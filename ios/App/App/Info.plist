@@ -43,6 +43,10 @@
       </array>
     </dict>
 	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>SETARA memakai lokasi hanya di ponsel untuk mendeteksi spot terdekat di Kiara Artha Park. Lokasi tidak dikirim ke server.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Kamera dipakai untuk memindai QR code di papan spot.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

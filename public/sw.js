@@ -2,7 +2,7 @@
 // - Aplikasi (HTML/JS/CSS/gambar): cache-first setelah kunjungan pertama
 // - Konten Supabase: network-first, jatuh ke cache saat offline
 // - Tile peta & font: stale-while-revalidate (tile yang pernah dilihat tersedia offline)
-const VERSION = 'setara-v1'
+const VERSION = 'setara-v2'
 const APP = `${VERSION}-app`
 const RUNTIME = `${VERSION}-runtime`
 const TILES = `${VERSION}-tiles`
@@ -51,7 +51,7 @@ self.addEventListener('fetch', (e) => {
 })
 
 async function cacheFirst(req, name) {
-  const hit = await caches.match(req)
+  const hit = await caches.match(req, { ignoreVary: true })
   if (hit) return hit
   const res = await fetch(req)
   if (res.ok) (await caches.open(name)).put(req, res.clone())
@@ -64,13 +64,13 @@ async function networkFirst(req, name, fallbackUrl) {
     if (res.ok) (await caches.open(name)).put(req, res.clone())
     return res
   } catch {
-    return (await caches.match(req)) || (fallbackUrl && (await caches.match(fallbackUrl))) || Response.error()
+    return (await caches.match(req, { ignoreVary: true })) || (fallbackUrl && (await caches.match(fallbackUrl, { ignoreVary: true }))) || Response.error()
   }
 }
 
 async function staleWhileRevalidate(req, name, maxEntries) {
   const cache = await caches.open(name)
-  const hit = await cache.match(req)
+  const hit = await cache.match(req, { ignoreVary: true })
   const net = fetch(req)
     .then(async (res) => {
       if (res.ok || res.type === 'opaque') {

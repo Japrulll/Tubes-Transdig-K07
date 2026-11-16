@@ -1,5 +1,14 @@
 {
   "appId": "com.example.setara",
-  "appName": "Setara",
-  "webDir": "dist"
+  "appName": "SETARA",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "backgroundColor": "#f4f9f8"
+  },
+  "ios": {
+    "backgroundColor": "#f4f9f8"
+  }
 }
