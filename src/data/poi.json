@@ -1,0 +1,1990 @@
+{
+  "version": "2026-11-16",
+  "park": {
+    "name": "Kiara Artha Park",
+    "city": "Bandung",
+    "address": "Jl. Banten, Kebonwaru, Kec. Batununggal, Kota Bandung, Jawa Barat",
+    "center": [
+      -6.9164043,
+      107.642318
+    ],
+    "zoom": 18,
+    "bounds": [
+      [
+        -6.9185,
+        107.6392
+      ],
+      [
+        -6.9135,
+        107.645
+      ]
+    ],
+    "opening_hours": {
+      "open": "07:00",
+      "close": "21:00"
+    },
+    "ticket": "Rp10.000 per orang (detikJabar, 2024) — cek kembali di loket",
+    "phone": "0822-1583-8889",
+    "instagram": "@kiaraarthapark",
+    "inaugurated": "2019-08-17",
+    "area_ha": 13,
+    "lake": {
+      "center": [
+        -6.9160874,
+        107.6422657
+      ],
+      "radius_m": 30
+    },
+    "ring": [
+      [
+        -6.916259,
+        107.643262
+      ],
+      [
+        -6.916159,
+        107.643272
+      ],
+      [
+        -6.916058,
+        107.643274
+      ],
+      [
+        -6.915957,
+        107.643269
+      ],
+      [
+        -6.915858,
+        107.643256
+      ],
+      [
+        -6.915761,
+        107.643236
+      ],
+      [
+        -6.915667,
+        107.643208
+      ],
+      [
+        -6.915576,
+        107.643173
+      ],
+      [
+        -6.915489,
+        107.64313
+      ],
+      [
+        -6.915407,
+        107.643082
+      ],
+      [
+        -6.91533,
+        107.643027
+      ],
+      [
+        -6.91526,
+        107.642966
+      ],
+      [
+        -6.915196,
+        107.642899
+      ],
+      [
+        -6.915139,
+        107.642828
+      ],
+      [
+        -6.915089,
+        107.642753
+      ],
+      [
+        -6.915047,
+        107.642673
+      ],
+      [
+        -6.915014,
+        107.642591
+      ],
+      [
+        -6.914988,
+        107.642506
+      ],
+      [
+        -6.914972,
+        107.642419
+      ],
+      [
+        -6.914964,
+        107.642331
+      ],
+      [
+        -6.914965,
+        107.642242
+      ],
+      [
+        -6.914974,
+        107.642154
+      ],
+      [
+        -6.914993,
+        107.642066
+      ],
+      [
+        -6.915019,
+        107.64198
+      ],
+      [
+        -6.915055,
+        107.641896
+      ],
+      [
+        -6.915098,
+        107.641814
+      ],
+      [
+        -6.915149,
+        107.641736
+      ],
+      [
+        -6.915208,
+        107.641662
+      ],
+      [
+        -6.915273,
+        107.641593
+      ],
+      [
+        -6.915345,
+        107.641528
+      ],
+      [
+        -6.915423,
+        107.641469
+      ],
+      [
+        -6.915506,
+        107.641417
+      ],
+      [
+        -6.915593,
+        107.64137
+      ],
+      [
+        -6.915685,
+        107.64133
+      ],
+      [
+        -6.91578,
+        107.641298
+      ],
+      [
+        -6.915878,
+        107.641272
+      ],
+      [
+        -6.915977,
+        107.641254
+      ],
+      [
+        -6.916077,
+        107.641244
+      ],
+      [
+        -6.916178,
+        107.641242
+      ],
+      [
+        -6.916279,
+        107.641247
+      ],
+      [
+        -6.916378,
+        107.64126
+      ],
+      [
+        -6.916475,
+        107.64128
+      ],
+      [
+        -6.916569,
+        107.641308
+      ],
+      [
+        -6.91666,
+        107.641343
+      ],
+      [
+        -6.916747,
+        107.641386
+      ],
+      [
+        -6.916829,
+        107.641434
+      ],
+      [
+        -6.916906,
+        107.641489
+      ],
+      [
+        -6.916976,
+        107.64155
+      ],
+      [
+        -6.91704,
+        107.641617
+      ],
+      [
+        -6.917097,
+        107.641688
+      ],
+      [
+        -6.917147,
+        107.641763
+      ],
+      [
+        -6.917189,
+        107.641843
+      ],
+      [
+        -6.917222,
+        107.641925
+      ],
+      [
+        -6.917248,
+        107.64201
+      ],
+      [
+        -6.917264,
+        107.642097
+      ],
+      [
+        -6.917272,
+        107.642185
+      ],
+      [
+        -6.917271,
+        107.642274
+      ],
+      [
+        -6.917262,
+        107.642362
+      ],
+      [
+        -6.917243,
+        107.64245
+      ],
+      [
+        -6.917217,
+        107.642536
+      ],
+      [
+        -6.917181,
+        107.64262
+      ],
+      [
+        -6.917138,
+        107.642702
+      ],
+      [
+        -6.917087,
+        107.64278
+      ],
+      [
+        -6.917028,
+        107.642854
+      ],
+      [
+        -6.916963,
+        107.642923
+      ],
+      [
+        -6.916891,
+        107.642988
+      ],
+      [
+        -6.916813,
+        107.643047
+      ],
+      [
+        -6.91673,
+        107.643099
+      ],
+      [
+        -6.916643,
+        107.643146
+      ],
+      [
+        -6.916551,
+        107.643186
+      ],
+      [
+        -6.916456,
+        107.643218
+      ],
+      [
+        -6.916358,
+        107.643244
+      ],
+      [
+        -6.916259,
+        107.643262
+      ]
+    ],
+    "sources": [
+      {
+        "label": "Google Maps — Kiara Artha Park & tempat di sekitarnya",
+        "url": "https://maps.google.com/?q=-6.9164043,107.642318",
+        "accessed": "2026-11-16"
+      },
+      {
+        "label": "detikJabar — Kiara Artha Park, Spot Rekreasi di Tengah Kota Bandung",
+        "url": "https://www.detik.com/jabar/wisata/d-7229191/kiara-artha-park-spot-rekreasi-di-tengah-kota-bandung"
+      },
+      {
+        "label": "Orami — Kiara Artha Park (30 Sep 2024)",
+        "url": "https://www.orami.co.id/magazine/kiara-artha-park"
+      },
+      {
+        "label": "Republika — Ayo Intip Keseruan di Kiara Artha Park (24 Agu 2019)",
+        "url": "https://news.republika.co.id/berita/pwoiiv0/ayo-intip-keseruan-di-kiara-artha-park-bandung"
+      },
+      {
+        "label": "Pemkot Bandung — Bike on The Street Everybody Happy (BOSEH)",
+        "url": "https://www.bandung.go.id/sub-etalase/27/sepeda"
+      }
+    ]
+  },
+  "categories": [
+    {
+      "id": "atraksi",
+      "label": "Atraksi",
+      "color": "#ee7b5b",
+      "icon": "sparkle",
+      "sort_order": 1
+    },
+    {
+      "id": "wellness",
+      "label": "Wellness",
+      "color": "#3f9e8e",
+      "icon": "pulse",
+      "sort_order": 2
+    },
+    {
+      "id": "kuliner",
+      "label": "Kuliner",
+      "color": "#e09a2d",
+      "icon": "cup",
+      "sort_order": 3
+    },
+    {
+      "id": "keluarga",
+      "label": "Keluarga",
+      "color": "#d4709c",
+      "icon": "balloon",
+      "sort_order": 4
+    },
+    {
+      "id": "fasilitas",
+      "label": "Fasilitas",
+      "color": "#4a93c4",
+      "icon": "facility",
+      "sort_order": 5
+    },
+    {
+      "id": "akses",
+      "label": "Akses",
+      "color": "#5d7d77",
+      "icon": "gate",
+      "sort_order": 6
+    }
+  ],
+  "pois": [
+    {
+      "id": "P01",
+      "name": "Pintu Utama Kiara Artha Park",
+      "short_name": "Pintu Utama",
+      "category_id": "akses",
+      "location_label": "Gerbang barat, sisi Jl. Banten",
+      "source": "Google Maps: \"Gerbang Barat Taman Kiara Artha\"",
+      "lat": -6.9161917,
+      "lng": 107.6407033,
+      "radius_m": 25,
+      "art": "gate",
+      "summary": "Gerbang utama di sisi Jl. Banten, titik awal menjelajah taman.",
+      "description": "Pintu masuk utama Kiara Artha Park berada di sisi barat, menghadap Jl. Banten. Dari sini jalur pejalan kaki mengarah ke lingkar Jl. Kiara Artha yang mengelilingi danau dan air mancur menari di tengah taman. Zona taman tersusun melingkar: area kuliner dan kafe di sisi selatan, danau dan air mancur di tengah, area bermain anak di sisi timur, serta jalur jogging dan musala di sisi utara.",
+      "trivia": [
+        "Kiara Artha Park diresmikan pada 17 Agustus 2019, bertepatan dengan HUT ke-74 Republik Indonesia.",
+        "Taman ini terletak di antara flyover Antapani dan flyover Kiaracondong, di Kelurahan Kebonwaru, Kecamatan Batununggal."
+      ],
+      "activities": [
+        "Peta ringkas zona taman",
+        "Titik kumpul rombongan",
+        "Akses ke Selter BOSEH dan area parkir"
+      ],
+      "tips": [
+        "Foto papan peta di gerbang sebagai cadangan bila baterai menipis.",
+        "Sore hari (15.00–18.00) cocok untuk jalan santai sebelum pertunjukan air mancur."
+      ],
+      "trigger_response": "Audio sambutan, ringkasan zona taman, dan rekomendasi rute sesuai jam kunjungan.",
+      "narration": "Selamat datang di Kiara Artha Park! Anda berada di gerbang barat, sisi Jalan Banten. Taman kota ini diresmikan pada tujuh belas Agustus dua ribu sembilan belas dan kini menjadi salah satu ruang publik favorit warga Bandung. Tata letaknya melingkar. Di tengah ada danau dengan air mancur menari. Di sisi utara terdapat titik start jogging track dan musala. Area bermain anak ada di sisi timur, sedangkan area kuliner dan kafe berada di sisi selatan. Ikuti jalur pejalan kaki ke arah timur untuk mencapai lingkar taman. SETARA akan memberi tahu Anda setiap kali mendekati spot menarik, jadi silakan simpan ponsel dan nikmati perjalanan.",
+      "hours": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "07:00",
+          "close": "21:00"
+        }
+      ],
+      "best_times": [
+        "pagi",
+        "siang",
+        "sore",
+        "malam"
+      ],
+      "keywords": [
+        "gerbang",
+        "pintu",
+        "masuk",
+        "jl banten",
+        "peta",
+        "tiket"
+      ],
+      "status_note": null
+    },
+    {
+      "id": "P02",
+      "name": "Gerbang Area Parkir",
+      "short_name": "Area Parkir",
+      "category_id": "akses",
+      "location_label": "Area parkir sisi barat laut, dekat gerbang utama",
+      "source": "Google Maps: \"Kiara Artha Parking Lot\"",
+      "lat": -6.9154692,
+      "lng": 107.6411222,
+      "radius_m": 25,
+      "art": "parking",
+      "summary": "Area parkir utama; arah ke Pintu Utama dan fasilitas terdekat.",
+      "description": "Area parkir utama berada di sisi barat laut taman, tidak jauh dari Jl. Banten. Dari gerbang parkir, pengunjung dapat berjalan ke selatan menuju Pintu Utama, atau ke timur menuju titik start jogging track, musala, dan toilet di sisi utara taman. Selter Sepeda BOSEH juga berada di dekat sini.",
+      "trivia": [
+        "Lokasi taman yang berada di antara dua flyover besar Bandung timur membuatnya mudah dijangkau dari arah Antapani maupun Kiaracondong.",
+        "Tiket masuk taman tercatat Rp10.000 per orang, baik hari kerja maupun akhir pekan (detikJabar, 2024). Cek kembali di loket karena harga dapat berubah."
+      ],
+      "activities": [
+        "Parkir mobil dan motor",
+        "Arah ke Pintu Utama (±90 m ke selatan)",
+        "Toilet terdekat di sisi utara taman"
+      ],
+      "tips": [
+        "Catat blok parkir kendaraan Anda.",
+        "Akhir pekan sore hari biasanya ramai; datang sebelum pukul 16.00."
+      ],
+      "trigger_response": "Notifikasi selamat datang, arah ke pintu utama, dan info fasilitas terdekat.",
+      "narration": "Halo, selamat datang di Kiara Artha Park! Anda berada di gerbang area parkir di sisi barat laut taman. Untuk menuju Pintu Utama, berjalanlah sekitar sembilan puluh meter ke arah selatan. Jika Anda ingin langsung berolahraga, titik start jogging track ada di sebelah timur, tidak jauh dari musala dan toilet. Selter sepeda BOSEH juga berada di dekat sini bila Anda ingin berkeliling dengan sepeda. Jangan lupa mencatat lokasi kendaraan Anda. Selamat menjelajah!",
+      "hours": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "07:00",
+          "close": "21:00"
+        }
+      ],
+      "best_times": [
+        "pagi",
+        "siang",
+        "sore",
+        "malam"
+      ],
+      "keywords": [
+        "parkir",
+        "mobil",
+        "motor",
+        "kendaraan",
+        "gerbang"
+      ],
+      "status_note": null
+    },
+    {
+      "id": "P03",
+      "name": "Danau & Air Mancur Menari",
+      "short_name": "Air Mancur",
+      "category_id": "atraksi",
+      "location_label": "Danau buatan di area tengah taman",
+      "source": "Google Maps: \"Dancing Fountain\"",
+      "lat": -6.9160874,
+      "lng": 107.6422657,
+      "radius_m": 40,
+      "art": "fountain",
+      "summary": "Ikon taman: danau dengan pertunjukan air mancur menari di malam hari.",
+      "description": "Danau di jantung taman ini adalah ikon Kiara Artha Park. Pada malam hari, air mancur menari tampil dengan permainan cahaya dan musik. Siang hingga sore, tepian danau menjadi tempat favorit untuk duduk santai, menikmati angin, dan memandangi patung Friendship Shake Hand di tepi utara.",
+      "trivia": [
+        "Pertunjukan air mancur menari umumnya digelar mulai pukul 18.30 hingga 20.30, dengan pertunjukan berbeda setiap jamnya (Orami, 2024).",
+        "Patung Friendship Shake Hand di tepi utara danau menggambarkan jabat tangan persahabatan, sejalan dengan semangat Asia Afrika kota Bandung."
+      ],
+      "activities": [
+        "Menonton pertunjukan air mancur menari (malam)",
+        "Duduk santai di tepi danau",
+        "Foto dengan latar air mancur"
+      ],
+      "tips": [
+        "Datang 15 menit sebelum pertunjukan untuk mendapat posisi depan.",
+        "Akses menonton disebut termasuk dalam paket Kiara Pelangi Food Court Rp35.000 (Orami, 2024); konfirmasi di lokasi."
+      ],
+      "trigger_response": "Kartu informasi dan narasi; sore/malam menampilkan hitung mundur pertunjukan air mancur.",
+      "narration": "Anda kini berada di tepi danau, jantung Kiara Artha Park. Di tengah danau inilah air mancur menari tampil setiap malam. Pertunjukan biasanya dimulai pukul setengah tujuh malam dan berlangsung hingga pukul setengah sembilan, dengan tema yang berbeda setiap jamnya. Semburan air bergerak mengikuti irama musik dan disinari lampu warna-warni. Coba perhatikan patung dua tangan yang berjabat di tepi utara danau. Itulah Friendship Shake Hand, simbol persahabatan. Jika Anda datang siang hari, nikmati angin di tepian danau, lalu kembali saat matahari terbenam untuk menyaksikan pertunjukannya.",
+      "hours": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "07:00",
+          "close": "21:00"
+        }
+      ],
+      "schedules": [
+        {
+          "title": "Pertunjukan Air Mancur Menari",
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "start": "18:30",
+          "end": "18:50"
+        },
+        {
+          "title": "Pertunjukan Air Mancur Menari",
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "start": "19:30",
+          "end": "19:50"
+        },
+        {
+          "title": "Pertunjukan Air Mancur Menari",
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "start": "20:30",
+          "end": "20:50"
+        }
+      ],
+      "best_times": [
+        "sore",
+        "malam"
+      ],
+      "keywords": [
+        "danau",
+        "air mancur",
+        "fountain",
+        "pertunjukan",
+        "malam",
+        "lampu",
+        "show"
+      ],
+      "status_note": "Jadwal pertunjukan dapat berubah; cek Instagram @kiaraarthapark."
+    },
+    {
+      "id": "P04",
+      "name": "Area Tematik Asia",
+      "short_name": "Tematik Asia",
+      "category_id": "atraksi",
+      "location_label": "Zona bergaya Korea di sisi barat, dekat Jl. Banten",
+      "source": "Google Maps: \"KAMPUNG KOREA BANDUNG\"",
+      "lat": -6.9156793,
+      "lng": 107.6406188,
+      "radius_m": 30,
+      "art": "asia",
+      "summary": "Zona tematik bernuansa Asia, dikenal sebagai Kampung Korea.",
+      "description": "Zona tematik bergaya Asia berada di sisi barat taman, dekat Jl. Banten. Area ini dikenal sebagai Kampung Korea: deretan bangunan dan ornamen bernuansa Korea yang sejak awal menjadi magnet foto pengunjung dan membuat Kiara Artha Park dijuluki destinasi \"ala Korea\" di tengah Kota Bandung.",
+      "trivia": [
+        "Kiara Artha Park sempat dipromosikan media sebagai destinasi wisata Bandung ala Korea berkat Kampung Korea-nya (VIVA).",
+        "Selain zona Asia, taman ini punya Taman Asia Afrika di sisi selatan danau, yang namanya menggemakan Konferensi Asia Afrika 1955 di Bandung."
+      ],
+      "activities": [
+        "Berfoto dengan ornamen bernuansa Asia",
+        "Mendengarkan cerita budaya lewat narasi audio"
+      ],
+      "tips": [
+        "Cahaya terbaik untuk foto: pagi 08.00–10.00 saat matahari dari timur."
+      ],
+      "trigger_response": "Prompt suara, kartu informasi, dan stempel POI.",
+      "narration": "Anda sedang berada di Area Tematik Asia, di sisi barat Kiara Artha Park. Kawasan ini dikenal sebagai Kampung Korea. Ketika taman dibuka pada tahun dua ribu sembilan belas, deretan bangunan dan ornamen bernuansa Korea di sini langsung menjadi magnet foto, sampai Kiara Artha Park dijuluki destinasi ala Korea di tengah Kota Bandung. Perhatikan detail atap, warna, dan tulisan Hangeul yang menghiasi area ini. Setelah dari sini, Anda bisa melanjutkan ke Taman Asia Afrika di sisi selatan danau, spot foto paling ikonik di taman ini.",
+      "hours": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "07:00",
+          "close": "21:00"
+        }
+      ],
+      "best_times": [
+        "pagi",
+        "siang",
+        "sore"
+      ],
+      "keywords": [
+        "asia",
+        "korea",
+        "kampung korea",
+        "budaya",
+        "tematik",
+        "foto"
+      ],
+      "status_note": "Google Maps menandai \"Kampung Korea Bandung\" sebagai tutup permanen (diakses 16 Nov 2026). Konfirmasi kondisi area saat survei lapangan."
+    },
+    {
+      "id": "P05",
+      "name": "Spot Foto Ikonik: Taman Asia Afrika",
+      "short_name": "Taman Asia Afrika",
+      "category_id": "atraksi",
+      "location_label": "Sisi selatan danau",
+      "source": "Google Maps: \"Taman Asia Afrika - Kiara Artha Park\"",
+      "lat": -6.9166173,
+      "lng": 107.6421607,
+      "radius_m": 25,
+      "art": "photo",
+      "summary": "Spot foto utama dengan latar danau dan air mancur.",
+      "description": "Taman Asia Afrika di sisi selatan danau adalah spot foto paling ikonik di Kiara Artha Park, dengan latar danau dan air mancur menari. Namanya menggemakan Konferensi Asia Afrika 1955 yang membuat Bandung dikenal dunia.",
+      "trivia": [
+        "Konferensi Asia Afrika digelar di Gedung Merdeka, Bandung, pada 18–24 April 1955 dan dihadiri 29 negara.",
+        "Dari titik ini air mancur menari terlihat utuh, sudut favorit untuk foto malam."
+      ],
+      "activities": [
+        "Foto dengan latar danau dan air mancur",
+        "Foto rombongan"
+      ],
+      "tips": [
+        "Sudut terbaik: menghadap utara ke arah air mancur.",
+        "Foto malam: aktifkan mode malam dan tunggu pertunjukan air mancur dimulai."
+      ],
+      "trigger_response": "Cerita singkat spot serta tips waktu dan sudut foto terbaik.",
+      "narration": "Selamat datang di Taman Asia Afrika, spot foto paling ikonik di Kiara Artha Park. Nama taman ini mengingatkan kita pada Konferensi Asia Afrika tahun seribu sembilan ratus lima puluh lima, ketika para pemimpin dua puluh sembilan negara berkumpul di Gedung Merdeka, Bandung. Dari sini, danau dan air mancur menari terlihat utuh. Untuk foto terbaik, menghadaplah ke utara. Pagi hari cahaya matahari lembut dari samping, sedangkan malam hari Anda bisa menangkap air mancur yang berwarna-warni. Siapkan gaya terbaik Anda!",
+      "hours": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "07:00",
+          "close": "21:00"
+        }
+      ],
+      "best_times": [
+        "pagi",
+        "sore",
+        "malam"
+      ],
+      "keywords": [
+        "foto",
+        "ikonik",
+        "asia afrika",
+        "spot foto",
+        "instagram",
+        "selfie"
+      ],
+      "status_note": null
+    },
+    {
+      "id": "P06",
+      "name": "Titik Start Jogging Track",
+      "short_name": "Start Jogging",
+      "category_id": "wellness",
+      "location_label": "Awal jalur jogging, sisi utara taman",
+      "source": "Google Maps: \"Jogging Track Kiara Artha Park\"",
+      "lat": -6.9152676,
+      "lng": 107.6417524,
+      "radius_m": 25,
+      "art": "jogging",
+      "summary": "Awal jalur jogging lingkar taman; mulai Wellness Trail dari sini.",
+      "description": "Titik awal jalur jogging berada di sisi utara taman. Jalur ini mengikuti lingkar Jl. Kiara Artha yang mengelilingi danau, sekitar 750 meter per putaran, cocok untuk jalan cepat, jogging, maupun bersepeda santai.",
+      "trivia": [
+        "Area jogging dan bersepeda di Kiara Artha Park disebut mencapai sekitar 2,6 hektare (Orami, 2024).",
+        "Kiara Artha Park pernah menjadi tuan rumah acara lari Pocari Run 2025."
+      ],
+      "activities": [
+        "Memulai Wellness Trail",
+        "Jogging lingkar taman (±750 m per putaran)",
+        "Pemanasan sebelum berlari"
+      ],
+      "tips": [
+        "Lakukan pemanasan 3–5 menit sebelum berlari.",
+        "Pagi pukul 06.00–09.00 udara paling segar dan jalur belum ramai."
+      ],
+      "trigger_response": "Tawaran memulai Wellness Trail, info panjang rute, dan tips pemanasan.",
+      "narration": "Anda berada di titik start jogging track Kiara Artha Park. Jalur di depan Anda mengikuti lingkar Jalan Kiara Artha yang mengelilingi danau, kira-kira tujuh ratus lima puluh meter untuk satu putaran. Sebelum mulai, lakukan pemanasan ringan selama tiga sampai lima menit: putar pergelangan kaki, ayunkan lengan, lalu jalan di tempat. Jika ingin dipandu, mulailah Wellness Trail dari menu Trail. SETARA akan memandu setiap checkpoint dengan suara dan mencatat jarak serta durasi Anda. Selamat berolahraga!",
+      "hours": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "06:00",
+          "close": "21:00"
+        }
+      ],
+      "best_times": [
+        "pagi",
+        "sore"
+      ],
+      "keywords": [
+        "jogging",
+        "lari",
+        "olahraga",
+        "track",
+        "trail",
+        "jalan pagi",
+        "wellness"
+      ],
+      "status_note": null
+    },
+    {
+      "id": "P07",
+      "name": "Selter Sepeda BOSEH",
+      "short_name": "Selter BOSEH",
+      "category_id": "wellness",
+      "location_label": "Sisi barat taman, dekat area parkir",
+      "source": "Google Maps: \"Stasiun Boseh Kiara Artha Park\"",
+      "lat": -6.915669,
+      "lng": 107.6408092,
+      "radius_m": 20,
+      "art": "bike",
+      "summary": "Sewa sepeda BOSEH untuk berkeliling taman dan kota.",
+      "description": "Selter Bike on the Street Everybody Happy (BOSEH) di sisi barat taman. Pengunjung dapat menyewa sepeda untuk berkeliling lingkar taman maupun menjelajah Bandung. Di dalam taman juga tersedia persewaan sepeda dan skuter listrik swasta.",
+      "trivia": [
+        "BOSEH adalah program sepeda sewa Pemerintah Kota Bandung; tarif resmi tercatat Rp1.000 untuk jam pertama dan Rp2.000 untuk jam berikutnya.",
+        "Persewaan sepeda dan skuter listrik di dalam taman bertarif Rp30.000 pada hari kerja dan Rp40.000 pada akhir pekan (detikJabar, 2024)."
+      ],
+      "activities": [
+        "Sewa sepeda BOSEH",
+        "Sewa sepeda/skuter listrik di dalam taman",
+        "Bersepeda di lingkar taman"
+      ],
+      "tips": [
+        "Siapkan kartu identitas untuk registrasi.",
+        "Gunakan jalur lingkar dan utamakan pejalan kaki."
+      ],
+      "trigger_response": "Info cara sewa sepeda/skuter, tarif dan jam operasional, serta rute bersepeda.",
+      "narration": "Anda berada di Selter Sepeda BOSEH, singkatan dari Bike on the Street Everybody Happy, program sepeda sewa milik Pemerintah Kota Bandung. Untuk menyewa, daftarkan diri dengan kartu identitas di petugas atau aplikasi BOSEH, lalu pilih sepeda yang tersedia. Tarif resminya sangat terjangkau, mulai seribu rupiah untuk jam pertama. Di dalam taman juga ada persewaan sepeda dan skuter listrik dengan tarif sekitar tiga puluh hingga empat puluh ribu rupiah. Rute favorit adalah lingkar Jalan Kiara Artha mengelilingi danau. Selalu utamakan pejalan kaki, ya!",
+      "hours": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "open": "08:00",
+          "close": "16:00"
+        },
+        {
+          "days": [
+            0,
+            6
+          ],
+          "open": "06:00",
+          "close": "18:00"
+        }
+      ],
+      "best_times": [
+        "pagi",
+        "sore"
+      ],
+      "keywords": [
+        "sepeda",
+        "boseh",
+        "skuter",
+        "sewa",
+        "bike",
+        "bersepeda"
+      ],
+      "status_note": "Jam layanan mengacu pada jam booth BOSEH Pemkot Bandung; konfirmasi saat survei."
+    },
+    {
+      "id": "P08",
+      "name": "Area Kuliner / Food Court",
+      "short_name": "Area Kuliner",
+      "category_id": "kuliner",
+      "location_label": "Kawasan Kiara Pelangi, sisi selatan taman",
+      "source": "Google Maps: \"Pelangi Graha Park\"",
+      "lat": -6.9170555,
+      "lng": 107.641775,
+      "radius_m": 30,
+      "art": "food",
+      "summary": "Kiara Pelangi Food Court dan deretan kafe di sisi selatan.",
+      "description": "Kawasan kuliner di sisi selatan taman dengan beragam tenant makanan dan minuman. Kiara Pelangi Food Court menjadi pusatnya, berdekatan dengan kafe seperti Ludo Sports Kitchen and Coffee dan Monday Co. Pilihan tepat untuk makan bersama sebelum menonton air mancur menari.",
+      "trivia": [
+        "Paket Kiara Pelangi Food Court seharga Rp35.000 disebut sudah termasuk akses menonton air mancur menari (Orami, 2024).",
+        "Ludo Sports Kitchen and Coffee di dekat area ini memiliki lebih dari seribu ulasan di Google Maps dengan rating 4,8."
+      ],
+      "activities": [
+        "Makan dan minum di food court",
+        "Nongkrong di kafe sekitar",
+        "Membeli paket makan + akses air mancur"
+      ],
+      "tips": [
+        "Jam makan malam akhir pekan ramai; pesan lebih awal sebelum pertunjukan air mancur.",
+        "Jam buka tenant bervariasi."
+      ],
+      "trigger_response": "Info tenant dan jam buka; jika belum buka, tampilkan jam buka dan alternatif terdekat.",
+      "narration": "Anda tiba di Area Kuliner Kiara Artha Park. Di kawasan Kiara Pelangi ini terdapat food court dengan beragam tenant, mulai dari makanan berat hingga jajanan dan minuman segar. Di sekitarnya ada kafe-kafe populer seperti Ludo Sports Kitchen and Coffee dan Monday Co. Menariknya, paket Kiara Pelangi Food Court disebut sudah termasuk akses menonton air mancur menari, jadi Anda bisa makan malam sambil menunggu pertunjukan. Jam buka setiap tenant berbeda, jadi cek papan informasi di lokasi. Selamat menikmati kuliner!",
+      "hours": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "10:00",
+          "close": "21:00"
+        }
+      ],
+      "best_times": [
+        "siang",
+        "sore",
+        "malam"
+      ],
+      "keywords": [
+        "makan",
+        "kuliner",
+        "food court",
+        "kiara pelangi",
+        "restoran",
+        "minum",
+        "jajan"
+      ],
+      "status_note": "Jam buka tenant bervariasi; konfirmasi saat survei."
+    },
+    {
+      "id": "P09",
+      "name": "Area Kafe & Lapangan Padel",
+      "short_name": "Kafe & Padel",
+      "category_id": "kuliner",
+      "secondary_category_id": "wellness",
+      "location_label": "Kawasan kafe dan lapangan padel, sisi utara",
+      "source": "Google Maps: \"Padel Co. Semi Outdoor\"",
+      "lat": -6.9149564,
+      "lng": 107.6422184,
+      "radius_m": 30,
+      "art": "padel",
+      "summary": "Kafe dan lapangan padel semi-outdoor di sisi utara taman.",
+      "description": "Kawasan kafe dan lapangan padel di sisi utara taman. Padel, olahraga raket perpaduan tenis dan squash, sedang populer di Bandung, dan Padel Co. menyediakan lapangan semi-outdoor di sini. Kafe di sekitarnya cocok untuk beristirahat setelah berolahraga.",
+      "trivia": [
+        "Padel lahir di Acapulco, Meksiko, pada 1969 dan dimainkan berpasangan di lapangan berdinding kaca.",
+        "Dalam padel, bola boleh memantul ke dinding sebelum dipukul kembali, berbeda dengan tenis."
+      ],
+      "activities": [
+        "Menonton atau bermain padel",
+        "Bersantai di kafe",
+        "Istirahat setelah jogging"
+      ],
+      "tips": [
+        "Pemesanan lapangan dilakukan langsung ke pengelola; SETARA tidak menyediakan reservasi.",
+        "Gunakan sepatu bersol rata untuk bermain padel."
+      ],
+      "trigger_response": "Info kafe, lapangan padel, jam operasional, dan aktivitas yang tersedia.",
+      "narration": "Anda berada di Area Kafe dan Lapangan Padel di sisi utara Kiara Artha Park. Padel adalah olahraga raket yang lahir di Meksiko pada tahun seribu sembilan ratus enam puluh sembilan. Permainannya mirip tenis, tetapi lapangannya lebih kecil dan dikelilingi dinding kaca, dan bola boleh memantul ke dinding. Lapangan semi-outdoor di sini bisa dipesan langsung ke pengelola. Jika hanya ingin bersantai, kafe di sekitar lapangan cocok untuk menikmati minuman sambil menonton pertandingan. Tempat yang pas untuk beristirahat setelah jogging!",
+      "hours": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "07:00",
+          "close": "22:00"
+        }
+      ],
+      "best_times": [
+        "pagi",
+        "sore",
+        "malam"
+      ],
+      "keywords": [
+        "padel",
+        "kafe",
+        "cafe",
+        "kopi",
+        "olahraga",
+        "raket",
+        "nongkrong"
+      ],
+      "status_note": "Jam operasional perlu dikonfirmasi ke pengelola saat survei."
+    },
+    {
+      "id": "P10",
+      "name": "Area Bermain Anak",
+      "short_name": "Area Bermain",
+      "category_id": "keluarga",
+      "location_label": "Lollipop Playland, sisi timur danau",
+      "source": "Google Maps: \"Lolipops Playland and Cafe\"",
+      "lat": -6.9164994,
+      "lng": 107.6428604,
+      "radius_m": 25,
+      "art": "playground",
+      "summary": "Lollipop Playland: wahana bermain anak dan kafe untuk pendamping.",
+      "description": "Lollipop Playland adalah area bermain anak di sisi timur danau, lengkap dengan kafe bagi orang tua dan pendamping. Lokasinya dekat Zona Relaksasi, sehingga pendamping bisa beristirahat di tempat teduh setelah anak-anak bermain.",
+      "trivia": [
+        "Lollipop Playland termasuk fasilitas yang paling sering disebut media saat membahas Kiara Artha Park, bersama air mancur menari dan Kampung Korea.",
+        "Area ini berada sekitar 80 meter dari air mancur, titik temu yang mudah diingat bila anggota keluarga terpisah."
+      ],
+      "activities": [
+        "Wahana bermain anak",
+        "Kafe untuk pendamping",
+        "Titik istirahat keluarga"
+      ],
+      "tips": [
+        "Sepakati titik temu (misalnya air mancur) bila anggota rombongan terpisah.",
+        "Cek ketentuan usia dan tinggi badan di loket wahana; bawa kaus kaki untuk area bermain indoor."
+      ],
+      "trigger_response": "Info wahana, batas usia, tips keamanan anak, dan fasilitas terdekat bagi pendamping.",
+      "narration": "Halo keluarga! Anda berada di dekat Lollipop Playland, area bermain anak di sisi timur danau. Di sini anak-anak bisa bermain di berbagai wahana, sementara orang tua dan pendamping beristirahat di kafe. Sebelum bermain, cek ketentuan usia dan tinggi badan di loket, dan siapkan kaus kaki untuk area bermain indoor. Untuk keamanan, sepakati satu titik temu yang mudah diingat, misalnya air mancur di tengah danau, sekitar delapan puluh meter dari sini. Jika ingin beristirahat, Zona Relaksasi yang teduh ada di sebelah utara. Selamat bermain!",
+      "hours": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "09:00",
+          "close": "21:00"
+        }
+      ],
+      "best_times": [
+        "pagi",
+        "siang",
+        "sore"
+      ],
+      "keywords": [
+        "anak",
+        "bermain",
+        "playground",
+        "lollipop",
+        "keluarga",
+        "wahana",
+        "balita"
+      ],
+      "status_note": "Jam operasional wahana perlu dikonfirmasi saat survei."
+    },
+    {
+      "id": "P11",
+      "name": "Zona Relaksasi / Spot Teduh",
+      "short_name": "Zona Teduh",
+      "category_id": "wellness",
+      "location_label": "Kanopi pepohonan di sisi timur danau",
+      "source": "Google Maps (citra satelit): titik di bawah kanopi pohon, timur danau",
+      "lat": -6.91593,
+      "lng": 107.643112,
+      "radius_m": 20,
+      "art": "shade",
+      "summary": "Area duduk teduh untuk relaksasi napas dan peregangan ringan.",
+      "description": "Area teduh di bawah kanopi pepohonan rindang di sisi timur danau. Tempat ideal untuk berhenti sejenak, mengatur napas, dan melakukan peregangan ringan, sekaligus menjadi checkpoint Wellness Trail.",
+      "trivia": [
+        "Kanopi pohon dapat membuat udara di bawahnya terasa lebih sejuk dibanding area terbuka di siang hari.",
+        "Menghembuskan napas lebih panjang daripada menarik napas membantu menenangkan detak jantung setelah berjalan."
+      ],
+      "activities": [
+        "Audio relaksasi 1–2 menit",
+        "Peregangan ringan",
+        "Checkpoint Wellness Trail"
+      ],
+      "tips": [
+        "Lepaskan earphone sejenak dan dengarkan suara di sekitar Anda.",
+        "Minum air setelah berjalan atau berlari."
+      ],
+      "trigger_response": "Tawaran audio relaksasi 1–2 menit; menjadi checkpoint Wellness Trail.",
+      "narration": "Selamat datang di Zona Relaksasi, area teduh di bawah kanopi pepohonan di sisi timur danau. Mari berhenti sejenak. Berdirilah dengan nyaman atau duduk di bangku terdekat. Tarik napas perlahan melalui hidung selama empat hitungan. Tahan sebentar. Lalu hembuskan perlahan melalui mulut selama enam hitungan. Ulangi tiga kali. Sekarang angkat kedua bahu ke arah telinga, tahan, lalu lepaskan. Putar leher perlahan ke kiri dan ke kanan. Rasakan udara yang lebih sejuk di bawah pepohonan ini. Jika sudah siap, lanjutkan perjalanan Anda dengan langkah yang lebih ringan.",
+      "hours": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "07:00",
+          "close": "21:00"
+        }
+      ],
+      "best_times": [
+        "pagi",
+        "siang",
+        "sore"
+      ],
+      "keywords": [
+        "teduh",
+        "relaksasi",
+        "istirahat",
+        "napas",
+        "peregangan",
+        "pohon",
+        "duduk"
+      ],
+      "status_note": "Titik ditentukan dari citra satelit Google Maps; validasi saat survei lapangan."
+    },
+    {
+      "id": "P12",
+      "name": "Musala & Toilet",
+      "short_name": "Musala & Toilet",
+      "category_id": "fasilitas",
+      "location_label": "Fasilitas umum utama, sisi utara taman",
+      "source": "Google Maps: \"Mushalla Kiara Artha Park\"",
+      "lat": -6.9151658,
+      "lng": 107.6421597,
+      "radius_m": 20,
+      "art": "musala",
+      "summary": "Musala, tempat wudu, dan toilet umum di sisi utara taman.",
+      "description": "Fasilitas umum utama di sisi utara taman: musala, tempat wudu, dan toilet. Lokasinya dekat Layana Hall dan titik start jogging track, sehingga mudah dijangkau sebelum atau sesudah berolahraga.",
+      "trivia": [
+        "Musala ini tercatat di Google Maps sebagai \"Mushalla Kiara Artha Park\", berdekatan dengan Layana Hall.",
+        "Toilet umum lain juga tersedia di sekitar area parkir sisi barat laut taman."
+      ],
+      "activities": [
+        "Salat",
+        "Wudu",
+        "Toilet umum"
+      ],
+      "tips": [
+        "Menjelang magrib musala biasanya ramai; datang beberapa menit lebih awal.",
+        "Jaga kebersihan dan simpan alas kaki di rak yang tersedia."
+      ],
+      "trigger_response": "Info fasilitas dan arah; tampil sebagai hasil cepat pada filter Fasilitas.",
+      "narration": "Anda berada di area Musala dan Toilet Kiara Artha Park, fasilitas umum utama di sisi utara taman. Di sini tersedia musala, tempat wudu, dan toilet umum. Menjelang waktu magrib, musala biasanya ramai, jadi datanglah beberapa menit lebih awal. Simpan alas kaki di rak yang tersedia dan bantu jaga kebersihan bersama. Setelah ini, Anda bisa melanjutkan ke titik start jogging track di sebelah barat, atau menuju danau dan air mancur di selatan.",
+      "hours": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "07:00",
+          "close": "21:00"
+        }
+      ],
+      "best_times": [
+        "pagi",
+        "siang",
+        "sore",
+        "malam"
+      ],
+      "keywords": [
+        "musala",
+        "mushola",
+        "masjid",
+        "salat",
+        "sholat",
+        "toilet",
+        "wc",
+        "kamar mandi",
+        "wudu"
+      ],
+      "status_note": null
+    }
+  ],
+  "trails": [
+    {
+      "id": "T01",
+      "name": "Rute Santai Kelilingi Danau",
+      "subtitle": "Jalan santai dengan peregangan dan latihan napas",
+      "description": "Rute jalan kaki santai mengelilingi danau melewati musala, zona teduh, dan Taman Asia Afrika. Setiap checkpoint memutar panduan audio berisi info spot dan ajakan peregangan atau latihan napas.",
+      "level": "Santai",
+      "best_times": [
+        "pagi",
+        "sore"
+      ],
+      "color": "#3f9e8e",
+      "path": [
+        [
+          -6.915268,
+          107.641752
+        ],
+        [
+          -6.915232,
+          107.641795
+        ],
+        [
+          -6.915206,
+          107.641834
+        ],
+        [
+          -6.915188,
+          107.641871
+        ],
+        [
+          -6.915177,
+          107.641906
+        ],
+        [
+          -6.91517,
+          107.641941
+        ],
+        [
+          -6.915168,
+          107.641977
+        ],
+        [
+          -6.915167,
+          107.642016
+        ],
+        [
+          -6.915168,
+          107.642058
+        ],
+        [
+          -6.915168,
+          107.642106
+        ],
+        [
+          -6.915166,
+          107.64216
+        ],
+        [
+          -6.91516,
+          107.642223
+        ],
+        [
+          -6.915152,
+          107.642295
+        ],
+        [
+          -6.915143,
+          107.642374
+        ],
+        [
+          -6.915135,
+          107.642457
+        ],
+        [
+          -6.915129,
+          107.642541
+        ],
+        [
+          -6.915127,
+          107.642625
+        ],
+        [
+          -6.915131,
+          107.642705
+        ],
+        [
+          -6.915143,
+          107.64278
+        ],
+        [
+          -6.915164,
+          107.642845
+        ],
+        [
+          -6.915196,
+          107.642899
+        ],
+        [
+          -6.915242,
+          107.642944
+        ],
+        [
+          -6.9153,
+          107.642983
+        ],
+        [
+          -6.91537,
+          107.643016
+        ],
+        [
+          -6.915447,
+          107.643044
+        ],
+        [
+          -6.915529,
+          107.643067
+        ],
+        [
+          -6.915614,
+          107.643086
+        ],
+        [
+          -6.9157,
+          107.643099
+        ],
+        [
+          -6.915782,
+          107.643108
+        ],
+        [
+          -6.91586,
+          107.643112
+        ],
+        [
+          -6.91593,
+          107.643112
+        ],
+        [
+          -6.915996,
+          107.643108
+        ],
+        [
+          -6.916062,
+          107.643099
+        ],
+        [
+          -6.916127,
+          107.643085
+        ],
+        [
+          -6.916191,
+          107.643066
+        ],
+        [
+          -6.916253,
+          107.643043
+        ],
+        [
+          -6.916312,
+          107.643016
+        ],
+        [
+          -6.916367,
+          107.642983
+        ],
+        [
+          -6.916417,
+          107.642947
+        ],
+        [
+          -6.916461,
+          107.642906
+        ],
+        [
+          -6.916499,
+          107.64286
+        ],
+        [
+          -6.916528,
+          107.642807
+        ],
+        [
+          -6.916547,
+          107.642744
+        ],
+        [
+          -6.916558,
+          107.642674
+        ],
+        [
+          -6.916564,
+          107.642598
+        ],
+        [
+          -6.916567,
+          107.642519
+        ],
+        [
+          -6.916569,
+          107.642439
+        ],
+        [
+          -6.916573,
+          107.642362
+        ],
+        [
+          -6.91658,
+          107.642288
+        ],
+        [
+          -6.916595,
+          107.64222
+        ],
+        [
+          -6.916617,
+          107.642161
+        ],
+        [
+          -6.916655,
+          107.64211
+        ],
+        [
+          -6.916709,
+          107.642066
+        ],
+        [
+          -6.916773,
+          107.642026
+        ],
+        [
+          -6.916842,
+          107.64199
+        ],
+        [
+          -6.916911,
+          107.641957
+        ],
+        [
+          -6.916974,
+          107.641924
+        ],
+        [
+          -6.917025,
+          107.641891
+        ],
+        [
+          -6.91706,
+          107.641856
+        ],
+        [
+          -6.917072,
+          107.641818
+        ],
+        [
+          -6.917055,
+          107.641775
+        ],
+        [
+          -6.917007,
+          107.641724
+        ],
+        [
+          -6.916931,
+          107.641663
+        ],
+        [
+          -6.916832,
+          107.641597
+        ],
+        [
+          -6.916716,
+          107.641527
+        ],
+        [
+          -6.916588,
+          107.641459
+        ],
+        [
+          -6.916455,
+          107.641395
+        ],
+        [
+          -6.916321,
+          107.64134
+        ],
+        [
+          -6.916193,
+          107.641295
+        ],
+        [
+          -6.916077,
+          107.641265
+        ],
+        [
+          -6.915977,
+          107.641254
+        ],
+        [
+          -6.915888,
+          107.641263
+        ],
+        [
+          -6.915802,
+          107.64129
+        ],
+        [
+          -6.915718,
+          107.641331
+        ],
+        [
+          -6.915637,
+          107.641384
+        ],
+        [
+          -6.915561,
+          107.641445
+        ],
+        [
+          -6.91549,
+          107.641511
+        ],
+        [
+          -6.915424,
+          107.641577
+        ],
+        [
+          -6.915365,
+          107.641642
+        ],
+        [
+          -6.915312,
+          107.641702
+        ],
+        [
+          -6.915268,
+          107.641752
+        ]
+      ],
+      "checkpoints": [
+        {
+          "name": "Titik Start Jogging Track",
+          "poi_id": "P06",
+          "coords": [
+            -6.9152676,
+            107.6417524
+          ],
+          "radius_m": 25,
+          "exercise": "Pemanasan 1 menit",
+          "coaching": "Checkpoint satu, titik start. Mari pemanasan. Putar pergelangan kaki kanan dan kiri masing-masing lima kali, lalu ayunkan kedua lengan ke depan dan ke belakang. Setelah itu, mulailah berjalan santai ke arah timur menuju musala."
+        },
+        {
+          "name": "Musala & Layana Hall",
+          "poi_id": "P12",
+          "coords": [
+            -6.9151658,
+            107.6421597
+          ],
+          "radius_m": 20,
+          "exercise": "Cek hidrasi",
+          "coaching": "Checkpoint dua, sisi utara taman. Di sini ada musala dan toilet. Jika haus, minumlah beberapa teguk air. Jaga postur: bahu rileks, pandangan ke depan. Lanjutkan ke arah timur menuju zona teduh."
+        },
+        {
+          "name": "Zona Teduh",
+          "poi_id": "P11",
+          "coords": [
+            -6.91593,
+            107.643112
+          ],
+          "radius_m": 20,
+          "exercise": "Peregangan ringan 1 menit",
+          "coaching": "Checkpoint tiga, Zona Teduh. Saatnya peregangan ringan satu menit. Tarik lengan kanan menyilang ke depan dada, tahan sepuluh hitungan, lalu ganti lengan kiri. Kemudian tarik napas empat hitungan dan hembuskan enam hitungan. Ulangi tiga kali."
+        },
+        {
+          "name": "Taman Asia Afrika",
+          "poi_id": "P05",
+          "coords": [
+            -6.9166173,
+            107.6421607
+          ],
+          "radius_m": 25,
+          "exercise": "Latihan napas 4-6",
+          "coaching": "Checkpoint empat, Taman Asia Afrika. Pandanglah danau dan air mancur di utara. Tarik napas dalam empat hitungan, hembuskan enam hitungan. Rasakan langkah Anda kini lebih ringan. Lanjutkan ke barat lalu ke utara kembali ke titik start."
+        },
+        {
+          "name": "Finish: Titik Start",
+          "poi_id": "P06",
+          "coords": [
+            -6.9152676,
+            107.6417524
+          ],
+          "radius_m": 25,
+          "exercise": "Pendinginan",
+          "coaching": "Selamat, Anda menyelesaikan Rute Santai Kelilingi Danau! Lakukan pendinginan: tarik tumit ke arah bokong untuk meregangkan paha depan, tahan lima belas hitungan untuk setiap kaki. Jangan lupa minum air."
+        }
+      ],
+      "distance_m": 670,
+      "est_minutes": 15
+    },
+    {
+      "id": "T02",
+      "name": "Jogging Lingkar Kiara Artha",
+      "subtitle": "Satu putaran jogging di lingkar Jl. Kiara Artha",
+      "description": "Rute jogging mengikuti lingkar Jl. Kiara Artha yang mengelilingi taman. Panduan audio di tiap sisi taman membantu menjaga ritme langkah dan napas. Ulangi untuk menambah jarak.",
+      "level": "Sedang",
+      "best_times": [
+        "pagi",
+        "sore"
+      ],
+      "color": "#ee7b5b",
+      "path": [
+        [
+          -6.915208,
+          107.641662
+        ],
+        [
+          -6.915149,
+          107.641736
+        ],
+        [
+          -6.915098,
+          107.641814
+        ],
+        [
+          -6.915055,
+          107.641896
+        ],
+        [
+          -6.915019,
+          107.64198
+        ],
+        [
+          -6.914993,
+          107.642066
+        ],
+        [
+          -6.914974,
+          107.642154
+        ],
+        [
+          -6.914965,
+          107.642242
+        ],
+        [
+          -6.914964,
+          107.642331
+        ],
+        [
+          -6.914972,
+          107.642419
+        ],
+        [
+          -6.914988,
+          107.642506
+        ],
+        [
+          -6.915014,
+          107.642591
+        ],
+        [
+          -6.915047,
+          107.642673
+        ],
+        [
+          -6.915089,
+          107.642753
+        ],
+        [
+          -6.915139,
+          107.642828
+        ],
+        [
+          -6.915196,
+          107.642899
+        ],
+        [
+          -6.91526,
+          107.642966
+        ],
+        [
+          -6.91533,
+          107.643027
+        ],
+        [
+          -6.915407,
+          107.643082
+        ],
+        [
+          -6.915489,
+          107.64313
+        ],
+        [
+          -6.915576,
+          107.643173
+        ],
+        [
+          -6.915667,
+          107.643208
+        ],
+        [
+          -6.915761,
+          107.643236
+        ],
+        [
+          -6.915858,
+          107.643256
+        ],
+        [
+          -6.915957,
+          107.643269
+        ],
+        [
+          -6.916058,
+          107.643274
+        ],
+        [
+          -6.916159,
+          107.643272
+        ],
+        [
+          -6.916259,
+          107.643262
+        ],
+        [
+          -6.916358,
+          107.643244
+        ],
+        [
+          -6.916456,
+          107.643218
+        ],
+        [
+          -6.916551,
+          107.643186
+        ],
+        [
+          -6.916643,
+          107.643146
+        ],
+        [
+          -6.91673,
+          107.643099
+        ],
+        [
+          -6.916813,
+          107.643047
+        ],
+        [
+          -6.916891,
+          107.642988
+        ],
+        [
+          -6.916963,
+          107.642923
+        ],
+        [
+          -6.917028,
+          107.642854
+        ],
+        [
+          -6.917087,
+          107.64278
+        ],
+        [
+          -6.917138,
+          107.642702
+        ],
+        [
+          -6.917181,
+          107.64262
+        ],
+        [
+          -6.917217,
+          107.642536
+        ],
+        [
+          -6.917243,
+          107.64245
+        ],
+        [
+          -6.917262,
+          107.642362
+        ],
+        [
+          -6.917271,
+          107.642274
+        ],
+        [
+          -6.917272,
+          107.642185
+        ],
+        [
+          -6.917264,
+          107.642097
+        ],
+        [
+          -6.917248,
+          107.64201
+        ],
+        [
+          -6.917222,
+          107.641925
+        ],
+        [
+          -6.917189,
+          107.641843
+        ],
+        [
+          -6.917147,
+          107.641763
+        ],
+        [
+          -6.917097,
+          107.641688
+        ],
+        [
+          -6.91704,
+          107.641617
+        ],
+        [
+          -6.916976,
+          107.64155
+        ],
+        [
+          -6.916906,
+          107.641489
+        ],
+        [
+          -6.916829,
+          107.641434
+        ],
+        [
+          -6.916747,
+          107.641386
+        ],
+        [
+          -6.91666,
+          107.641343
+        ],
+        [
+          -6.916569,
+          107.641308
+        ],
+        [
+          -6.916475,
+          107.64128
+        ],
+        [
+          -6.916378,
+          107.64126
+        ],
+        [
+          -6.916279,
+          107.641247
+        ],
+        [
+          -6.916178,
+          107.641242
+        ],
+        [
+          -6.916077,
+          107.641244
+        ],
+        [
+          -6.915977,
+          107.641254
+        ],
+        [
+          -6.915878,
+          107.641272
+        ],
+        [
+          -6.91578,
+          107.641298
+        ],
+        [
+          -6.915685,
+          107.64133
+        ],
+        [
+          -6.915593,
+          107.64137
+        ],
+        [
+          -6.915506,
+          107.641417
+        ],
+        [
+          -6.915423,
+          107.641469
+        ],
+        [
+          -6.915345,
+          107.641528
+        ],
+        [
+          -6.915273,
+          107.641593
+        ],
+        [
+          -6.915208,
+          107.641662
+        ]
+      ],
+      "checkpoints": [
+        {
+          "name": "Start: Sisi Barat Laut",
+          "poi_id": null,
+          "coords": [
+            -6.915208,
+            107.641662
+          ],
+          "radius_m": 25,
+          "exercise": "Pemanasan dinamis",
+          "coaching": "Selamat datang di Jogging Lingkar Kiara Artha. Lakukan pemanasan dinamis: angkat lutut bergantian selama tiga puluh detik. Lalu mulai jogging pelan searah jarum jam."
+        },
+        {
+          "name": "Sisi Timur Laut",
+          "poi_id": null,
+          "coords": [
+            -6.915489,
+            107.64313
+          ],
+          "radius_m": 25,
+          "exercise": "Atur ritme napas",
+          "coaching": "Checkpoint dua, sisi timur laut. Atur ritme napas: tarik napas dua langkah, hembuskan dua langkah. Anda seharusnya masih bisa berbicara dengan nyaman."
+        },
+        {
+          "name": "Sisi Tenggara",
+          "poi_id": null,
+          "coords": [
+            -6.917028,
+            107.642854
+          ],
+          "radius_m": 25,
+          "exercise": "Postur lari",
+          "coaching": "Checkpoint tiga, sisi tenggara. Periksa postur: badan tegak sedikit condong ke depan, lengan menekuk sembilan puluh derajat, dan mendarat dengan tengah telapak kaki."
+        },
+        {
+          "name": "Sisi Barat Daya",
+          "poi_id": null,
+          "coords": [
+            -6.916829,
+            107.641434
+          ],
+          "radius_m": 25,
+          "exercise": "Jaga kecepatan",
+          "coaching": "Checkpoint empat, sisi barat daya. Sedikit lagi! Pertahankan kecepatan yang nyaman. Area kuliner ada di sebelah kanan Anda bila ingin beristirahat setelah ini."
+        },
+        {
+          "name": "Finish: Sisi Barat Laut",
+          "poi_id": null,
+          "coords": [
+            -6.915208,
+            107.641662
+          ],
+          "radius_m": 25,
+          "exercise": "Pendinginan",
+          "coaching": "Satu putaran selesai, kerja bagus! Berjalanlah pelan selama dua menit untuk pendinginan, lalu regangkan betis dengan bertumpu pada dinding atau pohon."
+        }
+      ],
+      "distance_m": 760,
+      "est_minutes": 10
+    }
+  ],
+  "badges": [
+    {
+      "id": "B01",
+      "name": "Langkah Pertama",
+      "description": "Kumpulkan stempel pertama Anda.",
+      "poi_ids": [],
+      "min_count": 1,
+      "requires_trail": false,
+      "sort_order": 1
+    },
+    {
+      "id": "B02",
+      "name": "Penjelajah Danau",
+      "description": "Kunjungi 4 spot di sekitar danau.",
+      "poi_ids": [
+        "P03",
+        "P05",
+        "P10",
+        "P11"
+      ],
+      "min_count": 4,
+      "requires_trail": false,
+      "sort_order": 2
+    },
+    {
+      "id": "B03",
+      "name": "Pencicip Kuliner",
+      "description": "Kunjungi area kuliner dan kafe.",
+      "poi_ids": [
+        "P08",
+        "P09"
+      ],
+      "min_count": 2,
+      "requires_trail": false,
+      "sort_order": 3
+    },
+    {
+      "id": "B04",
+      "name": "Sahabat Sehat",
+      "description": "Kunjungi 3 spot wellness dan selesaikan satu Wellness Trail.",
+      "poi_ids": [
+        "P06",
+        "P07",
+        "P11"
+      ],
+      "min_count": 3,
+      "requires_trail": true,
+      "sort_order": 4
+    },
+    {
+      "id": "B05",
+      "name": "Penjelajah Sejati",
+      "description": "Kumpulkan seluruh 12 stempel Kiara Artha Park.",
+      "poi_ids": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "min_count": 12,
+      "requires_trail": false,
+      "sort_order": 5
+    }
+  ]
+}

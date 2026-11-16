@@ -13,9 +13,14 @@
     "@capacitor/cli": "^8.6.0",
     "@capacitor/core": "^8.6.0",
     "@capacitor/ios": "^8.6.0",
+    "@supabase/supabase-js": "^2.119.0",
     "@tailwindcss/vite": "^4.3.5",
+    "html5-qrcode": "^2.3.8",
+    "leaflet": "^1.9.4",
+    "qrcode": "^1.5.4",
     "tailwindcss": "^4.3.5",
-    "vue": "^3.5.44"
+    "vue": "^3.5.44",
+    "vue-router": "^4.6.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.10",
