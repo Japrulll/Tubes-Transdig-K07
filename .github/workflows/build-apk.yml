@@ -29,7 +29,15 @@ jobs:
         run: |
           echo "ANDROID_HOME=$ANDROID_HOME"
           chmod +x gradlew
-          ./gradlew assembleDebug --no-daemon --stacktrace
+          set -o pipefail
+          ./gradlew assembleDebug --no-daemon --stacktrace 2>&1 | tee gradle.log
+      # Ringkasan galat sebagai anotasi (terbaca tanpa login di halaman run)
+      - name: Ringkas galat Gradle
+        if: failure()
+        working-directory: android
+        run: |
+          { grep -A 30 "What went wrong" gradle.log | head -60; grep -E "error:|^e: " gradle.log | head -30; } > err.txt || true
+          echo "::error title=Gradle assembleDebug::$(sed ':a;N;$!ba;s/%/%25/g;s/\r//g;s/\n/%0A/g' err.txt | cut -c1-8000)"
       - uses: actions/upload-artifact@v4
         with:
           name: setara-debug-apk
