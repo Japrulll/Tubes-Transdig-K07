@@ -169,17 +169,34 @@
   font-weight: 800;
   color: #fff;
 }
-.poi-pin .pin-check {
+.poi-pin .pin-stars {
   position: absolute;
-  right: -4px;
-  top: -3px;
-  display: grid;
-  place-items: center;
-  width: 15px;
-  height: 15px;
+  right: -10px;
+  top: -6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+  height: 16px;
+  padding: 0 4px;
   border-radius: 999px;
-  background: var(--color-brand-500);
-  border: 2px solid #fff;
+  background: #fff;
+  border: 1.5px solid var(--color-brand-500);
+  color: var(--color-brand-700);
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1;
+}
+.poi-pin .pin-stars svg {
+  color: var(--color-sun-400);
+}
+.poi-pin .pin-stars.is-full {
+  background: var(--color-sun-400);
+  border-color: #fff;
+  color: #fff;
+}
+.poi-pin .pin-stars.is-full svg {
+  color: #fff;
 }
 .poi-pulse {
   position: absolute;

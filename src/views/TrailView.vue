@@ -12,6 +12,17 @@ import { trail, activeTrail, elapsed, nextCheckpoint, lastCheckpoint, startTrail
 import { formatKm, formatClock, formatDistance, haversine } from '../lib/geo'
 import { speak, speakingKey, unlockAudio } from '../lib/audio'
 import { timeSlot } from '../lib/time'
+import Kia from '../components/Kia.vue'
+import QuizPanel from '../components/QuizPanel.vue'
+import { play, level, completeTrailQuiz } from '../stores/play'
+import { slotImage } from '../lib/mediaSlots'
+
+const quizMood = ref('think')
+const trailQuizXp = ref(0)
+function onTrailQuiz(results) {
+  trailQuizXp.value = completeTrailQuiz(activeTrail.value.id, results).xp
+}
+const cover = (id) => slotImage(`trail/${String(id).toLowerCase()}`)
 
 const router = useRouter()
 const openMenu = inject('openMenu')
@@ -78,12 +89,24 @@ function onMapClick(ll) {
           <p class="eyebrow mt-4">{{ result.complete ? 'Stempel Wellness diperoleh' : 'Trail diakhiri' }}</p>
           <h2 class="mt-1 text-[22px] font-medium text-ink">{{ activeTrail?.name }}</h2>
           <p class="mt-1 text-[13px] text-muted">{{ result.complete ? 'Semua checkpoint tercapai. Kerja bagus!' : `${result.reached} dari ${result.total} checkpoint tercapai.` }}</p>
+          <p v-if="result.xp" class="mt-2 inline-flex rounded-full bg-brand-50 px-3 py-1 text-[12px] font-bold text-brand-700">+{{ result.xp }} XP</p>
         </div>
         <div class="mt-5 grid grid-cols-3 gap-2">
           <div class="stat"><span class="stat-value">{{ formatKm(result.distanceM) }}<span class="stat-unit">km</span></span><span class="stat-label">Jarak</span></div>
           <div class="stat"><span class="stat-value">{{ formatClock(result.durationMs) }}</span><span class="stat-label">Durasi</span></div>
           <div class="stat"><span class="stat-value">{{ result.reached }}/{{ result.total }}</span><span class="stat-label">Checkpoint</span></div>
         </div>
+
+        <!-- Kuis penutup trail -->
+        <section v-if="activeTrail?.quiz?.length && !play.trailQuiz[activeTrail.id]?.done" class="mt-5 rounded-[var(--radius-card)] border border-brand-100 bg-brand-50/50 p-4">
+          <div class="mb-3 flex items-center gap-3">
+            <Kia :mood="quizMood" :stage="level.level" :size="46" class="shrink-0" />
+            <p class="flex-1 text-[13px] font-medium leading-snug text-brand-900">Sebelum pulang, jawab 2 soal dariku, yuk! <span class="font-bold text-brand-600">+20 XP</span></p>
+          </div>
+          <QuizPanel :questions="activeTrail.quiz" done-label="Selesai" @mood="quizMood = $event" @done="onTrailQuiz" />
+        </section>
+        <p v-else-if="trailQuizXp" class="mt-4 rounded-2xl bg-brand-50 p-3 text-center text-[13px] font-semibold text-brand-800">Kuis trail selesai · +{{ trailQuizXp }} XP</p>
+
         <div class="mt-5 grid gap-2.5">
           <button class="btn-primary" @click="closeTrail(); router.push('/summary')">Lihat ringkasan kunjungan</button>
           <button class="btn-outline" @click="closeTrail()">Pilih trail lain</button>
@@ -137,7 +160,7 @@ function onMapClick(ll) {
       <template v-else>
         <p class="eyebrow">Wellness Trail</p>
         <h2 class="mt-1 text-[20px] font-medium text-ink">Jalan & jogging berpemandu audio</h2>
-        <p class="mt-1 text-[13px] leading-relaxed text-muted">Setiap checkpoint memutar info spot dan ajakan peregangan. Jarak dan durasi tercatat otomatis.</p>
+        <p class="mt-1 text-[13px] leading-relaxed text-muted">Kia memandu tiap checkpoint dengan suara: info spot, peregangan, dan latihan napas. Jarak dan durasi tercatat otomatis, selesaikan untuk +50 XP.</p>
         <div class="mt-4 space-y-3">
           <button
             v-for="t in content.trails"
@@ -146,6 +169,7 @@ function onMapClick(ll) {
             :class="pickedId === t.id ? 'border-brand-400 ring-2 ring-brand-100' : ''"
             @click="pickedId = t.id"
           >
+            <img v-if="cover(t.id)" :src="cover(t.id).url" :alt="`Sampul ${t.name}`" class="-mx-4 -mt-4 mb-3 aspect-[16/7] w-[calc(100%+2rem)] max-w-none rounded-t-[var(--radius-card)] object-cover" loading="lazy" />
             <div class="flex items-center justify-between gap-2">
               <p class="text-[15px] font-semibold text-ink">{{ t.name }}</p>
               <span class="rounded-full px-2 py-0.5 text-[10px] font-bold" :style="{ background: t.color + '1f', color: t.color }">{{ t.level }}</span>

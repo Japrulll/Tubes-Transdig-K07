@@ -6,6 +6,7 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { content } from '../stores/content'
 import { visits } from '../stores/visits'
+import { play, starsOf } from '../stores/play'
 
 const props = defineProps({
   user: { type: Object, default: null }, // {lat,lng,accuracy,simulated}
@@ -25,12 +26,13 @@ const map = shallowRef(null)
 let poiLayer, userMarker, accCircle, routeLine, trailLayer
 const markers = {}
 
-const pinHtml = (p, { active, visited, approaching, dim }) => `
+// Pin: nomor spot; spot yang sudah dikunjungi menampilkan jumlah bintang (0–3)
+const pinHtml = (p, { active, visited, approaching, dim, stars = 0 }) => `
   <div class="poi-pin ${active ? 'is-active' : ''}" style="opacity:${dim && !active ? 0.45 : 1}">
     ${approaching ? '<div class="poi-pulse"></div>' : ''}
     <svg width="30" height="38" viewBox="0 0 30 38"><path d="M15 37s13-12.3 13-22A13 13 0 0 0 2 15c0 9.7 13 22 13 22z" fill="${visited ? '#3f9e8e' : '#ee7b5b'}" stroke="#fff" stroke-width="2"/></svg>
     <span>${p.number}</span>
-    ${visited ? '<i class="pin-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4"><path d="M20 6 9 17l-5-5"/></svg></i>' : ''}
+    ${visited ? `<i class="pin-stars ${stars === 3 ? 'is-full' : ''}"><svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg>${stars}</i>` : ''}
   </div>`
 
 function renderPois() {
@@ -43,6 +45,7 @@ function renderPois() {
       html: pinHtml(p, {
         active: props.activeId === p.id || props.routeTo?.id === p.id,
         visited: !!visits.stamps[p.id],
+        stars: starsOf(p.id),
         approaching: props.approachingId === p.id,
         dim: props.dimPois,
       }),
@@ -203,7 +206,7 @@ onBeforeUnmount(() => {
   map.value = null
 })
 
-watch(() => [props.activeId, props.approachingId, props.showPois, props.dimPois, props.routeTo?.id, { ...visits.stamps }, content.pois], renderPois, { deep: true })
+watch(() => [props.activeId, props.approachingId, props.showPois, props.dimPois, props.routeTo?.id, { ...visits.stamps }, JSON.stringify(play.spots), content.pois], renderPois, { deep: true })
 watch(() => props.user && [props.user.lat, props.user.lng, props.user.accuracy, props.user.simulated], () => {
   if (props.user?.simulated !== undefined && userMarker) {
     // ganti warna titik saat beralih simulasi/GPS

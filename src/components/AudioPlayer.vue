@@ -15,6 +15,7 @@ const props = defineProps({
   compact: { type: Boolean, default: false },
   duration: { type: Number, default: null },
 })
+const emit = defineEmits(['ended'])
 
 // Rekaman dari Supabase Storage dipakai bila ada; jika berkas belum diunggah → TTS
 const recordingUrl = computed(() => (props.audioUrl && !audioBroken(props.audioUrl) ? props.audioUrl : null))
@@ -136,6 +137,9 @@ function replay() {
 function toggle() {
   state.value === 'playing' ? pause() : state.value === 'ended' ? replay() : play()
 }
+
+// Narasi selesai → bintang "dengar cerita" (lihat stores/play.js)
+watch(state, (s) => s === 'ended' && emit('ended'))
 
 // Bila suara lain mengambil alih (prompt/navigasi), tandai sebagai dijeda
 watch(speakingKey, (k) => {

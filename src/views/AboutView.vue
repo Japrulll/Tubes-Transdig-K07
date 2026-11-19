@@ -5,6 +5,11 @@ import heroImg from '../assets/hero-setara.png'
 import { content, syncContent, supabaseEnabled } from '../stores/content'
 import { settings } from '../stores/settings'
 import { useRouter } from 'vue-router'
+import Kia from '../components/Kia.vue'
+import { level } from '../stores/play'
+import { photoCredits } from '../lib/mediaSlots'
+
+const credits = photoCredits()
 
 const router = useRouter()
 const sourceLabel = { bundled: 'Dataset bawaan aplikasi (offline)', cache: 'Salinan Supabase tersimpan di ponsel', supabase: 'Supabase (terbaru)' }
@@ -25,6 +30,14 @@ function replayOnboarding() {
         Pemandu eksplorasi berbasis lokasi untuk pengunjung {{ content.park.name }}, Bandung: location trigger GPS (dengan QR sebagai cadangan), narasi audio,
         pencarian & navigasi, rekomendasi sesuai waktu, Wellness Trail, dan koleksi stempel.
       </p>
+      <div class="mt-4 flex gap-3 rounded-2xl bg-mint p-4">
+        <Kia mood="wave" :stage="level.level" :size="56" class="shrink-0" />
+        <p class="text-[12px] leading-relaxed text-muted">
+          <span class="block text-[14px] font-bold text-ink">Kia, teman jelajahmu</span>
+          Kia adalah tunas pohon kiara (Ficus), pohon yang konon menjadi asal nama Kiaracondong. Kia bercerita di setiap spot, memberi kuis dan misi,
+          menjawab pertanyaan secara offline, lalu tumbuh dari Tunas sampai Kiara Agung seiring bintang yang kamu kumpulkan.
+        </p>
+      </div>
       <dl class="mt-4 grid grid-cols-2 gap-2 text-[12px]">
         <div class="card p-3"><dt class="text-subtle">Alamat</dt><dd class="mt-0.5 font-semibold text-ink">{{ content.park.address }}</dd></div>
         <div class="card p-3"><dt class="text-subtle">Jam buka</dt><dd class="mt-0.5 font-semibold text-ink">{{ content.park.opening_hours.open.replace(':', '.') }}–{{ content.park.opening_hours.close.replace(':', '.') }} WIB</dd></div>
@@ -50,7 +63,13 @@ function replayOnboarding() {
             <a :href="s.url" target="_blank" rel="noopener" class="font-semibold text-brand-700 hover:underline">{{ s.label }}</a>
           </li>
         </ul>
-        <p class="mt-3 text-[11px] leading-relaxed text-muted">Koordinat 12 spot diambil dari Google Maps (16 Nov 2026) dan perlu divalidasi saat survei lapangan. Ilustrasi spot dipakai sampai foto survei tim diunggah.</p>
+        <p class="mt-3 text-[11px] leading-relaxed text-muted">Koordinat 12 spot diambil dari Google Maps (16 Nov 2026) dan perlu divalidasi saat survei lapangan. Ilustrasi spot dipakai sampai foto tim ditambahkan.</p>
+        <template v-if="credits.length">
+          <p class="eyebrow mt-4">Kredit foto</p>
+          <ul class="mt-1.5 space-y-1 text-[11px] text-muted">
+            <li v-for="c in credits" :key="c.key">{{ c.key.replace('foto/', '').toUpperCase() }} · {{ c.credit }}</li>
+          </ul>
+        </template>
       </section>
 
       <p class="mt-6 text-center text-[11px] text-subtle">Kelompok 07 · II4011 Transformasi Digital · STEI ITB 2026</p>

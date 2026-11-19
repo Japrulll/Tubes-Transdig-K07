@@ -2,7 +2,7 @@
 // - Aplikasi (HTML/JS/CSS/gambar): cache-first setelah kunjungan pertama
 // - Konten Supabase: network-first, jatuh ke cache saat offline
 // - Tile peta & font: stale-while-revalidate (tile yang pernah dilihat tersedia offline)
-const VERSION = 'setara-v2'
+const VERSION = 'setara-v3'
 const APP = `${VERSION}-app`
 const RUNTIME = `${VERSION}-runtime`
 const TILES = `${VERSION}-tiles`

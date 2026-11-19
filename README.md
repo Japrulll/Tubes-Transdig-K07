@@ -20,6 +20,23 @@ Info spot muncul otomatis saat pengunjung mendekat (GPS geofencing, QR sebagai c
 | A02 | Mode offline: dataset bawaan + cache konten + service worker (aplikasi, tile peta, font) | `src/data/poi.json`, `public/sw.js` |
 | A03 | Penjelasan lokasi sebelum izin, lokasi tidak pernah dikirim ke server, halaman privasi | `src/views/OnboardingView.vue`, `src/views/PrivacyView.vue` |
 
+### Interaksi dua arah bersama Kia
+
+Pengunjung tidak hanya mendengar; mereka menjawab, beraksi, dan memberi pendapat. Maskot **Kia** (tunas pohon kiara) menjadi teman bicaranya.
+
+| Fitur | Isi | Lokasi kode |
+| --- | --- | --- |
+| Tantangan di tiap spot | Setelah cerita: kuis 2 soal (salah → Kia memberi penjelasan, boleh coba lagi) → misi di lokasi (konfirmasi, foto, atau aktivitas berpemandu 60 detik; hanya terbuka di radius spot, setelah scan QR, atau Mode Simulasi) → nilai spot 1–5, "Berguna?", laporkan info salah | `src/components/ChallengeSheet.vue`, `QuizPanel.vue`, `MissionPanel.vue`, `RatePanel.vue` |
+| Bintang & XP | ⭐ dengar cerita (+10) · ⭐ kuis benar (+20, +5 bila langsung tepat) · ⭐ misi (+30, foto +10) · nilai spot +5 · tanya Kia +2 (maks. 5/hari) · Wellness Trail +50 · kuis trail +20 · tantangan harian +25 | `src/stores/play.js` |
+| Kia tumbuh | Level Tunas (0) → Daun (100) → Ranting (250) → Pohon (500) → Kiara Agung (900 XP); gambar Kia berubah tiap level, 5 ekspresi | `src/components/Kia.vue`, `Celebration.vue` |
+| Tanya Kia (offline) | Jadwal air mancur (hitung mundur), fasilitas terdekat (jarak nyata), buka/tutup sekarang, jarak ke spot, "ada apa di sini", rekomendasi, progres, tantangan, + 11 jawaban dari database; input suara; kotak Cari juga menjawab pertanyaan | `src/lib/kia.js`, `src/components/KiaChat.vue`, `src/views/SearchView.vue` |
+| Alasan kembali | Tantangan Hari Ini (7 tantangan bergilir), kunjungan mingguan berturut-turut, ajakan Kia di peta, pengingat terjadwal di APK (opt-in, Sabtu & Minggu 06.30, setiap hari 18.00) | `src/components/KiaNudge.vue`, `src/lib/reminders.js` |
+| Badge baru | Penjawab Jitu (kuis 6 spot), Misi Tuntas (misi 6 spot), Juru Foto (3 misi foto), Langganan Taman (3 minggu beruntun) | `scripts/data-interaksi.mjs` |
+| Jurnal Kunjungan | Foto misi disimpan hanya di ponsel (IndexedDB), tampil di Ringkasan & detail spot | `src/lib/photoStore.js`, `src/views/SummaryView.vue` |
+| Mode tenang | Menyembunyikan ajakan Kia bagi yang hanya ingin panduan audio | `src/components/SideMenu.vue` |
+
+Konten interaksi (narasi gaya Kia, kuis, misi, jawaban Tanya Kia, tantangan harian) ditulis di `scripts/data-interaksi.mjs`; **mohon tim meninjau isinya**.
+
 Layar tambahan untuk tim: **Log Trigger & Uji** (jarak ke tiap POI, waktu fix GPS, skenario jam pagi/sore/malam, ekspor CSV), **Cetak QR Spot**, dan **Mode Simulasi Lokasi** (ketuk peta untuk berpindah — untuk demo di luar taman).
 
 ## Menjalankan
@@ -39,7 +56,7 @@ Geolocation dan kamera hanya berjalan di **HTTPS** (atau `localhost`). Untuk uji
 
 ## Data & Supabase
 
-Sumber data tunggal ada di `scripts/build-data.mjs` (12 POI, kategori, trail, badge). Jalankan `node scripts/build-data.mjs` untuk menghasilkan:
+Sumber data tunggal ada di `scripts/build-data.mjs` (12 POI, kategori, trail, badge) dan `scripts/data-interaksi.mjs` (narasi Kia, kuis, misi, Tanya Kia, tantangan). Jalankan `npm run data` untuk menghasilkan:
 
 - `src/data/poi.json` — dataset bawaan aplikasi (dipakai saat offline/pertama kali dibuka)
 - `supabase/seed.sql` — isi database yang sama
@@ -51,11 +68,18 @@ Database Supabase (proyek `diyjdxwjuparfmdrqxcp`) memakai skema tim (`poi`, `cat
 - RPC `get_app_content()` (dibaca aplikasi) dan `pois_within(lat, lng, m)` (validasi spasial tim, ST_DWithin)
 - bucket publik **`poi-media`**
 
+Migrasi `supabase/migrations/20261119000000_setara_interaksi_dua_arah.sql` (sudah diterapkan, aditif) menambahkan:
+
+- konten interaksi (hanya-baca): `quiz_question`, `mission`, `kia_faq`, `daily_challenge`, kolom `badge.kind`; semuanya ikut dikirim oleh `get_app_content()`
+- umpan balik **anonim & hanya-tulis**: `visitor_rating`, `content_report`, `quiz_result`, `kia_question_log` (tanpa akun, tanpa ID perangkat, tanpa lokasi; aplikasi tidak bisa membaca kembali). Rekap untuk laporan tim: view `feedback_summary` (dibuka dari dashboard).
+
 Aplikasi membaca konten dengan kunci *publishable* (RLS hanya-baca). Isi database sebelum pembaruan disimpan di `supabase/backup/20261116_sebelum_update_rollback.sql`.
 
-### Mengunggah foto & narasi survei
+### Menambahkan foto
 
-Unggah berkas ke bucket `poi-media` sesuai `file_path` di tabel `photo`/`audio`, contoh `foto/p03_1.jpg` dan `audio/p03.mp3`. Aplikasi otomatis memakainya; selama berkas belum ada, ditampilkan ilustrasi dan narasi dibacakan dengan suara (TTS) dari kolom `poi.narration`. Kolom `caption` di tabel `photo` berisi foto yang perlu diambil.
+Foto **dibundel di aplikasi** agar cepat dan tetap tampil offline: taruh berkas di `media-inbox/` (nama `p05_1.jpg`, `onboarding_1.jpg`, `t01.jpg`, …), lalu jalankan `npm run media`. Petunjuk lengkap, kredit, dan aturan izin foto ada di [`media-inbox/README.md`](media-inbox/README.md). Slot tanpa foto memakai ilustrasi. Kolom `caption` di tabel `photo` berisi foto yang perlu diambil.
+
+Narasi rekaman (opsional) tetap bisa diunggah ke bucket `poi-media` sesuai `file_path` di tabel `audio` (mis. `audio/p03.mp3`); selama belum ada, narasi dibacakan TTS dari kolom `poi.narration`.
 
 ## Koordinat POI (Google Maps, diakses 16 Nov 2026)
 
@@ -83,7 +107,10 @@ Unggah berkas ke bucket `poi-media` sesuai `file_path` di tabel `photo`/`audio`,
 | 1.1 | 16 Nov 2026 | P04–P07 berjarak 21 m dan P09–P12 berjarak 24 m (< 40 m) | Posisi nyata di Google Maps; aturan "POI terdekat dipilih" menangani radius yang tumpang tindih. Validasi saat survei. |
 | 1.1 | 16 Nov 2026 | Google Maps menandai Kampung Korea (P04) tutup permanen | Perlu dikonfirmasi saat survei lapangan |
 | 1.1 | 16 Nov 2026 | Tile peta memakai OpenStreetMap | Tile CARTO kini memerlukan API key |
+| 1.2 | 19 Nov 2026 | Interaksi dua arah: maskot Kia, kuis/misi/nilai per spot, bintang & XP, Tanya Kia offline, Tantangan Hari Ini, kunjungan mingguan, pengingat APK, umpan balik anonim, Jurnal Kunjungan | Pengunjung terdorong aktif menggunakan aplikasi, bukan hanya mendengar |
+| 1.2 | 19 Nov 2026 | Narasi & panduan trail memakai suara Kia (aku–kamu, sapaan Sunda) | Konsisten dengan karakter maskot |
+| 1.2 | 19 Nov 2026 | Foto dibundel di aplikasi lewat `npm run media`; belum ada foto berlisensi terbuka untuk 12 spot | Foto web yang ada berhak cipta; tim akan menyediakan foto sendiri |
 
 ## Teknologi
 
-Vue 3 + Vite, Tailwind CSS 4, Leaflet + OpenStreetMap, Supabase (PostgreSQL + PostGIS), Web Speech API, Vibration API, html5-qrcode, Service Worker, Capacitor (Android/iOS).
+Vue 3 + Vite, Tailwind CSS 4, Leaflet + OpenStreetMap, Supabase (PostgreSQL + PostGIS), Web Speech API (TTS + pengenalan suara), Vibration API, IndexedDB, html5-qrcode, Service Worker, Capacitor (Android/iOS, Local Notifications), sharp (impor foto).

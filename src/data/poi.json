@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-16",
+  "version": "2026-11-19",
   "park": {
     "name": "Kiara Artha Park",
     "city": "Bandung",
@@ -425,7 +425,6 @@
         "Sore hari (15.00–18.00) cocok untuk jalan santai sebelum pertunjukan air mancur."
       ],
       "trigger_response": "Audio sambutan, ringkasan zona taman, dan rekomendasi rute sesuai jam kunjungan.",
-      "narration": "Selamat datang di Kiara Artha Park! Anda berada di gerbang barat, sisi Jalan Banten. Taman kota ini diresmikan pada tujuh belas Agustus dua ribu sembilan belas dan kini menjadi salah satu ruang publik favorit warga Bandung. Tata letaknya melingkar. Di tengah ada danau dengan air mancur menari. Di sisi utara terdapat titik start jogging track dan musala. Area bermain anak ada di sisi timur, sedangkan area kuliner dan kafe berada di sisi selatan. Ikuti jalur pejalan kaki ke arah timur untuk mencapai lingkar taman. SETARA akan memberi tahu Anda setiap kali mendekati spot menarik, jadi silakan simpan ponsel dan nikmati perjalanan.",
       "hours": [
         {
           "days": [
@@ -455,7 +454,37 @@
         "peta",
         "tiket"
       ],
-      "status_note": null
+      "status_note": null,
+      "narration": "Wilujeng sumping di Kiara Artha Park! Aku Kia, teman jelajahmu. Kamu sekarang di gerbang barat, sisi Jalan Banten. Taman ini diresmikan tanggal tujuh belas Agustus dua ribu sembilan belas, dan sekarang jadi salah satu ruang publik favorit warga Bandung. Tata letaknya melingkar, lho. Di tengah ada danau dengan air mancur menari. Di sisi utara ada titik start jogging track dan musala. Area bermain anak di sisi timur, dan area kuliner di sisi selatan. Ikuti jalur pejalan kaki ke timur untuk sampai di lingkar taman. Nanti aku sapa lagi setiap kamu dekat spot seru. Oh iya, di tiap spot ada kuis dan misi kecil. Kumpulkan bintangnya, ya!",
+      "quiz": [
+        {
+          "q": "Kapan Kiara Artha Park diresmikan?",
+          "options": [
+            "17 Agustus 2019",
+            "24 April 2019",
+            "1 Januari 2020",
+            "17 Agustus 2015"
+          ],
+          "answer": 0,
+          "explain": "Taman ini diresmikan 17 Agustus 2019, bertepatan dengan HUT ke-74 Republik Indonesia."
+        },
+        {
+          "q": "Kiara Artha Park berada di antara dua flyover. Flyover apa saja?",
+          "options": [
+            "Pelangi dan Pasupati",
+            "Pasupati dan Cimindi",
+            "Cimindi dan Antapani",
+            "Antapani dan Kiaracondong"
+          ],
+          "answer": 3,
+          "explain": "Taman ini terletak di antara flyover Antapani dan flyover Kiaracondong, Kelurahan Kebonwaru."
+        }
+      ],
+      "mission": {
+        "type": "photo",
+        "title": "Foto pertama di Jurnal",
+        "prompt": "Foto gerbang barat dari tempatmu berdiri. Ini jadi halaman pertama Jurnal Kunjunganmu!"
+      }
     },
     {
       "id": "P02",
@@ -484,7 +513,6 @@
         "Akhir pekan sore hari biasanya ramai; datang sebelum pukul 16.00."
       ],
       "trigger_response": "Notifikasi selamat datang, arah ke pintu utama, dan info fasilitas terdekat.",
-      "narration": "Halo, selamat datang di Kiara Artha Park! Anda berada di gerbang area parkir di sisi barat laut taman. Untuk menuju Pintu Utama, berjalanlah sekitar sembilan puluh meter ke arah selatan. Jika Anda ingin langsung berolahraga, titik start jogging track ada di sebelah timur, tidak jauh dari musala dan toilet. Selter sepeda BOSEH juga berada di dekat sini bila Anda ingin berkeliling dengan sepeda. Jangan lupa mencatat lokasi kendaraan Anda. Selamat menjelajah!",
       "hours": [
         {
           "days": [
@@ -513,7 +541,38 @@
         "kendaraan",
         "gerbang"
       ],
-      "status_note": null
+      "status_note": null,
+      "narration": "Halo, selamat datang! Kamu ada di gerbang area parkir, sisi barat laut taman. Mau ke Pintu Utama? Jalan saja sekitar sembilan puluh meter ke selatan. Kalau mau langsung olahraga, titik start jogging track ada di sebelah timur, dekat musala dan toilet. Selter sepeda BOSEH juga dekat dari sini. Sebelum jalan, ingat-ingat dulu lokasi kendaraanmu, ya. Itu misi pertamamu di sini!",
+      "quiz": [
+        {
+          "q": "Berapa tiket masuk per orang menurut detikJabar (2024)?",
+          "options": [
+            "Gratis",
+            "Rp5.000",
+            "Rp10.000",
+            "Rp25.000"
+          ],
+          "answer": 2,
+          "explain": "Tiket tercatat Rp10.000 per orang, hari kerja maupun akhir pekan. Cek lagi di loket karena harga bisa berubah."
+        },
+        {
+          "q": "Dari gerbang parkir, ke arah mana Pintu Utama?",
+          "options": [
+            "Utara, sekitar 300 m",
+            "Timur, sekitar 500 m",
+            "Di seberang Jl. Banten",
+            "Selatan, sekitar 90 m"
+          ],
+          "answer": 3,
+          "explain": "Pintu Utama ada sekitar 90 meter ke arah selatan dari gerbang parkir."
+        }
+      ],
+      "mission": {
+        "type": "confirm",
+        "title": "Ingat tempat parkirmu",
+        "prompt": "Catat blok atau patokan tempat kendaraanmu diparkir supaya mudah ditemukan saat pulang.",
+        "done_label": "Sudah kucatat!"
+      }
     },
     {
       "id": "P03",
@@ -542,7 +601,6 @@
         "Akses menonton disebut termasuk dalam paket Kiara Pelangi Food Court Rp35.000 (Orami, 2024); konfirmasi di lokasi."
       ],
       "trigger_response": "Kartu informasi dan narasi; sore/malam menampilkan hitung mundur pertunjukan air mancur.",
-      "narration": "Anda kini berada di tepi danau, jantung Kiara Artha Park. Di tengah danau inilah air mancur menari tampil setiap malam. Pertunjukan biasanya dimulai pukul setengah tujuh malam dan berlangsung hingga pukul setengah sembilan, dengan tema yang berbeda setiap jamnya. Semburan air bergerak mengikuti irama musik dan disinari lampu warna-warni. Coba perhatikan patung dua tangan yang berjabat di tepi utara danau. Itulah Friendship Shake Hand, simbol persahabatan. Jika Anda datang siang hari, nikmati angin di tepian danau, lalu kembali saat matahari terbenam untuk menyaksikan pertunjukannya.",
       "hours": [
         {
           "days": [
@@ -615,7 +673,38 @@
         "lampu",
         "show"
       ],
-      "status_note": "Jadwal pertunjukan dapat berubah; cek Instagram @kiaraarthapark."
+      "status_note": "Jadwal pertunjukan dapat berubah; cek Instagram @kiaraarthapark.",
+      "narration": "Kamu sampai di tepi danau, jantung Kiara Artha Park! Di tengah danau inilah air mancur menari tampil setiap malam. Pertunjukannya biasanya mulai jam setengah tujuh malam sampai setengah sembilan, dengan tema berbeda tiap jam. Semburan airnya bergerak mengikuti musik dan disinari lampu warna-warni. Coba lihat ke tepi utara danau. Ada patung dua tangan yang berjabat, namanya Friendship Shake Hand, simbol persahabatan. Kalau kamu datang siang, nikmati angin di tepi danau dulu, lalu balik lagi saat matahari terbenam. Bisa temukan patungnya? Itu misimu!",
+      "quiz": [
+        {
+          "q": "Jam berapa pertunjukan air mancur menari biasanya dimulai?",
+          "options": [
+            "16.00",
+            "21.00",
+            "12.00",
+            "18.30"
+          ],
+          "answer": 3,
+          "explain": "Pertunjukan umumnya mulai pukul 18.30 sampai 20.30, dengan pertunjukan berbeda tiap jam (Orami, 2024)."
+        },
+        {
+          "q": "Apa nama patung jabat tangan di tepi utara danau?",
+          "options": [
+            "Monumen Persahabatan",
+            "Patung Merdeka",
+            "Tugu Asia Afrika",
+            "Friendship Shake Hand"
+          ],
+          "answer": 3,
+          "explain": "Patung Friendship Shake Hand menggambarkan jabat tangan persahabatan, sejalan dengan semangat Asia Afrika."
+        }
+      ],
+      "mission": {
+        "type": "confirm",
+        "title": "Cari patung jabat tangan",
+        "prompt": "Lihat ke tepi utara danau dan temukan patung Friendship Shake Hand, dua tangan yang berjabat.",
+        "done_label": "Ketemu!"
+      }
     },
     {
       "id": "P04",
@@ -642,7 +731,6 @@
         "Cahaya terbaik untuk foto: pagi 08.00–10.00 saat matahari dari timur."
       ],
       "trigger_response": "Prompt suara, kartu informasi, dan stempel POI.",
-      "narration": "Anda sedang berada di Area Tematik Asia, di sisi barat Kiara Artha Park. Kawasan ini dikenal sebagai Kampung Korea. Ketika taman dibuka pada tahun dua ribu sembilan belas, deretan bangunan dan ornamen bernuansa Korea di sini langsung menjadi magnet foto, sampai Kiara Artha Park dijuluki destinasi ala Korea di tengah Kota Bandung. Perhatikan detail atap, warna, dan tulisan Hangeul yang menghiasi area ini. Setelah dari sini, Anda bisa melanjutkan ke Taman Asia Afrika di sisi selatan danau, spot foto paling ikonik di taman ini.",
       "hours": [
         {
           "days": [
@@ -671,7 +759,38 @@
         "tematik",
         "foto"
       ],
-      "status_note": "Google Maps menandai \"Kampung Korea Bandung\" sebagai tutup permanen (diakses 16 Nov 2026). Konfirmasi kondisi area saat survei lapangan."
+      "status_note": "Google Maps menandai \"Kampung Korea Bandung\" sebagai tutup permanen (diakses 16 Nov 2026). Konfirmasi kondisi area saat survei lapangan.",
+      "narration": "Kamu ada di Area Tematik Asia, sisi barat taman. Kawasan ini dikenal sebagai Kampung Korea. Waktu taman dibuka tahun dua ribu sembilan belas, deretan bangunan dan ornamen bernuansa Korea di sini langsung jadi magnet foto, sampai Kiara Artha Park dijuluki destinasi ala Korea di tengah Bandung. Sekarang Google Maps mencatat area ini tutup, jadi kita amati dari luar saja, ya. Perhatikan atap, warna, dan tulisan Hangeul-nya. Setelah ini, lanjut ke Taman Asia Afrika di sisi selatan danau, spot foto paling ikonik di taman.",
+      "quiz": [
+        {
+          "q": "Zona bernuansa Asia di sisi barat taman dikenal dengan julukan apa?",
+          "options": [
+            "Kampung Korea",
+            "Kampung Pecinan",
+            "Kampung Jepang",
+            "Little India"
+          ],
+          "answer": 0,
+          "explain": "Area ini dikenal sebagai Kampung Korea dan sempat membuat Kiara Artha Park dijuluki destinasi ala Korea."
+        },
+        {
+          "q": "Tulisan khas Korea yang menghiasi area ini disebut apa?",
+          "options": [
+            "Kanji",
+            "Aksara Sunda",
+            "Hangeul",
+            "Hiragana"
+          ],
+          "answer": 2,
+          "explain": "Hangeul adalah aksara Korea; tulisannya menghiasi ornamen di area ini."
+        }
+      ],
+      "mission": {
+        "type": "confirm",
+        "title": "Amati dari luar",
+        "prompt": "Google Maps mencatat area ini tutup. Dari luar, cari satu ornamen bernuansa Korea, misalnya atap atau tulisan Hangeul.",
+        "done_label": "Sudah kulihat!"
+      }
     },
     {
       "id": "P05",
@@ -699,7 +818,6 @@
         "Foto malam: aktifkan mode malam dan tunggu pertunjukan air mancur dimulai."
       ],
       "trigger_response": "Cerita singkat spot serta tips waktu dan sudut foto terbaik.",
-      "narration": "Selamat datang di Taman Asia Afrika, spot foto paling ikonik di Kiara Artha Park. Nama taman ini mengingatkan kita pada Konferensi Asia Afrika tahun seribu sembilan ratus lima puluh lima, ketika para pemimpin dua puluh sembilan negara berkumpul di Gedung Merdeka, Bandung. Dari sini, danau dan air mancur menari terlihat utuh. Untuk foto terbaik, menghadaplah ke utara. Pagi hari cahaya matahari lembut dari samping, sedangkan malam hari Anda bisa menangkap air mancur yang berwarna-warni. Siapkan gaya terbaik Anda!",
       "hours": [
         {
           "days": [
@@ -728,7 +846,37 @@
         "instagram",
         "selfie"
       ],
-      "status_note": null
+      "status_note": null,
+      "narration": "Wilujeng sumping di Taman Asia Afrika, spot foto paling ikonik di Kiara Artha Park! Namanya mengingatkan kita pada Konferensi Asia Afrika tahun seribu sembilan ratus lima puluh lima, waktu pemimpin dua puluh sembilan negara berkumpul di Gedung Merdeka, Bandung. Dari sini, danau dan air mancur menari kelihatan utuh. Untuk foto terbaik, menghadaplah ke utara. Pagi hari cahayanya lembut dari samping, malam hari air mancurnya warna-warni. Siapkan gaya terbaikmu, lalu simpan fotonya di Jurnal Kunjungan!",
+      "quiz": [
+        {
+          "q": "Konferensi Asia Afrika 1955 digelar di gedung apa di Bandung?",
+          "options": [
+            "Gedung Merdeka",
+            "Gedung Sate",
+            "Gedung Pakuan",
+            "Layana Hall"
+          ],
+          "answer": 0,
+          "explain": "KAA digelar di Gedung Merdeka, Bandung, 18–24 April 1955."
+        },
+        {
+          "q": "Berapa negara yang hadir di Konferensi Asia Afrika 1955?",
+          "options": [
+            "55 negara",
+            "10 negara",
+            "100 negara",
+            "29 negara"
+          ],
+          "answer": 3,
+          "explain": "Konferensi Asia Afrika 1955 dihadiri 29 negara."
+        }
+      ],
+      "mission": {
+        "type": "photo",
+        "title": "Foto ikonik Asia Afrika",
+        "prompt": "Menghadaplah ke utara dan ambil foto berlatar danau dan air mancur."
+      }
     },
     {
       "id": "P06",
@@ -757,7 +905,6 @@
         "Pagi pukul 06.00–09.00 udara paling segar dan jalur belum ramai."
       ],
       "trigger_response": "Tawaran memulai Wellness Trail, info panjang rute, dan tips pemanasan.",
-      "narration": "Anda berada di titik start jogging track Kiara Artha Park. Jalur di depan Anda mengikuti lingkar Jalan Kiara Artha yang mengelilingi danau, kira-kira tujuh ratus lima puluh meter untuk satu putaran. Sebelum mulai, lakukan pemanasan ringan selama tiga sampai lima menit: putar pergelangan kaki, ayunkan lengan, lalu jalan di tempat. Jika ingin dipandu, mulailah Wellness Trail dari menu Trail. SETARA akan memandu setiap checkpoint dengan suara dan mencatat jarak serta durasi Anda. Selamat berolahraga!",
       "hours": [
         {
           "days": [
@@ -786,7 +933,56 @@
         "jalan pagi",
         "wellness"
       ],
-      "status_note": null
+      "status_note": null,
+      "narration": "Kamu di titik start jogging track! Jalur di depanmu mengikuti lingkar Jalan Kiara Artha yang mengelilingi danau, kira-kira tujuh ratus lima puluh meter satu putaran. Sebelum mulai, yuk pemanasan tiga sampai lima menit: putar pergelangan kaki, ayunkan lengan, lalu jalan di tempat. Mau dipandu? Mulai Wellness Trail dari menu Trail, nanti aku temani di setiap checkpoint dan catat jarak serta durasimu. Ayo, pemanasan bareng aku dulu!",
+      "quiz": [
+        {
+          "q": "Kira-kira berapa panjang satu putaran jalur lingkar taman?",
+          "options": [
+            "±5 km",
+            "±200 m",
+            "±2 km",
+            "±750 m"
+          ],
+          "answer": 3,
+          "explain": "Jalur lingkar Jl. Kiara Artha sekitar 750 meter per putaran."
+        },
+        {
+          "q": "Acara lari apa yang pernah digelar di Kiara Artha Park?",
+          "options": [
+            "Pocari Run 2025",
+            "Jakarta Marathon",
+            "Borobudur Marathon",
+            "Tour de Bandung"
+          ],
+          "answer": 0,
+          "explain": "Kiara Artha Park pernah menjadi tuan rumah acara lari Pocari Run 2025."
+        }
+      ],
+      "mission": {
+        "type": "timer",
+        "title": "Pemanasan 60 detik",
+        "prompt": "Ikuti aba-aba Kia sampai waktunya habis. Gerakkan badan pelan-pelan saja.",
+        "seconds": 60,
+        "cues": [
+          {
+            "at": 0,
+            "text": "Putar pergelangan kaki kanan."
+          },
+          {
+            "at": 15,
+            "text": "Ganti, putar pergelangan kaki kiri."
+          },
+          {
+            "at": 30,
+            "text": "Ayunkan kedua lengan ke depan dan ke belakang."
+          },
+          {
+            "at": 45,
+            "text": "Sekarang jalan di tempat."
+          }
+        ]
+      }
     },
     {
       "id": "P07",
@@ -815,7 +1011,6 @@
         "Gunakan jalur lingkar dan utamakan pejalan kaki."
       ],
       "trigger_response": "Info cara sewa sepeda/skuter, tarif dan jam operasional, serta rute bersepeda.",
-      "narration": "Anda berada di Selter Sepeda BOSEH, singkatan dari Bike on the Street Everybody Happy, program sepeda sewa milik Pemerintah Kota Bandung. Untuk menyewa, daftarkan diri dengan kartu identitas di petugas atau aplikasi BOSEH, lalu pilih sepeda yang tersedia. Tarif resminya sangat terjangkau, mulai seribu rupiah untuk jam pertama. Di dalam taman juga ada persewaan sepeda dan skuter listrik dengan tarif sekitar tiga puluh hingga empat puluh ribu rupiah. Rute favorit adalah lingkar Jalan Kiara Artha mengelilingi danau. Selalu utamakan pejalan kaki, ya!",
       "hours": [
         {
           "days": [
@@ -849,7 +1044,38 @@
         "bike",
         "bersepeda"
       ],
-      "status_note": "Jam layanan mengacu pada jam booth BOSEH Pemkot Bandung; konfirmasi saat survei."
+      "status_note": "Jam layanan mengacu pada jam booth BOSEH Pemkot Bandung; konfirmasi saat survei.",
+      "narration": "Ini Selter Sepeda BOSEH, singkatan dari Bike on the Street Everybody Happy, program sepeda sewa Pemerintah Kota Bandung. Cara sewanya gampang: daftar pakai kartu identitas di petugas atau aplikasi BOSEH, lalu pilih sepeda yang tersedia. Tarif resminya mulai seribu rupiah untuk jam pertama. Di dalam taman juga ada sewa sepeda dan skuter listrik, sekitar tiga puluh sampai empat puluh ribu rupiah. Rute favorit: lingkar Jalan Kiara Artha mengelilingi danau. Tetap utamakan pejalan kaki, ya!",
+      "quiz": [
+        {
+          "q": "BOSEH adalah singkatan dari…",
+          "options": [
+            "Bersepeda Olahraga Sehat",
+            "Bike Of Smart Eco Hub",
+            "Bandung Ongkos Sepeda Hemat",
+            "Bike on the Street Everybody Happy"
+          ],
+          "answer": 3,
+          "explain": "BOSEH = Bike on the Street Everybody Happy, program sepeda sewa Pemkot Bandung."
+        },
+        {
+          "q": "Berapa tarif resmi BOSEH untuk jam pertama?",
+          "options": [
+            "Rp10.000",
+            "Rp1.000",
+            "Rp30.000",
+            "Rp50.000"
+          ],
+          "answer": 1,
+          "explain": "Tarif resmi BOSEH tercatat Rp1.000 untuk jam pertama dan Rp2.000 untuk jam berikutnya."
+        }
+      ],
+      "mission": {
+        "type": "confirm",
+        "title": "Intip selter BOSEH",
+        "prompt": "Lihat ke selter: ada sepeda yang siap disewa sekarang? Perhatikan juga papan tarifnya.",
+        "done_label": "Sudah kuintip!"
+      }
     },
     {
       "id": "P08",
@@ -878,7 +1104,6 @@
         "Jam buka tenant bervariasi."
       ],
       "trigger_response": "Info tenant dan jam buka; jika belum buka, tampilkan jam buka dan alternatif terdekat.",
-      "narration": "Anda tiba di Area Kuliner Kiara Artha Park. Di kawasan Kiara Pelangi ini terdapat food court dengan beragam tenant, mulai dari makanan berat hingga jajanan dan minuman segar. Di sekitarnya ada kafe-kafe populer seperti Ludo Sports Kitchen and Coffee dan Monday Co. Menariknya, paket Kiara Pelangi Food Court disebut sudah termasuk akses menonton air mancur menari, jadi Anda bisa makan malam sambil menunggu pertunjukan. Jam buka setiap tenant berbeda, jadi cek papan informasi di lokasi. Selamat menikmati kuliner!",
       "hours": [
         {
           "days": [
@@ -908,7 +1133,37 @@
         "minum",
         "jajan"
       ],
-      "status_note": "Jam buka tenant bervariasi; konfirmasi saat survei."
+      "status_note": "Jam buka tenant bervariasi; konfirmasi saat survei.",
+      "narration": "Kamu tiba di Area Kuliner! Di kawasan Kiara Pelangi ini ada food court dengan banyak tenant, dari makanan berat sampai jajanan dan minuman segar. Di sekitarnya ada kafe populer seperti Ludo Sports Kitchen and Coffee dan Monday Co. Menariknya, paket Kiara Pelangi Food Court disebut sudah termasuk akses menonton air mancur menari, jadi kamu bisa makan malam sambil menunggu pertunjukan. Jam buka tiap tenant beda-beda, cek papan info di lokasi, ya. Selamat makan, dan jangan lupa foto menu favoritmu!",
+      "quiz": [
+        {
+          "q": "Paket Kiara Pelangi Food Court Rp35.000 disebut sudah termasuk apa?",
+          "options": [
+            "Tiket Lollipop Playland",
+            "Akses menonton air mancur menari",
+            "Sewa sepeda satu jam",
+            "Parkir gratis"
+          ],
+          "answer": 1,
+          "explain": "Paketnya disebut sudah termasuk akses menonton air mancur menari (Orami, 2024)."
+        },
+        {
+          "q": "Kafe dekat area ini yang punya rating 4,8 dengan lebih dari seribu ulasan di Google Maps?",
+          "options": [
+            "Ludo Sports Kitchen and Coffee",
+            "Kopi Kiara",
+            "Lollipop Cafe",
+            "Padel Co."
+          ],
+          "answer": 0,
+          "explain": "Ludo Sports Kitchen and Coffee punya lebih dari seribu ulasan dengan rating 4,8."
+        }
+      ],
+      "mission": {
+        "type": "photo",
+        "title": "Foto menu favorit",
+        "prompt": "Foto makanan atau minuman yang paling menggoda di area kuliner."
+      }
     },
     {
       "id": "P09",
@@ -938,7 +1193,6 @@
         "Gunakan sepatu bersol rata untuk bermain padel."
       ],
       "trigger_response": "Info kafe, lapangan padel, jam operasional, dan aktivitas yang tersedia.",
-      "narration": "Anda berada di Area Kafe dan Lapangan Padel di sisi utara Kiara Artha Park. Padel adalah olahraga raket yang lahir di Meksiko pada tahun seribu sembilan ratus enam puluh sembilan. Permainannya mirip tenis, tetapi lapangannya lebih kecil dan dikelilingi dinding kaca, dan bola boleh memantul ke dinding. Lapangan semi-outdoor di sini bisa dipesan langsung ke pengelola. Jika hanya ingin bersantai, kafe di sekitar lapangan cocok untuk menikmati minuman sambil menonton pertandingan. Tempat yang pas untuk beristirahat setelah jogging!",
       "hours": [
         {
           "days": [
@@ -968,7 +1222,38 @@
         "raket",
         "nongkrong"
       ],
-      "status_note": "Jam operasional perlu dikonfirmasi ke pengelola saat survei."
+      "status_note": "Jam operasional perlu dikonfirmasi ke pengelola saat survei.",
+      "narration": "Kamu ada di Area Kafe dan Lapangan Padel, sisi utara taman. Tahu nggak, padel lahir di Meksiko tahun seribu sembilan ratus enam puluh sembilan? Mainnya mirip tenis, tapi lapangannya lebih kecil, dikelilingi dinding kaca, dan bolanya boleh memantul ke dinding. Lapangan semi-outdoor di sini bisa dipesan langsung ke pengelola. Kalau cuma mau santai, kafe di sekitarnya pas untuk minum sambil nonton pertandingan. Coba tonton satu reli sampai selesai, deh!",
+      "quiz": [
+        {
+          "q": "Di negara mana olahraga padel lahir?",
+          "options": [
+            "Meksiko",
+            "Inggris",
+            "Spanyol",
+            "Brasil"
+          ],
+          "answer": 0,
+          "explain": "Padel lahir di Acapulco, Meksiko, pada 1969."
+        },
+        {
+          "q": "Apa yang membedakan padel dari tenis?",
+          "options": [
+            "Bola boleh memantul ke dinding",
+            "Dimainkan tanpa raket",
+            "Lapangan tanpa net",
+            "Dimainkan sendirian"
+          ],
+          "answer": 0,
+          "explain": "Dalam padel, bola boleh memantul ke dinding kaca sebelum dipukul kembali."
+        }
+      ],
+      "mission": {
+        "type": "confirm",
+        "title": "Tonton satu reli",
+        "prompt": "Tonton pemain padel sampai satu reli selesai. Perhatikan bola yang memantul ke dinding kaca!",
+        "done_label": "Sudah kutonton!"
+      }
     },
     {
       "id": "P10",
@@ -997,7 +1282,6 @@
         "Cek ketentuan usia dan tinggi badan di loket wahana; bawa kaus kaki untuk area bermain indoor."
       ],
       "trigger_response": "Info wahana, batas usia, tips keamanan anak, dan fasilitas terdekat bagi pendamping.",
-      "narration": "Halo keluarga! Anda berada di dekat Lollipop Playland, area bermain anak di sisi timur danau. Di sini anak-anak bisa bermain di berbagai wahana, sementara orang tua dan pendamping beristirahat di kafe. Sebelum bermain, cek ketentuan usia dan tinggi badan di loket, dan siapkan kaus kaki untuk area bermain indoor. Untuk keamanan, sepakati satu titik temu yang mudah diingat, misalnya air mancur di tengah danau, sekitar delapan puluh meter dari sini. Jika ingin beristirahat, Zona Relaksasi yang teduh ada di sebelah utara. Selamat bermain!",
       "hours": [
         {
           "days": [
@@ -1027,7 +1311,38 @@
         "wahana",
         "balita"
       ],
-      "status_note": "Jam operasional wahana perlu dikonfirmasi saat survei."
+      "status_note": "Jam operasional wahana perlu dikonfirmasi saat survei.",
+      "narration": "Halo keluarga! Kamu di dekat Lollipop Playland, area bermain anak di sisi timur danau. Anak-anak bisa main di berbagai wahana, sementara pendamping istirahat di kafe. Sebelum main, cek ketentuan usia dan tinggi badan di loket, dan siapkan kaus kaki untuk area bermain indoor. Biar aman, sepakati satu titik temu yang gampang diingat, misalnya air mancur di tengah danau, sekitar delapan puluh meter dari sini. Kalau mau istirahat, Zona Teduh ada di sebelah utara. Selamat bermain!",
+      "quiz": [
+        {
+          "q": "Kira-kira berapa jarak Lollipop Playland ke air mancur?",
+          "options": [
+            "±10 m",
+            "±1 km",
+            "±500 m",
+            "±80 m"
+          ],
+          "answer": 3,
+          "explain": "Area bermain ini sekitar 80 meter dari air mancur, titik temu yang mudah diingat."
+        },
+        {
+          "q": "Apa yang sebaiknya disepakati sebelum anak-anak bermain?",
+          "options": [
+            "Pulang masing-masing",
+            "Satu titik temu bila terpisah",
+            "Tidak perlu apa-apa",
+            "Bertemu di parkiran besok"
+          ],
+          "answer": 1,
+          "explain": "Sepakati satu titik temu, misalnya air mancur, bila anggota rombongan terpisah."
+        }
+      ],
+      "mission": {
+        "type": "confirm",
+        "title": "Sepakati titik temu",
+        "prompt": "Ajak rombonganmu menyepakati satu titik temu kalau terpisah, misalnya air mancur.",
+        "done_label": "Sudah sepakat!"
+      }
     },
     {
       "id": "P11",
@@ -1056,7 +1371,6 @@
         "Minum air setelah berjalan atau berlari."
       ],
       "trigger_response": "Tawaran audio relaksasi 1–2 menit; menjadi checkpoint Wellness Trail.",
-      "narration": "Selamat datang di Zona Relaksasi, area teduh di bawah kanopi pepohonan di sisi timur danau. Mari berhenti sejenak. Berdirilah dengan nyaman atau duduk di bangku terdekat. Tarik napas perlahan melalui hidung selama empat hitungan. Tahan sebentar. Lalu hembuskan perlahan melalui mulut selama enam hitungan. Ulangi tiga kali. Sekarang angkat kedua bahu ke arah telinga, tahan, lalu lepaskan. Putar leher perlahan ke kiri dan ke kanan. Rasakan udara yang lebih sejuk di bawah pepohonan ini. Jika sudah siap, lanjutkan perjalanan Anda dengan langkah yang lebih ringan.",
       "hours": [
         {
           "days": [
@@ -1086,7 +1400,88 @@
         "pohon",
         "duduk"
       ],
-      "status_note": "Titik ditentukan dari citra satelit Google Maps; validasi saat survei lapangan."
+      "status_note": "Titik ditentukan dari citra satelit Google Maps; validasi saat survei lapangan.",
+      "narration": "Selamat datang di Zona Teduh, di bawah kanopi pepohonan sisi timur danau. Yuk, berhenti sebentar bareng aku. Berdiri dengan nyaman atau duduk di bangku terdekat. Tarik napas pelan lewat hidung, empat hitungan. Tahan sebentar. Lalu hembuskan pelan lewat mulut, enam hitungan. Ulangi tiga kali. Sekarang angkat kedua bahu ke arah telinga, tahan, lalu lepaskan. Putar leher pelan ke kiri dan ke kanan. Rasakan udara yang lebih sejuk di bawah pohon ini. Kalau sudah siap, lanjutkan perjalananmu dengan langkah yang lebih ringan.",
+      "quiz": [
+        {
+          "q": "Pola napas apa yang Kia ajak latih di Zona Teduh?",
+          "options": [
+            "Tahan napas 1 menit",
+            "Napas cepat 20 kali",
+            "Tarik 10, tahan 10",
+            "Tarik 4 hitungan, hembuskan 6"
+          ],
+          "answer": 3,
+          "explain": "Menghembuskan napas lebih panjang (6) daripada menarik (4) membantu menenangkan detak jantung."
+        },
+        {
+          "q": "Mengapa udara di bawah kanopi pohon terasa lebih sejuk?",
+          "options": [
+            "Kanopi menaungi dari terik matahari",
+            "Ada pendingin udara",
+            "Karena dekat parkiran",
+            "Karena tanahnya basah"
+          ],
+          "answer": 0,
+          "explain": "Kanopi pohon menaungi area di bawahnya sehingga terasa lebih sejuk dibanding area terbuka."
+        }
+      ],
+      "mission": {
+        "type": "timer",
+        "title": "Napas 4-6 selama 60 detik",
+        "prompt": "Tarik napas 4 hitungan, hembuskan 6 hitungan. Ikuti aba-aba Kia.",
+        "seconds": 60,
+        "cues": [
+          {
+            "at": 0,
+            "text": "Tarik napas."
+          },
+          {
+            "at": 4,
+            "text": "Hembuskan perlahan."
+          },
+          {
+            "at": 10,
+            "text": "Tarik napas."
+          },
+          {
+            "at": 14,
+            "text": "Hembuskan perlahan."
+          },
+          {
+            "at": 20,
+            "text": "Tarik napas."
+          },
+          {
+            "at": 24,
+            "text": "Hembuskan perlahan."
+          },
+          {
+            "at": 30,
+            "text": "Tarik napas."
+          },
+          {
+            "at": 34,
+            "text": "Hembuskan perlahan."
+          },
+          {
+            "at": 40,
+            "text": "Tarik napas."
+          },
+          {
+            "at": 44,
+            "text": "Hembuskan perlahan."
+          },
+          {
+            "at": 50,
+            "text": "Tarik napas."
+          },
+          {
+            "at": 54,
+            "text": "Hembuskan perlahan."
+          }
+        ]
+      }
     },
     {
       "id": "P12",
@@ -1115,7 +1510,6 @@
         "Jaga kebersihan dan simpan alas kaki di rak yang tersedia."
       ],
       "trigger_response": "Info fasilitas dan arah; tampil sebagai hasil cepat pada filter Fasilitas.",
-      "narration": "Anda berada di area Musala dan Toilet Kiara Artha Park, fasilitas umum utama di sisi utara taman. Di sini tersedia musala, tempat wudu, dan toilet umum. Menjelang waktu magrib, musala biasanya ramai, jadi datanglah beberapa menit lebih awal. Simpan alas kaki di rak yang tersedia dan bantu jaga kebersihan bersama. Setelah ini, Anda bisa melanjutkan ke titik start jogging track di sebelah barat, atau menuju danau dan air mancur di selatan.",
       "hours": [
         {
           "days": [
@@ -1148,7 +1542,38 @@
         "kamar mandi",
         "wudu"
       ],
-      "status_note": null
+      "status_note": null,
+      "narration": "Kamu di area Musala dan Toilet, fasilitas umum utama di sisi utara taman. Di sini ada musala, tempat wudu, dan toilet umum. Menjelang magrib musala biasanya ramai, jadi datang beberapa menit lebih awal, ya. Simpan alas kaki di rak yang tersedia dan bantu jaga kebersihan bareng-bareng. Setelah ini, kamu bisa lanjut ke titik start jogging track di sebelah barat, atau ke danau dan air mancur di selatan. Hatur nuhun sudah ikut menjaga taman!",
+      "quiz": [
+        {
+          "q": "Musala Kiara Artha Park berdekatan dengan gedung apa?",
+          "options": [
+            "Gedung Merdeka",
+            "Lollipop Playland",
+            "Layana Hall",
+            "Padel Co."
+          ],
+          "answer": 2,
+          "explain": "Musala ini tercatat di Google Maps berdekatan dengan Layana Hall."
+        },
+        {
+          "q": "Selain di sini, di mana lagi toilet umum tersedia?",
+          "options": [
+            "Tidak ada lagi",
+            "Sekitar area parkir sisi barat laut",
+            "Di tengah danau",
+            "Di Taman Asia Afrika"
+          ],
+          "answer": 1,
+          "explain": "Toilet umum lain tersedia di sekitar area parkir sisi barat laut taman."
+        }
+      ],
+      "mission": {
+        "type": "confirm",
+        "title": "Jaga kebersihan",
+        "prompt": "Simpan alas kaki di rak dan buang satu sampah yang kamu lihat ke tempatnya.",
+        "done_label": "Sudah!"
+      }
     }
   ],
   "trails": [
@@ -1499,7 +1924,7 @@
           ],
           "radius_m": 25,
           "exercise": "Pemanasan 1 menit",
-          "coaching": "Checkpoint satu, titik start. Mari pemanasan. Putar pergelangan kaki kanan dan kiri masing-masing lima kali, lalu ayunkan kedua lengan ke depan dan ke belakang. Setelah itu, mulailah berjalan santai ke arah timur menuju musala."
+          "coaching": "Checkpoint satu, titik start. Yuk pemanasan! Putar pergelangan kaki kanan dan kiri masing-masing lima kali, lalu ayunkan kedua lengan ke depan dan ke belakang. Setelah itu, jalan santai ke timur menuju musala."
         },
         {
           "name": "Musala & Layana Hall",
@@ -1510,7 +1935,7 @@
           ],
           "radius_m": 20,
           "exercise": "Cek hidrasi",
-          "coaching": "Checkpoint dua, sisi utara taman. Di sini ada musala dan toilet. Jika haus, minumlah beberapa teguk air. Jaga postur: bahu rileks, pandangan ke depan. Lanjutkan ke arah timur menuju zona teduh."
+          "coaching": "Checkpoint dua, sisi utara taman. Di sini ada musala dan toilet. Kalau haus, minum beberapa teguk air. Jaga postur: bahu rileks, pandangan ke depan. Lanjut ke timur menuju Zona Teduh."
         },
         {
           "name": "Zona Teduh",
@@ -1532,7 +1957,7 @@
           ],
           "radius_m": 25,
           "exercise": "Latihan napas 4-6",
-          "coaching": "Checkpoint empat, Taman Asia Afrika. Pandanglah danau dan air mancur di utara. Tarik napas dalam empat hitungan, hembuskan enam hitungan. Rasakan langkah Anda kini lebih ringan. Lanjutkan ke barat lalu ke utara kembali ke titik start."
+          "coaching": "Checkpoint empat, Taman Asia Afrika. Pandang danau dan air mancur di utara. Tarik napas dalam empat hitungan, hembuskan enam hitungan. Rasakan langkahmu jadi lebih ringan. Lanjut ke barat lalu ke utara, kembali ke titik start."
         },
         {
           "name": "Finish: Titik Start",
@@ -1543,7 +1968,31 @@
           ],
           "radius_m": 25,
           "exercise": "Pendinginan",
-          "coaching": "Selamat, Anda menyelesaikan Rute Santai Kelilingi Danau! Lakukan pendinginan: tarik tumit ke arah bokong untuk meregangkan paha depan, tahan lima belas hitungan untuk setiap kaki. Jangan lupa minum air."
+          "coaching": "Hore, kamu menyelesaikan Rute Santai Kelilingi Danau! Yuk pendinginan: tarik tumit ke arah bokong untuk meregangkan paha depan, tahan lima belas hitungan untuk tiap kaki. Jangan lupa minum air, ya."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Pola napas di Rute Santai: tarik berapa hitungan, hembuskan berapa?",
+          "options": [
+            "Tarik 10, hembuskan 10",
+            "Tarik 2, hembuskan 2",
+            "Tarik 6, hembuskan 4",
+            "Tarik 4, hembuskan 6"
+          ],
+          "answer": 3,
+          "explain": "Hembusan yang lebih panjang (6) dari tarikan (4) membantu tubuh lebih rileks."
+        },
+        {
+          "q": "Setelah selesai berjalan, sebaiknya kamu…",
+          "options": [
+            "Langsung lari sprint",
+            "Tidak perlu apa-apa",
+            "Pendinginan dan minum air",
+            "Duduk tanpa bergerak lama"
+          ],
+          "answer": 2,
+          "explain": "Pendinginan meregangkan otot, dan minum air mengganti cairan yang keluar."
         }
       ],
       "distance_m": 670,
@@ -1864,7 +2313,7 @@
           ],
           "radius_m": 25,
           "exercise": "Pemanasan dinamis",
-          "coaching": "Selamat datang di Jogging Lingkar Kiara Artha. Lakukan pemanasan dinamis: angkat lutut bergantian selama tiga puluh detik. Lalu mulai jogging pelan searah jarum jam."
+          "coaching": "Selamat datang di Jogging Lingkar Kiara Artha! Pemanasan dinamis dulu: angkat lutut bergantian selama tiga puluh detik. Lalu mulai jogging pelan searah jarum jam."
         },
         {
           "name": "Sisi Timur Laut",
@@ -1875,7 +2324,7 @@
           ],
           "radius_m": 25,
           "exercise": "Atur ritme napas",
-          "coaching": "Checkpoint dua, sisi timur laut. Atur ritme napas: tarik napas dua langkah, hembuskan dua langkah. Anda seharusnya masih bisa berbicara dengan nyaman."
+          "coaching": "Checkpoint dua, sisi timur laut. Atur ritme napas: tarik napas dua langkah, hembuskan dua langkah. Kamu seharusnya masih bisa ngobrol dengan nyaman."
         },
         {
           "name": "Sisi Tenggara",
@@ -1886,7 +2335,7 @@
           ],
           "radius_m": 25,
           "exercise": "Postur lari",
-          "coaching": "Checkpoint tiga, sisi tenggara. Periksa postur: badan tegak sedikit condong ke depan, lengan menekuk sembilan puluh derajat, dan mendarat dengan tengah telapak kaki."
+          "coaching": "Checkpoint tiga, sisi tenggara. Cek postur: badan tegak sedikit condong ke depan, lengan menekuk sembilan puluh derajat, dan mendarat dengan tengah telapak kaki."
         },
         {
           "name": "Sisi Barat Daya",
@@ -1897,7 +2346,7 @@
           ],
           "radius_m": 25,
           "exercise": "Jaga kecepatan",
-          "coaching": "Checkpoint empat, sisi barat daya. Sedikit lagi! Pertahankan kecepatan yang nyaman. Area kuliner ada di sebelah kanan Anda bila ingin beristirahat setelah ini."
+          "coaching": "Checkpoint empat, sisi barat daya. Sedikit lagi! Pertahankan kecepatan yang nyaman. Area kuliner ada di sebelah kananmu kalau mau istirahat setelah ini."
         },
         {
           "name": "Finish: Sisi Barat Laut",
@@ -1908,7 +2357,31 @@
           ],
           "radius_m": 25,
           "exercise": "Pendinginan",
-          "coaching": "Satu putaran selesai, kerja bagus! Berjalanlah pelan selama dua menit untuk pendinginan, lalu regangkan betis dengan bertumpu pada dinding atau pohon."
+          "coaching": "Satu putaran selesai, keren! Jalan pelan dua menit untuk pendinginan, lalu regangkan betis dengan bertumpu pada dinding atau pohon."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Saat jogging dengan ritme nyaman, kamu seharusnya…",
+          "options": [
+            "Menahan napas",
+            "Masih bisa ngobrol dengan nyaman",
+            "Berhenti tiap 10 meter",
+            "Terengah-engah tak bisa bicara"
+          ],
+          "answer": 1,
+          "explain": "Kalau masih bisa ngobrol, intensitas jogging-mu pas."
+        },
+        {
+          "q": "Posisi lengan yang dianjurkan saat berlari?",
+          "options": [
+            "Menekuk sekitar 90 derajat",
+            "Dimasukkan ke saku",
+            "Lurus kaku ke bawah",
+            "Diangkat di atas kepala"
+          ],
+          "answer": 0,
+          "explain": "Lengan menekuk 90 derajat membantu ayunan yang efisien."
         }
       ],
       "distance_m": 760,
@@ -1923,7 +2396,8 @@
       "poi_ids": [],
       "min_count": 1,
       "requires_trail": false,
-      "sort_order": 1
+      "sort_order": 1,
+      "kind": "stamp"
     },
     {
       "id": "B02",
@@ -1937,7 +2411,8 @@
       ],
       "min_count": 4,
       "requires_trail": false,
-      "sort_order": 2
+      "sort_order": 2,
+      "kind": "stamp"
     },
     {
       "id": "B03",
@@ -1949,7 +2424,8 @@
       ],
       "min_count": 2,
       "requires_trail": false,
-      "sort_order": 3
+      "sort_order": 3,
+      "kind": "stamp"
     },
     {
       "id": "B04",
@@ -1962,7 +2438,8 @@
       ],
       "min_count": 3,
       "requires_trail": true,
-      "sort_order": 4
+      "sort_order": 4,
+      "kind": "stamp"
     },
     {
       "id": "B05",
@@ -1984,7 +2461,265 @@
       ],
       "min_count": 12,
       "requires_trail": false,
+      "sort_order": 5,
+      "kind": "stamp"
+    },
+    {
+      "id": "B06",
+      "name": "Penjawab Jitu",
+      "description": "Jawab benar kuis di 6 spot.",
+      "kind": "quiz",
+      "min_count": 6,
+      "poi_ids": [],
+      "requires_trail": false,
+      "sort_order": 6
+    },
+    {
+      "id": "B07",
+      "name": "Misi Tuntas",
+      "description": "Selesaikan misi di 6 spot.",
+      "kind": "mission",
+      "min_count": 6,
+      "poi_ids": [],
+      "requires_trail": false,
+      "sort_order": 7
+    },
+    {
+      "id": "B08",
+      "name": "Juru Foto",
+      "description": "Selesaikan 3 misi foto.",
+      "kind": "photo",
+      "min_count": 3,
+      "poi_ids": [],
+      "requires_trail": false,
+      "sort_order": 8
+    },
+    {
+      "id": "B09",
+      "name": "Langganan Taman",
+      "description": "Berkunjung 3 minggu berturut-turut.",
+      "kind": "streak",
+      "min_count": 3,
+      "poi_ids": [],
+      "requires_trail": false,
+      "sort_order": 9
+    }
+  ],
+  "faq": [
+    {
+      "id": "tiket",
+      "patterns": [
+        "tiket",
+        "harga masuk",
+        "bayar masuk",
+        "htm",
+        "biaya masuk"
+      ],
+      "answer": "Tiket masuk tercatat Rp10.000 per orang, hari kerja maupun akhir pekan (detikJabar, 2024). Cek lagi di loket, ya, harga bisa berubah.",
+      "poi_id": "P02",
+      "sort_order": 1
+    },
+    {
+      "id": "alamat",
+      "patterns": [
+        "alamat",
+        "lokasi taman",
+        "letak taman",
+        "taman ini di mana"
+      ],
+      "answer": "Kiara Artha Park ada di Jl. Banten, Kebonwaru, Kecamatan Batununggal, Kota Bandung, di antara flyover Antapani dan flyover Kiaracondong.",
+      "poi_id": "P01",
+      "sort_order": 2
+    },
+    {
+      "id": "kontak",
+      "patterns": [
+        "kontak",
+        "telepon",
+        "nomor hp",
+        "nomor telepon",
+        "instagram",
+        "ig",
+        "pengelola"
+      ],
+      "answer": "Info resmi taman: Instagram @kiaraarthapark dan telepon 0822-1583-8889.",
+      "poi_id": null,
+      "sort_order": 3
+    },
+    {
+      "id": "angkutan",
+      "patterns": [
+        "angkot",
+        "bus",
+        "transportasi",
+        "naik apa",
+        "trans metro",
+        "kendaraan umum",
+        "halte"
+      ],
+      "answer": "Bus Trans Metro Bandung Koridor 5 berhenti di halte Kiara Artha. Dari selter BOSEH di sisi barat, kamu juga bisa lanjut bersepeda.",
+      "poi_id": "P07",
+      "sort_order": 4
+    },
+    {
+      "id": "sewa",
+      "patterns": [
+        "sewa sepeda",
+        "skuter",
+        "otoped",
+        "harga sepeda",
+        "tarif sepeda",
+        "boseh"
+      ],
+      "answer": "BOSEH (sepeda Pemkot Bandung) mulai Rp1.000 untuk jam pertama. Sewa sepeda dan skuter listrik di dalam taman sekitar Rp30.000 di hari kerja dan Rp40.000 di akhir pekan (detikJabar, 2024).",
+      "poi_id": "P07",
       "sort_order": 5
+    },
+    {
+      "id": "paket",
+      "patterns": [
+        "paket",
+        "food court",
+        "makan malam",
+        "paket makan"
+      ],
+      "answer": "Paket Kiara Pelangi Food Court Rp35.000 disebut sudah termasuk akses menonton air mancur menari (Orami, 2024). Konfirmasi lagi di lokasi, ya.",
+      "poi_id": "P08",
+      "sort_order": 6
+    },
+    {
+      "id": "padel",
+      "patterns": [
+        "booking padel",
+        "sewa lapangan",
+        "reservasi",
+        "pesan lapangan",
+        "main padel"
+      ],
+      "answer": "Lapangan padel dipesan langsung ke pengelola Padel Co. SETARA belum menyediakan reservasi.",
+      "poi_id": "P09",
+      "sort_order": 7
+    },
+    {
+      "id": "anak",
+      "patterns": [
+        "usia anak",
+        "tinggi badan",
+        "kaus kaki",
+        "wahana anak"
+      ],
+      "answer": "Cek ketentuan usia dan tinggi badan di loket Lollipop Playland, dan bawa kaus kaki untuk area bermain indoor.",
+      "poi_id": "P10",
+      "sort_order": 8
+    },
+    {
+      "id": "kia",
+      "patterns": [
+        "kamu siapa",
+        "siapa kamu",
+        "kia siapa",
+        "siapa kia",
+        "kenalan"
+      ],
+      "answer": "Aku Kia, tunas pohon kiara! Aku menemanimu menjelajah, membacakan cerita spot, dan memberi kuis serta misi. Makin banyak bintang yang kamu kumpulkan, makin tinggi aku tumbuh.",
+      "poi_id": null,
+      "sort_order": 9
+    },
+    {
+      "id": "kiara",
+      "patterns": [
+        "pohon kiara",
+        "asal nama",
+        "arti kiara",
+        "nama kiara"
+      ],
+      "answer": "Kiara adalah pohon sejenis beringin (Ficus). Nama Kiaracondong konon berasal dari pohon kiara yang tumbuh condong.",
+      "poi_id": null,
+      "sort_order": 10
+    },
+    {
+      "id": "privasi",
+      "patterns": [
+        "privasi",
+        "data saya",
+        "lokasi saya dikirim",
+        "aman nggak"
+      ],
+      "answer": "Lokasimu hanya diproses di ponsel dan tidak pernah dikirim ke server. Yang terkirim tanpa identitas hanya rating, laporan, hasil kuis, dan pertanyaan yang belum bisa kujawab.",
+      "poi_id": null,
+      "sort_order": 11
+    }
+  ],
+  "daily_challenges": [
+    {
+      "id": "D1",
+      "title": "Pendengar Pagi",
+      "description": "Dengarkan 3 cerita spot sebelum pukul 10.00.",
+      "goal_type": "listen",
+      "goal_count": 3,
+      "before": "10:00",
+      "xp": 25,
+      "sort_order": 1
+    },
+    {
+      "id": "D2",
+      "title": "Juru Foto Hari Ini",
+      "description": "Selesaikan 1 misi foto.",
+      "goal_type": "photo",
+      "goal_count": 1,
+      "before": null,
+      "xp": 25,
+      "sort_order": 2
+    },
+    {
+      "id": "D3",
+      "title": "Kuis Kilat",
+      "description": "Jawab benar kuis di 2 spot.",
+      "goal_type": "quiz",
+      "goal_count": 2,
+      "before": null,
+      "xp": 25,
+      "sort_order": 3
+    },
+    {
+      "id": "D4",
+      "title": "Penjelajah Hari Ini",
+      "description": "Kunjungi 4 spot berbeda.",
+      "goal_type": "spot",
+      "goal_count": 4,
+      "before": null,
+      "xp": 25,
+      "sort_order": 4
+    },
+    {
+      "id": "D5",
+      "title": "Langkah Sehat",
+      "description": "Selesaikan 1 Wellness Trail.",
+      "goal_type": "trail",
+      "goal_count": 1,
+      "before": null,
+      "xp": 25,
+      "sort_order": 5
+    },
+    {
+      "id": "D6",
+      "title": "Kepo Bareng Kia",
+      "description": "Tanyakan 3 hal ke Kia.",
+      "goal_type": "ask",
+      "goal_count": 3,
+      "before": null,
+      "xp": 25,
+      "sort_order": 6
+    },
+    {
+      "id": "D7",
+      "title": "Misi Tuntas",
+      "description": "Selesaikan misi di 2 spot.",
+      "goal_type": "mission",
+      "goal_count": 2,
+      "before": null,
+      "xp": 25,
+      "sort_order": 7
     }
   ]
 }

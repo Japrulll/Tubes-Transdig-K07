@@ -73,7 +73,7 @@ onPosition((pos) => {
     addStamp(t.id, 'gps')
     vibrate([300, 120, 300, 120, 300])
     chime()
-    speak(`Anda telah tiba di ${t.name}.`, { key: 'nav' })
+    speak(`Kamu sudah sampai di ${t.name}!`, { key: 'nav' })
     return
   }
   // Panduan suara berkala: tiap ±40 m progres atau saat instruksi belok berubah

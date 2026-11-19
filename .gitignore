@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Foto mentah untuk scripts/import-media.mjs (hasilnya di public/media)
+media-inbox/*
+!media-inbox/README.md
+!media-inbox/credits.json

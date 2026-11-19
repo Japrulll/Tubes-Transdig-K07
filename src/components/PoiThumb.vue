@@ -8,7 +8,7 @@ const props = defineProps({
   size: { type: String, default: 'size-11' },
   variant: { type: Number, default: 0 },
 })
-const url = computed(() => props.poi.photo_urls?.[0] || null)
+const url = computed(() => props.poi.photo_thumb || props.poi.photo_urls?.[0] || null)
 watchEffect(() => probeImage(url.value))
 </script>
 

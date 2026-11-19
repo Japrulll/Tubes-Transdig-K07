@@ -6,6 +6,11 @@ import { settings } from '../stores/settings'
 import { setSimulation } from '../stores/location'
 import { stampCount } from '../stores/visits'
 import { content } from '../stores/content'
+import { level, play } from '../stores/play'
+import { openKia } from '../stores/ui'
+import { remindersSupported, syncReminders } from '../lib/reminders'
+import Kia from './Kia.vue'
+import { ref } from 'vue'
 
 defineProps({ open: Boolean })
 const emit = defineEmits(['close'])
@@ -15,8 +20,18 @@ const go = (to) => {
   emit('close')
   router.push(to)
 }
+const reminderNote = ref('')
+async function toggleReminders(on) {
+  settings.reminders = on
+  const r = await syncReminders()
+  reminderNote.value = r === 'denied' ? 'Izin notifikasi ditolak di pengaturan ponsel.' : r === 'ok' ? 'Sabtu & Minggu 06.30, setiap hari 18.00.' : ''
+}
+function askKia() {
+  emit('close')
+  openKia()
+}
 const items = [
-  { to: '/stamps', icon: 'award', label: 'Koleksi Stempel' },
+  { to: '/stamps', icon: 'award', label: 'Koleksi & Progres' },
   { to: '/summary', icon: 'flag', label: 'Ringkasan Kunjungan' },
   { to: '/trail', icon: 'trail', label: 'Wellness Trail' },
   { to: '/qr', icon: 'qr', label: 'Scan QR Spot' },
@@ -48,6 +63,14 @@ const tools = [
         <button class="icon-btn" aria-label="Tutup menu" @click="emit('close')"><Icon name="x" /></button>
       </div>
       <p class="px-5 pt-1 text-xs text-muted">Sekitar Kiara Artha · {{ stampCount }}/{{ content.pois.length }} stempel</p>
+      <button class="mx-3 mt-3 flex items-center gap-3 rounded-2xl bg-mint p-3 text-left" @click="askKia">
+        <Kia mood="wave" :stage="level.level" :size="44" class="shrink-0" />
+        <span class="min-w-0 flex-1">
+          <span class="block text-[14px] font-bold text-ink">Tanya Kia</span>
+          <span class="block text-[11px] text-muted">Kia si {{ level.name }} · {{ play.xp }} XP</span>
+        </span>
+        <Icon name="chat" :size="19" class="text-brand-700" />
+      </button>
 
       <nav class="mt-4 flex-1 overflow-y-auto px-3 pb-6">
         <button v-for="i in items" :key="i.to" class="flex min-h-12 w-full items-center gap-3 rounded-xl px-3 text-left text-sm font-semibold text-ink hover:bg-white" @click="go(i.to)">
@@ -59,6 +82,21 @@ const tools = [
           <Icon name="volume" :size="19" class="text-brand-600" />
           <span class="flex-1">Mode Audio<br /><span class="text-[11px] font-normal text-muted">Narasi otomatis saat trigger</span></span>
           <input v-model="settings.audioMode" type="checkbox" class="size-5 accent-brand-500" />
+        </label>
+        <label class="flex min-h-12 items-center gap-3 rounded-xl px-3 text-sm font-semibold">
+          <Icon name="moon" :size="19" class="text-brand-600" />
+          <span class="flex-1">Mode tenang<br /><span class="text-[11px] font-normal text-muted">Kia tidak menampilkan ajakan</span></span>
+          <input v-model="settings.quiet" type="checkbox" class="size-5 accent-brand-500" />
+        </label>
+        <label class="flex min-h-12 items-center gap-3 rounded-xl px-3 text-sm font-semibold">
+          <Icon name="chat" :size="19" class="text-brand-600" />
+          <span class="flex-1">Suara Kia<br /><span class="text-[11px] font-normal text-muted">Jawaban Tanya Kia dibacakan</span></span>
+          <input v-model="settings.kiaVoice" type="checkbox" class="size-5 accent-brand-500" />
+        </label>
+        <label v-if="remindersSupported" class="flex min-h-12 items-center gap-3 rounded-xl px-3 text-sm font-semibold">
+          <Icon name="bell" :size="19" class="text-brand-600" />
+          <span class="flex-1">Pengingat jadwal<br /><span class="text-[11px] font-normal text-muted">{{ reminderNote || 'Jogging akhir pekan & air mancur malam' }}</span></span>
+          <input :checked="settings.reminders" type="checkbox" class="size-5 accent-brand-500" @change="toggleReminders($event.target.checked)" />
         </label>
         <label class="flex min-h-12 items-center gap-3 rounded-xl px-3 text-sm font-semibold">
           <Icon name="walk" :size="19" class="text-brand-600" />

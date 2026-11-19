@@ -1,6 +1,6 @@
 <script setup>
 // UI05 POI Detail — F03 (foto, deskripsi, trivia, jadwal, narasi), F04 (audio), F07 (rekomendasi).
-import { computed, ref, watchEffect } from 'vue'
+import { computed, ref, watch, watchEffect, onBeforeUnmount } from 'vue'
 import { probeImage, imageReady } from '../lib/media'
 import { useRoute, useRouter } from 'vue-router'
 import Icon from '../components/Icon.vue'
@@ -8,6 +8,11 @@ import PoiArt from '../components/PoiArt.vue'
 import AudioPill from '../components/AudioPill.vue'
 import AudioPlayer from '../components/AudioPlayer.vue'
 import RecommendationList from '../components/RecommendationList.vue'
+import Kia from '../components/Kia.vue'
+import StarRow from '../components/StarRow.vue'
+import { level, starsOf, spotState, markListened } from '../stores/play'
+import { openChallenge } from '../stores/ui'
+import { listPhotos } from '../lib/photoStore'
 import { getPoi, categoryById } from '../stores/content'
 import { location, requestCompass } from '../stores/location'
 import { geofence } from '../stores/geofence'
@@ -44,6 +49,20 @@ const onTe = (e) => {
   if (dx > 40) slide.value = Math.max(0, slide.value - 1)
   sx = null
 }
+
+const stars = computed(() => (poi.value ? starsOf(poi.value.id) : 0))
+const st = computed(() => (poi.value ? spotState(poi.value.id) : {}))
+const MISSION_TYPE = { confirm: 'Aksi di lokasi', photo: 'Misi foto', timer: 'Aktivitas berpemandu' }
+
+// Foto misi milik pengunjung di spot ini (Jurnal Kunjungan, hanya di ponsel)
+const myPhotos = ref([])
+async function loadPhotos() {
+  myPhotos.value.forEach((p) => URL.revokeObjectURL(p.url))
+  const all = poi.value ? (await listPhotos()).filter((p) => p.poiId === poi.value.id) : []
+  myPhotos.value = all.map((p) => ({ id: p.id, url: URL.createObjectURL(p.blob) }))
+}
+watch(() => [poi.value?.id, st.value.mission?.photos?.length], loadPhotos, { immediate: true })
+onBeforeUnmount(() => myPhotos.value.forEach((p) => URL.revokeObjectURL(p.url)))
 
 function navigate() {
   requestCompass()
@@ -129,7 +148,7 @@ function back() {
       </div>
 
       <div class="mt-5">
-        <AudioPlayer :id="poi.id" :text="poi.narration" :audio-url="poi.audio_url" :duration="poi.audio_duration" :title="`Narasi ${poi.short_name}`" />
+        <AudioPlayer :id="poi.id" :text="poi.narration" :audio-url="poi.audio_url" :duration="poi.audio_duration" :title="`Cerita ${poi.short_name} bersama Kia`" @ended="markListened(poi.id)" />
       </div>
 
       <div class="mt-4 grid grid-cols-[1fr_auto] gap-2.5">
@@ -140,13 +159,48 @@ function back() {
       </div>
       <p v-if="!location.position" class="mt-2 text-center text-[11px] text-muted">Aktifkan lokasi untuk navigasi dalam aplikasi.</p>
 
+      <!-- Tantangan di sini (interaksi dua arah) -->
+      <section class="mt-6 rounded-[var(--radius-card)] border border-brand-100 bg-brand-50/60 p-4">
+        <div class="flex items-center gap-3">
+          <Kia :mood="stars === 3 ? 'cheer' : 'wave'" :stage="level.level" :size="50" class="shrink-0" />
+          <div class="min-w-0 flex-1">
+            <p class="eyebrow">Tantangan di sini</p>
+            <p class="mt-0.5 text-[14px] font-semibold text-ink">{{ stars === 3 ? 'Semua bintang sudah kamu raih!' : `${stars} dari 3 bintang` }}</p>
+          </div>
+          <StarRow :count="stars" :size="18" />
+        </div>
+        <ul class="mt-3 space-y-1.5 text-[13px]">
+          <li class="flex items-center gap-2.5">
+            <Icon name="star" :size="16" :stroke="1.8" :fill="!!st.listened" :class="st.listened ? 'text-sun-400' : 'text-subtle'" />
+            <span class="flex-1 text-ink">Dengarkan cerita sampai selesai</span>
+            <span class="text-[11px] font-bold" :class="st.listened ? 'text-brand-600' : 'text-subtle'">{{ st.listened ? 'Selesai' : '+10 XP' }}</span>
+          </li>
+          <li class="flex items-center gap-2.5">
+            <Icon name="star" :size="16" :stroke="1.8" :fill="!!st.quiz?.done" :class="st.quiz?.done ? 'text-sun-400' : 'text-subtle'" />
+            <span class="flex-1 text-ink">Kuis {{ poi.quiz.length }} soal</span>
+            <span class="text-[11px] font-bold" :class="st.quiz?.done ? 'text-brand-600' : 'text-subtle'">{{ st.quiz?.done ? 'Selesai' : '+20 XP' }}</span>
+          </li>
+          <li v-if="poi.mission" class="flex items-center gap-2.5">
+            <Icon name="star" :size="16" :stroke="1.8" :fill="!!st.mission?.done" :class="st.mission?.done ? 'text-sun-400' : 'text-subtle'" />
+            <span class="min-w-0 flex-1 text-ink">{{ poi.mission.title }} <span class="text-[11px] text-muted">· {{ MISSION_TYPE[poi.mission.type] }}</span></span>
+            <span class="text-[11px] font-bold" :class="st.mission?.done ? 'text-brand-600' : 'text-subtle'">{{ st.mission?.done ? 'Selesai' : poi.mission.type === 'photo' ? '+40 XP' : '+30 XP' }}</span>
+          </li>
+        </ul>
+        <div v-if="myPhotos.length" class="no-scrollbar mt-3 flex gap-2 overflow-x-auto">
+          <img v-for="ph in myPhotos" :key="ph.id" :src="ph.url" alt="Fotomu dari misi di spot ini" class="size-16 shrink-0 rounded-xl object-cover" />
+        </div>
+        <button class="btn-primary mt-3 min-h-12 w-full" @click="openChallenge(poi.id)">
+          <Icon name="star" :size="17" :fill="true" /> {{ stars === 3 ? 'Beri nilai spot ini' : st.quiz?.done ? 'Lanjutkan tantangan' : 'Mulai tantangan' }}
+        </button>
+      </section>
+
       <section class="mt-7">
         <p class="eyebrow">Tentang spot</p>
         <p class="mt-2 text-[14px] leading-relaxed text-ink/90">{{ poi.description }}</p>
       </section>
 
       <section class="mt-6">
-        <p class="eyebrow">Tahukah Anda?</p>
+        <p class="eyebrow">Tahukah kamu?</p>
         <ul class="mt-2 space-y-2">
           <li v-for="(t, i) in poi.trivia" :key="i" class="flex gap-3 rounded-2xl border border-brand-100 bg-brand-50/60 p-3.5">
             <Icon name="bulb" :size="19" class="mt-0.5 shrink-0 text-brand-600" />
@@ -185,12 +239,12 @@ function back() {
       </section>
 
       <details class="mt-4 rounded-2xl border border-line bg-white p-4 text-[13px]">
-        <summary class="cursor-pointer font-bold text-brand-800">Teks narasi audio</summary>
+        <summary class="cursor-pointer font-bold text-brand-800">Teks cerita Kia</summary>
         <p class="mt-2 leading-relaxed text-muted">{{ poi.narration }}</p>
       </details>
 
       <div class="mt-8">
-        <RecommendationList :from="poi" title="Spot berikutnya untuk Anda" />
+        <RecommendationList :from="poi" title="Spot berikutnya untukmu" />
       </div>
     </div>
   </main>
