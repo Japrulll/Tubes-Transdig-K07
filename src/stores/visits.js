@@ -2,7 +2,6 @@
 import { reactive, computed, watch } from 'vue'
 import { load, save } from '../lib/storage'
 import { haversine } from '../lib/geo'
-import { content } from './content'
 import { onPosition } from './location'
 
 const newSession = () => ({ startedAt: null, endedAt: null, distanceM: 0, visited: [], lastPos: null })
@@ -26,9 +25,14 @@ export function ensureSession() {
   if (!visits.session.startedAt) visits.session.startedAt = Date.now()
 }
 
+// Pendengar kunjungan (dipakai Tantangan Hari Ini & kunjungan mingguan)
+const visitListeners = new Set()
+export const onVisit = (fn) => (visitListeners.add(fn), () => visitListeners.delete(fn))
+
 /** Tambah stempel; mengembalikan true bila stempel baru */
 export function addStamp(poiId, source = 'gps') {
   ensureSession()
+  visitListeners.forEach((fn) => fn(poiId, source))
   if (!visits.session.visited.includes(poiId)) visits.session.visited.push(poiId)
   if (visits.stamps[poiId]) return false
   visits.stamps[poiId] = { at: Date.now(), source }
@@ -71,17 +75,3 @@ export function resetAll() {
 }
 
 export const stampCount = computed(() => Object.keys(visits.stamps).length)
-
-export const badgeProgress = computed(() => {
-  const trailComplete = visits.trailsDone.some((t) => t.complete)
-  return content.badges.map((b) => {
-    const pool = b.poi_ids.length ? b.poi_ids : content.pois.map((p) => p.id)
-    const have = pool.filter((id) => visits.stamps[id]).length
-    const need = Math.min(b.min_count, pool.length)
-    const done = have >= need && (!b.requires_trail || trailComplete)
-    const missing = pool.filter((id) => !visits.stamps[id])
-    return { ...b, have: Math.min(have, need), need, done, missing, progress: Math.min(1, have / need) * (b.requires_trail && !trailComplete ? 0.9 : 1) }
-  })
-})
-
-export const nextBadge = computed(() => badgeProgress.value.filter((b) => !b.done).sort((a, b) => b.progress - a.progress)[0] || null)

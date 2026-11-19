@@ -7,6 +7,10 @@ import Icon from '../components/Icon.vue'
 import AudioPill from '../components/AudioPill.vue'
 import PoiThumb from '../components/PoiThumb.vue'
 import RecommendationList from '../components/RecommendationList.vue'
+import KiaNudge from '../components/KiaNudge.vue'
+import StarRow from '../components/StarRow.vue'
+import { starsOf } from '../stores/play'
+import { openChallenge } from '../stores/ui'
 import { location, startLocation, setSimulatedPosition } from '../stores/location'
 import { settings } from '../stores/settings'
 import { nearest, approaching, currentPoi, geofence } from '../stores/geofence'
@@ -117,7 +121,7 @@ watch(expanded, () => setTimeout(() => mapRef.value?.invalidate(), 300))
       </div>
       <div class="pointer-events-auto mt-3 flex items-center gap-2 rounded-2xl border border-line bg-white px-3.5 shadow-[var(--shadow-float)]">
         <Icon name="search" :size="19" class="text-muted" />
-        <button class="min-h-12 flex-1 text-left text-[14px] text-subtle" @click="router.push('/search')">Cari spot, fasilitas…</button>
+        <button class="min-h-12 flex-1 text-left text-[14px] text-subtle" @click="router.push('/search')">Cari spot atau tanya Kia…</button>
         <button class="icon-btn size-10 text-brand-700" aria-label="Cari dengan suara" @click="router.push('/search?voice=1')">
           <Icon name="mic" :size="19" />
         </button>
@@ -137,14 +141,17 @@ watch(expanded, () => setTimeout(() => mapRef.value?.invalidate(), 300))
       </div>
     </div>
 
-    <!-- Tombol mengambang -->
-    <div class="pointer-events-none absolute inset-x-0 z-[500] flex items-end justify-between px-4 transition-all" :style="{ bottom: expanded ? 'calc(60% + 12px)' : `${sheetH + 12}px` }">
-      <button class="pointer-events-auto grid size-12 place-items-center rounded-full bg-white text-brand-800 shadow-[var(--shadow-float)]" aria-label="Scan QR spot" @click="router.push('/qr')">
-        <Icon name="qr" :size="21" />
-      </button>
-      <button class="pill pointer-events-auto min-h-11 px-4 text-[13px]" @click="locateMe">
-        <Icon name="locate" :size="16" :stroke="2.4" class="text-brand-600" /> Lokasi saya
-      </button>
+    <!-- Tombol mengambang: Kia (Tanya Kia + ajakan) di kiri, QR & lokasi di kanan -->
+    <div class="pointer-events-none absolute inset-x-0 z-[500] flex items-end justify-between gap-2 px-4 transition-all" :style="{ bottom: expanded ? 'calc(60% + 12px)' : `${sheetH + 12}px` }">
+      <KiaNudge class="min-w-0" />
+      <div class="flex shrink-0 flex-col items-end gap-2">
+        <button class="pointer-events-auto grid size-12 place-items-center rounded-full bg-white text-brand-800 shadow-[var(--shadow-float)]" aria-label="Scan QR spot" @click="router.push('/qr')">
+          <Icon name="qr" :size="21" />
+        </button>
+        <button class="pointer-events-auto grid size-12 place-items-center rounded-full bg-white text-brand-700 shadow-[var(--shadow-float)]" aria-label="Lokasi saya" @click="locateMe">
+          <Icon name="locate" :size="20" :stroke="2.4" />
+        </button>
+      </div>
     </div>
 
     <!-- Bottom sheet -->
@@ -177,10 +184,11 @@ watch(expanded, () => setTimeout(() => mapRef.value?.invalidate(), 300))
             <PoiThumb :poi="focus.poi" />
             <span class="min-w-0">
               <span class="block truncate text-[15px] font-semibold text-ink">{{ focus.poi.name }}</span>
-              <span class="block truncate text-[11px] text-muted">{{ meta(focus) }}</span>
+              <span class="flex items-center gap-1.5 text-[11px] text-muted"><StarRow :count="starsOf(focus.poi.id)" :size="12" /><span class="truncate">{{ meta(focus) }}</span></span>
             </span>
           </button>
           <button v-if="mode !== 'inside'" class="btn-outline min-h-10 shrink-0 px-4 text-[13px]" :disabled="!location.position" @click="navigate(focus.poi.id)">Arahkan</button>
+          <button v-else-if="starsOf(focus.poi.id) < 3" class="btn-primary min-h-10 shrink-0 px-4 text-[13px]" @click="openChallenge(focus.poi.id)"><Icon name="star" :size="15" :fill="true" /> Tantangan</button>
           <button v-else class="btn-outline min-h-10 shrink-0 px-4 text-[13px]" @click="router.push(`/poi/${focus.poi.id}`)">Detail</button>
         </div>
         <p v-if="mode === 'approaching'" class="mt-2.5 rounded-xl bg-coral-500/10 px-3 py-2 text-[12px] font-medium text-coral-600">

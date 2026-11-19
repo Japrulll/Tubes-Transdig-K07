@@ -11,6 +11,10 @@ import { visits } from '../stores/visits'
 import { formatDistance, haversine } from '../lib/geo'
 import { startNavigation } from '../stores/navigation'
 import { openStatus } from '../lib/time'
+import Kia from '../components/Kia.vue'
+import { answer, looksLikeQuestion } from '../lib/kia'
+import { level } from '../stores/play'
+import { openKia, openChallenge } from '../stores/ui'
 
 const route = useRoute()
 const router = useRouter()
@@ -37,6 +41,20 @@ const results = computed(() => {
     .filter((r) => !terms.length || r.match)
     .sort((a, b) => (a.distance != null && b.distance != null ? a.distance - b.distance : a.poi.number - b.poi.number))
 })
+
+// Pertanyaan di kotak Cari dijawab Kia di atas daftar spot
+const kiaReply = computed(() => {
+  const text = q.value.trim()
+  if (text.length < 4 || !looksLikeQuestion(text)) return null
+  const a = answer(text)
+  return ['poi', 'greeting', 'help', 'thanks'].includes(a.intent) ? null : a
+})
+function kiaAct(a) {
+  if (a.kind === 'navigate') navigate(a.poi)
+  else if (a.kind === 'detail') go(a.poi)
+  else if (a.kind === 'challenge') openChallenge(a.poi)
+  else if (a.kind === 'route') router.push(a.to)
+}
 
 function go(id) {
   router.push(`/poi/${id}`)
@@ -79,7 +97,7 @@ onMounted(() => {
             v-model="q"
             type="search"
             enterkeyhint="search"
-            placeholder="Cari spot, fasilitas…"
+            placeholder="Cari spot atau tanya Kia…"
             aria-label="Cari spot atau fasilitas"
             class="min-h-12 min-w-0 flex-1 bg-transparent text-[15px] outline-none placeholder:text-subtle [&::-webkit-search-cancel-button]:hidden"
           />
@@ -105,6 +123,17 @@ onMounted(() => {
     </header>
 
     <ul class="min-h-0 flex-1 overflow-y-auto px-4 pb-6" aria-live="polite">
+      <li v-if="kiaReply" class="mt-3 flex gap-2.5 rounded-2xl bg-mint p-3">
+        <Kia :mood="kiaReply.answered ? 'happy' : 'think'" :stage="level.level" :size="40" still class="shrink-0" />
+        <div class="min-w-0 flex-1">
+          <p class="text-[10px] font-extrabold uppercase tracking-[0.12em] text-brand-700">Jawaban Kia</p>
+          <p class="mt-0.5 text-[13px] leading-relaxed text-ink">{{ kiaReply.answered ? kiaReply.text : 'Hmm, aku belum yakin. Tanyakan langsung ke aku, ya, nanti kucatat untuk tim.' }}</p>
+          <div class="mt-2 flex flex-wrap gap-1.5">
+            <button v-for="a in kiaReply.actions.slice(0, 2)" :key="a.label" class="inline-flex min-h-9 items-center rounded-full border border-brand-300 bg-white px-3 text-[12px] font-bold text-brand-700" @click="kiaAct(a)">{{ a.label }}</button>
+            <button class="inline-flex min-h-9 items-center gap-1 rounded-full px-2.5 text-[12px] font-bold text-brand-700" @click="openKia(q)"><Icon name="chat" :size="14" /> Tanya Kia</button>
+          </div>
+        </div>
+      </li>
       <li v-for="r in results" :key="r.poi.id" class="flex items-center gap-3 border-b border-line py-3">
         <button class="flex min-w-0 flex-1 items-center gap-3 text-left" @click="go(r.poi.id)">
           <PoiThumb :poi="r.poi" />
@@ -121,7 +150,7 @@ onMounted(() => {
         </button>
         <button class="btn-outline min-h-9 shrink-0 px-3.5 text-[12px]" :disabled="!location.position" @click="navigate(r.poi.id)">Arahkan</button>
       </li>
-      <li v-if="!results.length" class="py-16 text-center">
+      <li v-if="!results.length && !kiaReply" class="py-16 text-center">
         <p class="text-[15px] font-semibold text-ink">Tidak ada spot yang cocok</p>
         <p class="mt-1 text-[13px] text-muted">Coba kata lain, misalnya "musala", "makan", atau "foto".</p>
       </li>

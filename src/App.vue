@@ -3,14 +3,20 @@ import { computed, onMounted, ref, provide } from 'vue'
 import { useRoute } from 'vue-router'
 import BottomNav from './components/BottomNav.vue'
 import TriggerSheet from './components/TriggerSheet.vue'
+import ChallengeSheet from './components/ChallengeSheet.vue'
+import KiaChat from './components/KiaChat.vue'
+import RateToast from './components/RateToast.vue'
+import Celebration from './components/Celebration.vue'
 import SideMenu from './components/SideMenu.vue'
 import Icon from './components/Icon.vue'
 import { settings } from './stores/settings'
 import { startLocation, permissionState, location } from './stores/location'
 import { unlockAudio } from './lib/audio'
+import { syncReminders } from './lib/reminders'
 import './stores/geofence'
 import './stores/navigation'
 import './stores/trail'
+import './stores/ui'
 
 const route = useRoute()
 const showTabs = computed(() => route.meta.tabs)
@@ -27,6 +33,7 @@ window.addEventListener('pointerdown', unlockAudio, { once: true })
 onMounted(async () => {
   // Lanjutkan pelacakan lokasi bila izin sudah pernah diberikan
   if (settings.onboarded && (settings.simulation || (await permissionState()) === 'granted')) startLocation()
+  syncReminders()
 })
 </script>
 
@@ -45,8 +52,12 @@ onMounted(async () => {
         <span class="inline-flex items-center gap-1.5"><Icon name="wifi-off" :size="13" /> Mode offline: konten tersimpan tetap berfungsi</span>
       </div>
 
+      <RateToast />
       <TriggerSheet />
+      <ChallengeSheet />
+      <KiaChat />
       <SideMenu :open="menuOpen" @close="menuOpen = false" />
+      <Celebration />
     </div>
     <BottomNav v-if="showTabs" />
     <span class="sr-only" aria-live="polite">{{ location.message }}</span>

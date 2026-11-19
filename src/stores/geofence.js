@@ -37,6 +37,10 @@ export const approaching = computed(() => {
 /** POI tempat pengguna berada saat ini (di dalam radius) */
 export const currentPoi = computed(() => sorted.value.find((x) => geofence.inside[x.poi.id] && x.distance <= x.poi.radius_m + GEO.hysteresisM) || null)
 
+// Pendengar saat pengguna meninggalkan radius spot (dipakai untuk ajakan memberi rating)
+const exitListeners = new Set()
+export const onExit = (fn) => (exitListeners.add(fn), () => exitListeners.delete(fn))
+
 function logTrigger(entry) {
   geofence.log.unshift(entry)
   geofence.log.splice(50)
@@ -49,7 +53,10 @@ onPosition((pos) => {
     const d = haversine(pos, p)
     geofence.distances[p.id] = d
     if (geofence.inside[p.id]) {
-      if (d > p.radius_m + GEO.hysteresisM) delete geofence.inside[p.id] // reset (hysteresis)
+      if (d > p.radius_m + GEO.hysteresisM) {
+        delete geofence.inside[p.id] // reset (hysteresis)
+        exitListeners.forEach((fn) => fn(p))
+      }
     } else if (d <= p.radius_m) {
       candidates.push({ poi: p, distance: d })
     }
@@ -82,8 +89,8 @@ export function fireTrigger(poi, { source = 'gps', distance = null, accuracy = n
   vibrate([220, 120, 220])
   chime()
   const prompt = settings.audioMode
-    ? `Anda sedang mendekati ${poi.name}.`
-    : `Anda sedang mendekati ${poi.name}. Ingin mendengarkan ceritanya?`
+    ? `Hai! Kamu sudah dekat ${poi.short_name || poi.name}.`
+    : `Hai! Kamu sudah dekat ${poi.short_name || poi.name}. Mau dengar ceritanya?`
   setTimeout(() => {
     speak(prompt, { key: 'prompt' }).then(() => {
       // Mode Audio: narasi langsung diputar tanpa menyentuh layar

@@ -11,8 +11,29 @@ import { visits, endSession } from '../stores/visits'
 import { location } from '../stores/location'
 import { formatKm, formatDuration, formatDistance, haversine } from '../lib/geo'
 import { now } from '../lib/time'
+import Kia from '../components/Kia.vue'
+import { play, level, totalStars } from '../stores/play'
+import { listPhotos, deletePhoto } from '../lib/photoStore'
+import { onBeforeUnmount, onMounted } from 'vue'
+import { getPoi } from '../stores/content'
 
 const router = useRouter()
+
+// Jurnal Kunjungan: foto misi (hanya di ponsel ini)
+const journal = ref([])
+async function loadJournal() {
+  journal.value.forEach((p) => URL.revokeObjectURL(p.url))
+  journal.value = (await listPhotos()).map((p) => ({ ...p, url: URL.createObjectURL(p.blob) }))
+}
+async function removePhoto(id) {
+  await deletePhoto(id)
+  loadJournal()
+}
+onMounted(loadJournal)
+onBeforeUnmount(() => journal.value.forEach((p) => URL.revokeObjectURL(p.url)))
+const openPhoto = ref(null)
+// XP yang didapat sejak kunjungan ini dimulai (perkiraan dari catatan aktivitas)
+const xpToday = computed(() => (view.value.startedAt ? play.events.filter((e) => e.at >= view.value.startedAt && e.type !== 'spot').length : 0))
 const s = computed(() => visits.session)
 const ended = ref(null)
 const view = computed(() => ended.value || { ...s.value, endedAt: null })
@@ -28,7 +49,7 @@ const notVisited = computed(() => {
 const trailsToday = computed(() => visits.trailsDone.filter((t) => view.value.startedAt && t.at >= view.value.startedAt))
 const shareText = computed(
   () =>
-    `Petualanganku di Kiara Artha Park bersama SETARA: ${visitedCount.value} dari ${content.pois.length} spot, ${formatKm(view.value.distanceM)} km, ${formatDuration(duration.value)}.`
+    `Petualanganku di Kiara Artha Park bersama SETARA: ${visitedCount.value} dari ${content.pois.length} spot, ${formatKm(view.value.distanceM)} km, ${formatDuration(duration.value)}. ${totalStars.value} bintang terkumpul dan Kia sudah tumbuh jadi ${level.value.name}!`
 )
 const copied = ref(false)
 
@@ -80,6 +101,41 @@ function finish() {
         </div>
       </div>
       <p v-if="!view.startedAt" class="mx-5 mt-3 rounded-xl bg-mint p-3 text-center text-[12px] text-muted">Kunjungan dimulai otomatis saat stempel pertama atau Wellness Trail dimulai.</p>
+
+      <!-- Progres Kia -->
+      <button class="mx-5 mt-3 flex w-[calc(100%-2.5rem)] items-center gap-3 rounded-2xl bg-mint p-3 text-left" @click="router.push('/stamps')">
+        <Kia mood="cheer" :stage="level.level" :size="52" class="shrink-0" />
+        <span class="min-w-0 flex-1">
+          <span class="block text-[14px] font-semibold text-ink">Kia si {{ level.name }} · {{ play.xp }} XP</span>
+          <span class="block text-[12px] text-muted">{{ totalStars }} bintang · {{ xpToday }} aksi interaktif di kunjungan ini</span>
+        </span>
+        <Icon name="chevron-right" :size="18" class="text-brand-700" />
+      </button>
+
+      <!-- Jurnal Kunjungan -->
+      <section class="mt-6 px-5">
+        <div class="flex items-baseline justify-between">
+          <p class="text-[14px] font-semibold text-ink">Jurnal Kunjungan</p>
+          <span class="text-[11px] text-muted">{{ journal.length }} foto · hanya di ponselmu</span>
+        </div>
+        <div v-if="journal.length" class="mt-2 grid grid-cols-3 gap-2">
+          <button v-for="ph in journal" :key="ph.id" class="relative aspect-square overflow-hidden rounded-xl bg-mint" :aria-label="`Foto di ${getPoi(ph.poiId)?.short_name}`" @click="openPhoto = ph">
+            <img :src="ph.url" alt="" class="h-full w-full object-cover" />
+            <span class="absolute inset-x-0 bottom-0 truncate bg-gradient-to-t from-black/55 to-transparent px-1.5 pb-1 pt-3 text-[9px] font-bold text-white">{{ getPoi(ph.poiId)?.short_name }}</span>
+          </button>
+        </div>
+        <p v-else class="mt-2 rounded-xl border border-dashed border-line p-3 text-center text-[12px] text-muted">Selesaikan misi foto di Pintu Utama, Taman Asia Afrika, atau Area Kuliner untuk mengisi jurnal.</p>
+      </section>
+      <Transition name="fade">
+        <div v-if="openPhoto" class="absolute inset-0 z-[960] flex flex-col bg-black/90 p-4" role="dialog" aria-label="Foto jurnal" @click.self="openPhoto = null">
+          <div class="flex items-center justify-between text-white">
+            <p class="text-[13px] font-semibold">{{ getPoi(openPhoto.poiId)?.name }}</p>
+            <button class="icon-btn text-white hover:bg-white/10" aria-label="Tutup" @click="openPhoto = null"><Icon name="x" /></button>
+          </div>
+          <img :src="openPhoto.url" alt="Foto jurnal" class="mt-3 min-h-0 flex-1 rounded-2xl object-contain" @click="openPhoto = null" />
+          <button class="btn mt-3 border border-white/30 text-white" @click="removePhoto(openPhoto.id); openPhoto = null"><Icon name="trash" :size="16" /> Hapus dari jurnal</button>
+        </div>
+      </Transition>
 
       <section v-if="trailsToday.length" class="mt-6 px-5">
         <p class="eyebrow">Wellness Trail</p>

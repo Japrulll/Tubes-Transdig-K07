@@ -4,6 +4,7 @@ defineProps({
   name: { type: String, required: true },
   size: { type: [Number, String], default: 20 },
   stroke: { type: [Number, String], default: 2 },
+  fill: { type: Boolean, default: false },
 })
 
 const P = {
@@ -60,6 +61,16 @@ const P = {
   logout: 'M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9',
   plus: 'M12 5v14M5 12h14',
   minus: 'M5 12h14',
+  star: 'M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z',
+  chat: 'M21 12a8.5 8.5 0 0 1-12.3 7.6L3.5 21l1.5-4.9A8.5 8.5 0 1 1 21 12z',
+  send: 'M22 2 11 13M22 2l-7 20-4-9-9-4z',
+  bell: 'M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.9 1.9 0 0 0 3.4 0',
+  moon: 'M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z',
+  image: 'M3 5h18v14H3zM3 16l5-5 4 4 3-3 6 6M15.5 9.5h.01',
+  flame: 'M12 22c4 0 7-3 7-7 0-4-3-6-4-9-1 2-2 3-4 3 0-2-1-4-3-6-1 4-3 6-3 10 0 5 3 9 7 9z',
+  target: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM12 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2z',
+  trash: 'M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14',
+  question: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17h.01',
 }
 </script>
 
@@ -76,6 +87,6 @@ const P = {
     aria-hidden="true"
   >
     <path v-if="name === 'play'" :d="P.play" fill="currentColor" stroke="none" />
-    <path v-else :d="P[name] || P.info" />
+    <path v-else :d="P[name] || P.info" :fill="fill ? 'currentColor' : 'none'" />
   </svg>
 </template>

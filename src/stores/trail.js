@@ -7,6 +7,7 @@ import { now } from '../lib/time'
 import { trailById } from './content'
 import { location, onPosition } from './location'
 import { visits, ensureSession } from './visits'
+import { trailFinished } from './play'
 
 const empty = () => ({
   trailId: null,
@@ -40,7 +41,7 @@ export function startTrail(id) {
   Object.assign(trail, empty(), { trailId: id, status: 'running', startedAt: Date.now(), resumedAt: Date.now() })
   ensureSession()
   const t = trailById.value[id]
-  speak(`Wellness Trail ${t.name} dimulai. Menuju checkpoint pertama: ${t.checkpoints[0].name}.`, { key: 'trail' })
+  speak(`Yuk mulai ${t.name}! Aku temani, ya. Checkpoint pertama: ${t.checkpoints[0].name}.`, { key: 'trail' })
   // Pengguna mungkin sudah berdiri di checkpoint pertama
   if (location.position && !location.position.coarse) {
     trail.lastPos = { lat: location.position.lat, lng: location.position.lng, ts: Date.now() }
@@ -80,6 +81,7 @@ export function finishTrail() {
     complete,
   }
   visits.trailsDone.unshift(trail.result)
+  trail.result.xp = trailFinished(trail.result)
   trail.status = 'done'
 }
 
