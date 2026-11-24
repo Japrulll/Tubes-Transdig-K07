@@ -3,8 +3,12 @@ import './style.css'
 import App from './App.vue'
 import router from './router'
 import { syncContent } from './stores/content'
+import { initAuth } from './stores/auth'
 
 createApp(App).use(router).mount('#app')
+
+// Pulihkan sesi login (juga menyelesaikan login Google setelah redirect) lalu sinkronkan progres
+initAuth()
 
 // Ambil konten terbaru dari Supabase (dataset bawaan tetap jadi cadangan offline)
 syncContent()

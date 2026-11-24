@@ -63,7 +63,7 @@ function replayOnboarding() {
             <a :href="s.url" target="_blank" rel="noopener" class="font-semibold text-brand-700 hover:underline">{{ s.label }}</a>
           </li>
         </ul>
-        <p class="mt-3 text-[11px] leading-relaxed text-muted">Koordinat 12 spot diambil dari Google Maps (16 Nov 2026) dan perlu divalidasi saat survei lapangan. Ilustrasi spot dipakai sampai foto tim ditambahkan.</p>
+        <p class="mt-3 text-[11px] leading-relaxed text-muted">Koordinat {{ content.pois.length }} spot diambil dari Google Maps dan OpenStreetMap (16 &amp; 24 Nov 2026) dan perlu divalidasi saat survei lapangan. Ilustrasi spot dipakai sampai foto tim ditambahkan.</p>
         <template v-if="credits.length">
           <p class="eyebrow mt-4">Kredit foto</p>
           <ul class="mt-1.5 space-y-1 text-[11px] text-muted">

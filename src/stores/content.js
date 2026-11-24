@@ -7,7 +7,7 @@ import { SUPABASE_URL } from '../config'
 import { getSupabase, supabaseEnabled } from '../lib/supabase'
 import { bundledPhotos } from '../lib/mediaSlots'
 
-const CACHE_KEY = 'content:v3'
+const CACHE_KEY = 'content:v4'
 
 /** Path berkas di Storage ("poi-media/foto/p01_1.jpg") → URL publik */
 export function mediaUrl(src) {
@@ -25,7 +25,6 @@ function normalize(d) {
     return {
       ...p,
       sort_order: p.sort_order ?? i + 1,
-      number: Number(p.id.slice(1)),
       trivia: p.trivia || [],
       activities: p.activities || [],
       tips: p.tips || [],
@@ -41,6 +40,8 @@ function normalize(d) {
     }
   })
   pois.sort((a, b) => a.sort_order - b.sort_order)
+  // Nomor di pin peta mengikuti urutan tampil (ID POI tetap dipakai untuk QR & stempel)
+  pois.forEach((p, i) => (p.number = i + 1))
   const fallbackTrail = Object.fromEntries(bundled.trails.map((t) => [t.id, t]))
   const trails = d.trails.map((t) => ({
     ...t,
@@ -89,6 +90,11 @@ export async function syncContent() {
     const { data: remote, error } = await sb.rpc('get_app_content')
     if (error) throw error
     if (!remote?.pois?.length) throw new Error('Belum ada POI yang dipublikasikan di Supabase')
+    // Database belum menjalankan seed terbaru → tetap pakai dataset bawaan yang lebih baru
+    if (remote.version && bundled.version && String(remote.version) < String(bundled.version)) {
+      content.syncError = `Database masih versi ${remote.version}; aplikasi memakai data bawaan ${bundled.version}. Jalankan supabase/seed.sql.`
+      return
+    }
 
     const fallbackPoi = Object.fromEntries(bundled.pois.map((p) => [p.id, p]))
     const data = {

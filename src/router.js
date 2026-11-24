@@ -3,7 +3,9 @@ import { settings } from './stores/settings'
 
 // Hash history: aman untuk GitHub Pages (subpath) dan Capacitor (.apk)
 const routes = [
-  { path: '/', redirect: () => (settings.onboarded ? '/explore' : '/onboarding') },
+  { path: '/', redirect: '/home' },
+  // Beranda / landing "Selamat datang di SETARA" (akun + jalan pintas ke peta)
+  { path: '/home', name: 'home', component: () => import('./views/HomeView.vue') },
   { path: '/onboarding', name: 'onboarding', component: () => import('./views/OnboardingView.vue') },
   { path: '/explore', name: 'explore', component: () => import('./views/ExploreView.vue'), meta: { tabs: true } },
   { path: '/search', name: 'search', component: () => import('./views/SearchView.vue'), meta: { tabs: true } },
@@ -23,9 +25,28 @@ const routes = [
 
 const router = createRouter({ history: createWebHashHistory(), routes })
 
+// Setiap kali aplikasi dibuka dari awal (bukan sekadar muat ulang tab), mulai dari Beranda.
+// Tautan langsung (QR papan spot, detail spot, cetak QR) tetap dibuka sesuai tujuannya.
+// sessionStorage bertahan saat tab dimuat ulang, tetapi kosong saat aplikasi/tab baru dibuka.
+const DEEP_LINKS = ['qr-link', 'poi', 'print-qr', 'privacy', 'about', 'log']
+let firstNavigation = true
+function freshLaunch() {
+  try {
+    const alive = sessionStorage.getItem('setara:alive')
+    sessionStorage.setItem('setara:alive', '1')
+    return !alive
+  } catch {
+    return true
+  }
+}
+
 router.beforeEach((to) => {
-  const open = ['onboarding', 'qr-link', 'privacy', 'print-qr']
-  if (!settings.onboarded && !open.includes(to.name)) return { name: 'onboarding' }
+  if (firstNavigation) {
+    firstNavigation = false
+    if (freshLaunch() && to.name !== 'home' && !DEEP_LINKS.includes(to.name)) return { name: 'home' }
+  }
+  const open = ['home', 'onboarding', 'qr-link', 'privacy', 'about', 'print-qr']
+  if (!settings.onboarded && !open.includes(to.name)) return { name: 'home' }
 })
 
 export default router

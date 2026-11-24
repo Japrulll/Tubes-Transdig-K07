@@ -25,6 +25,11 @@ const listening = ref(false)
 
 const norm = (s) => (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9 ]/g, ' ')
 
+// Kategori tanpa spot (mis. setelah POI ditutup) tidak ditampilkan sebagai filter
+const usedCategories = computed(() =>
+  content.categories.filter((c) => content.pois.some((p) => p.category_id === c.id || p.secondary_category_id === c.id))
+)
+
 const results = computed(() => {
   const query = norm(q.value).trim()
   const terms = query.length >= 2 ? query.split(/\s+/).filter(Boolean) : []
@@ -109,7 +114,7 @@ onMounted(() => {
         <button class="chip" :class="cat === 'semua' ? 'chip-active' : ''" role="tab" :aria-selected="cat === 'semua'" @click="cat = 'semua'">
           <Icon v-if="cat === 'semua'" name="check" :size="13" :stroke="3" /> Semua
         </button>
-        <button v-for="c in content.categories" :key="c.id" class="chip" :class="cat === c.id ? 'chip-active' : ''" role="tab" :aria-selected="cat === c.id" @click="cat = c.id">
+        <button v-for="c in usedCategories" :key="c.id" class="chip" :class="cat === c.id ? 'chip-active' : ''" role="tab" :aria-selected="cat === c.id" @click="cat = c.id">
           <Icon v-if="cat === c.id" name="check" :size="13" :stroke="3" /> {{ c.label }}
         </button>
       </div>

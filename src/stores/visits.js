@@ -3,6 +3,7 @@ import { reactive, computed, watch } from 'vue'
 import { load, save } from '../lib/storage'
 import { haversine } from '../lib/geo'
 import { onPosition } from './location'
+import { poiById } from './content'
 
 const newSession = () => ({ startedAt: null, endedAt: null, distanceM: 0, visited: [], lastPos: null })
 
@@ -74,4 +75,5 @@ export function resetAll() {
   visits.trailsDone = []
 }
 
-export const stampCount = computed(() => Object.keys(visits.stamps).length)
+// Hanya stempel POI yang masih ada (stempel lama mis. Kampung Korea tetap tersimpan, tapi tidak dihitung)
+export const stampCount = computed(() => Object.keys(visits.stamps).filter((id) => poiById.value[id]).length)

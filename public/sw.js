@@ -1,8 +1,8 @@
 // SETARA service worker — A02 Mode Offline
 // - Aplikasi (HTML/JS/CSS/gambar): cache-first setelah kunjungan pertama
-// - Konten Supabase: network-first, jatuh ke cache saat offline
+// - Konten Supabase: network-first, jatuh ke cache saat offline (kecuali data akun/progres pribadi)
 // - Tile peta & font: stale-while-revalidate (tile yang pernah dilihat tersedia offline)
-const VERSION = 'setara-v3'
+const VERSION = 'setara-v4'
 const APP = `${VERSION}-app`
 const RUNTIME = `${VERSION}-runtime`
 const TILES = `${VERSION}-tiles`
@@ -33,6 +33,8 @@ self.addEventListener('fetch', (e) => {
   const url = new URL(req.url)
 
   if (url.hostname.endsWith('supabase.co')) {
+    // Data akun (sesi login & progres pribadi) tidak pernah disimpan di cache
+    if (url.pathname.startsWith('/auth/') || url.pathname.includes('/user_progress')) return
     e.respondWith(networkFirst(req, RUNTIME))
     return
   }

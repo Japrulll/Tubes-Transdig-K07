@@ -16,9 +16,10 @@ Info spot muncul otomatis saat pengunjung mendekat (GPS geofencing, QR sebagai c
 | F06 | Garis arah, jarak, estimasi waktu, penunjuk arah (kompas), notifikasi "Anda telah tiba", tautan Google Maps | `src/stores/navigation.js`, `src/views/NavigationView.vue` |
 | F07 | 2–3 rekomendasi: jarak + belum dikunjungi + slot waktu (pagi/siang/sore/malam) + jadwal atraksi | `src/lib/recommend.js`, `src/components/RecommendationList.vue` |
 | F08 | Wellness Trail: 2 rute, 5 checkpoint berpemandu audio, jarak & durasi, jeda/lanjut, stempel penyelesaian | `src/stores/trail.js`, `src/views/TrailView.vue` |
-| A01 | Koleksi 12 stempel + 5 badge, ringkasan kunjungan (spot, jarak, durasi), disimpan di ponsel | `src/stores/visits.js`, `src/views/StampsView.vue`, `src/views/SummaryView.vue` |
+| A01 | Koleksi 14 stempel + 5 badge, ringkasan kunjungan (spot, jarak, durasi), disimpan di ponsel | `src/stores/visits.js`, `src/views/StampsView.vue`, `src/views/SummaryView.vue` |
 | A02 | Mode offline: dataset bawaan + cache konten + service worker (aplikasi, tile peta, font) | `src/data/poi.json`, `public/sw.js` |
 | A03 | Penjelasan lokasi sebelum izin, lokasi tidak pernah dikirim ke server, halaman privasi | `src/views/OnboardingView.vue`, `src/views/PrivacyView.vue` |
+| Akun | Beranda "Selamat datang di SETARA" sebagai titik masuk; masuk dengan Google atau email (Supabase Auth); progres (stempel, bintang, XP, riwayat, trail, preferensi audio) tersinkron per pengguna; keluar akun & kembali ke Beranda dari menu | `src/views/HomeView.vue`, `src/components/AuthSheet.vue`, `src/stores/auth.js` |
 
 ### Interaksi dua arah bersama Kia
 
@@ -39,6 +40,22 @@ Konten interaksi (narasi gaya Kia, kuis, misi, jawaban Tanya Kia, tantangan hari
 
 Layar tambahan untuk tim: **Log Trigger & Uji** (jarak ke tiap POI, waktu fix GPS, skenario jam pagi/sore/malam, ekspor CSV), **Cetak QR Spot**, dan **Mode Simulasi Lokasi** (ketuk peta untuk berpindah — untuk demo di luar taman).
 
+### Akun & sinkronisasi progres
+
+- **Beranda (`#/home`)** adalah titik masuk setiap kali aplikasi dibuka dari awal (tab/aplikasi baru). Pertimbangannya dari sisi pengguna: kunjungan ke taman biasanya berjarak hari, jadi saat membuka aplikasi lagi pengguna disambut, melihat status akun & progres, lalu satu ketukan "Lanjut Jelajah" ke peta (atau "Lanjutkan trail" bila Wellness Trail sedang berjalan). Muat ulang di tab yang sama tetap di halaman yang sama, dan tautan QR (`#/qr/P05`) tetap langsung membuka spotnya.
+- **Masuk**: Google (OAuth, alur PKCE agar cocok dengan router hash) atau email + kata sandi (daftar, masuk, lupa kata sandi). Tanpa akun aplikasi tetap berjalan penuh (mode tamu).
+- **Sinkronisasi**: saat masuk, progres tamu di ponsel **digabung** dengan progres akun (stempel digabung, XP diambil yang tertinggi, bintang per spot digabung), lalu setiap perubahan disimpan otomatis (jeda 2,5 detik; antre saat offline). Disimpan di tabel `user_progress` (RLS: hanya pemilik). Selama migrasi belum dijalankan, progres sementara disimpan di `user_metadata` akun.
+- **Keluar**: dari Beranda atau menu samping. Progres disimpan dulu, lalu ponsel kembali ke mode tamu. Lokasi GPS dan foto Jurnal **tidak pernah** disinkronkan; umpan balik anonim tetap memakai klien tanpa sesi.
+
+**Langkah di Supabase Dashboard (sekali saja):**
+
+1. *SQL Editor*: jalankan `supabase/migrations/20261124000000_setara_akun_pengguna.sql`, lalu `supabase/seed.sql` (versi data 2026-11-24). Sebelum seed dijalankan, aplikasi otomatis memakai dataset bawaan yang lebih baru.
+2. *Authentication → URL Configuration*: Site URL `https://japrulll.github.io/Tubes-Transdig-K07/`; Redirect URLs tambahkan URL tersebut dan `http://localhost:5173/`.
+3. *Authentication → Sign In / Providers → Google*: aktifkan, isi Client ID & Client Secret dari Google Cloud Console (OAuth client "Web application", Authorized redirect URI `https://diyjdxwjuparfmdrqxcp.supabase.co/auth/v1/callback`). Tombol "Lanjutkan dengan Google" muncul otomatis setelah provider aktif.
+4. (Opsional) *Authentication → Emails*: sesuaikan templat email konfirmasi. Email konfirmasi saat ini wajib (`mailer_autoconfirm: false`).
+
+Catatan APK: Google memblokir login OAuth di WebView, jadi di aplikasi Android tombol Google disembunyikan dan pengguna masuk dengan email.
+
 ## Menjalankan
 
 ```bash
@@ -56,7 +73,7 @@ Geolocation dan kamera hanya berjalan di **HTTPS** (atau `localhost`). Untuk uji
 
 ## Data & Supabase
 
-Sumber data tunggal ada di `scripts/build-data.mjs` (12 POI, kategori, trail, badge) dan `scripts/data-interaksi.mjs` (narasi Kia, kuis, misi, Tanya Kia, tantangan). Jalankan `npm run data` untuk menghasilkan:
+Sumber data tunggal ada di `scripts/build-data.mjs` (14 POI, kategori, trail, badge) dan `scripts/data-interaksi.mjs` (narasi Kia, kuis, misi, Tanya Kia, tantangan). Jalankan `npm run data` untuk menghasilkan:
 
 - `src/data/poi.json` — dataset bawaan aplikasi (dipakai saat offline/pertama kali dibuka)
 - `supabase/seed.sql` — isi database yang sama
@@ -81,22 +98,26 @@ Foto **dibundel di aplikasi** agar cepat dan tetap tampil offline: taruh berkas 
 
 Narasi rekaman (opsional) tetap bisa diunggah ke bucket `poi-media` sesuai `file_path` di tabel `audio` (mis. `audio/p03.mp3`); selama belum ada, narasi dibacakan TTS dari kolom `poi.narration`.
 
-## Koordinat POI (Google Maps, diakses 16 Nov 2026)
+## Koordinat POI (Google Maps 16 Nov 2026; OpenStreetMap & Google Maps 24 Nov 2026)
 
-| ID | POI | Acuan Google Maps | Lat, Lng | Radius |
+| ID | POI | Acuan | Lat, Lng | Radius |
 | --- | --- | --- | --- | --- |
 | P01 | Pintu Utama | Gerbang Barat Taman Kiara Artha | -6.9161917, 107.6407033 | 25 m |
 | P02 | Gerbang Area Parkir | Kiara Artha Parking Lot | -6.9154692, 107.6411222 | 25 m |
 | P03 | Danau & Air Mancur Menari | Dancing Fountain | -6.9160874, 107.6422657 | 40 m |
-| P04 | Area Tematik Asia | KAMPUNG KOREA BANDUNG | -6.9156793, 107.6406188 | 30 m |
 | P05 | Spot Foto Ikonik | Taman Asia Afrika - Kiara Artha Park | -6.9166173, 107.6421607 | 25 m |
 | P06 | Titik Start Jogging Track | Jogging Track Kiara Artha Park | -6.9152676, 107.6417524 | 25 m |
 | P07 | Selter Sepeda BOSEH | Stasiun Boseh Kiara Artha Park | -6.9156690, 107.6408092 | 20 m |
 | P08 | Area Kuliner / Food Court | Pelangi Graha Park (Kiara Pelangi) | -6.9170555, 107.6417750 | 30 m |
 | P09 | Area Kafe & Lapangan Padel | Padel Co. Semi Outdoor | -6.9149564, 107.6422184 | 30 m |
-| P10 | Area Bermain Anak | Lolipops Playland and Cafe | -6.9164994, 107.6428604 | 25 m |
 | P11 | Zona Relaksasi / Spot Teduh | Citra satelit (kanopi pohon timur danau) | -6.9159300, 107.6431120 | 20 m |
 | P12 | Musala & Toilet | Mushalla Kiara Artha Park | -6.9151658, 107.6421597 | 20 m |
+| P13 | Gerbang Utara | OSM: halte "Gerbang Utara Kiara Artha Park" (Jl. Jakarta) + ujung Jl. Kiara Artha Utara | -6.9142000, 107.6412800 | 25 m |
+| P14 | Gerbang Timur | OSM: halte "Gerbang Timur Kiara Artha Park" (Jl. H. Ibrahim Adjie) | -6.9161500, 107.6437000 | 25 m |
+| P15 | Food Court 2 | OSM: Steak Ranjang (-6.91627), Siloka, Pang Waffle, RD Coffee & Eatery (-6.91675); titik tengah | -6.9164900, 107.6435100 | 30 m |
+| P16 | Masjid Al-Maleeq | Google Maps (tidak ada di OSM); diperkirakan dari posisi relatif Jl. Banten & skala peta | -6.9160000, 107.6406600 | 20 m |
+
+P04 (Area Tematik Asia / Kampung Korea) dan P10 (Area Bermain Anak / Lolipops Playland) **sudah tidak ada** dan dihapus dari aplikasi; di database keduanya hanya disembunyikan (`is_published = false`) agar umpan balik lama tetap utuh. ID POI tidak diubah agar QR yang sudah dicetak tetap berlaku; nomor pin di peta mengikuti urutan (1–14).
 
 ## Change Log
 
@@ -110,6 +131,10 @@ Narasi rekaman (opsional) tetap bisa diunggah ke bucket `poi-media` sesuai `file
 | 1.2 | 19 Nov 2026 | Interaksi dua arah: maskot Kia, kuis/misi/nilai per spot, bintang & XP, Tanya Kia offline, Tantangan Hari Ini, kunjungan mingguan, pengingat APK, umpan balik anonim, Jurnal Kunjungan | Pengunjung terdorong aktif menggunakan aplikasi, bukan hanya mendengar |
 | 1.2 | 19 Nov 2026 | Narasi & panduan trail memakai suara Kia (aku–kamu, sapaan Sunda) | Konsisten dengan karakter maskot |
 | 1.2 | 19 Nov 2026 | Foto dibundel di aplikasi lewat `npm run media`; belum ada foto berlisensi terbuka untuk 12 spot | Foto web yang ada berhak cipta; tim akan menyediakan foto sendiri |
+| 1.3 | 24 Nov 2026 | Akun pengguna: masuk Google/email, progres tersinkron per pengguna (`user_progress`, RLS), keluar akun | Progres tidak hilang saat ganti ponsel; data pengguna tersimpan di akunnya |
+| 1.3 | 24 Nov 2026 | Beranda "Selamat datang di SETARA" jadi titik masuk saat aplikasi dibuka; menu Beranda & Keluar di menu samping | Pengguna kembali ke halaman utama, lalu satu ketukan ke peta |
+| 1.3 | 24 Nov 2026 | Hapus P04 Kampung Korea & P10 Lolipops; tambah P13 Gerbang Utara, P14 Gerbang Timur, P15 Food Court 2, P16 Masjid Al-Maleeq; badge B02/B03/B05 disesuaikan | Kondisi lapangan terbaru (Kampung Korea & Lolipops sudah tidak ada) |
+| 1.3 | 24 Nov 2026 | Koordinat P16 diperkirakan (belum ada di OSM) | Validasi saat survei lapangan |
 
 ## Teknologi
 

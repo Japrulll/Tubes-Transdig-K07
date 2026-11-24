@@ -12,14 +12,19 @@ import { ref } from 'vue'
 
 const cleared = ref(false)
 const points = [
-  { icon: 'locate', title: 'Lokasi diproses di ponsel', text: 'Posisi GPS hanya dipakai untuk menghitung jarak ke 12 spot (rumus Haversine) langsung di perangkatmu.' },
+  { icon: 'locate', title: 'Lokasi diproses di ponsel', text: 'Posisi GPS hanya dipakai untuk menghitung jarak ke setiap spot (rumus Haversine) langsung di perangkatmu.' },
   { icon: 'shield', title: 'Posisimu tidak dikirim', text: 'SETARA tidak pernah mengirim atau menyimpan posisimu di server. Permintaan ke database hanya mengambil konten taman (teks, jadwal, kuis).' },
   {
     icon: 'chat',
     title: 'Umpan balik tanpa identitas',
     text: 'Rating spot, laporan info salah, hasil kuis, dan pertanyaan yang belum bisa dijawab Kia dikirim tanpa akun, tanpa ID perangkat, dan tanpa lokasi. Aplikasi hanya bisa menulis, tidak bisa membacanya kembali.',
   },
-  { icon: 'award', title: 'Progres & foto tersimpan lokal', text: 'Stempel, bintang, XP, level Kia, dan foto Jurnal Kunjungan disimpan di ponselmu saja dan bisa dihapus kapan saja.' },
+  { icon: 'award', title: 'Progres & foto tersimpan lokal', text: 'Stempel, bintang, XP, level Kia, dan foto Jurnal Kunjungan disimpan di ponselmu dan bisa dihapus kapan saja.' },
+  {
+    icon: 'user',
+    title: 'Akun opsional',
+    text: 'Bila kamu masuk (Google atau email), stempel, bintang, XP, riwayat kunjungan, dan preferensi audio ikut disimpan ke akunmu agar bisa dilanjutkan di ponsel lain. Hanya kamu yang bisa membacanya. Lokasi GPS dan foto Jurnal tidak pernah dikirim. Umpan balik tetap dikirim tanpa identitas akun.',
+  },
   { icon: 'bell', title: 'Pengingat opsional', text: 'Pengingat jadwal (aplikasi Android/iOS) dijadwalkan di ponsel dan tidak memakai lokasi latar belakang.' },
   { icon: 'external', title: 'Google Maps opsional', text: 'Tombol "Google Maps" hanya membuka rute ke koordinat spot tujuan; posisimu tidak disertakan di tautan.' },
   { icon: 'qr', title: 'Tanpa lokasi pun bisa', text: 'Jika izin lokasi tidak diberikan, gunakan Mode QR di papan setiap spot untuk membuka konten dan misi yang sama.' },
