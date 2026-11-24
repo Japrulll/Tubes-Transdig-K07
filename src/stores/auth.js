@@ -58,7 +58,7 @@ export const googleAvailable = computed(() => !isNative() && auth.providers.goog
 function message(e) {
   const m = String(e?.message || e || '')
   if (/invalid login credentials/i.test(m)) return 'Email atau kata sandi salah.'
-  if (/email not confirmed/i.test(m)) return 'Email belum dikonfirmasi. Buka tautan konfirmasi di kotak masuk emailmu.'
+  if (/email not confirmed/i.test(m)) return 'Akun ini belum aktif. Coba daftar ulang sebentar lagi, atau hubungi tim SETARA.'
   if (/already registered|already been registered/i.test(m)) return 'Email ini sudah terdaftar. Silakan masuk.'
   if (/password should be at least|password.*(short|characters)/i.test(m)) return 'Kata sandi minimal 6 karakter.'
   if (/rate limit|too many/i.test(m)) return 'Terlalu banyak percobaan. Coba lagi beberapa menit lagi.'
@@ -170,10 +170,12 @@ export function signInWithEmail(email, password) {
 
 export function signUpWithEmail(name, email, password) {
   return run(async (sb) => {
+    // Daftar tanpa verifikasi email: begitu akun dibuat, pengguna langsung masuk.
+    // (Di Supabase: Authentication → Sign In / Providers → Email → "Confirm email" dimatikan.)
     const { data, error } = await sb.auth.signUp({
       email: email.trim(),
       password,
-      options: { data: { full_name: name.trim() }, emailRedirectTo: redirectUrl() },
+      options: { data: { full_name: name.trim() } },
     })
     if (error) throw error
     // Supabase mengembalikan user tanpa identitas bila email sudah terdaftar
@@ -182,8 +184,11 @@ export function signUpWithEmail(name, email, password) {
       setUser(data.user)
       return data.user
     }
-    auth.notice = `Kami mengirim tautan konfirmasi ke ${email.trim()}. Buka tautan itu, lalu kembali ke sini untuk masuk.`
-    return 'confirm'
+    // Tanpa sesi: coba langsung masuk dengan kata sandi yang sama
+    const signin = await sb.auth.signInWithPassword({ email: email.trim(), password })
+    if (signin.error) throw signin.error
+    setUser(signin.data.user)
+    return signin.data.user
   })
 }
 

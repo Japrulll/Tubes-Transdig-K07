@@ -52,7 +52,7 @@ Layar tambahan untuk tim: **Log Trigger & Uji** (jarak ke tiap POI, waktu fix GP
 1. *SQL Editor*: jalankan `supabase/migrations/20261124000000_setara_akun_pengguna.sql`, lalu `supabase/seed.sql` (versi data 2026-11-24). Sebelum seed dijalankan, aplikasi otomatis memakai dataset bawaan yang lebih baru.
 2. *Authentication → URL Configuration*: Site URL `https://japrulll.github.io/Tubes-Transdig-K07/`; Redirect URLs tambahkan URL tersebut dan `http://localhost:5173/`.
 3. *Authentication → Sign In / Providers → Google*: aktifkan, isi Client ID & Client Secret dari Google Cloud Console (OAuth client "Web application", Authorized redirect URI `https://diyjdxwjuparfmdrqxcp.supabase.co/auth/v1/callback`). Tombol "Lanjutkan dengan Google" muncul otomatis setelah provider aktif.
-4. (Opsional) *Authentication → Emails*: sesuaikan templat email konfirmasi. Email konfirmasi saat ini wajib (`mailer_autoconfirm: false`).
+4. *Authentication → Sign In / Providers → Email*: matikan **Confirm email** (`mailer_autoconfirm: true`). Pendaftaran cukup nama, email, dan kata sandi; pengguna langsung masuk tanpa kode atau tautan verifikasi. Akun lama yang terlanjur belum terkonfirmasi diaktifkan sekali lewat *SQL Editor*: `update auth.users set email_confirmed_at = now() where email_confirmed_at is null;`
 
 Catatan APK: Google memblokir login OAuth di WebView, jadi di aplikasi Android tombol Google disembunyikan dan pengguna masuk dengan email.
 

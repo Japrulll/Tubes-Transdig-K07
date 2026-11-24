@@ -50,9 +50,7 @@ async function submit() {
   if (mode.value === 'login') {
     if (await signInWithEmail(email.value, password.value)) emit('done')
   } else if (mode.value === 'register') {
-    const r = await signUpWithEmail(name.value, email.value, password.value)
-    if (r && r !== 'confirm') emit('done')
-    if (r === 'confirm') password.value = ''
+    if (await signUpWithEmail(name.value, email.value, password.value)) emit('done')
   } else {
     await resetPassword(email.value)
   }
