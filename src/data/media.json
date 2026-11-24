@@ -1,4 +1,59 @@
 {
-  "generated": null,
-  "files": {}
+  "generated": "2026-11-24T10:34:18.449866Z",
+  "files": {
+    "foto/p01_1": {
+      "w": 960,
+      "h": 1280,
+      "thumb": true,
+      "credit": null
+    },
+    "foto/p01_2": {
+      "w": 1200,
+      "h": 800,
+      "thumb": true,
+      "credit": null
+    },
+    "foto/p03_1": {
+      "w": 960,
+      "h": 1280,
+      "thumb": true,
+      "credit": null
+    },
+    "foto/p03_2": {
+      "w": 1080,
+      "h": 784,
+      "thumb": true,
+      "credit": null
+    },
+    "foto/p05_1": {
+      "w": 960,
+      "h": 1280,
+      "thumb": true,
+      "credit": null
+    },
+    "foto/p05_2": {
+      "w": 960,
+      "h": 1280,
+      "thumb": true,
+      "credit": null
+    },
+    "foto/p08_1": {
+      "w": 1280,
+      "h": 489,
+      "thumb": true,
+      "credit": null
+    },
+    "foto/p08_2": {
+      "w": 1280,
+      "h": 398,
+      "thumb": true,
+      "credit": null
+    },
+    "onboarding/1": {
+      "w": 1080,
+      "h": 784,
+      "thumb": true,
+      "credit": null
+    }
+  }
 }
