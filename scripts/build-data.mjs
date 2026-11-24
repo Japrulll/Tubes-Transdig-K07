@@ -135,12 +135,12 @@ const pois = [
     art: 'gate',
     summary: 'Gerbang utama di sisi Jl. Banten, titik awal menjelajah taman.',
     description:
-      'Pintu masuk utama Kiara Artha Park berada di sisi barat, menghadap Jl. Banten. Dari sini jalur pejalan kaki mengarah ke lingkar Jl. Kiara Artha yang mengelilingi danau dan air mancur menari di tengah taman. Zona taman tersusun melingkar: area kuliner dan kafe di sisi selatan, danau dan air mancur di tengah, area bermain anak di sisi timur, serta jalur jogging dan musala di sisi utara.',
+      'Pintu masuk utama Kiara Artha Park berada di sisi barat, menghadap Jl. Banten. Dari sini jalur pejalan kaki mengarah ke lingkar Jl. Kiara Artha yang mengelilingi danau dan air mancur menari di tengah taman. Zona taman tersusun melingkar: area kuliner dan kafe di sisi selatan, danau dan air mancur di tengah, Food Court 2 dan gerbang timur di sisi timur, serta jalur jogging, musala, dan gerbang utara di sisi utara. Masjid Al-Maleeq berada tidak jauh di utara gerbang ini.',
     trivia: [
       'Kiara Artha Park diresmikan pada 17 Agustus 2019, bertepatan dengan HUT ke-74 Republik Indonesia.',
       'Taman ini terletak di antara flyover Antapani dan flyover Kiaracondong, di Kelurahan Kebonwaru, Kecamatan Batununggal.',
     ],
-    activities: ['Peta ringkas zona taman', 'Titik kumpul rombongan', 'Akses ke Selter BOSEH dan area parkir'],
+    activities: ['Peta ringkas zona taman', 'Titik kumpul rombongan', 'Akses ke Selter BOSEH, area parkir, dan Masjid Al-Maleeq'],
     tips: [
       'Foto papan peta di gerbang sebagai cadangan bila baterai menipis.',
       'Sore hari (15.00–18.00) cocok untuk jalan santai sebelum pertunjukan air mancur.',
@@ -210,33 +210,6 @@ const pois = [
     best_times: ['sore', 'malam'],
     keywords: ['danau', 'air mancur', 'fountain', 'pertunjukan', 'malam', 'lampu', 'show'],
     status_note: 'Jadwal pertunjukan dapat berubah; cek Instagram @kiaraarthapark.',
-  },
-  {
-    id: 'P04',
-    name: 'Area Tematik Asia',
-    short_name: 'Tematik Asia',
-    category_id: 'atraksi',
-    location_label: 'Zona bergaya Korea di sisi barat, dekat Jl. Banten',
-    source: 'Google Maps: "KAMPUNG KOREA BANDUNG"',
-    lat: -6.9156793,
-    lng: 107.6406188,
-    radius_m: 30,
-    art: 'asia',
-    summary: 'Zona tematik bernuansa Asia, dikenal sebagai Kampung Korea.',
-    description:
-      'Zona tematik bergaya Asia berada di sisi barat taman, dekat Jl. Banten. Area ini dikenal sebagai Kampung Korea: deretan bangunan dan ornamen bernuansa Korea yang sejak awal menjadi magnet foto pengunjung dan membuat Kiara Artha Park dijuluki destinasi "ala Korea" di tengah Kota Bandung.',
-    trivia: [
-      'Kiara Artha Park sempat dipromosikan media sebagai destinasi wisata Bandung ala Korea berkat Kampung Korea-nya (VIVA).',
-      'Selain zona Asia, taman ini punya Taman Asia Afrika di sisi selatan danau, yang namanya menggemakan Konferensi Asia Afrika 1955 di Bandung.',
-    ],
-    activities: ['Berfoto dengan ornamen bernuansa Asia', 'Mendengarkan cerita budaya lewat narasi audio'],
-    tips: ['Cahaya terbaik untuk foto: pagi 08.00–10.00 saat matahari dari timur.'],
-    trigger_response: 'Prompt suara, kartu informasi, dan stempel POI.',
-    hours: PARK_HOURS,
-    best_times: ['pagi', 'siang', 'sore'],
-    keywords: ['asia', 'korea', 'kampung korea', 'budaya', 'tematik', 'foto'],
-    status_note:
-      'Google Maps menandai "Kampung Korea Bandung" sebagai tutup permanen (diakses 16 Nov 2026). Konfirmasi kondisi area saat survei lapangan.',
   },
   {
     id: 'P05',
@@ -376,35 +349,6 @@ const pois = [
     status_note: 'Jam operasional perlu dikonfirmasi ke pengelola saat survei.',
   },
   {
-    id: 'P10',
-    name: 'Area Bermain Anak',
-    short_name: 'Area Bermain',
-    category_id: 'keluarga',
-    location_label: 'Lollipop Playland, sisi timur danau',
-    source: 'Google Maps: "Lolipops Playland and Cafe"',
-    lat: -6.9164994,
-    lng: 107.6428604,
-    radius_m: 25,
-    art: 'playground',
-    summary: 'Lollipop Playland: wahana bermain anak dan kafe untuk pendamping.',
-    description:
-      'Lollipop Playland adalah area bermain anak di sisi timur danau, lengkap dengan kafe bagi orang tua dan pendamping. Lokasinya dekat Zona Relaksasi, sehingga pendamping bisa beristirahat di tempat teduh setelah anak-anak bermain.',
-    trivia: [
-      'Lollipop Playland termasuk fasilitas yang paling sering disebut media saat membahas Kiara Artha Park, bersama air mancur menari dan Kampung Korea.',
-      'Area ini berada sekitar 80 meter dari air mancur, titik temu yang mudah diingat bila anggota keluarga terpisah.',
-    ],
-    activities: ['Wahana bermain anak', 'Kafe untuk pendamping', 'Titik istirahat keluarga'],
-    tips: [
-      'Sepakati titik temu (misalnya air mancur) bila anggota rombongan terpisah.',
-      'Cek ketentuan usia dan tinggi badan di loket wahana; bawa kaus kaki untuk area bermain indoor.',
-    ],
-    trigger_response: 'Info wahana, batas usia, tips keamanan anak, dan fasilitas terdekat bagi pendamping.',
-    hours: [{ days: DAILY, open: '09:00', close: '21:00' }],
-    best_times: ['pagi', 'siang', 'sore'],
-    keywords: ['anak', 'bermain', 'playground', 'lollipop', 'keluarga', 'wahana', 'balita'],
-    status_note: 'Jam operasional wahana perlu dikonfirmasi saat survei.',
-  },
-  {
     id: 'P11',
     name: 'Zona Relaksasi / Spot Teduh',
     short_name: 'Zona Teduh',
@@ -453,8 +397,113 @@ const pois = [
     trigger_response: 'Info fasilitas dan arah; tampil sebagai hasil cepat pada filter Fasilitas.',
     hours: PARK_HOURS,
     best_times: ['pagi', 'siang', 'sore', 'malam'],
-    keywords: ['musala', 'mushola', 'masjid', 'salat', 'sholat', 'toilet', 'wc', 'kamar mandi', 'wudu'],
+    keywords: ['musala', 'mushola', 'salat', 'sholat', 'toilet', 'wc', 'kamar mandi', 'wudu'],
     status_note: null,
+  },
+  // --- Tambahan 24 Nov 2026 (koordinat OpenStreetMap / Google Maps) ---
+  {
+    id: 'P13',
+    name: 'Gerbang Utara Kiara Artha Park',
+    short_name: 'Gerbang Utara',
+    category_id: 'akses',
+    location_label: 'Sisi Jl. Jakarta, ujung Jl. Kiara Artha Utara',
+    source: 'OpenStreetMap: halte "Gerbang Utara Kiara Artha Park", Jl. Jakarta; Google Maps: Jl. Kiara Artha Utara',
+    lat: -6.9142,
+    lng: 107.64128,
+    radius_m: 25,
+    art: 'gate',
+    summary: 'Pintu masuk dari Jl. Jakarta lewat Jl. Kiara Artha Utara, dekat halte bus.',
+    description:
+      'Gerbang utara menghubungkan Jl. Jakarta dengan taman melalui Jl. Kiara Artha Utara. Pengunjung yang turun di halte Gerbang Utara bisa berjalan lurus ke selatan sekitar 100 meter hingga tiba di lingkar Jl. Kiara Artha, dekat lapangan padel, titik start jogging track, serta musala dan toilet.',
+    trivia: [
+      'Halte bus di depan gerbang ini bernama "Gerbang Utara Kiara Artha Park", sehingga mudah dijadikan patokan saat naik kendaraan umum.',
+      'Dari gerbang ini, titik start jogging track hanya sekitar 130 meter ke arah tenggara.',
+    ],
+    activities: ['Masuk dari arah Jl. Jakarta', 'Turun dari bus di halte Gerbang Utara', 'Akses cepat ke jogging track dan area padel'],
+    tips: ['Menyeberang Jl. Jakarta lewat zebra cross dan tetap waspada; lalu lintasnya ramai.', 'Lanjut lurus ke selatan untuk tiba di lingkar taman.'],
+    trigger_response: 'Sambutan, arah ke lingkar taman, dan spot terdekat dari sisi utara.',
+    hours: PARK_HOURS,
+    best_times: ['pagi', 'siang', 'sore', 'malam'],
+    keywords: ['gerbang', 'gerbang utara', 'pintu', 'masuk', 'jl jakarta', 'halte', 'bus', 'kiara artha utara'],
+    status_note: 'Titik gerbang ditentukan dari peta; validasi saat survei lapangan.',
+  },
+  {
+    id: 'P14',
+    name: 'Gerbang Timur Kiara Artha Park',
+    short_name: 'Gerbang Timur',
+    category_id: 'akses',
+    location_label: 'Sisi Jl. H. Ibrahim Adjie (Kiaracondong)',
+    source: 'OpenStreetMap: halte "Gerbang Timur Kiara Artha Park", Jl. H. Ibrahim Adjie',
+    lat: -6.91615,
+    lng: 107.6437,
+    radius_m: 25,
+    art: 'gate',
+    summary: 'Pintu masuk dari Jl. Ibrahim Adjie, tepat di samping Food Court 2.',
+    description:
+      'Gerbang timur berada di sisi Jl. H. Ibrahim Adjie (Kiaracondong), terhubung ke lingkar taman lewat dua ruas Jl. Kiara Artha. Tepat di sebelah selatannya ada Food Court 2 dengan deretan kafe dan resto, sementara Zona Teduh dan danau berada sekitar 60–150 meter ke arah barat.',
+    trivia: [
+      'Halte bus di depan gerbang ini bernama "Gerbang Timur Kiara Artha Park" dan berada di jalur Jl. Ibrahim Adjie yang ramai.',
+      'Kiara Artha Park terletak di antara flyover Antapani dan flyover Kiaracondong; gerbang timur adalah sisi yang menghadap Kiaracondong.',
+    ],
+    activities: ['Masuk dari arah Jl. Ibrahim Adjie', 'Turun dari bus di halte Gerbang Timur', 'Akses cepat ke Food Court 2'],
+    tips: ['Jl. Ibrahim Adjie padat pada jam sibuk; menyeberanglah di titik penyeberangan.', 'Belok kiri (selatan) untuk Food Court 2, lurus ke barat untuk danau.'],
+    trigger_response: 'Sambutan, arah ke danau, dan info Food Court 2 di sebelahnya.',
+    hours: PARK_HOURS,
+    best_times: ['pagi', 'siang', 'sore', 'malam'],
+    keywords: ['gerbang', 'gerbang timur', 'pintu', 'masuk', 'ibrahim adjie', 'kiaracondong', 'halte', 'bus'],
+    status_note: 'Titik gerbang ditentukan dari peta; validasi saat survei lapangan.',
+  },
+  {
+    id: 'P15',
+    name: 'Food Court 2: Deretan Kafe Sisi Timur',
+    short_name: 'Food Court 2',
+    category_id: 'kuliner',
+    location_label: 'Bangunan sisi timur, antara lingkar taman dan Jl. Ibrahim Adjie',
+    source: 'OpenStreetMap: Steak Ranjang, Siloka, Pang Waffle, RD Coffee & Eatery (Jl. H. Ibrahim Adjie)',
+    lat: -6.91649,
+    lng: 107.64351,
+    radius_m: 30,
+    art: 'food',
+    summary: 'Food court kedua: Steak Ranjang, Siloka, Pang Waffle, dan RD Coffee & Eatery.',
+    description:
+      'Food court kedua berada di bangunan memanjang sisi timur taman, di antara lingkar Jl. Kiara Artha dan Jl. Ibrahim Adjie. Deretan tenannya dari utara ke selatan antara lain Steak Ranjang, Siloka, Pang Waffle, dan RD Coffee & Eatery: pilihan steak, jajanan manis, sampai kopi. Cocok untuk makan setelah jogging atau sambil menunggu air mancur menari di malam hari.',
+    trivia: [
+      'Urutan tenan dari utara ke selatan: Steak Ranjang, Siloka, Pang Waffle, lalu RD Coffee & Eatery (OpenStreetMap, 2026).',
+      'Dari sini danau dan air mancur menari hanya sekitar 140 meter ke arah barat.',
+    ],
+    activities: ['Makan steak, waffle, atau jajanan', 'Ngopi di kafe', 'Istirahat setelah jogging'],
+    tips: ['Jam buka tiap tenan berbeda; cek papan di depan tenan.', 'Akhir pekan malam ramai; datang sebelum pukul 18.00 bila ingin menonton air mancur setelah makan.'],
+    trigger_response: 'Info tenan, jam buka, dan arah ke danau setelah makan.',
+    hours: [{ days: DAILY, open: '10:00', close: '22:00' }],
+    best_times: ['siang', 'sore', 'malam'],
+    keywords: ['makan', 'kuliner', 'food court', 'food court 2', 'steak', 'steak ranjang', 'siloka', 'waffle', 'pang waffle', 'rd coffee', 'kopi', 'kafe', 'jajan'],
+    status_note: 'Jam buka tenan bervariasi; konfirmasi saat survei.',
+  },
+  {
+    id: 'P16',
+    name: 'Masjid Al-Maleeq',
+    short_name: 'Masjid Al-Maleeq',
+    category_id: 'fasilitas',
+    location_label: 'Sisi barat, di pojok deretan toko dekat Jl. Banten',
+    source: 'Google Maps: "Masjid Al-Maleeq" (diakses 24 Nov 2026)',
+    lat: -6.916,
+    lng: 107.64066,
+    radius_m: 20,
+    art: 'musala',
+    summary: 'Masjid di sisi barat taman, dekat Jl. Banten dan Pintu Utama.',
+    description:
+      'Masjid Al-Maleeq berada di sisi barat kawasan Kiara Artha, di pojok deretan toko dekat Jl. Banten dan tidak jauh dari Pintu Utama. Pengunjung yang masuk dari gerbang barat atau area parkir bisa salat di sini; untuk sisi utara taman tersedia juga musala dan toilet dekat Layana Hall.',
+    trivia: [
+      'Google Maps mencatat lokasi masjid ini berada di pojok deretan bangunan, dekat Jl. Banten.',
+      'Selain masjid ini, Kiara Artha Park juga punya musala di sisi utara, dekat Layana Hall dan titik start jogging track.',
+    ],
+    activities: ['Salat berjamaah', 'Wudu', 'Istirahat sejenak'],
+    tips: ['Menjelang magrib biasanya ramai; datang beberapa menit lebih awal.', 'Simpan alas kaki di tempat yang disediakan dan jaga kebersihan.'],
+    trigger_response: 'Info masjid dan arah; tampil sebagai hasil cepat saat mencari masjid/musala.',
+    hours: [{ days: DAILY, open: '04:00', close: '21:00' }],
+    best_times: ['pagi', 'siang', 'sore', 'malam'],
+    keywords: ['masjid', 'mesjid', 'al maleeq', 'al-maleeq', 'salat', 'sholat', 'shalat', 'jumat', 'wudu', 'ibadah'],
+    status_note: 'Koordinat diperkirakan dari Google Maps (belum ada di OpenStreetMap); validasi saat survei lapangan.',
   },
 ]
 
@@ -471,7 +520,7 @@ for (const [i, p] of pois.entries()) {
 const byId = Object.fromEntries(pois.map((p) => [p.id, p]))
 const at = (id) => [byId[id].lat, byId[id].lng]
 
-const t1Anchors = [at('P06'), at('P12'), ringPoint(60), at('P11'), at('P10'), at('P05'), at('P08'), ringPoint(180)]
+const t1Anchors = [at('P06'), at('P12'), ringPoint(60), at('P11'), [-6.9164994, 107.6428604], at('P05'), at('P08'), ringPoint(180)]
 const t1Path = smoothLoop(t1Anchors, 10)
 
 const t2Start = 135
@@ -527,10 +576,10 @@ for (const [i, t] of trails.entries()) {
 // ---------------------------------------------------------------------------
 const badges = [
   { id: 'B01', name: 'Langkah Pertama', description: 'Kumpulkan stempel pertama Anda.', poi_ids: [], min_count: 1, requires_trail: false, sort_order: 1 },
-  { id: 'B02', name: 'Penjelajah Danau', description: 'Kunjungi 4 spot di sekitar danau.', poi_ids: ['P03', 'P05', 'P10', 'P11'], min_count: 4, requires_trail: false, sort_order: 2 },
-  { id: 'B03', name: 'Pencicip Kuliner', description: 'Kunjungi area kuliner dan kafe.', poi_ids: ['P08', 'P09'], min_count: 2, requires_trail: false, sort_order: 3 },
+  { id: 'B02', name: 'Penjelajah Danau', description: 'Kunjungi 3 spot di sekitar danau.', poi_ids: ['P03', 'P05', 'P11'], min_count: 3, requires_trail: false, sort_order: 2 },
+  { id: 'B03', name: 'Pencicip Kuliner', description: 'Kunjungi 2 dari 3 area kuliner dan kafe.', poi_ids: ['P08', 'P09', 'P15'], min_count: 2, requires_trail: false, sort_order: 3 },
   { id: 'B04', name: 'Sahabat Sehat', description: 'Kunjungi 3 spot wellness dan selesaikan satu Wellness Trail.', poi_ids: ['P06', 'P07', 'P11'], min_count: 3, requires_trail: true, sort_order: 4 },
-  { id: 'B05', name: 'Penjelajah Sejati', description: 'Kumpulkan seluruh 12 stempel Kiara Artha Park.', poi_ids: pois.map((p) => p.id), min_count: 12, requires_trail: false, sort_order: 5 },
+  { id: 'B05', name: 'Penjelajah Sejati', description: `Kumpulkan seluruh ${pois.length} stempel Kiara Artha Park.`, poi_ids: pois.map((p) => p.id), min_count: pois.length, requires_trail: false, sort_order: 5 },
 ].map((b) => ({ ...b, kind: 'stamp' }))
 // Badge dari bintang kuis/misi, misi foto, dan kunjungan mingguan
 BADGE_INTERAKSI.forEach((b, i) => badges.push({ ...b, poi_ids: [], requires_trail: false, sort_order: 6 + i }))
@@ -552,7 +601,7 @@ for (let i = 0; i < pois.length; i++)
 // ---------------------------------------------------------------------------
 // Output JSON
 // ---------------------------------------------------------------------------
-const version = '2026-11-19'
+const version = '2026-11-24'
 const dataset = { version, park, categories, pois, trails, badges, faq, daily_challenges }
 mkdirSync(resolve(root, 'src/data'), { recursive: true })
 writeFileSync(resolve(root, 'src/data/poi.json'), JSON.stringify(dataset, null, 2) + '\n')
@@ -573,15 +622,17 @@ const TRIVIA_SOURCES = {
   P01: [['Orami (30 Sep 2024); Republika (24 Agu 2019)', true], ['Orami (2024); Republika (2019)', true]],
   P02: [['Orami (2024); Republika (2019)', true], ['detikJabar (Mar 2024)', true]],
   P03: [['Orami (30 Sep 2024)', true], ['Google Maps: Friendship Shake Hand Sculpture', true]],
-  P04: [['VIVA: Kiara Artha Park, Destinasi Wisata Bandung Ala Korea', true], ['Google Maps: Taman Asia Afrika - Kiara Artha Park', true]],
   P05: [['Sejarah KAA 1955 (Museum KAA) — perlu dicek tim', false], ['Pengamatan peta Google Maps', true]],
   P06: [['Orami (30 Sep 2024)', true], ['Asia Property Awards — profil Kiara Artha Park', true]],
   P07: [['Pemkot Bandung — BOSEH', true], ['detikJabar (Mar 2024)', true]],
   P08: [['Orami (30 Sep 2024)', true], ['Google Maps: Ludo Sports Kitchen and Coffee (16 Nov 2026)', true]],
   P09: [['Pengetahuan umum olahraga padel — perlu dicek tim', false], ['Pengetahuan umum olahraga padel — perlu dicek tim', false]],
-  P10: [['Ringkasan media (Orami 2024, Republika 2019)', false], ['Hitungan jarak koordinat Google Maps', true]],
   P11: [['Pengetahuan umum kesehatan — perlu dicek tim', false], ['Pengetahuan umum kesehatan — perlu dicek tim', false]],
   P12: [['Google Maps: Mushalla Kiara Artha Park', true], ['Google Maps: "Kamar Cai" dekat parkir — perlu dicek tim', false]],
+  P13: [['OpenStreetMap: halte Gerbang Utara Kiara Artha Park (24 Nov 2026)', true], ['Hitungan jarak koordinat peta', true]],
+  P14: [['OpenStreetMap: halte Gerbang Timur Kiara Artha Park (24 Nov 2026)', true], ['Orami (2024); Republika (2019)', true]],
+  P15: [['OpenStreetMap: tenan Jl. H. Ibrahim Adjie (24 Nov 2026)', true], ['Hitungan jarak koordinat peta', true]],
+  P16: [['Google Maps: Masjid Al-Maleeq (24 Nov 2026)', true], ['Google Maps: Mushalla Kiara Artha Park', true]],
 }
 
 // Keterangan foto yang perlu diambil tim (berkas diunggah ke bucket poi-media)
@@ -589,22 +640,24 @@ const PHOTO_CAPTIONS = {
   P01: ['Gerbang barat dari arah Jl. Banten', 'Papan peta zona taman di dekat gerbang'],
   P02: ['Pintu masuk area parkir', 'Jalur pejalan kaki dari parkir ke gerbang'],
   P03: ['Pertunjukan air mancur menari pada malam hari', 'Danau dan air mancur pada siang hari'],
-  P04: ['Bangunan bernuansa Korea', 'Detail ornamen dan tulisan Hangeul'],
   P05: ['Spot foto Taman Asia Afrika berlatar danau', 'Sudut foto menghadap air mancur'],
   P06: ['Titik start jogging track', 'Jalur lingkar Jl. Kiara Artha'],
   P07: ['Selter sepeda BOSEH', 'Sepeda dan skuter yang siap disewa'],
   P08: ['Kiara Pelangi Food Court', 'Deretan tenant kuliner'],
   P09: ['Lapangan padel semi-outdoor', 'Area kafe di sekitar lapangan'],
-  P10: ['Gerbang Lollipop Playland', 'Wahana bermain anak'],
   P11: ['Bangku teduh di bawah pepohonan', 'Kanopi pohon di sisi timur danau'],
   P12: ['Bangunan musala', 'Toilet umum dan tempat wudu'],
+  P13: ['Gerbang utara dari arah Jl. Jakarta', 'Jl. Kiara Artha Utara menuju lingkar taman'],
+  P14: ['Gerbang timur dari arah Jl. Ibrahim Adjie', 'Jalan masuk menuju Food Court 2'],
+  P15: ['Deretan tenan Food Court 2', 'Suasana makan malam di Food Court 2'],
+  P16: ['Tampak depan Masjid Al-Maleeq', 'Ruang salat dan tempat wudu'],
 }
 const estSeconds = (text) => Math.round(text.split(/\s+/).filter(Boolean).length / 2.6)
 
 const lines = []
 lines.push('-- SETARA — isi konten database (dibuat otomatis oleh scripts/build-data.mjs; jangan edit manual)')
 lines.push(`-- Versi dataset: ${version}. Mengganti data simulasi dengan data Kiara Artha Park (koordinat Google Maps).`)
-lines.push('-- Jalankan SETELAH migrasi 20261116000000_setara_lengkapi_skema.sql dan 20261119000000_setara_interaksi_dua_arah.sql')
+lines.push('-- Jalankan SETELAH migrasi 20261116000000_setara_lengkapi_skema.sql, 20261119000000_setara_interaksi_dua_arah.sql, dan 20261124000000_setara_akun_pengguna.sql')
 lines.push('begin;')
 lines.push('')
 lines.push(`insert into public.park_info (id, data, version) values ('kiara-artha', ${json(park)}, ${q(version)})`)
@@ -613,23 +666,25 @@ lines.push('')
 lines.push('-- Kategori (atribut tampilan)')
 for (const c of categories) lines.push(`update public.category set color = ${q(c.color)}, icon = ${q(c.icon)}, sort_order = ${c.sort_order} where id = ${q(c.id)};`)
 lines.push('')
-lines.push('-- POI: koordinat nyata, radius, konten')
+lines.push('-- POI: koordinat nyata, radius, konten (upsert: POI baru ikut dibuat)')
+const poiCols = ['id', 'name', 'short_name', 'category_id', 'zone', 'location', 'radius_m', 'description', 'trigger_response', 'qr_code', 'data_source',
+  'is_published', 'summary', 'narration', 'activities', 'tips', 'best_times', 'keywords', 'art', 'status_note', 'source_place', 'sort_order']
 for (const [i, p] of pois.entries()) {
+  const vals = [
+    q(p.id), q(p.name), q(p.short_name), q(p.category_id), q(p.location_label), geog(p.lat, p.lng), p.radius_m, q(p.description),
+    q(p.trigger_response), q('SETARA:POI:' + p.id), `'google_maps'`, 'true', q(p.summary), q(p.narration), arr(p.activities),
+    arr(p.tips), arr(p.best_times), arr(p.keywords), q(p.art), q(p.status_note), q(p.source), i + 1,
+  ]
   lines.push(
-    `update public.poi set ` +
-      [
-        `name = ${q(p.name)}`, `short_name = ${q(p.short_name)}`, `category_id = ${q(p.category_id)}`, `zone = ${q(p.location_label)}`,
-        `location = ${geog(p.lat, p.lng)}`, `radius_m = ${p.radius_m}`, `description = ${q(p.description)}`,
-        `trigger_response = ${q(p.trigger_response)}`, `qr_code = ${q('SETARA:POI:' + p.id)}`, `data_source = 'google_maps'`,
-        `is_published = true`, `summary = ${q(p.summary)}`, `narration = ${q(p.narration)}`, `activities = ${arr(p.activities)}`,
-        `tips = ${arr(p.tips)}`, `best_times = ${arr(p.best_times)}`, `keywords = ${arr(p.keywords)}`, `art = ${q(p.art)}`,
-        `status_note = ${q(p.status_note)}`, `source_place = ${q(p.source)}`, `sort_order = ${i + 1}`,
-      ].join(', ') +
-      ` where id = ${q(p.id)};`
+    `insert into public.poi (${poiCols.join(', ')}) values (${vals.join(', ')})\n` +
+      `  on conflict (id) do update set ${poiCols.slice(1).map((c) => `${c} = excluded.${c}`).join(', ')};`
   )
 }
+lines.push('-- POI yang sudah tidak ada di lapangan (mis. Kampung Korea, Lolipops Playland) disembunyikan, bukan dihapus,')
+lines.push('-- agar umpan balik lama yang merujuk ke POI tersebut tetap utuh.')
+lines.push(`update public.poi set is_published = false where id not in (${pois.map((p) => q(p.id)).join(', ')});`)
 lines.push('')
-lines.push('-- Kategori ganda (P09 = Kuliner & Olahraga)')
+lines.push('-- Kategori ganda (P09 = Kuliner & Wellness)')
 lines.push('delete from public.poi_category;')
 lines.push(
   'insert into public.poi_category (poi_id, category_id) values ' +
@@ -647,28 +702,31 @@ lines.push(
 )
 lines.push('')
 lines.push('-- Foto: path di bucket poi-media (unggah berkas dengan nama ini); keterangan = foto yang perlu diambil')
-for (const p of pois)
-  for (const k of [1, 2])
-    lines.push(
-      `update public.photo set file_path = ${q(`poi-media/foto/${p.id.toLowerCase()}_${k}.jpg`)}, caption = ${q(PHOTO_CAPTIONS[p.id][k - 1])} where poi_id = ${q(p.id)} and display_order = ${k};`
-    )
+lines.push(`delete from public.photo where poi_id in (${pois.map((p) => q(p.id)).join(', ')});`)
+lines.push('insert into public.photo (poi_id, file_path, caption, display_order) values')
+lines.push(
+  pois.flatMap((p) => [1, 2].map((k) => `  (${q(p.id)}, ${q(`poi-media/foto/${p.id.toLowerCase()}_${k}.jpg`)}, ${q(PHOTO_CAPTIONS[p.id][k - 1])}, ${k})`)).join(',\n') + ';'
+)
 lines.push('')
 lines.push('-- Audio narasi: path di bucket poi-media; durasi = estimasi naskah narasi (TTS dipakai sampai berkas diunggah)')
-for (const p of pois)
-  lines.push(`update public.audio set file_path = ${q(`poi-media/audio/${p.id.toLowerCase()}.mp3`)}, duration_seconds = ${estSeconds(p.narration)}, language_code = 'id' where poi_id = ${q(p.id)};`)
+lines.push(`delete from public.audio where poi_id in (${pois.map((p) => q(p.id)).join(', ')});`)
+lines.push('insert into public.audio (poi_id, file_path, duration_seconds, language_code) values')
+lines.push(pois.map((p) => `  (${q(p.id)}, ${q(`poi-media/audio/${p.id.toLowerCase()}.mp3`)}, ${estSeconds(p.narration)}, 'id')`).join(',\n') + ';')
 lines.push('')
 lines.push('-- Jam operasional per hari (0 = Minggu … 6 = Sabtu)')
-for (const p of pois) {
-  for (let d = 0; d < 7; d++) {
-    const rule = p.hours.find((h) => h.days.includes(d))
-    const note = p.status_note && /jam|Jadwal/i.test(p.status_note) ? p.status_note : 'Jam taman 07.00–21.00 (Google Maps/detikJabar 2024)'
-    lines.push(
-      rule
-        ? `update public.schedule set open_time = ${tq(rule.open)}, close_time = ${tq(rule.close)}, is_closed = false, notes = ${q(note)} where poi_id = ${q(p.id)} and day_of_week = ${d};`
-        : `update public.schedule set open_time = null, close_time = null, is_closed = true, notes = 'Tutup' where poi_id = ${q(p.id)} and day_of_week = ${d};`
+lines.push(`delete from public.schedule where poi_id in (${pois.map((p) => q(p.id)).join(', ')});`)
+lines.push('insert into public.schedule (poi_id, day_of_week, open_time, close_time, is_closed, notes) values')
+lines.push(
+  pois
+    .flatMap((p) =>
+      Array.from({ length: 7 }, (_, d) => {
+        const rule = p.hours.find((h) => h.days.includes(d))
+        const note = p.status_note && /jam|Jadwal/i.test(p.status_note) ? p.status_note : 'Jam taman 07.00–21.00 (Google Maps/detikJabar 2024)'
+        return rule ? `  (${q(p.id)}, ${d}, ${tq(rule.open)}, ${tq(rule.close)}, false, ${q(note)})` : `  (${q(p.id)}, ${d}, null, null, true, 'Tutup')`
+      })
     )
-  }
-}
+    .join(',\n') + ';'
+)
 lines.push('')
 lines.push('-- Jadwal atraksi')
 lines.push('delete from public.poi_event;')

@@ -60,7 +60,7 @@ async function stop() {
 }
 function submitManual() {
   const id = parsePoiCode(manual.value.length <= 3 ? `P${manual.value.replace(/\D/g, '').padStart(2, '0')}` : manual.value)
-  if (!id || !open(id)) manualErr.value = 'Kode tidak dikenal. Contoh: P04'
+  if (!id || !open(id)) manualErr.value = 'Kode tidak dikenal. Contoh: P05'
 }
 
 onMounted(start)
@@ -109,7 +109,7 @@ onBeforeUnmount(stop)
           list="poi-codes"
           inputmode="text"
           autocapitalize="characters"
-          placeholder="Kode spot, mis. P04"
+          placeholder="Kode spot, mis. P05"
           aria-label="Kode spot"
           class="min-h-12 min-w-0 flex-1 rounded-full border border-line px-4 text-[14px] outline-none focus:border-brand-500"
         />

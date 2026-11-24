@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-19",
+  "version": "2026-11-24",
   "park": {
     "name": "Kiara Artha Park",
     "city": "Bandung",
@@ -410,7 +410,7 @@
       "radius_m": 25,
       "art": "gate",
       "summary": "Gerbang utama di sisi Jl. Banten, titik awal menjelajah taman.",
-      "description": "Pintu masuk utama Kiara Artha Park berada di sisi barat, menghadap Jl. Banten. Dari sini jalur pejalan kaki mengarah ke lingkar Jl. Kiara Artha yang mengelilingi danau dan air mancur menari di tengah taman. Zona taman tersusun melingkar: area kuliner dan kafe di sisi selatan, danau dan air mancur di tengah, area bermain anak di sisi timur, serta jalur jogging dan musala di sisi utara.",
+      "description": "Pintu masuk utama Kiara Artha Park berada di sisi barat, menghadap Jl. Banten. Dari sini jalur pejalan kaki mengarah ke lingkar Jl. Kiara Artha yang mengelilingi danau dan air mancur menari di tengah taman. Zona taman tersusun melingkar: area kuliner dan kafe di sisi selatan, danau dan air mancur di tengah, Food Court 2 dan gerbang timur di sisi timur, serta jalur jogging, musala, dan gerbang utara di sisi utara. Masjid Al-Maleeq berada tidak jauh di utara gerbang ini.",
       "trivia": [
         "Kiara Artha Park diresmikan pada 17 Agustus 2019, bertepatan dengan HUT ke-74 Republik Indonesia.",
         "Taman ini terletak di antara flyover Antapani dan flyover Kiaracondong, di Kelurahan Kebonwaru, Kecamatan Batununggal."
@@ -418,7 +418,7 @@
       "activities": [
         "Peta ringkas zona taman",
         "Titik kumpul rombongan",
-        "Akses ke Selter BOSEH dan area parkir"
+        "Akses ke Selter BOSEH, area parkir, dan Masjid Al-Maleeq"
       ],
       "tips": [
         "Foto papan peta di gerbang sebagai cadangan bila baterai menipis.",
@@ -455,7 +455,7 @@
         "tiket"
       ],
       "status_note": null,
-      "narration": "Wilujeng sumping di Kiara Artha Park! Aku Kia, teman jelajahmu. Kamu sekarang di gerbang barat, sisi Jalan Banten. Taman ini diresmikan tanggal tujuh belas Agustus dua ribu sembilan belas, dan sekarang jadi salah satu ruang publik favorit warga Bandung. Tata letaknya melingkar, lho. Di tengah ada danau dengan air mancur menari. Di sisi utara ada titik start jogging track dan musala. Area bermain anak di sisi timur, dan area kuliner di sisi selatan. Ikuti jalur pejalan kaki ke timur untuk sampai di lingkar taman. Nanti aku sapa lagi setiap kamu dekat spot seru. Oh iya, di tiap spot ada kuis dan misi kecil. Kumpulkan bintangnya, ya!",
+      "narration": "Wilujeng sumping di Kiara Artha Park! Aku Kia, teman jelajahmu. Kamu sekarang di gerbang barat, sisi Jalan Banten. Taman ini diresmikan tanggal tujuh belas Agustus dua ribu sembilan belas, dan sekarang jadi salah satu ruang publik favorit warga Bandung. Tata letaknya melingkar, lho. Di tengah ada danau dengan air mancur menari. Di sisi utara ada titik start jogging track dan musala. Di sisi timur ada Food Court 2, dan area kuliner utama di sisi selatan. Ikuti jalur pejalan kaki ke timur untuk sampai di lingkar taman. Nanti aku sapa lagi setiap kamu dekat spot seru. Oh iya, di tiap spot ada kuis dan misi kecil. Kumpulkan bintangnya, ya!",
       "quiz": [
         {
           "q": "Kapan Kiara Artha Park diresmikan?",
@@ -707,92 +707,6 @@
       }
     },
     {
-      "id": "P04",
-      "name": "Area Tematik Asia",
-      "short_name": "Tematik Asia",
-      "category_id": "atraksi",
-      "location_label": "Zona bergaya Korea di sisi barat, dekat Jl. Banten",
-      "source": "Google Maps: \"KAMPUNG KOREA BANDUNG\"",
-      "lat": -6.9156793,
-      "lng": 107.6406188,
-      "radius_m": 30,
-      "art": "asia",
-      "summary": "Zona tematik bernuansa Asia, dikenal sebagai Kampung Korea.",
-      "description": "Zona tematik bergaya Asia berada di sisi barat taman, dekat Jl. Banten. Area ini dikenal sebagai Kampung Korea: deretan bangunan dan ornamen bernuansa Korea yang sejak awal menjadi magnet foto pengunjung dan membuat Kiara Artha Park dijuluki destinasi \"ala Korea\" di tengah Kota Bandung.",
-      "trivia": [
-        "Kiara Artha Park sempat dipromosikan media sebagai destinasi wisata Bandung ala Korea berkat Kampung Korea-nya (VIVA).",
-        "Selain zona Asia, taman ini punya Taman Asia Afrika di sisi selatan danau, yang namanya menggemakan Konferensi Asia Afrika 1955 di Bandung."
-      ],
-      "activities": [
-        "Berfoto dengan ornamen bernuansa Asia",
-        "Mendengarkan cerita budaya lewat narasi audio"
-      ],
-      "tips": [
-        "Cahaya terbaik untuk foto: pagi 08.00–10.00 saat matahari dari timur."
-      ],
-      "trigger_response": "Prompt suara, kartu informasi, dan stempel POI.",
-      "hours": [
-        {
-          "days": [
-            0,
-            1,
-            2,
-            3,
-            4,
-            5,
-            6
-          ],
-          "open": "07:00",
-          "close": "21:00"
-        }
-      ],
-      "best_times": [
-        "pagi",
-        "siang",
-        "sore"
-      ],
-      "keywords": [
-        "asia",
-        "korea",
-        "kampung korea",
-        "budaya",
-        "tematik",
-        "foto"
-      ],
-      "status_note": "Google Maps menandai \"Kampung Korea Bandung\" sebagai tutup permanen (diakses 16 Nov 2026). Konfirmasi kondisi area saat survei lapangan.",
-      "narration": "Kamu ada di Area Tematik Asia, sisi barat taman. Kawasan ini dikenal sebagai Kampung Korea. Waktu taman dibuka tahun dua ribu sembilan belas, deretan bangunan dan ornamen bernuansa Korea di sini langsung jadi magnet foto, sampai Kiara Artha Park dijuluki destinasi ala Korea di tengah Bandung. Sekarang Google Maps mencatat area ini tutup, jadi kita amati dari luar saja, ya. Perhatikan atap, warna, dan tulisan Hangeul-nya. Setelah ini, lanjut ke Taman Asia Afrika di sisi selatan danau, spot foto paling ikonik di taman.",
-      "quiz": [
-        {
-          "q": "Zona bernuansa Asia di sisi barat taman dikenal dengan julukan apa?",
-          "options": [
-            "Kampung Korea",
-            "Kampung Pecinan",
-            "Kampung Jepang",
-            "Little India"
-          ],
-          "answer": 0,
-          "explain": "Area ini dikenal sebagai Kampung Korea dan sempat membuat Kiara Artha Park dijuluki destinasi ala Korea."
-        },
-        {
-          "q": "Tulisan khas Korea yang menghiasi area ini disebut apa?",
-          "options": [
-            "Kanji",
-            "Aksara Sunda",
-            "Hangeul",
-            "Hiragana"
-          ],
-          "answer": 2,
-          "explain": "Hangeul adalah aksara Korea; tulisannya menghiasi ornamen di area ini."
-        }
-      ],
-      "mission": {
-        "type": "confirm",
-        "title": "Amati dari luar",
-        "prompt": "Google Maps mencatat area ini tutup. Dari luar, cari satu ornamen bernuansa Korea, misalnya atap atau tulisan Hangeul.",
-        "done_label": "Sudah kulihat!"
-      }
-    },
-    {
       "id": "P05",
       "name": "Spot Foto Ikonik: Taman Asia Afrika",
       "short_name": "Taman Asia Afrika",
@@ -853,9 +767,9 @@
           "q": "Konferensi Asia Afrika 1955 digelar di gedung apa di Bandung?",
           "options": [
             "Gedung Merdeka",
+            "Layana Hall",
             "Gedung Sate",
-            "Gedung Pakuan",
-            "Layana Hall"
+            "Gedung Pakuan"
           ],
           "answer": 0,
           "explain": "KAA digelar di Gedung Merdeka, Bandung, 18–24 April 1955."
@@ -863,12 +777,12 @@
         {
           "q": "Berapa negara yang hadir di Konferensi Asia Afrika 1955?",
           "options": [
-            "55 negara",
             "10 negara",
             "100 negara",
-            "29 negara"
+            "29 negara",
+            "55 negara"
           ],
-          "answer": 3,
+          "answer": 2,
           "explain": "Konferensi Asia Afrika 1955 dihadiri 29 negara."
         }
       ],
@@ -939,23 +853,23 @@
         {
           "q": "Kira-kira berapa panjang satu putaran jalur lingkar taman?",
           "options": [
-            "±5 km",
-            "±200 m",
+            "±750 m",
             "±2 km",
-            "±750 m"
+            "±200 m",
+            "±5 km"
           ],
-          "answer": 3,
+          "answer": 0,
           "explain": "Jalur lingkar Jl. Kiara Artha sekitar 750 meter per putaran."
         },
         {
           "q": "Acara lari apa yang pernah digelar di Kiara Artha Park?",
           "options": [
-            "Pocari Run 2025",
-            "Jakarta Marathon",
             "Borobudur Marathon",
-            "Tour de Bandung"
+            "Jakarta Marathon",
+            "Tour de Bandung",
+            "Pocari Run 2025"
           ],
-          "answer": 0,
+          "answer": 3,
           "explain": "Kiara Artha Park pernah menjadi tuan rumah acara lari Pocari Run 2025."
         }
       ],
@@ -1061,12 +975,12 @@
         {
           "q": "Berapa tarif resmi BOSEH untuk jam pertama?",
           "options": [
-            "Rp10.000",
             "Rp1.000",
+            "Rp10.000",
             "Rp30.000",
             "Rp50.000"
           ],
-          "answer": 1,
+          "answer": 0,
           "explain": "Tarif resmi BOSEH tercatat Rp1.000 untuk jam pertama dan Rp2.000 untuk jam berikutnya."
         }
       ],
@@ -1139,23 +1053,23 @@
         {
           "q": "Paket Kiara Pelangi Food Court Rp35.000 disebut sudah termasuk apa?",
           "options": [
-            "Tiket Lollipop Playland",
-            "Akses menonton air mancur menari",
+            "Tiket masuk taman",
+            "Parkir gratis",
             "Sewa sepeda satu jam",
-            "Parkir gratis"
+            "Akses menonton air mancur menari"
           ],
-          "answer": 1,
+          "answer": 3,
           "explain": "Paketnya disebut sudah termasuk akses menonton air mancur menari (Orami, 2024)."
         },
         {
           "q": "Kafe dekat area ini yang punya rating 4,8 dengan lebih dari seribu ulasan di Google Maps?",
           "options": [
-            "Ludo Sports Kitchen and Coffee",
             "Kopi Kiara",
-            "Lollipop Cafe",
-            "Padel Co."
+            "Ludo Sports Kitchen and Coffee",
+            "Padel Co.",
+            "Kopi Taman Kota"
           ],
-          "answer": 0,
+          "answer": 1,
           "explain": "Ludo Sports Kitchen and Coffee punya lebih dari seribu ulasan dengan rating 4,8."
         }
       ],
@@ -1228,12 +1142,12 @@
         {
           "q": "Di negara mana olahraga padel lahir?",
           "options": [
+            "Brasil",
             "Meksiko",
-            "Inggris",
             "Spanyol",
-            "Brasil"
+            "Inggris"
           ],
-          "answer": 0,
+          "answer": 1,
           "explain": "Padel lahir di Acapulco, Meksiko, pada 1969."
         },
         {
@@ -1241,8 +1155,8 @@
           "options": [
             "Bola boleh memantul ke dinding",
             "Dimainkan tanpa raket",
-            "Lapangan tanpa net",
-            "Dimainkan sendirian"
+            "Dimainkan sendirian",
+            "Lapangan tanpa net"
           ],
           "answer": 0,
           "explain": "Dalam padel, bola boleh memantul ke dinding kaca sebelum dipukul kembali."
@@ -1253,95 +1167,6 @@
         "title": "Tonton satu reli",
         "prompt": "Tonton pemain padel sampai satu reli selesai. Perhatikan bola yang memantul ke dinding kaca!",
         "done_label": "Sudah kutonton!"
-      }
-    },
-    {
-      "id": "P10",
-      "name": "Area Bermain Anak",
-      "short_name": "Area Bermain",
-      "category_id": "keluarga",
-      "location_label": "Lollipop Playland, sisi timur danau",
-      "source": "Google Maps: \"Lolipops Playland and Cafe\"",
-      "lat": -6.9164994,
-      "lng": 107.6428604,
-      "radius_m": 25,
-      "art": "playground",
-      "summary": "Lollipop Playland: wahana bermain anak dan kafe untuk pendamping.",
-      "description": "Lollipop Playland adalah area bermain anak di sisi timur danau, lengkap dengan kafe bagi orang tua dan pendamping. Lokasinya dekat Zona Relaksasi, sehingga pendamping bisa beristirahat di tempat teduh setelah anak-anak bermain.",
-      "trivia": [
-        "Lollipop Playland termasuk fasilitas yang paling sering disebut media saat membahas Kiara Artha Park, bersama air mancur menari dan Kampung Korea.",
-        "Area ini berada sekitar 80 meter dari air mancur, titik temu yang mudah diingat bila anggota keluarga terpisah."
-      ],
-      "activities": [
-        "Wahana bermain anak",
-        "Kafe untuk pendamping",
-        "Titik istirahat keluarga"
-      ],
-      "tips": [
-        "Sepakati titik temu (misalnya air mancur) bila anggota rombongan terpisah.",
-        "Cek ketentuan usia dan tinggi badan di loket wahana; bawa kaus kaki untuk area bermain indoor."
-      ],
-      "trigger_response": "Info wahana, batas usia, tips keamanan anak, dan fasilitas terdekat bagi pendamping.",
-      "hours": [
-        {
-          "days": [
-            0,
-            1,
-            2,
-            3,
-            4,
-            5,
-            6
-          ],
-          "open": "09:00",
-          "close": "21:00"
-        }
-      ],
-      "best_times": [
-        "pagi",
-        "siang",
-        "sore"
-      ],
-      "keywords": [
-        "anak",
-        "bermain",
-        "playground",
-        "lollipop",
-        "keluarga",
-        "wahana",
-        "balita"
-      ],
-      "status_note": "Jam operasional wahana perlu dikonfirmasi saat survei.",
-      "narration": "Halo keluarga! Kamu di dekat Lollipop Playland, area bermain anak di sisi timur danau. Anak-anak bisa main di berbagai wahana, sementara pendamping istirahat di kafe. Sebelum main, cek ketentuan usia dan tinggi badan di loket, dan siapkan kaus kaki untuk area bermain indoor. Biar aman, sepakati satu titik temu yang gampang diingat, misalnya air mancur di tengah danau, sekitar delapan puluh meter dari sini. Kalau mau istirahat, Zona Teduh ada di sebelah utara. Selamat bermain!",
-      "quiz": [
-        {
-          "q": "Kira-kira berapa jarak Lollipop Playland ke air mancur?",
-          "options": [
-            "±10 m",
-            "±1 km",
-            "±500 m",
-            "±80 m"
-          ],
-          "answer": 3,
-          "explain": "Area bermain ini sekitar 80 meter dari air mancur, titik temu yang mudah diingat."
-        },
-        {
-          "q": "Apa yang sebaiknya disepakati sebelum anak-anak bermain?",
-          "options": [
-            "Pulang masing-masing",
-            "Satu titik temu bila terpisah",
-            "Tidak perlu apa-apa",
-            "Bertemu di parkiran besok"
-          ],
-          "answer": 1,
-          "explain": "Sepakati satu titik temu, misalnya air mancur, bila anggota rombongan terpisah."
-        }
-      ],
-      "mission": {
-        "type": "confirm",
-        "title": "Sepakati titik temu",
-        "prompt": "Ajak rombonganmu menyepakati satu titik temu kalau terpisah, misalnya air mancur.",
-        "done_label": "Sudah sepakat!"
       }
     },
     {
@@ -1406,12 +1231,12 @@
         {
           "q": "Pola napas apa yang Kia ajak latih di Zona Teduh?",
           "options": [
-            "Tahan napas 1 menit",
+            "Tarik 4 hitungan, hembuskan 6",
             "Napas cepat 20 kali",
             "Tarik 10, tahan 10",
-            "Tarik 4 hitungan, hembuskan 6"
+            "Tahan napas 1 menit"
           ],
-          "answer": 3,
+          "answer": 0,
           "explain": "Menghembuskan napas lebih panjang (6) daripada menarik (4) membantu menenangkan detak jantung."
         },
         {
@@ -1534,7 +1359,6 @@
       "keywords": [
         "musala",
         "mushola",
-        "masjid",
         "salat",
         "sholat",
         "toilet",
@@ -1548,20 +1372,20 @@
         {
           "q": "Musala Kiara Artha Park berdekatan dengan gedung apa?",
           "options": [
+            "Padel Co.",
+            "Gedung Sate",
             "Gedung Merdeka",
-            "Lollipop Playland",
-            "Layana Hall",
-            "Padel Co."
+            "Layana Hall"
           ],
-          "answer": 2,
+          "answer": 3,
           "explain": "Musala ini tercatat di Google Maps berdekatan dengan Layana Hall."
         },
         {
           "q": "Selain di sini, di mana lagi toilet umum tersedia?",
           "options": [
-            "Tidak ada lagi",
-            "Sekitar area parkir sisi barat laut",
             "Di tengah danau",
+            "Sekitar area parkir sisi barat laut",
+            "Tidak ada lagi",
             "Di Taman Asia Afrika"
           ],
           "answer": 1,
@@ -1573,6 +1397,375 @@
         "title": "Jaga kebersihan",
         "prompt": "Simpan alas kaki di rak dan buang satu sampah yang kamu lihat ke tempatnya.",
         "done_label": "Sudah!"
+      }
+    },
+    {
+      "id": "P13",
+      "name": "Gerbang Utara Kiara Artha Park",
+      "short_name": "Gerbang Utara",
+      "category_id": "akses",
+      "location_label": "Sisi Jl. Jakarta, ujung Jl. Kiara Artha Utara",
+      "source": "OpenStreetMap: halte \"Gerbang Utara Kiara Artha Park\", Jl. Jakarta; Google Maps: Jl. Kiara Artha Utara",
+      "lat": -6.9142,
+      "lng": 107.64128,
+      "radius_m": 25,
+      "art": "gate",
+      "summary": "Pintu masuk dari Jl. Jakarta lewat Jl. Kiara Artha Utara, dekat halte bus.",
+      "description": "Gerbang utara menghubungkan Jl. Jakarta dengan taman melalui Jl. Kiara Artha Utara. Pengunjung yang turun di halte Gerbang Utara bisa berjalan lurus ke selatan sekitar 100 meter hingga tiba di lingkar Jl. Kiara Artha, dekat lapangan padel, titik start jogging track, serta musala dan toilet.",
+      "trivia": [
+        "Halte bus di depan gerbang ini bernama \"Gerbang Utara Kiara Artha Park\", sehingga mudah dijadikan patokan saat naik kendaraan umum.",
+        "Dari gerbang ini, titik start jogging track hanya sekitar 130 meter ke arah tenggara."
+      ],
+      "activities": [
+        "Masuk dari arah Jl. Jakarta",
+        "Turun dari bus di halte Gerbang Utara",
+        "Akses cepat ke jogging track dan area padel"
+      ],
+      "tips": [
+        "Menyeberang Jl. Jakarta lewat zebra cross dan tetap waspada; lalu lintasnya ramai.",
+        "Lanjut lurus ke selatan untuk tiba di lingkar taman."
+      ],
+      "trigger_response": "Sambutan, arah ke lingkar taman, dan spot terdekat dari sisi utara.",
+      "hours": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "07:00",
+          "close": "21:00"
+        }
+      ],
+      "best_times": [
+        "pagi",
+        "siang",
+        "sore",
+        "malam"
+      ],
+      "keywords": [
+        "gerbang",
+        "gerbang utara",
+        "pintu",
+        "masuk",
+        "jl jakarta",
+        "halte",
+        "bus",
+        "kiara artha utara"
+      ],
+      "status_note": "Titik gerbang ditentukan dari peta; validasi saat survei lapangan.",
+      "narration": "Halo, selamat datang dari sisi utara! Kamu di Gerbang Utara, dekat halte bus di Jalan Jakarta. Jalan lurus saja ke selatan lewat Jalan Kiara Artha Utara, kira-kira seratus meter, sampai ketemu lingkar taman. Di sana ada lapangan padel, titik start jogging track, juga musala dan toilet. Hati-hati menyeberang, ya, Jalan Jakarta ramai. Begitu sampai di lingkar taman, aku sapa lagi. Misi pertamamu: hitung berapa langkah sampai ke lingkar taman!",
+      "quiz": [
+        {
+          "q": "Gerbang Utara menghadap jalan apa?",
+          "options": [
+            "Jl. Asia Afrika",
+            "Jl. Ibrahim Adjie",
+            "Jl. Banten",
+            "Jl. Jakarta"
+          ],
+          "answer": 3,
+          "explain": "Gerbang Utara ada di sisi Jl. Jakarta, terhubung ke taman lewat Jl. Kiara Artha Utara."
+        },
+        {
+          "q": "Dari Gerbang Utara, ke arah mana lingkar taman?",
+          "options": [
+            "Lurus ke selatan, ±100 m",
+            "Ke utara, ±1 km",
+            "Ke barat, ±500 m",
+            "Menyeberang Jl. Jakarta"
+          ],
+          "answer": 0,
+          "explain": "Ikuti Jl. Kiara Artha Utara lurus ke selatan sekitar 100 meter."
+        }
+      ],
+      "mission": {
+        "type": "confirm",
+        "title": "Hitung langkahmu",
+        "prompt": "Hitung langkahmu dari gerbang sampai lingkar taman. Lebih atau kurang dari 150 langkah?",
+        "done_label": "Sudah kuhitung!"
+      }
+    },
+    {
+      "id": "P14",
+      "name": "Gerbang Timur Kiara Artha Park",
+      "short_name": "Gerbang Timur",
+      "category_id": "akses",
+      "location_label": "Sisi Jl. H. Ibrahim Adjie (Kiaracondong)",
+      "source": "OpenStreetMap: halte \"Gerbang Timur Kiara Artha Park\", Jl. H. Ibrahim Adjie",
+      "lat": -6.91615,
+      "lng": 107.6437,
+      "radius_m": 25,
+      "art": "gate",
+      "summary": "Pintu masuk dari Jl. Ibrahim Adjie, tepat di samping Food Court 2.",
+      "description": "Gerbang timur berada di sisi Jl. H. Ibrahim Adjie (Kiaracondong), terhubung ke lingkar taman lewat dua ruas Jl. Kiara Artha. Tepat di sebelah selatannya ada Food Court 2 dengan deretan kafe dan resto, sementara Zona Teduh dan danau berada sekitar 60–150 meter ke arah barat.",
+      "trivia": [
+        "Halte bus di depan gerbang ini bernama \"Gerbang Timur Kiara Artha Park\" dan berada di jalur Jl. Ibrahim Adjie yang ramai.",
+        "Kiara Artha Park terletak di antara flyover Antapani dan flyover Kiaracondong; gerbang timur adalah sisi yang menghadap Kiaracondong."
+      ],
+      "activities": [
+        "Masuk dari arah Jl. Ibrahim Adjie",
+        "Turun dari bus di halte Gerbang Timur",
+        "Akses cepat ke Food Court 2"
+      ],
+      "tips": [
+        "Jl. Ibrahim Adjie padat pada jam sibuk; menyeberanglah di titik penyeberangan.",
+        "Belok kiri (selatan) untuk Food Court 2, lurus ke barat untuk danau."
+      ],
+      "trigger_response": "Sambutan, arah ke danau, dan info Food Court 2 di sebelahnya.",
+      "hours": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "07:00",
+          "close": "21:00"
+        }
+      ],
+      "best_times": [
+        "pagi",
+        "siang",
+        "sore",
+        "malam"
+      ],
+      "keywords": [
+        "gerbang",
+        "gerbang timur",
+        "pintu",
+        "masuk",
+        "ibrahim adjie",
+        "kiaracondong",
+        "halte",
+        "bus"
+      ],
+      "status_note": "Titik gerbang ditentukan dari peta; validasi saat survei lapangan.",
+      "narration": "Wilujeng sumping dari sisi timur! Kamu di Gerbang Timur, menghadap Jalan Ibrahim Adjie, arah Kiaracondong. Tepat di sebelah selatanmu ada Food Court 2, deretan kafe dan resto kayak Steak Ranjang dan Pang Waffle. Kalau lurus ke barat, kamu ketemu Zona Teduh lalu danau dengan air mancur menari. Malam hari, pertunjukannya mulai jam setengah tujuh. Oh iya, halte bus di depan gerbang ini namanya juga Gerbang Timur, jadi gampang dijadikan patokan pulang. Yuk, masuk pelan-pelan dan nikmati tamannya!",
+      "quiz": [
+        {
+          "q": "Gerbang Timur menghadap jalan apa?",
+          "options": [
+            "Jl. Jakarta",
+            "Jl. Banten",
+            "Jl. H. Ibrahim Adjie",
+            "Jl. Pasirkoja"
+          ],
+          "answer": 2,
+          "explain": "Gerbang Timur ada di sisi Jl. H. Ibrahim Adjie, arah Kiaracondong."
+        },
+        {
+          "q": "Spot apa yang tepat berada di sebelah selatan Gerbang Timur?",
+          "options": [
+            "Taman Asia Afrika",
+            "Food Court 2",
+            "Selter BOSEH",
+            "Area parkir"
+          ],
+          "answer": 1,
+          "explain": "Food Court 2 dengan deretan kafe dan resto ada tepat di sebelah selatan gerbang."
+        }
+      ],
+      "mission": {
+        "type": "confirm",
+        "title": "Cari papan nama",
+        "prompt": "Temukan papan nama atau tulisan Kiara Artha Park di sekitar gerbang timur.",
+        "done_label": "Ketemu!"
+      }
+    },
+    {
+      "id": "P15",
+      "name": "Food Court 2: Deretan Kafe Sisi Timur",
+      "short_name": "Food Court 2",
+      "category_id": "kuliner",
+      "location_label": "Bangunan sisi timur, antara lingkar taman dan Jl. Ibrahim Adjie",
+      "source": "OpenStreetMap: Steak Ranjang, Siloka, Pang Waffle, RD Coffee & Eatery (Jl. H. Ibrahim Adjie)",
+      "lat": -6.91649,
+      "lng": 107.64351,
+      "radius_m": 30,
+      "art": "food",
+      "summary": "Food court kedua: Steak Ranjang, Siloka, Pang Waffle, dan RD Coffee & Eatery.",
+      "description": "Food court kedua berada di bangunan memanjang sisi timur taman, di antara lingkar Jl. Kiara Artha dan Jl. Ibrahim Adjie. Deretan tenannya dari utara ke selatan antara lain Steak Ranjang, Siloka, Pang Waffle, dan RD Coffee & Eatery: pilihan steak, jajanan manis, sampai kopi. Cocok untuk makan setelah jogging atau sambil menunggu air mancur menari di malam hari.",
+      "trivia": [
+        "Urutan tenan dari utara ke selatan: Steak Ranjang, Siloka, Pang Waffle, lalu RD Coffee & Eatery (OpenStreetMap, 2026).",
+        "Dari sini danau dan air mancur menari hanya sekitar 140 meter ke arah barat."
+      ],
+      "activities": [
+        "Makan steak, waffle, atau jajanan",
+        "Ngopi di kafe",
+        "Istirahat setelah jogging"
+      ],
+      "tips": [
+        "Jam buka tiap tenan berbeda; cek papan di depan tenan.",
+        "Akhir pekan malam ramai; datang sebelum pukul 18.00 bila ingin menonton air mancur setelah makan."
+      ],
+      "trigger_response": "Info tenan, jam buka, dan arah ke danau setelah makan.",
+      "hours": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "10:00",
+          "close": "22:00"
+        }
+      ],
+      "best_times": [
+        "siang",
+        "sore",
+        "malam"
+      ],
+      "keywords": [
+        "makan",
+        "kuliner",
+        "food court",
+        "food court 2",
+        "steak",
+        "steak ranjang",
+        "siloka",
+        "waffle",
+        "pang waffle",
+        "rd coffee",
+        "kopi",
+        "kafe",
+        "jajan"
+      ],
+      "status_note": "Jam buka tenan bervariasi; konfirmasi saat survei.",
+      "narration": "Kamu tiba di Food Court 2, sisi timur taman! Di bangunan memanjang ini ada Steak Ranjang, Siloka, Pang Waffle, dan RD Coffee and Eatery. Mau makan berat, jajan manis, atau sekadar ngopi, semuanya ada. Jam buka tiap tenan beda-beda, jadi cek papan di depannya, ya. Habis makan, jalan ke barat sekitar seratus empat puluh meter untuk sampai di danau. Pas banget kalau mau nonton air mancur menari malam nanti!",
+      "quiz": [
+        {
+          "q": "Tenan mana yang ada di Food Court 2?",
+          "options": [
+            "Steak Ranjang",
+            "Kiara Pelangi",
+            "Ludo Sports Kitchen",
+            "Padel Co."
+          ],
+          "answer": 0,
+          "explain": "Food Court 2 berisi Steak Ranjang, Siloka, Pang Waffle, dan RD Coffee & Eatery."
+        },
+        {
+          "q": "Kira-kira berapa jarak Food Court 2 ke danau?",
+          "options": [
+            "±10 m",
+            "±140 m",
+            "±600 m",
+            "±1 km"
+          ],
+          "answer": 1,
+          "explain": "Danau dan air mancur sekitar 140 meter ke arah barat dari sini."
+        }
+      ],
+      "mission": {
+        "type": "photo",
+        "title": "Foto menu Food Court 2",
+        "prompt": "Foto menu atau tenan favoritmu di Food Court 2."
+      }
+    },
+    {
+      "id": "P16",
+      "name": "Masjid Al-Maleeq",
+      "short_name": "Masjid Al-Maleeq",
+      "category_id": "fasilitas",
+      "location_label": "Sisi barat, di pojok deretan toko dekat Jl. Banten",
+      "source": "Google Maps: \"Masjid Al-Maleeq\" (diakses 24 Nov 2026)",
+      "lat": -6.916,
+      "lng": 107.64066,
+      "radius_m": 20,
+      "art": "musala",
+      "summary": "Masjid di sisi barat taman, dekat Jl. Banten dan Pintu Utama.",
+      "description": "Masjid Al-Maleeq berada di sisi barat kawasan Kiara Artha, di pojok deretan toko dekat Jl. Banten dan tidak jauh dari Pintu Utama. Pengunjung yang masuk dari gerbang barat atau area parkir bisa salat di sini; untuk sisi utara taman tersedia juga musala dan toilet dekat Layana Hall.",
+      "trivia": [
+        "Google Maps mencatat lokasi masjid ini berada di pojok deretan bangunan, dekat Jl. Banten.",
+        "Selain masjid ini, Kiara Artha Park juga punya musala di sisi utara, dekat Layana Hall dan titik start jogging track."
+      ],
+      "activities": [
+        "Salat berjamaah",
+        "Wudu",
+        "Istirahat sejenak"
+      ],
+      "tips": [
+        "Menjelang magrib biasanya ramai; datang beberapa menit lebih awal.",
+        "Simpan alas kaki di tempat yang disediakan dan jaga kebersihan."
+      ],
+      "trigger_response": "Info masjid dan arah; tampil sebagai hasil cepat saat mencari masjid/musala.",
+      "hours": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "04:00",
+          "close": "21:00"
+        }
+      ],
+      "best_times": [
+        "pagi",
+        "siang",
+        "sore",
+        "malam"
+      ],
+      "keywords": [
+        "masjid",
+        "mesjid",
+        "al maleeq",
+        "al-maleeq",
+        "salat",
+        "sholat",
+        "shalat",
+        "jumat",
+        "wudu",
+        "ibadah"
+      ],
+      "status_note": "Koordinat diperkirakan dari Google Maps (belum ada di OpenStreetMap); validasi saat survei lapangan.",
+      "narration": "Assalamualaikum! Kamu di dekat Masjid Al-Maleeq, di sisi barat kawasan Kiara Artha, dekat Jalan Banten. Kalau sudah masuk waktu salat, kamu bisa beribadah di sini sebelum lanjut menjelajah. Simpan alas kaki di tempatnya dan jaga kebersihan, ya. Kalau sedang di sisi utara taman, ada juga musala dekat Layana Hall. Menjelang magrib biasanya ramai, jadi datang sedikit lebih awal. Setelah salat, Pintu Utama dan Selter BOSEH ada tidak jauh di sebelah selatan dan timur, siap jadi titik awal jelajahmu berikutnya.",
+      "quiz": [
+        {
+          "q": "Masjid Al-Maleeq berada di sisi mana kawasan Kiara Artha?",
+          "options": [
+            "Barat, dekat Jl. Banten",
+            "Timur, dekat Jl. Ibrahim Adjie",
+            "Di tengah danau",
+            "Selatan, di Kiara Pelangi"
+          ],
+          "answer": 0,
+          "explain": "Masjid Al-Maleeq ada di sisi barat, di pojok deretan toko dekat Jl. Banten."
+        },
+        {
+          "q": "Selain masjid ini, di mana lagi bisa salat di taman?",
+          "options": [
+            "Selter BOSEH",
+            "Food Court 2",
+            "Musala dekat Layana Hall",
+            "Lapangan padel"
+          ],
+          "answer": 2,
+          "explain": "Ada musala di sisi utara taman, dekat Layana Hall dan titik start jogging track."
+        }
+      ],
+      "mission": {
+        "type": "confirm",
+        "title": "Rapikan alas kaki",
+        "prompt": "Simpan alas kakimu dengan rapi di tempat yang disediakan, lalu bantu rapikan satu pasang lainnya.",
+        "done_label": "Sudah rapi!"
       }
     }
   ],
@@ -2402,14 +2595,13 @@
     {
       "id": "B02",
       "name": "Penjelajah Danau",
-      "description": "Kunjungi 4 spot di sekitar danau.",
+      "description": "Kunjungi 3 spot di sekitar danau.",
       "poi_ids": [
         "P03",
         "P05",
-        "P10",
         "P11"
       ],
-      "min_count": 4,
+      "min_count": 3,
       "requires_trail": false,
       "sort_order": 2,
       "kind": "stamp"
@@ -2417,10 +2609,11 @@
     {
       "id": "B03",
       "name": "Pencicip Kuliner",
-      "description": "Kunjungi area kuliner dan kafe.",
+      "description": "Kunjungi 2 dari 3 area kuliner dan kafe.",
       "poi_ids": [
         "P08",
-        "P09"
+        "P09",
+        "P15"
       ],
       "min_count": 2,
       "requires_trail": false,
@@ -2444,22 +2637,24 @@
     {
       "id": "B05",
       "name": "Penjelajah Sejati",
-      "description": "Kumpulkan seluruh 12 stempel Kiara Artha Park.",
+      "description": "Kumpulkan seluruh 14 stempel Kiara Artha Park.",
       "poi_ids": [
         "P01",
         "P02",
         "P03",
-        "P04",
         "P05",
         "P06",
         "P07",
         "P08",
         "P09",
-        "P10",
         "P11",
-        "P12"
+        "P12",
+        "P13",
+        "P14",
+        "P15",
+        "P16"
       ],
-      "min_count": 12,
+      "min_count": 14,
       "requires_trail": false,
       "sort_order": 5,
       "kind": "stamp"
@@ -2601,15 +2796,16 @@
       "sort_order": 7
     },
     {
-      "id": "anak",
+      "id": "masjid",
       "patterns": [
-        "usia anak",
-        "tinggi badan",
-        "kaus kaki",
-        "wahana anak"
+        "salat jumat",
+        "jumatan",
+        "masjid besar",
+        "al maleeq",
+        "al-maleeq"
       ],
-      "answer": "Cek ketentuan usia dan tinggi badan di loket Lollipop Playland, dan bawa kaus kaki untuk area bermain indoor.",
-      "poi_id": "P10",
+      "answer": "Untuk salat, ada Masjid Al-Maleeq di sisi barat dekat Jl. Banten dan Pintu Utama, serta musala dekat Layana Hall di sisi utara taman.",
+      "poi_id": "P16",
       "sort_order": 8
     },
     {

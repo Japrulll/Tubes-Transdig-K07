@@ -27,16 +27,15 @@ const QUESTION = ['apa', 'apakah', 'kapan', 'berapa', 'dimana', 'di mana', 'mana
 
 const FACILITY = [
   { words: ['toilet', 'wc', 'kamar mandi', 'kamar kecil', 'buang air'], poi: 'P12', label: 'toilet', extra: 'Toilet lain ada di sekitar area parkir sisi barat laut.' },
-  { words: ['musala', 'mushola', 'mushala', 'musholla', 'masjid', 'salat', 'sholat', 'shalat', 'wudu', 'wudhu', 'solat'], poi: 'P12', label: 'musala' },
+  { words: ['musala', 'mushola', 'mushala', 'musholla', 'masjid', 'salat', 'sholat', 'shalat', 'wudu', 'wudhu', 'solat', 'jumatan'], poi: ['P12', 'P16'], label: 'musala & masjid' },
   { words: ['parkir', 'parkiran', 'mobil', 'motor'], poi: 'P02', label: 'area parkir' },
-  { words: ['makan', 'kuliner', 'jajan', 'food court', 'restoran', 'lapar', 'minum', 'kafe', 'cafe', 'kopi', 'ngopi', 'haus'], poi: ['P08', 'P09'], label: 'tempat makan & minum' },
+  { words: ['makan', 'kuliner', 'jajan', 'food court', 'restoran', 'lapar', 'minum', 'kafe', 'cafe', 'kopi', 'ngopi', 'haus', 'steak', 'waffle'], poi: ['P08', 'P15', 'P09'], label: 'tempat makan & minum' },
   { words: ['sepeda', 'boseh', 'skuter', 'bersepeda'], poi: 'P07', label: 'sewa sepeda' },
-  { words: ['main anak', 'bermain', 'playground', 'wahana', 'anak anak', 'anak', 'balita'], poi: 'P10', label: 'area bermain anak' },
   { words: ['teduh', 'istirahat', 'duduk', 'adem', 'rehat', 'capek', 'lelah'], poi: 'P11', label: 'tempat teduh' },
   { words: ['spot foto', 'foto', 'instagramable', 'selfie', 'foto foto'], poi: 'P05', label: 'spot foto ikonik' },
   { words: ['jogging', 'lari', 'olahraga', 'joging'], poi: 'P06', label: 'titik start jogging' },
   { words: ['padel', 'raket'], poi: 'P09', label: 'lapangan padel' },
-  { words: ['pintu', 'gerbang', 'pintu keluar', 'pintu masuk', 'keluar'], poi: 'P01', label: 'pintu utama' },
+  { words: ['pintu', 'gerbang', 'pintu keluar', 'pintu masuk', 'keluar'], poi: ['P01', 'P13', 'P14'], label: 'gerbang' },
 ]
 
 function distanceText(p) {

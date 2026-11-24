@@ -47,7 +47,12 @@ function useQr() {
 
 <template>
   <main class="safe-top safe-bottom flex flex-col overflow-y-auto bg-white" @touchstart.passive="onTouchStart" @touchend="onTouchEnd">
-    <div class="flex flex-1 flex-col px-5 pt-4">
+    <div class="flex items-center justify-between px-2 pt-2">
+      <button class="icon-btn" aria-label="Kembali ke Beranda" @click="router.push('/home')"><Icon name="chevron-left" :size="24" /></button>
+      <span class="text-[12px] font-bold text-subtle">{{ slide + 1 }} / {{ slides }}</span>
+      <span class="w-11" />
+    </div>
+    <div class="flex flex-1 flex-col px-5 pt-1">
       <!-- Slide 1: sambutan + alasan lokasi -->
       <section v-if="slide === 0" class="flex flex-1 flex-col">
         <div class="relative overflow-hidden rounded-[1.75rem]">
@@ -59,7 +64,7 @@ function useQr() {
         </div>
         <p class="eyebrow mt-6">Teman jelajah tamanmu</p>
         <h1 class="mt-2 text-[32px] font-medium leading-[1.12] tracking-tight text-ink">
-          Selamat datang<br />di <span class="text-brand-500">SETARA</span>
+          Kenalan dulu<br />dengan <span class="text-brand-500">Kia</span>
         </h1>
         <p class="mt-3 text-[14px] leading-relaxed text-muted">
           Aku Kia, tunas pohon kiara. Aku menyapamu setiap kamu dekat spot seru di Kiara Artha Park, dan kamu bisa bertanya apa saja kepadaku.
@@ -116,8 +121,8 @@ function useQr() {
         <div class="mt-5 flex gap-3 rounded-2xl border border-brand-100 bg-brand-50/60 p-4">
           <span class="grid size-11 shrink-0 place-items-center rounded-2xl bg-brand-100 text-brand-700"><Icon name="shield" :size="22" /></span>
           <p class="text-[12px] leading-relaxed text-muted">
-            <span class="block text-[14px] font-bold text-ink">Tersimpan di ponselmu</span>
-            Stempel, bintang, dan foto misi tidak dikirim ke server. Aplikasi tetap berjalan tanpa internet.
+            <span class="block text-[14px] font-bold text-ink">Tersimpan aman</span>
+            Stempel, bintang, dan foto misi disimpan di ponsel. Kalau kamu masuk akun, stempel dan bintang ikut tersimpan ke akunmu (foto tidak). Aplikasi tetap berjalan tanpa internet.
           </p>
         </div>
       </section>
