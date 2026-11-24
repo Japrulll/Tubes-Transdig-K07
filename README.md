@@ -44,7 +44,7 @@ Layar tambahan untuk tim: **Log Trigger & Uji** (jarak ke tiap POI, waktu fix GP
 
 - **Beranda (`#/home`)** adalah titik masuk setiap kali aplikasi dibuka dari awal (tab/aplikasi baru). Pertimbangannya dari sisi pengguna: kunjungan ke taman biasanya berjarak hari, jadi saat membuka aplikasi lagi pengguna disambut, melihat status akun & progres, lalu satu ketukan "Lanjut Jelajah" ke peta (atau "Lanjutkan trail" bila Wellness Trail sedang berjalan). Muat ulang di tab yang sama tetap di halaman yang sama, dan tautan QR (`#/qr/P05`) tetap langsung membuka spotnya.
 - **Masuk**: Google (OAuth, alur PKCE agar cocok dengan router hash) atau email + kata sandi (daftar, masuk, lupa kata sandi). Tanpa akun aplikasi tetap berjalan penuh (mode tamu).
-- **Sinkronisasi**: saat masuk, progres tamu di ponsel **digabung** dengan progres akun (stempel digabung, XP diambil yang tertinggi, bintang per spot digabung), lalu setiap perubahan disimpan otomatis (jeda 2,5 detik; antre saat offline). Disimpan di tabel `user_progress` (RLS: hanya pemilik). Selama migrasi belum dijalankan, progres sementara disimpan di `user_metadata` akun.
+- **Sinkronisasi**: saat masuk, progres tamu di ponsel **digabung** dengan progres akun (stempel digabung, XP diambil yang tertinggi, bintang per spot digabung), lalu setiap perubahan disimpan otomatis (jeda 2,5 detik; antre saat offline). Disimpan di tabel `setara_progress` (RLS: hanya pemilik). Selama migrasi belum dijalankan, progres sementara disimpan di `user_metadata` akun.
 - **Keluar**: dari Beranda atau menu samping. Progres disimpan dulu, lalu ponsel kembali ke mode tamu. Lokasi GPS dan foto Jurnal **tidak pernah** disinkronkan; umpan balik anonim tetap memakai klien tanpa sesi.
 
 **Langkah di Supabase Dashboard (sekali saja):**
@@ -131,7 +131,7 @@ P04 (Area Tematik Asia / Kampung Korea) dan P10 (Area Bermain Anak / Lolipops Pl
 | 1.2 | 19 Nov 2026 | Interaksi dua arah: maskot Kia, kuis/misi/nilai per spot, bintang & XP, Tanya Kia offline, Tantangan Hari Ini, kunjungan mingguan, pengingat APK, umpan balik anonim, Jurnal Kunjungan | Pengunjung terdorong aktif menggunakan aplikasi, bukan hanya mendengar |
 | 1.2 | 19 Nov 2026 | Narasi & panduan trail memakai suara Kia (aku–kamu, sapaan Sunda) | Konsisten dengan karakter maskot |
 | 1.2 | 19 Nov 2026 | Foto dibundel di aplikasi lewat `npm run media`; belum ada foto berlisensi terbuka untuk 12 spot | Foto web yang ada berhak cipta; tim akan menyediakan foto sendiri |
-| 1.3 | 24 Nov 2026 | Akun pengguna: masuk Google/email, progres tersinkron per pengguna (`user_progress`, RLS), keluar akun | Progres tidak hilang saat ganti ponsel; data pengguna tersimpan di akunnya |
+| 1.3 | 24 Nov 2026 | Akun pengguna: masuk Google/email, progres tersinkron per pengguna (`setara_progress`, RLS), keluar akun | Progres tidak hilang saat ganti ponsel; data pengguna tersimpan di akunnya |
 | 1.3 | 24 Nov 2026 | Beranda "Selamat datang di SETARA" jadi titik masuk saat aplikasi dibuka; menu Beranda & Keluar di menu samping | Pengguna kembali ke halaman utama, lalu satu ketukan ke peta |
 | 1.3 | 24 Nov 2026 | Hapus P04 Kampung Korea & P10 Lolipops; tambah P13 Gerbang Utara, P14 Gerbang Timur, P15 Food Court 2, P16 Masjid Al-Maleeq; badge B02/B03/B05 disesuaikan | Kondisi lapangan terbaru (Kampung Korea & Lolipops sudah tidak ada) |
 | 1.3 | 24 Nov 2026 | Koordinat P16 diperkirakan (belum ada di OSM) | Validasi saat survei lapangan |

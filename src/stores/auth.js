@@ -3,7 +3,7 @@
 // - Tanpa login aplikasi tetap berjalan penuh (mode tamu, progres hanya di ponsel).
 // - Setelah login, progres tamu di ponsel DIGABUNG dengan progres akun, lalu setiap perubahan
 //   (stempel, bintang/XP, riwayat kunjungan, trail, preferensi) disimpan ke akun.
-// - Penyimpanan akun: tabel public.user_progress (RLS: hanya pemilik). Bila migrasi
+// - Penyimpanan akun: tabel public.setara_progress (RLS: hanya pemilik). Bila migrasi
 //   20261124000000_setara_akun_pengguna.sql belum dijalankan, progres sementara disimpan di
 //   user_metadata akun agar fitur tetap bekerja.
 // - Lokasi GPS dan foto Jurnal TIDAK pernah ikut disinkronkan.
@@ -324,7 +324,7 @@ const missingTable = (e) => ['PGRST205', '42P01', 'PGRST106'].includes(e?.code) 
 
 async function remoteGet(sb) {
   if (auth.sync.backend !== 'metadata') {
-    const { data, error } = await sb.from('user_progress').select('data').eq('user_id', auth.user.id).maybeSingle()
+    const { data, error } = await sb.from('setara_progress').select('data').eq('user_id', auth.user.id).maybeSingle()
     if (!error) {
       auth.sync.backend = 'table'
       return data?.data || null
@@ -339,7 +339,7 @@ async function remoteGet(sb) {
 
 async function remotePut(sb) {
   if (auth.sync.backend === 'table') {
-    const { error } = await sb.from('user_progress').upsert({
+    const { error } = await sb.from('setara_progress').upsert({
       user_id: auth.user.id,
       display_name: profile.value?.name || null,
       data: snapshot(),
