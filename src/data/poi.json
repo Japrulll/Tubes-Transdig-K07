@@ -460,23 +460,23 @@
         {
           "q": "Kapan Kiara Artha Park diresmikan?",
           "options": [
-            "17 Agustus 2019",
             "24 April 2019",
+            "17 Agustus 2019",
             "1 Januari 2020",
             "17 Agustus 2015"
           ],
-          "answer": 0,
+          "answer": 1,
           "explain": "Taman ini diresmikan 17 Agustus 2019, bertepatan dengan HUT ke-74 Republik Indonesia."
         },
         {
           "q": "Kiara Artha Park berada di antara dua flyover. Flyover apa saja?",
           "options": [
             "Pelangi dan Pasupati",
+            "Antapani dan Kiaracondong",
             "Pasupati dan Cimindi",
-            "Cimindi dan Antapani",
-            "Antapani dan Kiaracondong"
+            "Cimindi dan Antapani"
           ],
-          "answer": 3,
+          "answer": 1,
           "explain": "Taman ini terletak di antara flyover Antapani dan flyover Kiaracondong, Kelurahan Kebonwaru."
         }
       ],
@@ -547,20 +547,20 @@
         {
           "q": "Berapa tiket masuk per orang menurut detikJabar (2024)?",
           "options": [
-            "Gratis",
             "Rp5.000",
             "Rp10.000",
+            "Gratis",
             "Rp25.000"
           ],
-          "answer": 2,
+          "answer": 1,
           "explain": "Tiket tercatat Rp10.000 per orang, hari kerja maupun akhir pekan. Cek lagi di loket karena harga bisa berubah."
         },
         {
           "q": "Dari gerbang parkir, ke arah mana Pintu Utama?",
           "options": [
             "Utara, sekitar 300 m",
-            "Timur, sekitar 500 m",
             "Di seberang Jl. Banten",
+            "Timur, sekitar 500 m",
             "Selatan, sekitar 90 m"
           ],
           "answer": 3,
@@ -680,22 +680,22 @@
           "q": "Jam berapa pertunjukan air mancur menari biasanya dimulai?",
           "options": [
             "16.00",
-            "21.00",
             "12.00",
-            "18.30"
+            "18.30",
+            "21.00"
           ],
-          "answer": 3,
+          "answer": 2,
           "explain": "Pertunjukan umumnya mulai pukul 18.30 sampai 20.30, dengan pertunjukan berbeda tiap jam (Orami, 2024)."
         },
         {
           "q": "Apa nama patung jabat tangan di tepi utara danau?",
           "options": [
             "Monumen Persahabatan",
+            "Friendship Shake Hand",
             "Patung Merdeka",
-            "Tugu Asia Afrika",
-            "Friendship Shake Hand"
+            "Tugu Asia Afrika"
           ],
-          "answer": 3,
+          "answer": 1,
           "explain": "Patung Friendship Shake Hand menggambarkan jabat tangan persahabatan, sejalan dengan semangat Asia Afrika."
         }
       ],
@@ -766,23 +766,23 @@
         {
           "q": "Konferensi Asia Afrika 1955 digelar di gedung apa di Bandung?",
           "options": [
+            "Gedung Kembar",
             "Gedung Merdeka",
-            "Layana Hall",
             "Gedung Sate",
             "Gedung Pakuan"
           ],
-          "answer": 0,
+          "answer": 1,
           "explain": "KAA digelar di Gedung Merdeka, Bandung, 18–24 April 1955."
         },
         {
           "q": "Berapa negara yang hadir di Konferensi Asia Afrika 1955?",
           "options": [
-            "10 negara",
-            "100 negara",
             "29 negara",
-            "55 negara"
+            "55 negara",
+            "100 negara",
+            "10 negara"
           ],
-          "answer": 2,
+          "answer": 0,
           "explain": "Konferensi Asia Afrika 1955 dihadiri 29 negara."
         }
       ],
@@ -855,8 +855,8 @@
           "options": [
             "±750 m",
             "±2 km",
-            "±200 m",
-            "±5 km"
+            "±5 km",
+            "±200 m"
           ],
           "answer": 0,
           "explain": "Jalur lingkar Jl. Kiara Artha sekitar 750 meter per putaran."
@@ -864,12 +864,12 @@
         {
           "q": "Acara lari apa yang pernah digelar di Kiara Artha Park?",
           "options": [
-            "Borobudur Marathon",
             "Jakarta Marathon",
+            "Pocari Run 2025",
             "Tour de Bandung",
-            "Pocari Run 2025"
+            "Borobudur Marathon"
           ],
-          "answer": 3,
+          "answer": 1,
           "explain": "Kiara Artha Park pernah menjadi tuan rumah acara lari Pocari Run 2025."
         }
       ],
@@ -964,23 +964,23 @@
         {
           "q": "BOSEH adalah singkatan dari…",
           "options": [
-            "Bersepeda Olahraga Sehat",
             "Bike Of Smart Eco Hub",
             "Bandung Ongkos Sepeda Hemat",
-            "Bike on the Street Everybody Happy"
+            "Bike on the Street Everybody Happy",
+            "Bersepeda Olahraga Sehat"
           ],
-          "answer": 3,
+          "answer": 2,
           "explain": "BOSEH = Bike on the Street Everybody Happy, program sepeda sewa Pemkot Bandung."
         },
         {
           "q": "Berapa tarif resmi BOSEH untuk jam pertama?",
           "options": [
-            "Rp1.000",
-            "Rp10.000",
+            "Rp50.000",
             "Rp30.000",
-            "Rp50.000"
+            "Rp1.000",
+            "Rp10.000"
           ],
-          "answer": 0,
+          "answer": 2,
           "explain": "Tarif resmi BOSEH tercatat Rp1.000 untuk jam pertama dan Rp2.000 untuk jam berikutnya."
         }
       ],
@@ -1053,8 +1053,8 @@
         {
           "q": "Paket Kiara Pelangi Food Court Rp35.000 disebut sudah termasuk apa?",
           "options": [
-            "Tiket masuk taman",
             "Parkir gratis",
+            "Tiket masuk taman",
             "Sewa sepeda satu jam",
             "Akses menonton air mancur menari"
           ],
@@ -1064,12 +1064,12 @@
         {
           "q": "Kafe dekat area ini yang punya rating 4,8 dengan lebih dari seribu ulasan di Google Maps?",
           "options": [
-            "Kopi Kiara",
             "Ludo Sports Kitchen and Coffee",
-            "Padel Co.",
-            "Kopi Taman Kota"
+            "Kopi Kiara",
+            "Kopi Taman Kota",
+            "Padel Co."
           ],
-          "answer": 1,
+          "answer": 0,
           "explain": "Ludo Sports Kitchen and Coffee punya lebih dari seribu ulasan dengan rating 4,8."
         }
       ],
@@ -1144,8 +1144,8 @@
           "options": [
             "Brasil",
             "Meksiko",
-            "Spanyol",
-            "Inggris"
+            "Inggris",
+            "Spanyol"
           ],
           "answer": 1,
           "explain": "Padel lahir di Acapulco, Meksiko, pada 1969."
@@ -1154,9 +1154,9 @@
           "q": "Apa yang membedakan padel dari tenis?",
           "options": [
             "Bola boleh memantul ke dinding",
-            "Dimainkan tanpa raket",
+            "Lapangan tanpa net",
             "Dimainkan sendirian",
-            "Lapangan tanpa net"
+            "Dimainkan tanpa raket"
           ],
           "answer": 0,
           "explain": "Dalam padel, bola boleh memantul ke dinding kaca sebelum dipukul kembali."
@@ -1167,6 +1167,97 @@
         "title": "Tonton satu reli",
         "prompt": "Tonton pemain padel sampai satu reli selesai. Perhatikan bola yang memantul ke dinding kaca!",
         "done_label": "Sudah kutonton!"
+      }
+    },
+    {
+      "id": "P10",
+      "name": "Musala & Toilet",
+      "short_name": "Musala & Toilet",
+      "category_id": "fasilitas",
+      "location_label": "Fasilitas umum utama, sisi utara taman",
+      "source": "Google Maps: \"Mushalla Kiara Artha Park\"",
+      "lat": -6.9151658,
+      "lng": 107.6421597,
+      "radius_m": 20,
+      "art": "musala",
+      "summary": "Musala, tempat wudu, dan toilet umum di sisi utara taman.",
+      "description": "Fasilitas umum utama di sisi utara taman: musala, tempat wudu, dan toilet. Lokasinya dekat titik start jogging track, sehingga mudah dijangkau sebelum atau sesudah berolahraga.",
+      "trivia": [
+        "Musala ini tercatat di Google Maps sebagai \"Mushalla Kiara Artha Park\".",
+        "Toilet umum lain juga tersedia di sekitar area parkir sisi barat laut taman."
+      ],
+      "activities": [
+        "Salat",
+        "Wudu",
+        "Toilet umum"
+      ],
+      "tips": [
+        "Menjelang magrib musala biasanya ramai; datang beberapa menit lebih awal.",
+        "Jaga kebersihan dan simpan alas kaki di rak yang tersedia."
+      ],
+      "trigger_response": "Info fasilitas dan arah; tampil sebagai hasil cepat pada filter Fasilitas.",
+      "hours": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "07:00",
+          "close": "21:00"
+        }
+      ],
+      "best_times": [
+        "pagi",
+        "siang",
+        "sore",
+        "malam"
+      ],
+      "keywords": [
+        "musala",
+        "mushola",
+        "salat",
+        "sholat",
+        "toilet",
+        "wc",
+        "kamar mandi",
+        "wudu"
+      ],
+      "status_note": null,
+      "narration": "Kamu di area Musala dan Toilet, fasilitas umum utama di sisi utara taman. Di sini ada musala, tempat wudu, dan toilet umum. Menjelang magrib musala biasanya ramai, jadi datang beberapa menit lebih awal, ya. Simpan alas kaki di rak yang tersedia dan bantu jaga kebersihan. Setelah ini, kamu bisa lanjut ke titik start jogging track di sebelah barat.",
+      "quiz": [
+        {
+          "q": "Fasilitas apa yang ada di P10?",
+          "options": [
+            "Air mancur menari",
+            "Musala dan toilet",
+            "Lapangan padel",
+            "Selter sepeda"
+          ],
+          "answer": 1,
+          "explain": "P10 adalah fasilitas musala dan toilet di sisi utara taman."
+        },
+        {
+          "q": "Musala P10 berdekatan dengan titik apa?",
+          "options": [
+            "Start jogging track",
+            "Lapangan padel",
+            "Gerbang Barat",
+            "Air mancur menari"
+          ],
+          "answer": 0,
+          "explain": "Musala P10 berada dekat titik start jogging track di sisi utara taman."
+        }
+      ],
+      "mission": {
+        "type": "confirm",
+        "title": "Jaga kebersihan",
+        "prompt": "Simpan alas kaki di rak dan buang satu sampah yang kamu lihat ke tempatnya.",
+        "done_label": "Sudah!"
       }
     },
     {
@@ -1231,21 +1322,21 @@
         {
           "q": "Pola napas apa yang Kia ajak latih di Zona Teduh?",
           "options": [
-            "Tarik 4 hitungan, hembuskan 6",
             "Napas cepat 20 kali",
+            "Tahan napas 1 menit",
             "Tarik 10, tahan 10",
-            "Tahan napas 1 menit"
+            "Tarik 4 hitungan, hembuskan 6"
           ],
-          "answer": 0,
+          "answer": 3,
           "explain": "Menghembuskan napas lebih panjang (6) daripada menarik (4) membantu menenangkan detak jantung."
         },
         {
           "q": "Mengapa udara di bawah kanopi pohon terasa lebih sejuk?",
           "options": [
             "Kanopi menaungi dari terik matahari",
+            "Karena tanahnya basah",
             "Ada pendingin udara",
-            "Karena dekat parkiran",
-            "Karena tanahnya basah"
+            "Karena dekat parkiran"
           ],
           "answer": 0,
           "explain": "Kanopi pohon menaungi area di bawahnya sehingga terasa lebih sejuk dibanding area terbuka."
@@ -1306,97 +1397,6 @@
             "text": "Hembuskan perlahan."
           }
         ]
-      }
-    },
-    {
-      "id": "P12",
-      "name": "Musala & Toilet",
-      "short_name": "Musala & Toilet",
-      "category_id": "fasilitas",
-      "location_label": "Fasilitas umum utama, sisi utara taman",
-      "source": "Google Maps: \"Mushalla Kiara Artha Park\"",
-      "lat": -6.9151658,
-      "lng": 107.6421597,
-      "radius_m": 20,
-      "art": "musala",
-      "summary": "Musala, tempat wudu, dan toilet umum di sisi utara taman.",
-      "description": "Fasilitas umum utama di sisi utara taman: musala, tempat wudu, dan toilet. Lokasinya dekat Layana Hall dan titik start jogging track, sehingga mudah dijangkau sebelum atau sesudah berolahraga.",
-      "trivia": [
-        "Musala ini tercatat di Google Maps sebagai \"Mushalla Kiara Artha Park\", berdekatan dengan Layana Hall.",
-        "Toilet umum lain juga tersedia di sekitar area parkir sisi barat laut taman."
-      ],
-      "activities": [
-        "Salat",
-        "Wudu",
-        "Toilet umum"
-      ],
-      "tips": [
-        "Menjelang magrib musala biasanya ramai; datang beberapa menit lebih awal.",
-        "Jaga kebersihan dan simpan alas kaki di rak yang tersedia."
-      ],
-      "trigger_response": "Info fasilitas dan arah; tampil sebagai hasil cepat pada filter Fasilitas.",
-      "hours": [
-        {
-          "days": [
-            0,
-            1,
-            2,
-            3,
-            4,
-            5,
-            6
-          ],
-          "open": "07:00",
-          "close": "21:00"
-        }
-      ],
-      "best_times": [
-        "pagi",
-        "siang",
-        "sore",
-        "malam"
-      ],
-      "keywords": [
-        "musala",
-        "mushola",
-        "salat",
-        "sholat",
-        "toilet",
-        "wc",
-        "kamar mandi",
-        "wudu"
-      ],
-      "status_note": null,
-      "narration": "Kamu di area Musala dan Toilet, fasilitas umum utama di sisi utara taman. Di sini ada musala, tempat wudu, dan toilet umum. Menjelang magrib musala biasanya ramai, jadi datang beberapa menit lebih awal, ya. Simpan alas kaki di rak yang tersedia dan bantu jaga kebersihan bareng-bareng. Setelah ini, kamu bisa lanjut ke titik start jogging track di sebelah barat, atau ke danau dan air mancur di selatan. Hatur nuhun sudah ikut menjaga taman!",
-      "quiz": [
-        {
-          "q": "Musala Kiara Artha Park berdekatan dengan gedung apa?",
-          "options": [
-            "Padel Co.",
-            "Gedung Sate",
-            "Gedung Merdeka",
-            "Layana Hall"
-          ],
-          "answer": 3,
-          "explain": "Musala ini tercatat di Google Maps berdekatan dengan Layana Hall."
-        },
-        {
-          "q": "Selain di sini, di mana lagi toilet umum tersedia?",
-          "options": [
-            "Di tengah danau",
-            "Sekitar area parkir sisi barat laut",
-            "Tidak ada lagi",
-            "Di Taman Asia Afrika"
-          ],
-          "answer": 1,
-          "explain": "Toilet umum lain tersedia di sekitar area parkir sisi barat laut taman."
-        }
-      ],
-      "mission": {
-        "type": "confirm",
-        "title": "Jaga kebersihan",
-        "prompt": "Simpan alas kaki di rak dan buang satu sampah yang kamu lihat ke tempatnya.",
-        "done_label": "Sudah!"
       }
     },
     {
@@ -1464,8 +1464,8 @@
           "q": "Gerbang Utara menghadap jalan apa?",
           "options": [
             "Jl. Asia Afrika",
-            "Jl. Ibrahim Adjie",
             "Jl. Banten",
+            "Jl. Ibrahim Adjie",
             "Jl. Jakarta"
           ],
           "answer": 3,
@@ -1475,8 +1475,8 @@
           "q": "Dari Gerbang Utara, ke arah mana lingkar taman?",
           "options": [
             "Lurus ke selatan, ±100 m",
-            "Ke utara, ±1 km",
             "Ke barat, ±500 m",
+            "Ke utara, ±1 km",
             "Menyeberang Jl. Jakarta"
           ],
           "answer": 0,
@@ -1555,9 +1555,9 @@
           "q": "Gerbang Timur menghadap jalan apa?",
           "options": [
             "Jl. Jakarta",
-            "Jl. Banten",
+            "Jl. Pasirkoja",
             "Jl. H. Ibrahim Adjie",
-            "Jl. Pasirkoja"
+            "Jl. Banten"
           ],
           "answer": 2,
           "explain": "Gerbang Timur ada di sisi Jl. H. Ibrahim Adjie, arah Kiaracondong."
@@ -1565,12 +1565,12 @@
         {
           "q": "Spot apa yang tepat berada di sebelah selatan Gerbang Timur?",
           "options": [
-            "Taman Asia Afrika",
             "Food Court 2",
             "Selter BOSEH",
+            "Taman Asia Afrika",
             "Area parkir"
           ],
-          "answer": 1,
+          "answer": 0,
           "explain": "Food Court 2 dengan deretan kafe dan resto ada tepat di sebelah selatan gerbang."
         }
       ],
@@ -1649,21 +1649,21 @@
         {
           "q": "Tenan mana yang ada di Food Court 2?",
           "options": [
-            "Steak Ranjang",
             "Kiara Pelangi",
+            "Steak Ranjang",
             "Ludo Sports Kitchen",
             "Padel Co."
           ],
-          "answer": 0,
+          "answer": 1,
           "explain": "Food Court 2 berisi Steak Ranjang, Siloka, Pang Waffle, dan RD Coffee & Eatery."
         },
         {
           "q": "Kira-kira berapa jarak Food Court 2 ke danau?",
           "options": [
-            "±10 m",
-            "±140 m",
             "±600 m",
-            "±1 km"
+            "±140 m",
+            "±1 km",
+            "±10 m"
           ],
           "answer": 1,
           "explain": "Danau dan air mancur sekitar 140 meter ke arah barat dari sini."
@@ -1687,10 +1687,10 @@
       "radius_m": 20,
       "art": "musala",
       "summary": "Masjid di sisi barat taman, dekat Jl. Banten dan Pintu Utama.",
-      "description": "Masjid Al-Maleeq berada di sisi barat kawasan Kiara Artha, di pojok deretan toko dekat Jl. Banten dan tidak jauh dari Pintu Utama. Pengunjung yang masuk dari gerbang barat atau area parkir bisa salat di sini; untuk sisi utara taman tersedia juga musala dan toilet dekat Layana Hall.",
+      "description": "Masjid Al-Maleeq berada di sisi barat kawasan Kiara Artha, di pojok deretan toko dekat Jl. Banten dan tidak jauh dari Pintu Utama. Pengunjung yang masuk dari gerbang barat atau area parkir bisa salat di sini; untuk sisi utara taman tersedia juga musala dan toilet dekat titik start jogging track.",
       "trivia": [
         "Google Maps mencatat lokasi masjid ini berada di pojok deretan bangunan, dekat Jl. Banten.",
-        "Selain masjid ini, Kiara Artha Park juga punya musala di sisi utara, dekat Layana Hall dan titik start jogging track."
+        "Selain masjid ini, Kiara Artha Park juga punya musala di sisi utara, dekat titik start jogging track."
       ],
       "activities": [
         "Salat berjamaah",
@@ -1736,15 +1736,15 @@
         "ibadah"
       ],
       "status_note": "Koordinat diperkirakan dari Google Maps (belum ada di OpenStreetMap); validasi saat survei lapangan.",
-      "narration": "Assalamualaikum! Kamu di dekat Masjid Al-Maleeq, di sisi barat kawasan Kiara Artha, dekat Jalan Banten. Kalau sudah masuk waktu salat, kamu bisa beribadah di sini sebelum lanjut menjelajah. Simpan alas kaki di tempatnya dan jaga kebersihan, ya. Kalau sedang di sisi utara taman, ada juga musala dekat Layana Hall. Menjelang magrib biasanya ramai, jadi datang sedikit lebih awal. Setelah salat, Pintu Utama dan Selter BOSEH ada tidak jauh di sebelah selatan dan timur, siap jadi titik awal jelajahmu berikutnya.",
+      "narration": "Assalamualaikum! Kamu di dekat Masjid Al-Maleeq, di sisi barat kawasan Kiara Artha, dekat Jalan Banten. Kalau sudah masuk waktu salat, kamu bisa beribadah di sini sebelum lanjut menjelajah. Simpan alas kaki di tempatnya dan jaga kebersihan, ya. Kalau sedang di sisi utara taman, ada juga musala dekat titik start jogging track. Menjelang magrib biasanya ramai, jadi datang sedikit lebih awal. Setelah salat, Pintu Utama dan Selter BOSEH ada tidak jauh di sebelah selatan dan timur, siap jadi titik awal jelajahmu berikutnya.",
       "quiz": [
         {
           "q": "Masjid Al-Maleeq berada di sisi mana kawasan Kiara Artha?",
           "options": [
             "Barat, dekat Jl. Banten",
             "Timur, dekat Jl. Ibrahim Adjie",
-            "Di tengah danau",
-            "Selatan, di Kiara Pelangi"
+            "Selatan, di Kiara Pelangi",
+            "Di tengah danau"
           ],
           "answer": 0,
           "explain": "Masjid Al-Maleeq ada di sisi barat, di pojok deretan toko dekat Jl. Banten."
@@ -1752,13 +1752,13 @@
         {
           "q": "Selain masjid ini, di mana lagi bisa salat di taman?",
           "options": [
-            "Selter BOSEH",
             "Food Court 2",
-            "Musala dekat Layana Hall",
+            "Musala di sisi utara taman",
+            "Selter BOSEH",
             "Lapangan padel"
           ],
-          "answer": 2,
-          "explain": "Ada musala di sisi utara taman, dekat Layana Hall dan titik start jogging track."
+          "answer": 1,
+          "explain": "Ada musala di sisi utara taman, dekat titik start jogging track."
         }
       ],
       "mission": {
@@ -2120,8 +2120,8 @@
           "coaching": "Checkpoint satu, titik start. Yuk pemanasan! Putar pergelangan kaki kanan dan kiri masing-masing lima kali, lalu ayunkan kedua lengan ke depan dan ke belakang. Setelah itu, jalan santai ke timur menuju musala."
         },
         {
-          "name": "Musala & Layana Hall",
-          "poi_id": "P12",
+          "name": "Musala & Toilet",
+          "poi_id": "P10",
           "coords": [
             -6.9151658,
             107.6421597
@@ -2169,8 +2169,8 @@
           "q": "Pola napas di Rute Santai: tarik berapa hitungan, hembuskan berapa?",
           "options": [
             "Tarik 10, hembuskan 10",
-            "Tarik 2, hembuskan 2",
             "Tarik 6, hembuskan 4",
+            "Tarik 2, hembuskan 2",
             "Tarik 4, hembuskan 6"
           ],
           "answer": 3,
@@ -2180,11 +2180,11 @@
           "q": "Setelah selesai berjalan, sebaiknya kamu…",
           "options": [
             "Langsung lari sprint",
-            "Tidak perlu apa-apa",
             "Pendinginan dan minum air",
+            "Tidak perlu apa-apa",
             "Duduk tanpa bergerak lama"
           ],
-          "answer": 2,
+          "answer": 1,
           "explain": "Pendinginan meregangkan otot, dan minum air mengganti cairan yang keluar."
         }
       ],
@@ -2558,22 +2558,22 @@
           "q": "Saat jogging dengan ritme nyaman, kamu seharusnya…",
           "options": [
             "Menahan napas",
-            "Masih bisa ngobrol dengan nyaman",
             "Berhenti tiap 10 meter",
+            "Masih bisa ngobrol dengan nyaman",
             "Terengah-engah tak bisa bicara"
           ],
-          "answer": 1,
+          "answer": 2,
           "explain": "Kalau masih bisa ngobrol, intensitas jogging-mu pas."
         },
         {
           "q": "Posisi lengan yang dianjurkan saat berlari?",
           "options": [
-            "Menekuk sekitar 90 derajat",
-            "Dimasukkan ke saku",
             "Lurus kaku ke bawah",
+            "Dimasukkan ke saku",
+            "Menekuk sekitar 90 derajat",
             "Diangkat di atas kepala"
           ],
-          "answer": 0,
+          "answer": 2,
           "explain": "Lengan menekuk 90 derajat membantu ayunan yang efisien."
         }
       ],
@@ -2647,8 +2647,8 @@
         "P07",
         "P08",
         "P09",
+        "P10",
         "P11",
-        "P12",
         "P13",
         "P14",
         "P15",
@@ -2796,19 +2796,6 @@
       "sort_order": 7
     },
     {
-      "id": "masjid",
-      "patterns": [
-        "salat jumat",
-        "jumatan",
-        "masjid besar",
-        "al maleeq",
-        "al-maleeq"
-      ],
-      "answer": "Untuk salat, ada Masjid Al-Maleeq di sisi barat dekat Jl. Banten dan Pintu Utama, serta musala dekat Layana Hall di sisi utara taman.",
-      "poi_id": "P16",
-      "sort_order": 8
-    },
-    {
       "id": "kia",
       "patterns": [
         "kamu siapa",
@@ -2819,7 +2806,7 @@
       ],
       "answer": "Aku Kia, tunas pohon kiara! Aku menemanimu menjelajah, membacakan cerita spot, dan memberi kuis serta misi. Makin banyak bintang yang kamu kumpulkan, makin tinggi aku tumbuh.",
       "poi_id": null,
-      "sort_order": 9
+      "sort_order": 8
     },
     {
       "id": "kiara",
@@ -2831,7 +2818,7 @@
       ],
       "answer": "Kiara adalah pohon sejenis beringin (Ficus). Nama Kiaracondong konon berasal dari pohon kiara yang tumbuh condong.",
       "poi_id": null,
-      "sort_order": 10
+      "sort_order": 9
     },
     {
       "id": "privasi",
@@ -2843,7 +2830,7 @@
       ],
       "answer": "Lokasimu hanya diproses di ponsel dan tidak pernah dikirim ke server. Yang terkirim tanpa identitas hanya rating, laporan, hasil kuis, dan pertanyaan yang belum bisa kujawab.",
       "poi_id": null,
-      "sort_order": 11
+      "sort_order": 10
     }
   ],
   "daily_challenges": [

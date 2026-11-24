@@ -349,6 +349,32 @@ const pois = [
     status_note: 'Jam operasional perlu dikonfirmasi ke pengelola saat survei.',
   },
   {
+    id: 'P10',
+    name: 'Musala & Toilet',
+    short_name: 'Musala & Toilet',
+    category_id: 'fasilitas',
+    location_label: 'Fasilitas umum utama, sisi utara taman',
+    source: 'Google Maps: "Mushalla Kiara Artha Park"',
+    lat: -6.9151658,
+    lng: 107.6421597,
+    radius_m: 20,
+    art: 'musala',
+    summary: 'Musala, tempat wudu, dan toilet umum di sisi utara taman.',
+    description:
+      'Fasilitas umum utama di sisi utara taman: musala, tempat wudu, dan toilet. Lokasinya dekat titik start jogging track, sehingga mudah dijangkau sebelum atau sesudah berolahraga.',
+    trivia: [
+      'Musala ini tercatat di Google Maps sebagai "Mushalla Kiara Artha Park".',
+      'Toilet umum lain juga tersedia di sekitar area parkir sisi barat laut taman.',
+    ],
+    activities: ['Salat', 'Wudu', 'Toilet umum'],
+    tips: ['Menjelang magrib musala biasanya ramai; datang beberapa menit lebih awal.', 'Jaga kebersihan dan simpan alas kaki di rak yang tersedia.'],
+    trigger_response: 'Info fasilitas dan arah; tampil sebagai hasil cepat pada filter Fasilitas.',
+    hours: PARK_HOURS,
+    best_times: ['pagi', 'siang', 'sore', 'malam'],
+    keywords: ['musala', 'mushola', 'salat', 'sholat', 'toilet', 'wc', 'kamar mandi', 'wudu'],
+    status_note: null,
+  },
+  {
     id: 'P11',
     name: 'Zona Relaksasi / Spot Teduh',
     short_name: 'Zona Teduh',
@@ -373,32 +399,6 @@ const pois = [
     best_times: ['pagi', 'siang', 'sore'],
     keywords: ['teduh', 'relaksasi', 'istirahat', 'napas', 'peregangan', 'pohon', 'duduk'],
     status_note: 'Titik ditentukan dari citra satelit Google Maps; validasi saat survei lapangan.',
-  },
-  {
-    id: 'P12',
-    name: 'Musala & Toilet',
-    short_name: 'Musala & Toilet',
-    category_id: 'fasilitas',
-    location_label: 'Fasilitas umum utama, sisi utara taman',
-    source: 'Google Maps: "Mushalla Kiara Artha Park"',
-    lat: -6.9151658,
-    lng: 107.6421597,
-    radius_m: 20,
-    art: 'musala',
-    summary: 'Musala, tempat wudu, dan toilet umum di sisi utara taman.',
-    description:
-      'Fasilitas umum utama di sisi utara taman: musala, tempat wudu, dan toilet. Lokasinya dekat Layana Hall dan titik start jogging track, sehingga mudah dijangkau sebelum atau sesudah berolahraga.',
-    trivia: [
-      'Musala ini tercatat di Google Maps sebagai "Mushalla Kiara Artha Park", berdekatan dengan Layana Hall.',
-      'Toilet umum lain juga tersedia di sekitar area parkir sisi barat laut taman.',
-    ],
-    activities: ['Salat', 'Wudu', 'Toilet umum'],
-    tips: ['Menjelang magrib musala biasanya ramai; datang beberapa menit lebih awal.', 'Jaga kebersihan dan simpan alas kaki di rak yang tersedia.'],
-    trigger_response: 'Info fasilitas dan arah; tampil sebagai hasil cepat pada filter Fasilitas.',
-    hours: PARK_HOURS,
-    best_times: ['pagi', 'siang', 'sore', 'malam'],
-    keywords: ['musala', 'mushola', 'salat', 'sholat', 'toilet', 'wc', 'kamar mandi', 'wudu'],
-    status_note: null,
   },
   // --- Tambahan 24 Nov 2026 (koordinat OpenStreetMap / Google Maps) ---
   {
@@ -492,10 +492,10 @@ const pois = [
     art: 'musala',
     summary: 'Masjid di sisi barat taman, dekat Jl. Banten dan Pintu Utama.',
     description:
-      'Masjid Al-Maleeq berada di sisi barat kawasan Kiara Artha, di pojok deretan toko dekat Jl. Banten dan tidak jauh dari Pintu Utama. Pengunjung yang masuk dari gerbang barat atau area parkir bisa salat di sini; untuk sisi utara taman tersedia juga musala dan toilet dekat Layana Hall.',
+      'Masjid Al-Maleeq berada di sisi barat kawasan Kiara Artha, di pojok deretan toko dekat Jl. Banten dan tidak jauh dari Pintu Utama. Pengunjung yang masuk dari gerbang barat atau area parkir bisa salat di sini; untuk sisi utara taman tersedia juga musala dan toilet dekat titik start jogging track.',
     trivia: [
       'Google Maps mencatat lokasi masjid ini berada di pojok deretan bangunan, dekat Jl. Banten.',
-      'Selain masjid ini, Kiara Artha Park juga punya musala di sisi utara, dekat Layana Hall dan titik start jogging track.',
+      'Selain masjid ini, Kiara Artha Park juga punya musala di sisi utara, dekat titik start jogging track.',
     ],
     activities: ['Salat berjamaah', 'Wudu', 'Istirahat sejenak'],
     tips: ['Menjelang magrib biasanya ramai; datang beberapa menit lebih awal.', 'Simpan alas kaki di tempat yang disediakan dan jaga kebersihan.'],
@@ -520,7 +520,7 @@ for (const [i, p] of pois.entries()) {
 const byId = Object.fromEntries(pois.map((p) => [p.id, p]))
 const at = (id) => [byId[id].lat, byId[id].lng]
 
-const t1Anchors = [at('P06'), at('P12'), ringPoint(60), at('P11'), [-6.9164994, 107.6428604], at('P05'), at('P08'), ringPoint(180)]
+const t1Anchors = [at('P06'), at('P10'), ringPoint(60), at('P11'), [-6.9164994, 107.6428604], at('P05'), at('P08'), ringPoint(180)]
 const t1Path = smoothLoop(t1Anchors, 10)
 
 const t2Start = 135
@@ -539,7 +539,7 @@ const trails = [
     path: t1Path,
     checkpoints: [
       { name: 'Titik Start Jogging Track', poi_id: 'P06', coords: at('P06'), radius_m: 25, exercise: 'Pemanasan 1 menit' },
-      { name: 'Musala & Layana Hall', poi_id: 'P12', coords: at('P12'), radius_m: 20, exercise: 'Cek hidrasi' },
+      { name: 'Musala & Toilet', poi_id: 'P10', coords: at('P10'), radius_m: 20, exercise: 'Cek hidrasi' },
       { name: 'Zona Teduh', poi_id: 'P11', coords: at('P11'), radius_m: 20, exercise: 'Peregangan ringan 1 menit' },
       { name: 'Taman Asia Afrika', poi_id: 'P05', coords: at('P05'), radius_m: 25, exercise: 'Latihan napas 4-6' },
       { name: 'Finish: Titik Start', poi_id: 'P06', coords: at('P06'), radius_m: 25, exercise: 'Pendinginan' },
@@ -627,8 +627,8 @@ const TRIVIA_SOURCES = {
   P07: [['Pemkot Bandung — BOSEH', true], ['detikJabar (Mar 2024)', true]],
   P08: [['Orami (30 Sep 2024)', true], ['Google Maps: Ludo Sports Kitchen and Coffee (16 Nov 2026)', true]],
   P09: [['Pengetahuan umum olahraga padel — perlu dicek tim', false], ['Pengetahuan umum olahraga padel — perlu dicek tim', false]],
+  P10: [['Google Maps: Mushalla Kiara Artha Park', true], ['Google Maps: toilet umum di area parkir — perlu dicek tim', false]],
   P11: [['Pengetahuan umum kesehatan — perlu dicek tim', false], ['Pengetahuan umum kesehatan — perlu dicek tim', false]],
-  P12: [['Google Maps: Mushalla Kiara Artha Park', true], ['Google Maps: "Kamar Cai" dekat parkir — perlu dicek tim', false]],
   P13: [['OpenStreetMap: halte Gerbang Utara Kiara Artha Park (24 Nov 2026)', true], ['Hitungan jarak koordinat peta', true]],
   P14: [['OpenStreetMap: halte Gerbang Timur Kiara Artha Park (24 Nov 2026)', true], ['Orami (2024); Republika (2019)', true]],
   P15: [['OpenStreetMap: tenan Jl. H. Ibrahim Adjie (24 Nov 2026)', true], ['Hitungan jarak koordinat peta', true]],
@@ -645,8 +645,8 @@ const PHOTO_CAPTIONS = {
   P07: ['Selter sepeda BOSEH', 'Sepeda dan skuter yang siap disewa'],
   P08: ['Kiara Pelangi Food Court', 'Deretan tenant kuliner'],
   P09: ['Lapangan padel semi-outdoor', 'Area kafe di sekitar lapangan'],
+  P10: ['Bangunan musala', 'Toilet umum dan tempat wudu'],
   P11: ['Bangku teduh di bawah pepohonan', 'Kanopi pohon di sisi timur danau'],
-  P12: ['Bangunan musala', 'Toilet umum dan tempat wudu'],
   P13: ['Gerbang utara dari arah Jl. Jakarta', 'Jl. Kiara Artha Utara menuju lingkar taman'],
   P14: ['Gerbang timur dari arah Jl. Ibrahim Adjie', 'Jalan masuk menuju Food Court 2'],
   P15: ['Deretan tenan Food Court 2', 'Suasana makan malam di Food Court 2'],

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-24T10:34:18.449866Z",
+  "generated": "2026-11-24T12:50:29.114Z",
   "files": {
     "foto/p01_1": {
       "w": 960,
@@ -46,6 +46,18 @@
     "foto/p08_2": {
       "w": 1280,
       "h": 398,
+      "thumb": true,
+      "credit": null
+    },
+    "foto/p10_1": {
+      "w": 768,
+      "h": 1024,
+      "thumb": true,
+      "credit": null
+    },
+    "foto/p10_2": {
+      "w": 768,
+      "h": 1024,
       "thumb": true,
       "credit": null
     },
