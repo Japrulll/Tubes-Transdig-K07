@@ -103,7 +103,6 @@ const park = {
     { label: 'detikJabar — Kiara Artha Park, Spot Rekreasi di Tengah Kota Bandung', url: 'https://www.detik.com/jabar/wisata/d-7229191/kiara-artha-park-spot-rekreasi-di-tengah-kota-bandung' },
     { label: 'Orami — Kiara Artha Park (30 Sep 2024)', url: 'https://www.orami.co.id/magazine/kiara-artha-park' },
     { label: 'Republika — Ayo Intip Keseruan di Kiara Artha Park (24 Agu 2019)', url: 'https://news.republika.co.id/berita/pwoiiv0/ayo-intip-keseruan-di-kiara-artha-park-bandung' },
-    { label: 'Pemkot Bandung — Bike on The Street Everybody Happy (BOSEH)', url: 'https://www.bandung.go.id/sub-etalase/27/sepeda' },
   ],
 }
 
@@ -140,7 +139,7 @@ const pois = [
       'Kiara Artha Park diresmikan pada 17 Agustus 2019, bertepatan dengan HUT ke-74 Republik Indonesia.',
       'Taman ini terletak di antara flyover Antapani dan flyover Kiaracondong, di Kelurahan Kebonwaru, Kecamatan Batununggal.',
     ],
-    activities: ['Peta ringkas zona taman', 'Titik kumpul rombongan', 'Akses ke Selter BOSEH, area parkir, dan Masjid Al-Maleeq'],
+    activities: ['Peta ringkas zona taman', 'Titik kumpul rombongan', 'Akses ke area parkir, Rest Area 78, dan Masjid Al-Maleeq'],
     tips: [
       'Foto papan peta di gerbang sebagai cadangan bila baterai menipis.',
       'Sore hari (15.00–18.00) cocok untuk jalan santai sebelum pertunjukan air mancur.',
@@ -164,7 +163,7 @@ const pois = [
     art: 'parking',
     summary: 'Area parkir utama; arah ke Pintu Utama dan fasilitas terdekat.',
     description:
-      'Area parkir utama berada di sisi barat laut taman, tidak jauh dari Jl. Banten. Dari gerbang parkir, pengunjung dapat berjalan ke selatan menuju Pintu Utama, atau ke timur menuju titik start jogging track, musala, dan toilet di sisi utara taman. Selter Sepeda BOSEH juga berada di dekat sini.',
+      'Area parkir utama berada di sisi barat laut taman, tidak jauh dari Jl. Banten. Dari gerbang parkir, pengunjung dapat berjalan ke selatan menuju Pintu Utama, atau ke timur menuju titik start jogging track, musala, dan toilet di sisi utara taman. Rest Area 78 dengan deretan kafe dan rumah makan juga berada di dekat sini.',
     trivia: [
       'Lokasi taman yang berada di antara dua flyover besar Bandung timur membuatnya mudah dijangkau dari arah Antapani maupun Kiaracondong.',
       'Tiket masuk taman tercatat Rp10.000 per orang, baik hari kerja maupun akhir pekan (detikJabar, 2024). Cek kembali di loket karena harga dapat berubah.',
@@ -268,32 +267,29 @@ const pois = [
   },
   {
     id: 'P07',
-    name: 'Selter Sepeda BOSEH',
-    short_name: 'Selter BOSEH',
-    category_id: 'wellness',
-    location_label: 'Sisi barat taman, dekat area parkir',
-    source: 'Google Maps: "Stasiun Boseh Kiara Artha Park"',
-    lat: -6.915669,
-    lng: 107.6408092,
+    name: 'Rental Skuter Papa Skuter',
+    short_name: 'Papa Skuter',
+    category_id: 'keluarga',
+    location_label: 'Area dalam, sebelah Solaria dan Taman Asia Afrika',
+    source: 'Google Maps: "Papa Skuter" (plus code 3JMR+FM, diakses 25 Nov 2026); OpenStreetMap: Papa Skuter (bicycle_rental)',
+    lat: -6.9163125,
+    lng: 107.6416875,
     radius_m: 20,
     art: 'bike',
-    summary: 'Sewa sepeda BOSEH untuk berkeliling taman dan kota.',
+    summary: 'Sewa skuter dan sepeda listrik untuk berkeliling taman.',
     description:
-      'Selter Bike on the Street Everybody Happy (BOSEH) di sisi barat taman. Pengunjung dapat menyewa sepeda untuk berkeliling lingkar taman maupun menjelajah Bandung. Di dalam taman juga tersedia persewaan sepeda dan skuter listrik swasta.',
+      'Papa Skuter menyewakan skuter dan sepeda listrik di area dalam taman, bersebelahan dengan Solaria dan Taman Asia Afrika. Pilihannya beragam, dari skuter roda dua sampai roda tiga, sehingga cocok untuk berkeliling lingkar taman bersama keluarga.',
     trivia: [
-      'BOSEH adalah program sepeda sewa Pemerintah Kota Bandung; tarif resmi tercatat Rp1.000 untuk jam pertama dan Rp2.000 untuk jam berikutnya.',
-      'Persewaan sepeda dan skuter listrik di dalam taman bertarif Rp30.000 pada hari kerja dan Rp40.000 pada akhir pekan (detikJabar, 2024).',
+      'Alamat Papa Skuter tercatat di Google Maps: Taman Air Mancur Kiara Artha Park, sebelah Solaria, Taman Asia Afrika, area dalam.',
+      'Persewaan sepeda dan skuter listrik di dalam taman bertarif sekitar Rp30.000 pada hari kerja dan Rp40.000 pada akhir pekan (detikJabar, 2024).',
     ],
-    activities: ['Sewa sepeda BOSEH', 'Sewa sepeda/skuter listrik di dalam taman', 'Bersepeda di lingkar taman'],
-    tips: ['Siapkan kartu identitas untuk registrasi.', 'Gunakan jalur lingkar dan utamakan pejalan kaki.'],
-    trigger_response: 'Info cara sewa sepeda/skuter, tarif dan jam operasional, serta rute bersepeda.',
-    hours: [
-      { days: WEEKDAY, open: '08:00', close: '16:00' },
-      { days: WEEKEND, open: '06:00', close: '18:00' },
-    ],
-    best_times: ['pagi', 'sore'],
-    keywords: ['sepeda', 'boseh', 'skuter', 'sewa', 'bike', 'bersepeda'],
-    status_note: 'Jam layanan mengacu pada jam booth BOSEH Pemkot Bandung; konfirmasi saat survei.',
+    activities: ['Sewa skuter listrik', 'Sewa sepeda listrik', 'Berkeliling lingkar taman'],
+    tips: ['Tanyakan tarif dan durasi sewa di kasir sebelum berangkat.', 'Gunakan jalur lingkar dan utamakan pejalan kaki.'],
+    trigger_response: 'Info sewa skuter/sepeda listrik dan rute berkeliling taman.',
+    hours: PARK_HOURS,
+    best_times: ['pagi', 'sore', 'malam'],
+    keywords: ['skuter', 'scooter', 'sepeda listrik', 'sepeda', 'sewa', 'rental', 'papa skuter', 'otoped'],
+    status_note: 'Jam sewa dan tarif terbaru perlu dikonfirmasi ke Papa Skuter saat survei.',
   },
   {
     id: 'P08',
@@ -485,9 +481,9 @@ const pois = [
     short_name: 'Masjid Al-Maleeq',
     category_id: 'fasilitas',
     location_label: 'Sisi barat, di pojok deretan toko dekat Jl. Banten',
-    source: 'Google Maps: "Masjid Al-Maleeq" (diakses 24 Nov 2026)',
-    lat: -6.916,
-    lng: 107.64066,
+    source: 'Google Maps: "Masjid Al-Maleeq" (plus code 3JMR+J7, diakses 25 Nov 2026)',
+    lat: -6.9159375,
+    lng: 107.6406875,
     radius_m: 20,
     art: 'musala',
     summary: 'Masjid di sisi barat taman, dekat Jl. Banten dan Pintu Utama.',
@@ -503,7 +499,33 @@ const pois = [
     hours: [{ days: DAILY, open: '04:00', close: '21:00' }],
     best_times: ['pagi', 'siang', 'sore', 'malam'],
     keywords: ['masjid', 'mesjid', 'al maleeq', 'al-maleeq', 'salat', 'sholat', 'shalat', 'jumat', 'wudu', 'ibadah'],
-    status_note: 'Koordinat diperkirakan dari Google Maps (belum ada di OpenStreetMap); validasi saat survei lapangan.',
+    status_note: null,
+  },
+  {
+    id: 'P17',
+    name: 'Rest Area 78',
+    short_name: 'Rest Area 78',
+    category_id: 'kuliner',
+    location_label: 'Sisi barat laut, Jl. Banten No. 78, dekat area parkir',
+    source: 'Google Maps: tenan Rest Area 78 (diakses 25 Nov 2026); OpenStreetMap: Gubuk Makan Mang Engking',
+    lat: -6.9153,
+    lng: 107.6408,
+    radius_m: 30,
+    art: 'food',
+    summary: 'Deretan kafe dan rumah makan di Jl. Banten, buka dari sarapan sampai malam.',
+    description:
+      'Rest Area 78 adalah bangunan berderet di sisi barat laut taman, menghadap Jl. Banten dekat area parkir. Di dalamnya ada beberapa kafe dan rumah makan, antara lain Orien Coffee, Bagi Kopi Kiara Artha, Kang Bubur, Nats Time, dan Gubug Makan Mang Engking, serta Fely Creative Space.',
+    trivia: [
+      'Papan di depan bangunan mengajak pengunjung datang dari sarapan pagi sampai nongkrong malam.',
+      'Rest Area 78 dekat area parkir dan Masjid Al-Maleeq, jadi praktis untuk singgah sebelum atau sesudah menjelajah taman.',
+    ],
+    activities: ['Sarapan', 'Makan berat', 'Ngopi & nongkrong', 'Fely Creative Space'],
+    tips: ['Jam buka tiap tenan berbeda; cek papan di depan tenan.', 'Pas untuk sarapan sebelum jogging pagi.'],
+    trigger_response: 'Daftar tenan makanan & minuman dan arah ke area parkir.',
+    hours: PARK_HOURS,
+    best_times: ['pagi', 'siang', 'sore', 'malam'],
+    keywords: ['rest area', 'rest area 78', 'makan', 'kuliner', 'kafe', 'kopi', 'bubur', 'sarapan', 'restoran', 'orien', 'bagi kopi', 'kang bubur', 'mang engking', 'nats time'],
+    status_note: 'Koordinat diperkirakan dari OpenStreetMap (Gubuk Makan Mang Engking) dan peta tenan; validasi saat survei lapangan.',
   },
 ]
 
@@ -577,8 +599,8 @@ for (const [i, t] of trails.entries()) {
 const badges = [
   { id: 'B01', name: 'Langkah Pertama', description: 'Kumpulkan stempel pertama Anda.', poi_ids: [], min_count: 1, requires_trail: false, sort_order: 1 },
   { id: 'B02', name: 'Penjelajah Danau', description: 'Kunjungi 3 spot di sekitar danau.', poi_ids: ['P03', 'P05', 'P11'], min_count: 3, requires_trail: false, sort_order: 2 },
-  { id: 'B03', name: 'Pencicip Kuliner', description: 'Kunjungi 2 dari 3 area kuliner dan kafe.', poi_ids: ['P08', 'P09', 'P15'], min_count: 2, requires_trail: false, sort_order: 3 },
-  { id: 'B04', name: 'Sahabat Sehat', description: 'Kunjungi 3 spot wellness dan selesaikan satu Wellness Trail.', poi_ids: ['P06', 'P07', 'P11'], min_count: 3, requires_trail: true, sort_order: 4 },
+  { id: 'B03', name: 'Pencicip Kuliner', description: 'Kunjungi 2 dari 4 area kuliner dan kafe.', poi_ids: ['P08', 'P09', 'P15', 'P17'], min_count: 2, requires_trail: false, sort_order: 3 },
+  { id: 'B04', name: 'Sahabat Sehat', description: 'Kunjungi 3 spot wellness dan selesaikan satu Wellness Trail.', poi_ids: ['P06', 'P09', 'P11'], min_count: 3, requires_trail: true, sort_order: 4 },
   { id: 'B05', name: 'Penjelajah Sejati', description: `Kumpulkan seluruh ${pois.length} stempel Kiara Artha Park.`, poi_ids: pois.map((p) => p.id), min_count: pois.length, requires_trail: false, sort_order: 5 },
 ].map((b) => ({ ...b, kind: 'stamp' }))
 // Badge dari bintang kuis/misi, misi foto, dan kunjungan mingguan
@@ -601,7 +623,7 @@ for (let i = 0; i < pois.length; i++)
 // ---------------------------------------------------------------------------
 // Output JSON
 // ---------------------------------------------------------------------------
-const version = '2026-11-24'
+const version = '2026-11-25'
 const dataset = { version, park, categories, pois, trails, badges, faq, daily_challenges }
 mkdirSync(resolve(root, 'src/data'), { recursive: true })
 writeFileSync(resolve(root, 'src/data/poi.json'), JSON.stringify(dataset, null, 2) + '\n')
@@ -624,7 +646,7 @@ const TRIVIA_SOURCES = {
   P03: [['Orami (30 Sep 2024)', true], ['Google Maps: Friendship Shake Hand Sculpture', true]],
   P05: [['Sejarah KAA 1955 (Museum KAA) — perlu dicek tim', false], ['Pengamatan peta Google Maps', true]],
   P06: [['Orami (30 Sep 2024)', true], ['Asia Property Awards — profil Kiara Artha Park', true]],
-  P07: [['Pemkot Bandung — BOSEH', true], ['detikJabar (Mar 2024)', true]],
+  P07: [['Google Maps: Papa Skuter (25 Nov 2026)', true], ['detikJabar (Mar 2024)', true]],
   P08: [['Orami (30 Sep 2024)', true], ['Google Maps: Ludo Sports Kitchen and Coffee (16 Nov 2026)', true]],
   P09: [['Pengetahuan umum olahraga padel — perlu dicek tim', false], ['Pengetahuan umum olahraga padel — perlu dicek tim', false]],
   P10: [['Google Maps: Mushalla Kiara Artha Park', true], ['Google Maps: toilet umum di area parkir — perlu dicek tim', false]],
@@ -633,6 +655,7 @@ const TRIVIA_SOURCES = {
   P14: [['OpenStreetMap: halte Gerbang Timur Kiara Artha Park (24 Nov 2026)', true], ['Orami (2024); Republika (2019)', true]],
   P15: [['OpenStreetMap: tenan Jl. H. Ibrahim Adjie (24 Nov 2026)', true], ['Hitungan jarak koordinat peta', true]],
   P16: [['Google Maps: Masjid Al-Maleeq (24 Nov 2026)', true], ['Google Maps: Mushalla Kiara Artha Park', true]],
+  P17: [['Foto papan Rest Area 78 (tim, 25 Nov 2026)', true], ['Hitungan jarak koordinat peta', true]],
 }
 
 // Keterangan foto yang perlu diambil tim (berkas diunggah ke bucket poi-media)
@@ -642,7 +665,7 @@ const PHOTO_CAPTIONS = {
   P03: ['Pertunjukan air mancur menari pada malam hari', 'Danau dan air mancur pada siang hari'],
   P05: ['Spot foto Taman Asia Afrika berlatar danau', 'Sudut foto menghadap air mancur'],
   P06: ['Titik start jogging track', 'Jalur lingkar Jl. Kiara Artha'],
-  P07: ['Selter sepeda BOSEH', 'Sepeda dan skuter yang siap disewa'],
+  P07: ['Skuter dan sepeda listrik Papa Skuter', 'Area sewa di dekat Taman Asia Afrika'],
   P08: ['Kiara Pelangi Food Court', 'Deretan tenant kuliner'],
   P09: ['Lapangan padel semi-outdoor', 'Area kafe di sekitar lapangan'],
   P10: ['Bangunan musala', 'Toilet umum dan tempat wudu'],
@@ -651,6 +674,7 @@ const PHOTO_CAPTIONS = {
   P14: ['Gerbang timur dari arah Jl. Ibrahim Adjie', 'Jalan masuk menuju Food Court 2'],
   P15: ['Deretan tenan Food Court 2', 'Suasana makan malam di Food Court 2'],
   P16: ['Tampak depan Masjid Al-Maleeq', 'Ruang salat dan tempat wudu'],
+  P17: ['Tampak depan Rest Area 78', 'Deretan tenan kafe dan rumah makan'],
 }
 const estSeconds = (text) => Math.round(text.split(/\s+/).filter(Boolean).length / 2.6)
 

@@ -47,6 +47,7 @@ export function startNavigation(poiId) {
   nav.lastInstruction = null
   nav.startDistance = location.position ? haversine(location.position, getPoi(poiId)) : null
   geofence.suppress = poiId
+  geofence.active = null // kartu spot yang masih terbuka ditutup saat navigasi dimulai
   if (location.position && settings.navVoice) {
     const info = navInfo.value
     speak(`Menuju ${getPoi(poiId).name}. ${formatDistance(info.distance)}, sekitar ${info.minutes} menit berjalan kaki. ${info.instruction}.`, { key: 'nav' })

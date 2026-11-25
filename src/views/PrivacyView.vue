@@ -23,7 +23,7 @@ const points = [
   {
     icon: 'user',
     title: 'Akun opsional',
-    text: 'Bila kamu masuk (Google atau email), stempel, bintang, XP, riwayat kunjungan, dan preferensi audio ikut disimpan ke akunmu agar bisa dilanjutkan di ponsel lain. Hanya kamu yang bisa membacanya. Lokasi GPS dan foto Jurnal tidak pernah dikirim. Umpan balik tetap dikirim tanpa identitas akun.',
+    text: 'Bila kamu masuk dengan email, stempel, bintang, XP, riwayat kunjungan, dan preferensi audio ikut disimpan ke akunmu agar bisa dilanjutkan di ponsel lain. Hanya kamu yang bisa membacanya. Lokasi GPS dan foto Jurnal tidak pernah dikirim. Umpan balik tetap dikirim tanpa identitas akun.',
   },
   { icon: 'bell', title: 'Pengingat opsional', text: 'Pengingat jadwal (aplikasi Android/iOS) dijadwalkan di ponsel dan tidak memakai lokasi latar belakang.' },
   { icon: 'external', title: 'Google Maps opsional', text: 'Tombol "Google Maps" hanya membuka rute ke koordinat spot tujuan; posisimu tidak disertakan di tautan.' },

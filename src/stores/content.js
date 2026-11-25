@@ -1,13 +1,11 @@
-// Konten taman: dataset bawaan (offline) → cache → Supabase (bila online).
+// Konten taman: dataset bawaan → Supabase (bila database sudah memuat versi yang sama/lebih baru).
 // Permintaan ke Supabase hanya MEMBACA konten; tidak ada data lokasi yang dikirim (A03).
 import { reactive, computed } from 'vue'
 import bundled from '../data/poi.json'
-import { load, save } from '../lib/storage'
 import { SUPABASE_URL } from '../config'
 import { getSupabase, supabaseEnabled } from '../lib/supabase'
 import { bundledPhotos } from '../lib/mediaSlots'
-
-const CACHE_KEY = 'content:v4'
+import { canonicalPoiId } from '../lib/poiIds'
 
 /** Path berkas di Storage ("poi-media/foto/p01_1.jpg") → URL publik */
 export function mediaUrl(src) {
@@ -60,13 +58,12 @@ function normalize(d) {
   }
 }
 
-const cached = load(CACHE_KEY, null)
-const initial = normalize(cached?.data || bundled)
+const initial = normalize(bundled)
 
 export const content = reactive({
   ...initial,
-  source: cached ? 'cache' : 'bundled', // bundled | cache | supabase
-  syncedAt: cached?.syncedAt || null,
+  source: 'bundled', // bundled | supabase
+  syncedAt: null,
   syncing: false,
   syncError: null,
 })
@@ -74,7 +71,7 @@ export const content = reactive({
 export const poiById = computed(() => Object.fromEntries(content.pois.map((p) => [p.id, p])))
 export const categoryById = computed(() => Object.fromEntries(content.categories.map((c) => [c.id, c])))
 export const trailById = computed(() => Object.fromEntries(content.trails.map((t) => [t.id, t])))
-export const getPoi = (id) => poiById.value[String(id || '').toUpperCase()] || null
+export const getPoi = (id) => poiById.value[canonicalPoiId(id)] || null
 
 export { supabaseEnabled }
 
@@ -118,7 +115,6 @@ export async function syncContent() {
     Object.assign(content, normalize(data))
     content.source = 'supabase'
     content.syncedAt = new Date().toISOString()
-    save(CACHE_KEY, { data, syncedAt: content.syncedAt })
   } catch (e) {
     content.syncError = e?.message || String(e)
   } finally {

@@ -1,5 +1,5 @@
 <script setup>
-// Tanya Kia — percakapan dua arah (teks & suara), dijawab offline dari data taman.
+// Tanya Kia — percakapan dua arah (teks & suara), dijawab dari data taman (rule-based).
 import { computed, nextTick, reactive, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import Kia from './Kia.vue'
@@ -51,9 +51,18 @@ function ask(text) {
   push({ from: 'me', text: q })
   thinking.value = true
   setTimeout(() => {
-    const a = answer(q)
-    const xp = askedKia(q, a.answered)
-    thinking.value = false
+    // Satu jawaban yang gagal tidak boleh membuat Kia macet untuk pertanyaan berikutnya
+    let a
+    let xp = 0
+    try {
+      a = answer(q)
+      xp = askedKia(q, a.answered)
+    } catch (e) {
+      console.error('Tanya Kia:', e)
+      a = { text: 'Maaf, aku sedang bingung menjawab itu. Coba tanya dengan kata lain, ya.', actions: [], intent: 'error' }
+    } finally {
+      thinking.value = false
+    }
     push({ from: 'kia', text: a.text, actions: a.actions, xp, intent: a.intent })
     if (settings.kiaVoice) speak(a.text, { key: 'kia' })
   }, 380)
@@ -109,7 +118,7 @@ function close() {
         <Kia :mood="thinking ? 'think' : 'happy'" :stage="level.level" :size="44" />
         <div class="min-w-0 flex-1">
           <h2 class="text-[16px] font-bold text-ink">Tanya Kia</h2>
-          <p class="text-[11px] text-muted">Menjawab dari data taman, tetap jalan tanpa internet</p>
+          <p class="text-[11px] text-muted">Menjawab langsung dari data taman</p>
         </div>
         <button
           class="icon-btn size-10"

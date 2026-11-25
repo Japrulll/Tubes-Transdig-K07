@@ -49,7 +49,7 @@ onMounted(async () => {
         v-if="!online && route.name !== 'onboarding'"
         class="pointer-events-none absolute left-1/2 top-[calc(env(safe-area-inset-top)+64px)] z-[700] -translate-x-1/2 rounded-full bg-brand-950/85 px-3 py-1.5 text-[11px] font-semibold text-white"
       >
-        <span class="inline-flex items-center gap-1.5"><Icon name="wifi-off" :size="13" /> Mode offline: konten tersimpan tetap berfungsi</span>
+        <span class="inline-flex items-center gap-1.5"><Icon name="wifi-off" :size="13" /> Tidak ada koneksi internet</span>
       </div>
 
       <RateToast />

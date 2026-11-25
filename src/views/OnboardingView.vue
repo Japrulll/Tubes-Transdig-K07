@@ -122,7 +122,7 @@ function useQr() {
           <span class="grid size-11 shrink-0 place-items-center rounded-2xl bg-brand-100 text-brand-700"><Icon name="shield" :size="22" /></span>
           <p class="text-[12px] leading-relaxed text-muted">
             <span class="block text-[14px] font-bold text-ink">Tersimpan aman</span>
-            Stempel, bintang, dan foto misi disimpan di ponsel. Kalau kamu masuk akun, stempel dan bintang ikut tersimpan ke akunmu (foto tidak). Aplikasi tetap berjalan tanpa internet.
+            Stempel, bintang, dan foto misi disimpan di ponsel. Kalau kamu masuk akun, stempel dan bintang ikut tersimpan ke akunmu (foto tidak).
           </p>
         </div>
       </section>

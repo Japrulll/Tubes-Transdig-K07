@@ -11,7 +11,7 @@ import { rateSpot, level } from '../stores/play'
 
 const route = useRoute()
 const poi = computed(() => (ui.ratePrompt ? getPoi(ui.ratePrompt) : null))
-const show = computed(() => poi.value && !ui.challenge && !geofence.active && route.name !== 'onboarding')
+const show = computed(() => poi.value && !ui.challenge && !geofence.active && !['onboarding', 'navigate'].includes(route.name))
 const thanks = ref(null)
 let timer = null
 

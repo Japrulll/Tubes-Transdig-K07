@@ -13,6 +13,8 @@ import { startNavigation } from '../stores/navigation'
 import { openStatus } from '../lib/time'
 import Kia from '../components/Kia.vue'
 import { answer, looksLikeQuestion } from '../lib/kia'
+import { norm } from '../lib/text'
+import { familiesIn } from '../lib/families'
 import { level } from '../stores/play'
 import { openKia, openChallenge } from '../stores/ui'
 
@@ -23,28 +25,39 @@ const cat = ref('semua')
 const input = ref(null)
 const listening = ref(false)
 
-const norm = (s) => (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9 ]/g, ' ')
-
 // Kategori tanpa spot (mis. setelah POI ditutup) tidak ditampilkan sebagai filter
 const usedCategories = computed(() =>
   content.categories.filter((c) => content.pois.some((p) => p.category_id === c.id || p.secondary_category_id === c.id))
 )
 
+// Family yang disebut di kotak cari ("musala" → Tempat ibadah: Musala & Toilet + Masjid Al-Maleeq)
+const queryFamilies = computed(() => (norm(q.value).length >= 2 ? familiesIn(q.value) : []))
+
 const results = computed(() => {
-  const query = norm(q.value).trim()
-  const terms = query.length >= 2 ? query.split(/\s+/).filter(Boolean) : []
+  const query = norm(q.value)
+  const terms = query.length >= 2 ? query.split(' ').filter(Boolean) : []
+  const fams = queryFamilies.value
   return content.pois
     .filter((p) => cat.value === 'semua' || p.category_id === cat.value || p.secondary_category_id === cat.value)
     .map((p) => {
       const hay = norm([p.name, p.short_name, p.keywords.join(' '), categoryById.value[p.category_id]?.label, p.location_label, p.summary].join(' '))
-      const nameHay = norm(p.name + ' ' + p.keywords.join(' '))
-      const match = terms.every((t) => hay.includes(t))
-      const score = terms.reduce((s, t) => s + (nameHay.includes(t) ? 2 : 1), 0)
+      const family = fams.find((f) => f.match(p)) || null
+      const match = terms.every((t) => hay.includes(t)) || !!family
       const d = location.position ? geofence.distances[p.id] ?? haversine(location.position, p) : null
-      return { poi: p, match, score, distance: d }
+      return { poi: p, match, family, distance: d }
     })
     .filter((r) => !terms.length || r.match)
     .sort((a, b) => (a.distance != null && b.distance != null ? a.distance - b.distance : a.poi.number - b.poi.number))
+})
+
+// Hasil dikelompokkan per family; spot lain yang cocok dengan kata kuncinya di "Hasil lain"
+const groups = computed(() => {
+  const fams = queryFamilies.value
+  if (!fams.length) return [{ id: 'all', label: null, items: results.value }]
+  const out = fams.map((f) => ({ id: f.id, label: f.label, items: results.value.filter((r) => r.family === f) })).filter((g) => g.items.length)
+  const rest = results.value.filter((r) => !r.family)
+  if (rest.length) out.push({ id: 'lain', label: 'Hasil lain', items: rest })
+  return out
 })
 
 // Pertanyaan di kotak Cari dijawab Kia di atas daftar spot
@@ -139,7 +152,12 @@ onMounted(() => {
           </div>
         </div>
       </li>
-      <li v-for="r in results" :key="r.poi.id" class="flex items-center gap-3 border-b border-line py-3">
+      <template v-for="g in groups" :key="g.id">
+      <li v-if="g.label" class="flex items-baseline justify-between pb-1 pt-4">
+        <span class="text-[11px] font-extrabold uppercase tracking-[0.12em] text-brand-700">{{ g.label }}</span>
+        <span class="text-[11px] text-muted">{{ g.items.length }} spot</span>
+      </li>
+      <li v-for="r in g.items" :key="r.poi.id" class="flex items-center gap-3 border-b border-line py-3">
         <button class="flex min-w-0 flex-1 items-center gap-3 text-left" @click="go(r.poi.id)">
           <PoiThumb :poi="r.poi" />
           <span class="min-w-0">
@@ -155,6 +173,7 @@ onMounted(() => {
         </button>
         <button class="btn-outline min-h-9 shrink-0 px-3.5 text-[12px]" :disabled="!location.position" @click="navigate(r.poi.id)">Arahkan</button>
       </li>
+      </template>
       <li v-if="!results.length && !kiaReply" class="py-16 text-center">
         <p class="text-[15px] font-semibold text-ink">Tidak ada spot yang cocok</p>
         <p class="mt-1 text-[13px] text-muted">Coba kata lain, misalnya "musala", "makan", atau "foto".</p>

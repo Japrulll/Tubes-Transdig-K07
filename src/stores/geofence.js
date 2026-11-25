@@ -80,9 +80,10 @@ export function fireTrigger(poi, { source = 'gps', distance = null, accuracy = n
     accuracy: accuracy != null ? Math.round(accuracy) : null,
   })
 
-  if (geofence.suppress === poi.id && source !== 'qr') return
-  // Saat Wellness Trail berjalan, checkpoint memakai panduan audio trail (tidak dobel)
-  if (source !== 'qr' && trail.status === 'running' && activeTrail.value?.checkpoints.some((c) => c.poi_id === poi.id)) return
+  // Selama navigasi atau Wellness Trail berjalan, spot yang dilewati hanya dicatat stempelnya:
+  // kartu & suara spot tidak boleh menimpa layar "Anda telah tiba" atau memotong panduan
+  // checkpoint (radius spot sering bersinggungan dengan jalur). Scan QR tetap membuka kartu.
+  if (source !== 'qr' && (geofence.suppress || (trail.status === 'running' && activeTrail.value))) return
   geofence.active = { poi, source, distance, at: Date.now(), isNewStamp }
 
   // Respons multimodal: getar + nada + prompt suara (≤3 detik)
