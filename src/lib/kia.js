@@ -225,8 +225,7 @@ function poiAnswer(p) {
 
 // Topik yang dikenali tapi datanya belum ada: jawab jujur dan arahkan ke pengelola
 const HONEST = [
-  { id: 'darurat', words: ['darurat', 'kecelakaan', 'pingsan', 'luka', 'p3k', 'pertolongan pertama', 'sakit', 'ambulans', 'ambulance', 'anak hilang', 'tersesat', 'polisi', 'kebakaran'], text: () => `Kalau darurat, segera hubungi 112 (gratis). Minta bantuan petugas atau satpam taman terdekat, dan hubungi pengelola: ${contact()}.` },
-  { id: 'hilang', words: ['barang hilang', 'kehilangan', 'dompet hilang', 'hp hilang', 'ketinggalan', 'lost and found'], text: () => `Untuk barang hilang atau ketinggalan, lapor ke petugas taman atau hubungi pengelola: ${contact()}.` },
+  { id: 'darurat', words: ['darurat', 'kecelakaan', 'pingsan', 'luka', 'terjatuh', 'berdarah', 'kejang', 'sesak napas', 'p3k', 'pertolongan pertama', 'sakit', 'ambulans', 'ambulance', 'polisi', 'kebakaran', 'tolong', 'bahaya'], text: () => `Kalau darurat, segera hubungi 112 (gratis, 24 jam) atau ambulans 119. Minta bantuan petugas atau satpam taman terdekat, dan hubungi pengelola: ${contact()}.` },
   { id: 'hujan', words: ['hujan', 'gerimis', 'berteduh', 'payung', 'cuaca', 'panas banget', 'terik'], text: () => { const f = FAMILIES.find((x) => x.id === 'kuliner'); const p = byDistance(membersOf(f, content.pois))[0]; return `Taman ini sebagian besar terbuka. Saat hujan atau terik, berteduh di ${p ? p.short_name : 'area kuliner'} atau di bawah pepohonan Zona Teduh, lalu lanjut menjelajah setelah reda.` } },
   { id: 'hewan', words: ['anjing', 'kucing', 'hewan peliharaan', 'peliharaan', 'pet'], text: () => `Aku belum punya info resmi soal hewan peliharaan. Tanyakan ke petugas di gerbang atau ${contact()}.` },
   { id: 'rokok', words: ['rokok', 'merokok', 'vape', 'smoking'], text: () => `Aku belum punya info area merokok. Demi kenyamanan bersama, tanyakan ke petugas dan hindari merokok di dekat anak-anak, ya.` },
@@ -249,6 +248,46 @@ function faqAnswer(t, strict) {
   return null
 }
 
+// ---------------------------------------------------------------------------
+// Keselamatan: orang atau barang hilang. Dicek PALING AWAL dan memakai kombinasi kata
+// ("anak saya hilang", "barang saya ketinggalan"), bukan frasa persis.
+// ---------------------------------------------------------------------------
+const LOST = ['hilang', 'kehilangan', 'tersesat', 'nyasar', 'terpisah', 'kepisah', 'ketinggalan', 'tertinggal', 'lupa taruh', 'lupa naruh', 'ga ketemu', 'gak ketemu', 'nggak ketemu', 'ngga ketemu', 'tidak ketemu', 'belum ketemu', 'lost', 'lost and found']
+const PERSON = ['anak', 'anakku', 'adik', 'adek', 'balita', 'bayi', 'bocah', 'putra', 'putri', 'keponakan', 'cucu', 'ibu', 'ayah', 'bapak', 'mama', 'papa', 'mamah', 'papah', 'orang tua', 'ortu', 'nenek', 'kakek', 'istri', 'suami', 'teman', 'kawan', 'pacar', 'keluarga', 'rombongan', 'lansia', 'orang', 'saudara']
+const ITEM = ['barang', 'dompet', 'hp', 'handphone', 'ponsel', 'telepon', 'tas', 'kunci', 'kartu', 'ktp', 'sim', 'jaket', 'payung', 'kacamata', 'jam tangan', 'helm', 'botol', 'mainan', 'sepatu', 'sandal', 'uang', 'laptop', 'earphone', 'headset', 'powerbank', 'kamera', 'stnk', 'karcis parkir', 'tiket']
+
+function staffPoint() {
+  // Titik berpetugas yang pasti ada: loket tiket (spot 2). Bila tidak ada, Pintu Utama.
+  return getPoi('P18') || getPoi('P01')
+}
+
+function lostPersonAnswer() {
+  const s = staffPoint()
+  const text =
+    'Tetap tenang, ya. Segera lapor ke petugas atau satpam terdekat' +
+    (s ? `, misalnya di ${s.name} (spot ${s.number})` : '') +
+    '. Sebutkan nama, usia, ciri pakaian, dan tempat terakhir dia terlihat. ' +
+    'Minta rekanmu tetap menunggu di tempat terakhir bertemu. ' +
+    `Kalau belum ketemu dalam beberapa menit, hubungi polisi 110 atau darurat 112 (gratis). Pengelola taman: ${contact()}.`
+  return { intent: 'safety:lost-person', text, actions: s ? [navAction(s)] : [] }
+}
+
+function lostItemAnswer() {
+  const s = staffPoint()
+  const text =
+    'Coba telusuri lagi tempat terakhir kamu memakainya dan tanyakan ke tenan atau petugas di sekitar sana. ' +
+    `Lalu laporkan ke petugas taman${s ? ` di ${s.name} (spot ${s.number})` : ''} dan tinggalkan nomor yang bisa dihubungi. ` +
+    `Kamu juga bisa menghubungi pengelola: ${contact()}. Kalau yang hilang ponsel, lacak lewat Find My Device (Android) atau Find My (iPhone).`
+  return { intent: 'safety:lost-item', text, actions: s ? [navAction(s)] : [] }
+}
+
+function safetyAnswer(t) {
+  if (!has(t, LOST)) return null
+  if (has(t, PERSON)) return lostPersonAnswer()
+  if (has(t, ITEM) || has(t, ['hilang', 'kehilangan', 'ketinggalan', 'tertinggal', 'lost and found'])) return lostItemAnswer()
+  return null
+}
+
 /**
  * @returns {{ text: string, intent: string, answered: boolean, actions: Array }}
  */
@@ -256,6 +295,10 @@ export function answer(question) {
   const t = norm(question)
   const done = (a) => ({ actions: [], ...a, answered: a.intent !== 'fallback' })
   if (!t) return done({ intent: 'help', text: 'Tanya apa saja soal taman ini: jadwal air mancur, toilet terdekat, jam buka, atau mau ke mana sekarang.' })
+
+  // 0. Keselamatan dulu: orang/barang hilang, lalu keadaan darurat
+  const safety = safetyAnswer(t)
+  if (safety) return done(safety)
 
   const words = t.split(' ')
   if (words.length <= 3 && has(t, ['halo', 'hai', 'hi', 'hallo', 'hey', 'pagi', 'siang', 'sore', 'malam', 'assalamualaikum', 'punten', 'sampurasun']))

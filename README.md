@@ -146,6 +146,7 @@ P04 (Area Tematik Asia / Kampung Korea) dan Lolipops Playland **sudah tidak ada*
 | 1.6 | 25 Nov 2026 | Tambah P18 Loket Tiket Masuk (plus code 3JMR+HMC; papan harga Rp10.000, usia 6+) | Titik pembelian tiket di dalam taman |
 | 1.6 | 25 Nov 2026 | Spot diurutkan ulang sebagai rute keliling; nomor spot (1–16) dipakai di semua halaman, bukan ID; satu nama per spot (`name` = `short_name`) | Penomoran & nama di Stempel sempat berbeda dengan peta |
 | 1.6 | 25 Nov 2026 | Foto P02 Gerbang Parkir, P11 Zona Relaksasi, P18 Loket Tiket; semua 16 spot kini berfoto | Data lapangan dari tim |
+| 1.7 | 25 Nov 2026 | Tanya Kia: aturan keselamatan dicek paling awal dan memakai kombinasi kata (kata "hilang/tersesat/terpisah/ketinggalan…" + orang atau barang), sehingga "anak saya hilang harus ke mana?" dan "barang saya hilang" terjawab; jawaban berisi langkah, nomor 110/112/119, kontak pengelola, dan tombol arah ke Loket Tiket | DF-03: kalimat dengan kata sisipan ("anak **saya** hilang") sebelumnya jatuh ke jawaban cadangan |
 
 ## Teknologi
 
