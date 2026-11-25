@@ -87,11 +87,12 @@ function navigate(id) {
 // Pencarian suara (bahasa Indonesia; web atau native di aplikasi)
 const SR = speechSupported()
 const voiceError = ref('')
+let stopListening = null
 function voice() {
-  if (listening.value) return
+  if (listening.value) return stopListening?.()
   voiceError.value = ''
   listening.value = true
-  listen({
+  stopListening = listen({
     onPartial: (text) => (q.value = text),
     onFinal: (text) => (q.value = text),
     onError: (message) => (voiceError.value = message),
@@ -121,8 +122,8 @@ onMounted(() => {
             aria-label="Cari spot atau fasilitas"
             class="min-h-12 min-w-0 flex-1 bg-transparent text-[15px] outline-none placeholder:text-subtle [&::-webkit-search-cancel-button]:hidden"
           />
-          <button v-if="q" class="grid size-7 place-items-center rounded-full border border-line text-muted" aria-label="Hapus" @click="q = ''"><Icon name="x" :size="14" :stroke="2.6" /></button>
-          <button v-else-if="SR" class="grid size-8 place-items-center rounded-full text-brand-700" :class="listening ? 'animate-pulse bg-brand-100' : ''" aria-label="Cari dengan suara" @click="voice"><Icon name="mic" :size="18" /></button>
+          <button v-if="q && !listening" class="grid size-7 place-items-center rounded-full border border-line text-muted" aria-label="Hapus" @click="q = ''"><Icon name="x" :size="14" :stroke="2.6" /></button>
+          <button v-else-if="SR || listening" class="grid size-8 place-items-center rounded-full" :class="listening ? 'bg-coral-500 text-white' : 'text-brand-700'" :aria-label="listening ? 'Berhenti merekam' : 'Cari dengan suara'" @click="voice"><Icon :name="listening ? 'stop' : 'mic'" :size="listening ? 14 : 18" :fill="listening" /></button>
         </div>
       </div>
       <div class="no-scrollbar -mx-4 mt-3 flex gap-2 overflow-x-auto px-4 pb-1" role="tablist" aria-label="Filter kategori">

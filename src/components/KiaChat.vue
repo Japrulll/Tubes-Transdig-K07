@@ -52,6 +52,7 @@ function ask(text, { spoken = false } = {}) {
   input.value = ''
   push({ from: 'me', text: q })
   thinking.value = true
+  // Jeda singkat hanya agar indikator mengetik terlihat; jawaban dihitung langsung di ponsel
   setTimeout(() => {
     // Satu jawaban yang gagal tidak boleh membuat Kia macet untuk pertanyaan berikutnya
     let a
@@ -68,7 +69,7 @@ function ask(text, { spoken = false } = {}) {
     push({ from: 'kia', text: a.text, actions: a.actions, xp, intent: a.intent })
     // Pertanyaan lewat suara dijawab dengan suara juga (eyes-free)
     if (settings.kiaVoice || spoken) speak(a.text, { key: 'kia' })
-  }, 380)
+  }, 120)
 }
 
 function voice() {
@@ -154,24 +155,28 @@ function close() {
       </div>
 
       <div class="shrink-0 border-t border-line px-4 pb-3 pt-2.5">
-        <div class="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 pb-2.5">
+        <div v-if="!listening" class="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 pb-2.5">
           <button v-for="c in chips" :key="c" class="chip shrink-0 border-brand-200 text-brand-800" @click="ask(c)">{{ c }}</button>
         </div>
+        <p v-if="listening" class="mb-2 flex items-center gap-2 rounded-xl bg-coral-500/10 px-3 py-2 text-[12px] font-semibold text-coral-600" role="status" aria-live="polite">
+          <span class="rec-dot size-2.5 shrink-0 rounded-full bg-coral-500" />
+          Merekam… ketuk <Icon name="stop" :size="11" fill class="inline" /> untuk mengirim pertanyaan
+        </p>
         <form class="flex items-center gap-2" @submit.prevent="ask(input)">
           <div class="flex min-h-12 flex-1 items-center gap-2 rounded-2xl border-[1.5px] border-brand-300 bg-white px-3.5 focus-within:border-brand-500">
-            <input ref="field" v-model="input" type="text" enterkeyhint="send" maxlength="200" :placeholder="listening ? 'Mendengarkan… bicara sekarang' : 'Tanya Kia…'" aria-label="Pertanyaan untuk Kia" class="min-w-0 flex-1 bg-transparent text-[15px] outline-none placeholder:text-subtle" />
+            <input ref="field" v-model="input" type="text" enterkeyhint="send" maxlength="200" :readonly="listening" :placeholder="listening ? 'Bicara sekarang…' : 'Tanya Kia…'" aria-label="Pertanyaan untuk Kia" class="min-w-0 flex-1 bg-transparent text-[15px] outline-none placeholder:text-subtle" />
             <button
               type="button"
-              class="grid size-9 place-items-center rounded-full"
-              :class="[listening ? 'animate-pulse bg-coral-500/15 text-coral-600' : 'text-brand-700', canListen ? '' : 'opacity-50']"
-              :aria-label="listening ? 'Selesai bicara' : 'Tanya dengan suara'"
+              class="grid size-9 shrink-0 place-items-center rounded-full transition-colors"
+              :class="[listening ? 'bg-coral-500 text-white' : 'text-brand-700', canListen ? '' : 'opacity-50']"
+              :aria-label="listening ? 'Berhenti merekam dan kirim' : 'Tanya dengan suara'"
               :aria-pressed="listening"
               @click="voice"
             >
-              <Icon name="mic" :size="19" />
+              <Icon :name="listening ? 'stop' : 'mic'" :size="listening ? 16 : 19" :fill="listening" />
             </button>
           </div>
-          <button type="submit" class="grid size-12 shrink-0 place-items-center rounded-full bg-brand-500 text-white disabled:opacity-40" :disabled="!input.trim()" aria-label="Kirim pertanyaan">
+          <button type="submit" class="grid size-12 shrink-0 place-items-center rounded-full bg-brand-500 text-white disabled:opacity-40" :disabled="!input.trim() || listening" aria-label="Kirim pertanyaan">
             <Icon name="send" :size="19" />
           </button>
         </form>
@@ -181,6 +186,14 @@ function close() {
 </template>
 
 <style scoped>
+.rec-dot {
+  animation: rec-blink 1s ease-in-out infinite;
+}
+@keyframes rec-blink {
+  50% {
+    opacity: 0.25;
+  }
+}
 .typing {
   display: inline-flex;
   gap: 4px;
