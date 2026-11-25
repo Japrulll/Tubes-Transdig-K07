@@ -30,7 +30,7 @@ export const FAMILIES = [
     equivalent: true,
     label: 'Gerbang & pintu masuk',
     terms: ['gerbang', 'pintu', 'pintu masuk', 'pintu keluar', 'jalan masuk', 'jalan keluar'],
-    match: (p) => p.art === 'gate',
+    match: (p) => p.art === 'gate' && !has(p, ['loket']),
   },
   {
     id: 'parkir',

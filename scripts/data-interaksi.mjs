@@ -22,6 +22,7 @@ export const NARASI = {
   P15: 'Kamu tiba di Food Court 2, sisi timur taman! Di bangunan memanjang ini ada Steak Ranjang, Siloka, Pang Waffle, dan RD Coffee and Eatery. Mau makan berat, jajan manis, atau sekadar ngopi, semuanya ada. Jam buka tiap tenan beda-beda, jadi cek papan di depannya, ya. Habis makan, jalan ke barat sekitar seratus empat puluh meter untuk sampai di danau. Pas banget kalau mau nonton air mancur menari malam nanti!',
   P16: 'Assalamualaikum! Kamu di dekat Masjid Al-Maleeq, di sisi barat kawasan Kiara Artha, dekat Jalan Banten. Kalau sudah masuk waktu salat, kamu bisa beribadah di sini sebelum lanjut menjelajah. Simpan alas kaki di tempatnya dan jaga kebersihan, ya. Kalau sedang di sisi utara taman, ada juga musala dekat titik start jogging track. Menjelang magrib biasanya ramai, jadi datang sedikit lebih awal. Setelah salat, Pintu Utama ada tidak jauh di sebelah selatan, dan Rest Area 78 di sebelah utara kalau kamu lapar.',
   P17: 'Selamat datang di Rest Area 78, deretan kafe dan rumah makan di Jalan Banten, dekat area parkir. Mau sarapan bubur, makan berat, atau ngopi santai? Di sini ada Orien Coffee, Bagi Kopi, Kang Bubur, Nats Time, sampai Gubug Makan Mang Engking. Ada juga Fely Creative Space kalau kamu suka berkreasi. Jam buka tiap tenan beda-beda, jadi cek papan di depannya, ya. Setelah kenyang, Masjid Al-Maleeq dan Pintu Utama ada tidak jauh di sebelah selatan. Selamat menikmati!',
+  P18: 'Halo, selamat datang di Kiara Artha Park! Ini loket tiket masuk, booth merah di bawah tenda putih. Tiketnya sepuluh ribu rupiah per orang untuk usia enam tahun ke atas. Setelah beli tiket, coba foto dulu di papan nama Kiara Artha Park di dekat sini. Lalu jalan ke timur untuk sampai di danau dan air mancur, atau mampir ke Papa Skuter kalau mau berkeliling naik skuter. Selamat menjelajah!',
 }
 
 // ---------------------------------------------------------------------------
@@ -88,6 +89,10 @@ export const KUIS = {
     { q: 'Rest Area 78 berada di jalan apa?', options: ['Jl. Banten', 'Jl. Jakarta', 'Jl. Ibrahim Adjie', 'Jl. Asia Afrika'], explain: 'Rest Area 78 ada di Jl. Banten No. 78, sisi barat laut taman.' },
     { q: 'Spot mana yang dekat dengan Rest Area 78?', options: ['Area parkir', 'Gerbang Timur', 'Food Court 2', 'Zona Teduh'], explain: 'Rest Area 78 berada dekat area parkir di sisi barat laut taman.' },
   ],
+  P18: [
+    { q: 'Berapa harga tiket masuk per orang menurut papan di loket?', options: ['Rp10.000', 'Rp5.000', 'Rp25.000', 'Gratis'], explain: 'Papan di loket mencantumkan Rp10.000 per orang untuk usia 6 tahun ke atas.' },
+    { q: 'Tiket Rp10.000 berlaku untuk usia berapa?', options: ['6 tahun ke atas', 'Semua usia', '17 tahun ke atas', '12 tahun ke atas'], explain: 'Papan harga menyebut tiket berlaku untuk usia 6 tahun ke atas.' },
+  ],
 }
 
 // ---------------------------------------------------------------------------
@@ -129,6 +134,7 @@ export const MISI = {
   P15: { type: 'photo', title: 'Foto menu Food Court 2', prompt: 'Foto menu atau tenan favoritmu di Food Court 2.' },
   P16: { type: 'confirm', title: 'Rapikan alas kaki', prompt: 'Simpan alas kakimu dengan rapi di tempat yang disediakan, lalu bantu rapikan satu pasang lainnya.', done_label: 'Sudah rapi!' },
   P17: { type: 'photo', title: 'Foto menu Rest Area 78', prompt: 'Foto menu atau tenan favoritmu di Rest Area 78.' },
+  P18: { type: 'photo', title: 'Foto di papan Kiara Artha', prompt: 'Ambil foto berlatar papan nama Kiara Artha Park di dekat loket.' },
 }
 
 // ---------------------------------------------------------------------------
@@ -167,7 +173,7 @@ export const KUIS_TRAIL = {
 // jadwal air mancur, fasilitas terdekat, rekomendasi) dijawab langsung oleh src/lib/kia.js.
 // ---------------------------------------------------------------------------
 export const FAQ = [
-  { id: 'tiket', patterns: ['tiket', 'harga masuk', 'bayar masuk', 'htm', 'biaya masuk'], answer: 'Tiket masuk tercatat Rp10.000 per orang, hari kerja maupun akhir pekan (detikJabar, 2024). Cek lagi di loket, ya, harga bisa berubah.', poi_id: 'P02' },
+  { id: 'tiket', patterns: ['tiket', 'harga masuk', 'bayar masuk', 'htm', 'biaya masuk'], answer: 'Tiket masuk Rp10.000 per orang untuk usia 6 tahun ke atas, sesuai papan di loket tiket dekat papan nama Kiara Artha Park.', poi_id: 'P18' },
   { id: 'alamat', patterns: ['alamat', 'lokasi taman', 'letak taman', 'taman ini di mana'], answer: 'Kiara Artha Park ada di Jl. Banten, Kebonwaru, Kecamatan Batununggal, Kota Bandung, di antara flyover Antapani dan flyover Kiaracondong.', poi_id: 'P01' },
   { id: 'kontak', patterns: ['kontak', 'telepon', 'nomor hp', 'nomor telepon', 'instagram', 'ig', 'pengelola'], answer: 'Info resmi taman: Instagram @kiaraarthapark dan telepon 0822-1583-8889.', poi_id: null },
   { id: 'angkutan', patterns: ['angkot', 'bus', 'transportasi', 'naik apa', 'trans metro', 'kendaraan umum', 'halte'], answer: 'Bus Trans Metro Bandung Koridor 5 berhenti di halte Kiara Artha. Halte Gerbang Utara Kiara Artha Park juga ada di Jl. Jakarta, dekat Gerbang Utara.', poi_id: 'P13' },

@@ -111,7 +111,7 @@ function back() {
     <div class="relative -mt-6 rounded-t-[1.75rem] bg-canvas px-5 pb-10 pt-5">
       <div class="flex items-start justify-between gap-3">
         <div class="min-w-0">
-          <p class="eyebrow" :style="{ color: cat?.color }">{{ cat?.label }} · {{ poi.id }}</p>
+          <p class="eyebrow" :style="{ color: cat?.color }">{{ cat?.label }} · Spot {{ poi.number }}</p>
           <h1 class="mt-1.5 text-[26px] font-medium leading-tight tracking-tight text-ink">{{ poi.name }}</h1>
           <p class="mt-1 text-[12px] text-muted">{{ poi.location_label }}</p>
         </div>
@@ -120,7 +120,7 @@ function back() {
           :class="stamp ? 'border-brand-500 bg-brand-50 text-brand-700' : 'border-dashed border-line text-subtle'"
           :title="stamp ? 'Stempel tersimpan' : 'Belum dikunjungi'"
         >
-          <span>{{ poi.id }}<br /><span class="text-[8px] font-bold uppercase tracking-wider">{{ stamp ? 'Stempel ✓' : 'Belum' }}</span></span>
+          <span><span class="text-[15px]">{{ poi.number }}</span><br /><span class="text-[8px] font-bold uppercase tracking-wider">{{ stamp ? 'Stempel ✓' : 'Belum' }}</span></span>
         </div>
       </div>
 

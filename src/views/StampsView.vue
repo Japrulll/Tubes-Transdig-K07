@@ -99,14 +99,14 @@ const badgeMeta = (b) => (b.done ? 'Diperoleh' : b.kind === 'stamp' ? `${b.have}
               class="relative grid aspect-square w-full max-w-[64px] place-items-center rounded-full text-[12px] font-extrabold"
               :class="visits.stamps[p.id] ? 'border-2 border-brand-300 bg-brand-100 text-brand-800' : 'border-2 border-dashed border-line text-subtle'"
             >
-              {{ p.id }}
+              {{ p.number }}
               <span v-if="visits.stamps[p.id]" class="absolute -bottom-0.5 -right-0.5 grid size-5 place-items-center rounded-full border-2 border-canvas bg-brand-500 text-white">
                 <Icon name="check" :size="10" :stroke="3.5" />
               </span>
             </span>
             <StarRow :count="starsOf(p.id)" :size="11" />
-            <span class="w-full truncate text-center text-[10px]" :class="visits.stamps[p.id] ? 'font-semibold text-ink' : 'text-subtle'">
-              {{ visits.stamps[p.id] ? p.short_name : 'Belum' }}
+            <span class="line-clamp-2 w-full text-center text-[10px] leading-tight" :class="visits.stamps[p.id] ? 'font-semibold text-ink' : 'text-subtle'">
+              {{ p.name }}
             </span>
           </button>
         </li>
@@ -147,8 +147,8 @@ const badgeMeta = (b) => (b.done ? 'Diperoleh' : b.kind === 'stamp' ? `${b.have}
       <section v-if="stampCount" class="mt-6">
         <p class="eyebrow">Riwayat stempel</p>
         <ul class="mt-2 divide-y divide-line rounded-2xl border border-line bg-white">
-          <li v-for="[id, s] in Object.entries(visits.stamps).sort((a, b) => b[1].at - a[1].at)" :key="id" class="flex items-center justify-between px-4 py-2.5 text-[12px]">
-            <span class="font-semibold text-ink">{{ id }} · {{ getPoi(id)?.short_name }}</span>
+          <li v-for="[id, s] in Object.entries(visits.stamps).filter(([id]) => getPoi(id)).sort((a, b) => b[1].at - a[1].at)" :key="id" class="flex items-center justify-between px-4 py-2.5 text-[12px]">
+            <span class="font-semibold text-ink">{{ getPoi(id).number }} · {{ getPoi(id).name }}</span>
             <span class="text-muted">{{ fmtDate(s.at) }} · {{ s.source === 'qr' ? 'QR' : 'GPS' }}</span>
           </li>
         </ul>

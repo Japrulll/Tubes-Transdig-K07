@@ -1,9 +1,15 @@
 {
-  "generated": "2026-11-25T08:59:02.518680Z",
+  "generated": "2026-11-25T09:24:09.282625Z",
   "files": {
     "foto/p01_1": {
       "w": 960,
       "h": 1280,
+      "thumb": true,
+      "credit": null
+    },
+    "foto/p02_1": {
+      "w": 1280,
+      "h": 857,
       "thumb": true,
       "credit": null
     },
@@ -73,6 +79,12 @@
       "thumb": true,
       "credit": null
     },
+    "foto/p11_1": {
+      "w": 1280,
+      "h": 707,
+      "thumb": true,
+      "credit": null
+    },
     "foto/p13_1": {
       "w": 1280,
       "h": 720,
@@ -100,6 +112,12 @@
     "foto/p17_1": {
       "w": 1280,
       "h": 853,
+      "thumb": true,
+      "credit": null
+    },
+    "foto/p18_1": {
+      "w": 910,
+      "h": 984,
       "thumb": true,
       "credit": null
     },

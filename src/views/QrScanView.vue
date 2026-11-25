@@ -59,9 +59,17 @@ async function stop() {
     /* abaikan */
   }
 }
+// Nomor spot (sama dengan pin di peta & stempel), mis. "5"; kode QR "P05" juga diterima
 function submitManual() {
-  const id = parsePoiCode(manual.value.length <= 3 ? `P${manual.value.replace(/\D/g, '').padStart(2, '0')}` : manual.value)
-  if (!id || !open(id)) manualErr.value = (id && RETIRED_POIS[id]) || 'Kode tidak dikenal. Contoh: P05'
+  const raw = manual.value.trim()
+  if (/^\d{1,2}$/.test(raw)) {
+    const poi = content.pois.find((p) => p.number === Number(raw))
+    if (poi && open(poi.id)) return
+    manualErr.value = `Nomor spot 1–${content.pois.length}.`
+    return
+  }
+  const id = parsePoiCode(raw)
+  if (!id || !open(id)) manualErr.value = (id && RETIRED_POIS[id]) || `Tidak dikenal. Masukkan nomor spot 1–${content.pois.length}.`
 }
 
 onMounted(start)
@@ -108,13 +116,12 @@ onBeforeUnmount(stop)
         <input
           v-model="manual"
           list="poi-codes"
-          inputmode="text"
-          autocapitalize="characters"
-          placeholder="Kode spot, mis. P05"
-          aria-label="Kode spot"
+          inputmode="numeric"
+          :placeholder="`Nomor spot (1–${content.pois.length})`"
+          aria-label="Nomor spot"
           class="min-h-12 min-w-0 flex-1 rounded-full border border-line px-4 text-[14px] outline-none focus:border-brand-500"
         />
-        <datalist id="poi-codes"><option v-for="p in content.pois" :key="p.id" :value="p.id">{{ p.name }}</option></datalist>
+        <datalist id="poi-codes"><option v-for="p in content.pois" :key="p.id" :value="p.number">{{ p.name }}</option></datalist>
         <button class="btn-primary min-h-12 px-5 text-sm" type="submit">Buka</button>
       </form>
       <p v-if="manualErr" class="mt-1.5 text-[12px] text-coral-600">{{ manualErr }}</p>
