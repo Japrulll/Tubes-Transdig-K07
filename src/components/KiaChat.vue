@@ -11,6 +11,7 @@ import { requestCompass } from '../stores/location'
 import { startNavigation } from '../stores/navigation'
 import { answer, suggestions, greeting } from '../lib/kia'
 import { speak, stopSpeech } from '../lib/audio'
+import { listen, speechSupported, UNSUPPORTED_MESSAGE } from '../lib/speech'
 
 const router = useRouter()
 const chat = reactive({ messages: [] })
@@ -20,7 +21,8 @@ const listening = ref(false)
 const scroller = ref(null)
 const field = ref(null)
 const chips = computed(() => suggestions())
-const SR = typeof window !== 'undefined' ? window.SpeechRecognition || window.webkitSpeechRecognition : null
+const canListen = speechSupported()
+let stopListening = null
 let uid = 0
 
 function push(m) {
@@ -44,7 +46,7 @@ watch(
   }
 )
 
-function ask(text) {
+function ask(text, { spoken = false } = {}) {
   const q = String(text || '').trim()
   if (!q || thinking.value) return
   input.value = ''
@@ -64,29 +66,26 @@ function ask(text) {
       thinking.value = false
     }
     push({ from: 'kia', text: a.text, actions: a.actions, xp, intent: a.intent })
-    if (settings.kiaVoice) speak(a.text, { key: 'kia' })
+    // Pertanyaan lewat suara dijawab dengan suara juga (eyes-free)
+    if (settings.kiaVoice || spoken) speak(a.text, { key: 'kia' })
   }, 380)
 }
 
 function voice() {
-  if (!SR || listening.value) return
+  // Ketuk lagi saat mendengarkan = selesai bicara
+  if (listening.value) return stopListening?.()
   stopSpeech()
-  const r = new SR()
-  r.lang = 'id-ID'
-  r.interimResults = true
-  let finalText = ''
-  r.onresult = (e) => {
-    const t = [...e.results].map((x) => x[0].transcript).join(' ')
-    input.value = t
-    if (e.results[e.results.length - 1].isFinal) finalText = t
-  }
-  r.onend = () => {
-    listening.value = false
-    if (finalText) ask(finalText)
-  }
-  r.onerror = () => (listening.value = false)
+  if (!canListen) return push({ from: 'kia', text: UNSUPPORTED_MESSAGE })
   listening.value = true
-  r.start()
+  stopListening = listen({
+    onPartial: (text) => (input.value = text),
+    onFinal: (text) => ask(text, { spoken: true }),
+    onError: (message) => push({ from: 'kia', text: message }),
+    onEnd: () => {
+      listening.value = false
+      stopListening = null
+    },
+  })
 }
 
 function act(a) {
@@ -160,8 +159,15 @@ function close() {
         </div>
         <form class="flex items-center gap-2" @submit.prevent="ask(input)">
           <div class="flex min-h-12 flex-1 items-center gap-2 rounded-2xl border-[1.5px] border-brand-300 bg-white px-3.5 focus-within:border-brand-500">
-            <input ref="field" v-model="input" type="text" enterkeyhint="send" maxlength="200" placeholder="Tanya Kia…" aria-label="Pertanyaan untuk Kia" class="min-w-0 flex-1 bg-transparent text-[15px] outline-none placeholder:text-subtle" />
-            <button v-if="SR" type="button" class="grid size-9 place-items-center rounded-full text-brand-700" :class="listening ? 'animate-pulse bg-brand-100' : ''" aria-label="Tanya dengan suara" @click="voice">
+            <input ref="field" v-model="input" type="text" enterkeyhint="send" maxlength="200" :placeholder="listening ? 'Mendengarkan… bicara sekarang' : 'Tanya Kia…'" aria-label="Pertanyaan untuk Kia" class="min-w-0 flex-1 bg-transparent text-[15px] outline-none placeholder:text-subtle" />
+            <button
+              type="button"
+              class="grid size-9 place-items-center rounded-full"
+              :class="[listening ? 'animate-pulse bg-coral-500/15 text-coral-600' : 'text-brand-700', canListen ? '' : 'opacity-50']"
+              :aria-label="listening ? 'Selesai bicara' : 'Tanya dengan suara'"
+              :aria-pressed="listening"
+              @click="voice"
+            >
               <Icon name="mic" :size="19" />
             </button>
           </div>

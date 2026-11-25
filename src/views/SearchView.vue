@@ -15,6 +15,7 @@ import Kia from '../components/Kia.vue'
 import { answer, looksLikeQuestion } from '../lib/kia'
 import { norm } from '../lib/text'
 import { familiesIn } from '../lib/families'
+import { listen, speechSupported } from '../lib/speech'
 import { level } from '../stores/play'
 import { openKia, openChallenge } from '../stores/ui'
 
@@ -83,18 +84,19 @@ function navigate(id) {
   router.push(`/navigate/${id}`)
 }
 
-// Pencarian suara (Web Speech Recognition, bahasa Indonesia)
-const SR = window.SpeechRecognition || window.webkitSpeechRecognition
+// Pencarian suara (bahasa Indonesia; web atau native di aplikasi)
+const SR = speechSupported()
+const voiceError = ref('')
 function voice() {
-  if (!SR) return
-  const r = new SR()
-  r.lang = 'id-ID'
-  r.interimResults = true
-  r.onresult = (e) => (q.value = [...e.results].map((x) => x[0].transcript).join(' '))
-  r.onend = () => (listening.value = false)
-  r.onerror = () => (listening.value = false)
+  if (listening.value) return
+  voiceError.value = ''
   listening.value = true
-  r.start()
+  listen({
+    onPartial: (text) => (q.value = text),
+    onFinal: (text) => (q.value = text),
+    onError: (message) => (voiceError.value = message),
+    onEnd: () => (listening.value = false),
+  })
 }
 
 onMounted(() => {
@@ -140,6 +142,7 @@ onMounted(() => {
       </div>
     </header>
 
+    <p v-if="voiceError" class="mx-4 mt-3 rounded-xl bg-coral-500/10 p-2.5 text-[12px] font-semibold text-coral-600" role="alert">{{ voiceError }}</p>
     <ul class="min-h-0 flex-1 overflow-y-auto px-4 pb-6" aria-live="polite">
       <li v-if="kiaReply" class="mt-3 flex gap-2.5 rounded-2xl bg-mint p-3">
         <Kia :mood="kiaReply.answered ? 'happy' : 'think'" :stage="level.level" :size="40" still class="shrink-0" />
