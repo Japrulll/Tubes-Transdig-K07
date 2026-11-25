@@ -10,7 +10,8 @@ export const speechSupported = () => isNative() || !!WebSR
 
 const WEB_ERRORS = {
   'not-allowed': 'Izin mikrofon ditolak. Izinkan mikrofon di pengaturan browser, lalu coba lagi.',
-  'service-not-allowed': 'Izin mikrofon ditolak. Izinkan mikrofon di pengaturan browser, lalu coba lagi.',
+  // Mikrofon diizinkan, tapi layanan pengenalan suara browser menolak (mis. Edge/Brave tertentu)
+  'service-not-allowed': 'Layanan pengenalan suara di browser ini tidak bisa dipakai. Coba buka SETARA di Google Chrome.',
   'audio-capture': 'Mikrofon tidak ditemukan. Pastikan mikrofon terpasang dan tidak dipakai aplikasi lain.',
   'no-speech': 'Aku belum mendengar suaramu. Ketuk mikrofon lalu bicara, ya.',
   network: 'Pengenalan suara butuh koneksi internet. Coba lagi saat online.',
@@ -44,7 +45,8 @@ export function listen({ onPartial = () => {}, onFinal, onError = () => {}, onEn
   r.onerror = (e) => {
     if (e.error === 'aborted') return
     errored = true
-    onError(WEB_ERRORS[e.error] || 'Input suara gagal. Coba lagi atau ketik pertanyaanmu.')
+    // Kode galat ikut ditampilkan agar mudah dilacak saat uji
+    onError(`${WEB_ERRORS[e.error] || 'Input suara gagal. Coba lagi atau ketik pertanyaanmu.'} (kode: ${e.error})`)
   }
   r.onend = () => {
     // Sebagian browser berhenti tanpa menandai hasil "final": pakai teks terakhir yang terdengar
