@@ -6,6 +6,7 @@ import Icon from '../components/Icon.vue'
 import { getPoi, content } from '../stores/content'
 import { fireTrigger } from '../stores/geofence'
 import { parsePoiCode } from '../lib/qr'
+import { RETIRED_POIS } from '../lib/poiIds'
 import { vibrate } from '../lib/audio'
 
 const router = useRouter()
@@ -39,7 +40,7 @@ async function start() {
         if (id && getPoi(id)) open(id)
         else {
           vibrate(80)
-          errorMsg.value = 'QR ini bukan kode spot SETARA.'
+          errorMsg.value = id ? RETIRED_POIS[id] || `Kode spot ${id} tidak dikenali.` : 'QR ini bukan kode spot SETARA.'
         }
       },
       () => {}
@@ -60,7 +61,7 @@ async function stop() {
 }
 function submitManual() {
   const id = parsePoiCode(manual.value.length <= 3 ? `P${manual.value.replace(/\D/g, '').padStart(2, '0')}` : manual.value)
-  if (!id || !open(id)) manualErr.value = 'Kode tidak dikenal. Contoh: P05'
+  if (!id || !open(id)) manualErr.value = (id && RETIRED_POIS[id]) || 'Kode tidak dikenal. Contoh: P05'
 }
 
 onMounted(start)

@@ -7,6 +7,7 @@ import { visits, onVisit, stampCount } from './visits'
 export { stampCount }
 import { now } from '../lib/time'
 import { sendFeedback } from '../lib/feedback'
+import { migrateKeys, canonicalPoiId } from '../lib/poiIds'
 
 export const XP = {
   listen: 10,
@@ -43,6 +44,9 @@ const fresh = () => ({
 })
 
 const stored = load('play', null)
+// Bintang per spot dengan ID lama (mis. P12 → P10) dipindahkan ke ID baru
+if (stored?.spots) stored.spots = migrateKeys(stored.spots)
+for (const e of stored?.events || []) if (e.poi) e.poi = canonicalPoiId(e.poi)
 export const play = reactive({ ...fresh(), ...(stored || {}) })
 watch(play, (v) => save('play', v), { deep: true })
 

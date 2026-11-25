@@ -1,4 +1,4 @@
-// Akun pengguna (Supabase Auth: Google atau email) + sinkronisasi progres per pengguna.
+// Akun pengguna (Supabase Auth: email & kata sandi) + sinkronisasi progres per pengguna.
 //
 // - Tanpa login aplikasi tetap berjalan penuh (mode tamu, progres hanya di ponsel).
 // - Setelah login, progres tamu di ponsel DIGABUNG dengan progres akun, lalu setiap perubahan
@@ -9,14 +9,13 @@
 // - Lokasi GPS dan foto Jurnal TIDAK pernah ikut disinkronkan.
 import { reactive, computed, watch } from 'vue'
 import { getAuthClient, supabaseEnabled } from '../lib/supabase'
-import { SUPABASE_URL, SUPABASE_ANON_KEY } from '../config'
 import { load, save } from '../lib/storage'
-import { visits, resetAll } from './visits'
+import { visits, resetAll, migrateVisitIds } from './visits'
+import { migrateKeys } from '../lib/poiIds'
 import { play, resetPlay } from './play'
 import { settings } from './settings'
 
 const PREF_KEYS = ['audioMode', 'navVoice', 'quiet', 'kiaVoice']
-const isNative = () => !!window.Capacitor?.isNativePlatform?.()
 
 export const auth = reactive({
   ready: false,
@@ -24,7 +23,6 @@ export const auth = reactive({
   busy: false,
   error: null,
   notice: null,
-  providers: { google: null, email: null }, // null = belum dicek
   sync: { status: 'idle', at: load('syncAt', null), backend: null, error: null }, // idle | syncing | synced | pending | error
 })
 
@@ -49,8 +47,6 @@ export const profile = computed(() => {
   }
 })
 
-// Login Google lewat redirect tidak didukung di WebView aplikasi (.apk); di sana pakai email.
-export const googleAvailable = computed(() => !isNative() && auth.providers.google !== false)
 
 // ---------------------------------------------------------------------------
 // Pesan galat dalam bahasa Indonesia
@@ -62,7 +58,6 @@ function message(e) {
   if (/already registered|already been registered/i.test(m)) return 'Email ini sudah terdaftar. Silakan masuk.'
   if (/password should be at least|password.*(short|characters)/i.test(m)) return 'Kata sandi minimal 6 karakter.'
   if (/rate limit|too many/i.test(m)) return 'Terlalu banyak percobaan. Coba lagi beberapa menit lagi.'
-  if (/provider is not enabled|unsupported provider/i.test(m)) return 'Login Google belum diaktifkan di server. Gunakan email dulu, ya.'
   if (/signups not allowed/i.test(m)) return 'Pendaftaran akun baru sedang ditutup.'
   if (/invalid email|unable to validate email/i.test(m)) return 'Format email tidak valid.'
   if (/failed to fetch|network/i.test(m)) return 'Tidak ada koneksi internet. Coba lagi saat online.'
@@ -82,16 +77,6 @@ function cleanAuthParams() {
   window.history.replaceState(window.history.state, '', url.pathname + url.search + url.hash)
 }
 
-async function loadProviders() {
-  try {
-    const r = await fetch(`${SUPABASE_URL}/auth/v1/settings`, { headers: { apikey: SUPABASE_ANON_KEY } })
-    const s = await r.json()
-    auth.providers = { google: !!s.external?.google, email: s.external?.email !== false }
-  } catch {
-    /* offline: biarkan null, tombol tetap tampil */
-  }
-}
-
 // ---------------------------------------------------------------------------
 // Inisialisasi sesi
 // ---------------------------------------------------------------------------
@@ -106,10 +91,9 @@ export async function initAuth() {
     auth.ready = true
     return
   }
-  loadProviders()
   try {
     const sb = await getAuthClient()
-    const { data, error } = await sb.auth.getSession() // juga menukar ?code= hasil redirect Google
+    const { data, error } = await sb.auth.getSession()
     if (error) auth.error = message(error)
     cleanAuthParams()
     setUser(data?.session?.user || null)
@@ -142,21 +126,6 @@ async function run(fn) {
   } finally {
     auth.busy = false
   }
-}
-
-export function signInWithGoogle() {
-  if (auth.providers.google === false) {
-    auth.error = message('provider is not enabled')
-    return Promise.resolve(null)
-  }
-  return run(async (sb) => {
-    const { error } = await sb.auth.signInWithOAuth({
-      provider: 'google',
-      options: { redirectTo: redirectUrl(), queryParams: { prompt: 'select_account' } },
-    })
-    if (error) throw error
-    return true // browser berpindah ke halaman Google
-  })
 }
 
 export function signInWithEmail(email, password) {
@@ -369,7 +338,8 @@ export async function pullAndMerge() {
     const sb = await getAuthClient()
     const remote = await remoteGet(sb)
     if (auth.user?.id !== uid) return
-    apply(merge(snapshot(), remote))
+    if (remote?.play?.spots) remote.play.spots = migrateKeys(remote.play.spots)
+    apply(merge(snapshot(), migrateVisitIds(remote)))
     await remotePut(sb)
     markSynced()
   } catch (e) {

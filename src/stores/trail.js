@@ -8,6 +8,7 @@ import { trailById } from './content'
 import { location, onPosition } from './location'
 import { visits, ensureSession } from './visits'
 import { trailFinished } from './play'
+import { geofence } from './geofence'
 
 const empty = () => ({
   trailId: null,
@@ -39,6 +40,7 @@ export const lastCheckpoint = computed(() => {
 
 export function startTrail(id) {
   Object.assign(trail, empty(), { trailId: id, status: 'running', startedAt: Date.now(), resumedAt: Date.now() })
+  geofence.active = null // panduan trail menggantikan kartu spot yang masih terbuka
   ensureSession()
   const t = trailById.value[id]
   speak(`Yuk mulai ${t.name}! Aku temani, ya. Checkpoint pertama: ${t.checkpoints[0].name}.`, { key: 'trail' })

@@ -3,7 +3,7 @@
 // Ada DUA klien terpisah:
 //   - getSupabase()   → anonim, tanpa sesi. Dipakai untuk membaca konten taman dan mengirim
 //                        umpan balik anonim, sehingga umpan balik tidak pernah membawa identitas akun.
-//   - getAuthClient() → menyimpan sesi login (Google / email) dan sinkronisasi progres pengguna.
+//   - getAuthClient() → menyimpan sesi login (email) dan sinkronisasi progres pengguna.
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from '../config'
 
 export const supabaseEnabled = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY)

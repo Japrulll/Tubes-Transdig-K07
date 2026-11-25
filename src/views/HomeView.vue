@@ -1,12 +1,11 @@
 <script setup>
 // Beranda / landing "Selamat datang di SETARA": titik masuk setiap kali aplikasi dibuka.
-// Berisi akun (masuk Google/email, status sinkron, keluar) dan jalan pintas ke peta.
+// Berisi akun (masuk dengan email, status sinkron, keluar) dan jalan pintas ke peta.
 import { computed, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import Icon from '../components/Icon.vue'
 import Kia from '../components/Kia.vue'
 import AuthSheet from '../components/AuthSheet.vue'
-import GoogleButton from '../components/GoogleButton.vue'
 import heroImg from '../assets/hero-setara.png'
 import iconLocate from '../assets/icon-locate.png'
 import { slotImage } from '../lib/mediaSlots'
@@ -15,7 +14,7 @@ import { content } from '../stores/content'
 import { stampCount } from '../stores/visits'
 import { play, level, totalStars } from '../stores/play'
 import { trail, activeTrail } from '../stores/trail'
-import { auth, isLoggedIn, profile, googleAvailable, signInWithGoogle, signOut, pushNow } from '../stores/auth'
+import { auth, isLoggedIn, profile, signOut, pushNow } from '../stores/auth'
 import { unlockAudio } from '../lib/audio'
 import { timeSlot } from '../lib/time'
 
@@ -42,7 +41,7 @@ watch(
   },
   { immediate: true }
 )
-// Tutup lembar login setelah berhasil masuk (termasuk kembali dari Google)
+// Tutup lembar login setelah berhasil masuk
 watch(isLoggedIn, (v) => v && (sheet.value = false))
 
 const greeting = computed(() => ({ pagi: 'Selamat pagi', siang: 'Selamat siang', sore: 'Selamat sore', malam: 'Selamat malam' })[timeSlot()] || 'Halo')
@@ -59,11 +58,6 @@ const syncText = computed(() => {
   }
   return 'Progres tersimpan di akun'
 })
-
-async function google() {
-  unlockAudio()
-  await signInWithGoogle()
-}
 
 function start() {
   unlockAudio()
@@ -126,7 +120,7 @@ async function logout(force = false) {
             <p class="truncate text-[15px] font-bold text-ink">{{ profile.name }}</p>
             <p class="truncate text-[12px] text-muted">{{ profile.email }}</p>
           </div>
-          <span class="rounded-full bg-mint px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.1em] text-brand-700">{{ profile.provider === 'google' ? 'Google' : 'Email' }}</span>
+          <span class="rounded-full bg-mint px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.1em] text-brand-700">Email</span>
         </div>
         <button
           class="mt-3 flex w-full items-center gap-2 rounded-xl px-1 text-left text-[12px] font-semibold"
@@ -176,7 +170,6 @@ async function logout(force = false) {
         </div>
         <p v-if="auth.error && !sheet" class="mt-3 rounded-xl bg-coral-500/10 p-2.5 text-[12px] font-semibold text-coral-600" role="alert">{{ auth.error }}</p>
         <div class="mt-4 flex flex-col gap-2.5">
-          <GoogleButton v-if="googleAvailable" :disabled="auth.busy || !auth.ready" @click="google" />
           <button class="btn-outline min-h-13 w-full" :disabled="!auth.ready" @click="openAuth('login')"><Icon name="mail" :size="18" /> Masuk dengan Email</button>
         </div>
         <p class="mt-3 text-center text-[12px] text-muted">
@@ -201,6 +194,6 @@ async function logout(force = false) {
       </div>
     </div>
   </main>
-  <AuthSheet :open="sheet" :initial-mode="sheetMode" @close="sheet = false" @done="sheet = false" @google="google" />
+  <AuthSheet :open="sheet" :initial-mode="sheetMode" @close="sheet = false" @done="sheet = false" />
   </div>
 </template>

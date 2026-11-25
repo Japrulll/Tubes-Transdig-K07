@@ -1,6 +1,7 @@
 // Lapisan UI global: lembar tantangan, Tanya Kia, ajakan rating saat meninggalkan spot.
 import { reactive } from 'vue'
-import { onExit } from './geofence'
+import { onExit, geofence } from './geofence'
+import { trail } from './trail'
 import { visits } from './visits'
 import { play, ratedThisVisit } from './play'
 import { settings } from './settings'
@@ -27,6 +28,8 @@ export const closeKia = () => (ui.kiaOpen = false)
 // pengguna meninggalkan spot bila tantangan dilewati.
 onExit((poi) => {
   if (settings.quiet || ui.challenge) return
+  // Spot yang hanya dilewati saat navigasi / Wellness Trail tidak dimintai rating
+  if (geofence.suppress || trail.status === 'running') return
   if (!visits.session.visited.includes(poi.id) || ratedThisVisit(poi.id)) return
   const key = `rate:${poi.id}:${visits.session.startedAt}`
   if (play.dismissed[key]) return

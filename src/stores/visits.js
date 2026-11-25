@@ -4,15 +4,27 @@ import { load, save } from '../lib/storage'
 import { haversine } from '../lib/geo'
 import { onPosition } from './location'
 import { poiById } from './content'
+import { migrateKeys, migrateList } from '../lib/poiIds'
 
 const newSession = () => ({ startedAt: null, endedAt: null, distanceM: 0, visited: [], lastPos: null })
 
-export const visits = reactive({
-  stamps: load('stamps', {}), // { P01: { at, source } }
-  session: load('session', newSession()),
-  history: load('history', []), // ringkasan kunjungan sebelumnya
-  trailsDone: load('trailsDone', []), // [{ trailId, at, distanceM, durationMs, complete }]
-})
+// Data lama memakai ID POI yang sudah berganti (mis. P12 → P10): dipindahkan saat dimuat
+export function migrateVisitIds(v) {
+  if (!v) return v
+  if (v.stamps) v.stamps = migrateKeys(v.stamps)
+  if (v.session?.visited) v.session.visited = migrateList(v.session.visited)
+  for (const h of v.history || []) h.visited = migrateList(h.visited)
+  return v
+}
+
+export const visits = reactive(
+  migrateVisitIds({
+    stamps: load('stamps', {}), // { P01: { at, source } }
+    session: load('session', newSession()),
+    history: load('history', []), // ringkasan kunjungan sebelumnya
+    trailsDone: load('trailsDone', []), // [{ trailId, at, distanceM, durationMs, complete }]
+  })
+)
 
 watch(() => visits.stamps, (v) => save('stamps', v), { deep: true })
 watch(() => visits.session, (v) => save('session', v), { deep: true })

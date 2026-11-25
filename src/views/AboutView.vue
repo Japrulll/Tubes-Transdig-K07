@@ -12,7 +12,7 @@ import { photoCredits } from '../lib/mediaSlots'
 const credits = photoCredits()
 
 const router = useRouter()
-const sourceLabel = { bundled: 'Dataset bawaan aplikasi (offline)', cache: 'Salinan Supabase tersimpan di ponsel', supabase: 'Supabase (terbaru)' }
+const sourceLabel = { bundled: 'Dataset bawaan aplikasi', supabase: 'Supabase (terbaru)' }
 const fmt = (t) => (t ? new Date(t).toLocaleString('id-ID', { dateStyle: 'medium', timeStyle: 'short' }) : '–')
 function replayOnboarding() {
   settings.onboarded = false
@@ -35,7 +35,7 @@ function replayOnboarding() {
         <p class="text-[12px] leading-relaxed text-muted">
           <span class="block text-[14px] font-bold text-ink">Kia, teman jelajahmu</span>
           Kia adalah tunas pohon kiara (Ficus), pohon yang konon menjadi asal nama Kiaracondong. Kia bercerita di setiap spot, memberi kuis dan misi,
-          menjawab pertanyaan secara offline, lalu tumbuh dari Tunas sampai Kiara Agung seiring bintang yang kamu kumpulkan.
+          menjawab pertanyaan langsung dari data taman, lalu tumbuh dari Tunas sampai Kiara Agung seiring bintang yang kamu kumpulkan.
         </p>
       </div>
       <dl class="mt-4 grid grid-cols-2 gap-2 text-[12px]">

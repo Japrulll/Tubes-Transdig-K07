@@ -26,7 +26,13 @@ const listening = ref(false)
 const listened = ref(false)
 const player = ref(null)
 const sched = computed(() => (poi.value ? nextSchedule(poi.value) : null))
-const hidden = computed(() => route.name === 'onboarding' || (route.name === 'poi' && route.params.id === poi.value?.id))
+// Layar navigasi punya kartu kedatangan sendiri: kartu spot tidak boleh menumpuk di atasnya
+const hidden = computed(
+  () =>
+    route.name === 'onboarding' ||
+    (route.name === 'poi' && route.params.id === poi.value?.id) ||
+    (route.name === 'navigate' && active.value?.source !== 'qr')
+)
 const stars = computed(() => (poi.value ? starsOf(poi.value.id) : 0))
 const challengeLeft = computed(() => (poi.value ? !spotState(poi.value.id).quiz?.done || !spotState(poi.value.id).mission?.done : false))
 

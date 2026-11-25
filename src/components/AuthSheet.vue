@@ -1,13 +1,12 @@
 <script setup>
-// Lembar masuk / daftar akun (Google atau email). Dipakai di Beranda.
+// Lembar masuk / daftar akun dengan email. Dipakai di Beranda.
 import { computed, ref, watch } from 'vue'
 import Icon from './Icon.vue'
 import Kia from './Kia.vue'
-import GoogleButton from './GoogleButton.vue'
-import { auth, googleAvailable, signInWithEmail, signUpWithEmail, resetPassword } from '../stores/auth'
+import { auth, signInWithEmail, signUpWithEmail, resetPassword } from '../stores/auth'
 
 const props = defineProps({ open: Boolean, initialMode: { type: String, default: 'login' } })
-const emit = defineEmits(['close', 'done', 'google'])
+const emit = defineEmits(['close', 'done'])
 
 const mode = ref(props.initialMode) // login | register | reset
 const name = ref('')
@@ -74,13 +73,7 @@ async function submit() {
           <button class="icon-btn -mr-2 -mt-1 size-10 text-muted" aria-label="Tutup" @click="emit('close')"><Icon name="x" /></button>
         </div>
 
-        <template v-if="mode !== 'reset' && googleAvailable">
-          <GoogleButton class="mt-5" :disabled="auth.busy" @click="emit('google')" />
-          <div class="my-4 flex items-center gap-3 text-[11px] font-semibold text-subtle">
-            <span class="h-px flex-1 bg-line" /> atau dengan email <span class="h-px flex-1 bg-line" />
-          </div>
-        </template>
-        <div v-else class="h-4" />
+        <div class="h-4" />
 
         <form class="space-y-3" novalidate @submit.prevent="submit">
           <label v-if="mode === 'register'" class="field">
