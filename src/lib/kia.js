@@ -319,7 +319,7 @@ export function suggestions() {
   if (slot === 'sore' || slot === 'malam') list.push('Air mancur mulai jam berapa?')
   list.push('Enaknya ke mana sekarang?', 'Toilet terdekat di mana?')
   if (daily.value && !daily.value.done) list.push('Tantangan hari ini apa?')
-  list.push('Berapa harga tiket masuk?', 'Musala terdekat?', 'Sewa sepeda berapa?', 'Bintangku sudah berapa?')
+  list.push('Berapa harga tiket masuk?', 'Musala terdekat?', 'Sewa skuter di mana?', 'Bintangku sudah berapa?')
   if (slot === 'pagi') list.unshift('Mau jogging, mulai dari mana?')
   return [...new Set(list)].slice(0, 5)
 }

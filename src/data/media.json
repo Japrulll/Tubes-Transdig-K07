@@ -1,15 +1,9 @@
 {
-  "generated": "2026-11-24T12:50:29.114Z",
+  "generated": "2026-11-25T08:59:02.518680Z",
   "files": {
     "foto/p01_1": {
       "w": 960,
       "h": 1280,
-      "thumb": true,
-      "credit": null
-    },
-    "foto/p01_2": {
-      "w": 1200,
-      "h": 800,
       "thumb": true,
       "credit": null
     },
@@ -37,6 +31,18 @@
       "thumb": true,
       "credit": null
     },
+    "foto/p06_1": {
+      "w": 1200,
+      "h": 800,
+      "thumb": true,
+      "credit": null
+    },
+    "foto/p07_1": {
+      "w": 1280,
+      "h": 909,
+      "thumb": true,
+      "credit": null
+    },
     "foto/p08_1": {
       "w": 1280,
       "h": 489,
@@ -49,6 +55,12 @@
       "thumb": true,
       "credit": null
     },
+    "foto/p09_1": {
+      "w": 1280,
+      "h": 720,
+      "thumb": true,
+      "credit": null
+    },
     "foto/p10_1": {
       "w": 768,
       "h": 1024,
@@ -58,6 +70,36 @@
     "foto/p10_2": {
       "w": 768,
       "h": 1024,
+      "thumb": true,
+      "credit": null
+    },
+    "foto/p13_1": {
+      "w": 1280,
+      "h": 720,
+      "thumb": true,
+      "credit": null
+    },
+    "foto/p14_1": {
+      "w": 1280,
+      "h": 720,
+      "thumb": true,
+      "credit": null
+    },
+    "foto/p15_1": {
+      "w": 1280,
+      "h": 720,
+      "thumb": true,
+      "credit": null
+    },
+    "foto/p16_1": {
+      "w": 1280,
+      "h": 725,
+      "thumb": true,
+      "credit": null
+    },
+    "foto/p17_1": {
+      "w": 1280,
+      "h": 853,
       "thumb": true,
       "credit": null
     },

@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-24",
+  "version": "2026-11-25",
   "park": {
     "name": "Kiara Artha Park",
     "city": "Bandung",
@@ -346,10 +346,6 @@
       {
         "label": "Republika — Ayo Intip Keseruan di Kiara Artha Park (24 Agu 2019)",
         "url": "https://news.republika.co.id/berita/pwoiiv0/ayo-intip-keseruan-di-kiara-artha-park-bandung"
-      },
-      {
-        "label": "Pemkot Bandung — Bike on The Street Everybody Happy (BOSEH)",
-        "url": "https://www.bandung.go.id/sub-etalase/27/sepeda"
       }
     ]
   },
@@ -418,7 +414,7 @@
       "activities": [
         "Peta ringkas zona taman",
         "Titik kumpul rombongan",
-        "Akses ke Selter BOSEH, area parkir, dan Masjid Al-Maleeq"
+        "Akses ke area parkir, Rest Area 78, dan Masjid Al-Maleeq"
       ],
       "tips": [
         "Foto papan peta di gerbang sebagai cadangan bila baterai menipis.",
@@ -498,7 +494,7 @@
       "radius_m": 25,
       "art": "parking",
       "summary": "Area parkir utama; arah ke Pintu Utama dan fasilitas terdekat.",
-      "description": "Area parkir utama berada di sisi barat laut taman, tidak jauh dari Jl. Banten. Dari gerbang parkir, pengunjung dapat berjalan ke selatan menuju Pintu Utama, atau ke timur menuju titik start jogging track, musala, dan toilet di sisi utara taman. Selter Sepeda BOSEH juga berada di dekat sini.",
+      "description": "Area parkir utama berada di sisi barat laut taman, tidak jauh dari Jl. Banten. Dari gerbang parkir, pengunjung dapat berjalan ke selatan menuju Pintu Utama, atau ke timur menuju titik start jogging track, musala, dan toilet di sisi utara taman. Rest Area 78 dengan deretan kafe dan rumah makan juga berada di dekat sini.",
       "trivia": [
         "Lokasi taman yang berada di antara dua flyover besar Bandung timur membuatnya mudah dijangkau dari arah Antapani maupun Kiaracondong.",
         "Tiket masuk taman tercatat Rp10.000 per orang, baik hari kerja maupun akhir pekan (detikJabar, 2024). Cek kembali di loket karena harga dapat berubah."
@@ -542,7 +538,7 @@
         "gerbang"
       ],
       "status_note": null,
-      "narration": "Halo, selamat datang! Kamu ada di gerbang area parkir, sisi barat laut taman. Mau ke Pintu Utama? Jalan saja sekitar sembilan puluh meter ke selatan. Kalau mau langsung olahraga, titik start jogging track ada di sebelah timur, dekat musala dan toilet. Selter sepeda BOSEH juga dekat dari sini. Sebelum jalan, ingat-ingat dulu lokasi kendaraanmu, ya. Itu misi pertamamu di sini!",
+      "narration": "Halo, selamat datang! Kamu ada di gerbang area parkir, sisi barat laut taman. Mau ke Pintu Utama? Jalan saja sekitar sembilan puluh meter ke selatan. Kalau mau langsung olahraga, titik start jogging track ada di sebelah timur, dekat musala dan toilet. Rest Area 78 dengan kafe dan rumah makannya juga dekat dari sini. Sebelum jalan, ingat-ingat dulu lokasi kendaraanmu, ya. Itu misi pertamamu di sini!",
       "quiz": [
         {
           "q": "Berapa tiket masuk per orang menurut detikJabar (2024)?",
@@ -900,95 +896,92 @@
     },
     {
       "id": "P07",
-      "name": "Selter Sepeda BOSEH",
-      "short_name": "Selter BOSEH",
-      "category_id": "wellness",
-      "location_label": "Sisi barat taman, dekat area parkir",
-      "source": "Google Maps: \"Stasiun Boseh Kiara Artha Park\"",
-      "lat": -6.915669,
-      "lng": 107.6408092,
+      "name": "Rental Skuter Papa Skuter",
+      "short_name": "Papa Skuter",
+      "category_id": "keluarga",
+      "location_label": "Area dalam, sebelah Solaria dan Taman Asia Afrika",
+      "source": "Google Maps: \"Papa Skuter\" (plus code 3JMR+FM, diakses 25 Nov 2026); OpenStreetMap: Papa Skuter (bicycle_rental)",
+      "lat": -6.9163125,
+      "lng": 107.6416875,
       "radius_m": 20,
       "art": "bike",
-      "summary": "Sewa sepeda BOSEH untuk berkeliling taman dan kota.",
-      "description": "Selter Bike on the Street Everybody Happy (BOSEH) di sisi barat taman. Pengunjung dapat menyewa sepeda untuk berkeliling lingkar taman maupun menjelajah Bandung. Di dalam taman juga tersedia persewaan sepeda dan skuter listrik swasta.",
+      "summary": "Sewa skuter dan sepeda listrik untuk berkeliling taman.",
+      "description": "Papa Skuter menyewakan skuter dan sepeda listrik di area dalam taman, bersebelahan dengan Solaria dan Taman Asia Afrika. Pilihannya beragam, dari skuter roda dua sampai roda tiga, sehingga cocok untuk berkeliling lingkar taman bersama keluarga.",
       "trivia": [
-        "BOSEH adalah program sepeda sewa Pemerintah Kota Bandung; tarif resmi tercatat Rp1.000 untuk jam pertama dan Rp2.000 untuk jam berikutnya.",
-        "Persewaan sepeda dan skuter listrik di dalam taman bertarif Rp30.000 pada hari kerja dan Rp40.000 pada akhir pekan (detikJabar, 2024)."
+        "Alamat Papa Skuter tercatat di Google Maps: Taman Air Mancur Kiara Artha Park, sebelah Solaria, Taman Asia Afrika, area dalam.",
+        "Persewaan sepeda dan skuter listrik di dalam taman bertarif sekitar Rp30.000 pada hari kerja dan Rp40.000 pada akhir pekan (detikJabar, 2024)."
       ],
       "activities": [
-        "Sewa sepeda BOSEH",
-        "Sewa sepeda/skuter listrik di dalam taman",
-        "Bersepeda di lingkar taman"
+        "Sewa skuter listrik",
+        "Sewa sepeda listrik",
+        "Berkeliling lingkar taman"
       ],
       "tips": [
-        "Siapkan kartu identitas untuk registrasi.",
+        "Tanyakan tarif dan durasi sewa di kasir sebelum berangkat.",
         "Gunakan jalur lingkar dan utamakan pejalan kaki."
       ],
-      "trigger_response": "Info cara sewa sepeda/skuter, tarif dan jam operasional, serta rute bersepeda.",
+      "trigger_response": "Info sewa skuter/sepeda listrik dan rute berkeliling taman.",
       "hours": [
         {
           "days": [
+            0,
             1,
             2,
             3,
             4,
-            5
-          ],
-          "open": "08:00",
-          "close": "16:00"
-        },
-        {
-          "days": [
-            0,
+            5,
             6
           ],
-          "open": "06:00",
-          "close": "18:00"
+          "open": "07:00",
+          "close": "21:00"
         }
       ],
       "best_times": [
         "pagi",
-        "sore"
+        "sore",
+        "malam"
       ],
       "keywords": [
-        "sepeda",
-        "boseh",
         "skuter",
+        "scooter",
+        "sepeda listrik",
+        "sepeda",
         "sewa",
-        "bike",
-        "bersepeda"
+        "rental",
+        "papa skuter",
+        "otoped"
       ],
-      "status_note": "Jam layanan mengacu pada jam booth BOSEH Pemkot Bandung; konfirmasi saat survei.",
-      "narration": "Ini Selter Sepeda BOSEH, singkatan dari Bike on the Street Everybody Happy, program sepeda sewa Pemerintah Kota Bandung. Cara sewanya gampang: daftar pakai kartu identitas di petugas atau aplikasi BOSEH, lalu pilih sepeda yang tersedia. Tarif resminya mulai seribu rupiah untuk jam pertama. Di dalam taman juga ada sewa sepeda dan skuter listrik, sekitar tiga puluh sampai empat puluh ribu rupiah. Rute favorit: lingkar Jalan Kiara Artha mengelilingi danau. Tetap utamakan pejalan kaki, ya!",
+      "status_note": "Jam sewa dan tarif terbaru perlu dikonfirmasi ke Papa Skuter saat survei.",
+      "narration": "Ini Papa Skuter, tempat sewa skuter dan sepeda listrik di area dalam taman, persis di sebelah Solaria dan Taman Asia Afrika. Pilihannya banyak, dari skuter roda dua sampai roda tiga yang nyaman untuk anak dan orang tua. Tanyakan tarif dan durasi sewanya di kasir dulu, ya. Rute paling seru: lingkar Jalan Kiara Artha mengelilingi danau. Pelan-pelan saja dan selalu utamakan pejalan kaki. Selamat berkeliling!",
       "quiz": [
         {
-          "q": "BOSEH adalah singkatan dari…",
+          "q": "Papa Skuter berada di sebelah spot apa?",
           "options": [
-            "Bike Of Smart Eco Hub",
-            "Bandung Ongkos Sepeda Hemat",
-            "Bike on the Street Everybody Happy",
-            "Bersepeda Olahraga Sehat"
+            "Lapangan padel",
+            "Gerbang Utara",
+            "Taman Asia Afrika",
+            "Musala & Toilet"
           ],
           "answer": 2,
-          "explain": "BOSEH = Bike on the Street Everybody Happy, program sepeda sewa Pemkot Bandung."
+          "explain": "Papa Skuter ada di area dalam, sebelah Solaria dan Taman Asia Afrika."
         },
         {
-          "q": "Berapa tarif resmi BOSEH untuk jam pertama?",
+          "q": "Saat naik skuter di lingkar taman, siapa yang harus diutamakan?",
           "options": [
-            "Rp50.000",
-            "Rp30.000",
-            "Rp1.000",
-            "Rp10.000"
+            "Tidak ada",
+            "Mobil",
+            "Pejalan kaki",
+            "Skuter yang lebih cepat"
           ],
           "answer": 2,
-          "explain": "Tarif resmi BOSEH tercatat Rp1.000 untuk jam pertama dan Rp2.000 untuk jam berikutnya."
+          "explain": "Jalur lingkar dipakai bersama; pejalan kaki selalu diutamakan."
         }
       ],
       "mission": {
         "type": "confirm",
-        "title": "Intip selter BOSEH",
-        "prompt": "Lihat ke selter: ada sepeda yang siap disewa sekarang? Perhatikan juga papan tarifnya.",
-        "done_label": "Sudah kuintip!"
+        "title": "Pilih skuter favorit",
+        "prompt": "Lihat deretan skuter di Papa Skuter. Warna apa yang paling banyak? Perhatikan juga papan tarifnya.",
+        "done_label": "Sudah kulihat!"
       }
     },
     {
@@ -1236,7 +1229,7 @@
             "Air mancur menari",
             "Musala dan toilet",
             "Lapangan padel",
-            "Selter sepeda"
+            "Sewa skuter"
           ],
           "answer": 1,
           "explain": "P10 adalah fasilitas musala dan toilet di sisi utara taman."
@@ -1566,7 +1559,7 @@
           "q": "Spot apa yang tepat berada di sebelah selatan Gerbang Timur?",
           "options": [
             "Food Court 2",
-            "Selter BOSEH",
+            "Papa Skuter",
             "Taman Asia Afrika",
             "Area parkir"
           ],
@@ -1681,9 +1674,9 @@
       "short_name": "Masjid Al-Maleeq",
       "category_id": "fasilitas",
       "location_label": "Sisi barat, di pojok deretan toko dekat Jl. Banten",
-      "source": "Google Maps: \"Masjid Al-Maleeq\" (diakses 24 Nov 2026)",
-      "lat": -6.916,
-      "lng": 107.64066,
+      "source": "Google Maps: \"Masjid Al-Maleeq\" (plus code 3JMR+J7, diakses 25 Nov 2026)",
+      "lat": -6.9159375,
+      "lng": 107.6406875,
       "radius_m": 20,
       "art": "musala",
       "summary": "Masjid di sisi barat taman, dekat Jl. Banten dan Pintu Utama.",
@@ -1735,8 +1728,8 @@
         "wudu",
         "ibadah"
       ],
-      "status_note": "Koordinat diperkirakan dari Google Maps (belum ada di OpenStreetMap); validasi saat survei lapangan.",
-      "narration": "Assalamualaikum! Kamu di dekat Masjid Al-Maleeq, di sisi barat kawasan Kiara Artha, dekat Jalan Banten. Kalau sudah masuk waktu salat, kamu bisa beribadah di sini sebelum lanjut menjelajah. Simpan alas kaki di tempatnya dan jaga kebersihan, ya. Kalau sedang di sisi utara taman, ada juga musala dekat titik start jogging track. Menjelang magrib biasanya ramai, jadi datang sedikit lebih awal. Setelah salat, Pintu Utama dan Selter BOSEH ada tidak jauh di sebelah selatan dan timur, siap jadi titik awal jelajahmu berikutnya.",
+      "status_note": null,
+      "narration": "Assalamualaikum! Kamu di dekat Masjid Al-Maleeq, di sisi barat kawasan Kiara Artha, dekat Jalan Banten. Kalau sudah masuk waktu salat, kamu bisa beribadah di sini sebelum lanjut menjelajah. Simpan alas kaki di tempatnya dan jaga kebersihan, ya. Kalau sedang di sisi utara taman, ada juga musala dekat titik start jogging track. Menjelang magrib biasanya ramai, jadi datang sedikit lebih awal. Setelah salat, Pintu Utama ada tidak jauh di sebelah selatan, dan Rest Area 78 di sebelah utara kalau kamu lapar.",
       "quiz": [
         {
           "q": "Masjid Al-Maleeq berada di sisi mana kawasan Kiara Artha?",
@@ -1754,7 +1747,7 @@
           "options": [
             "Food Court 2",
             "Musala di sisi utara taman",
-            "Selter BOSEH",
+            "Papa Skuter",
             "Lapangan padel"
           ],
           "answer": 1,
@@ -1766,6 +1759,103 @@
         "title": "Rapikan alas kaki",
         "prompt": "Simpan alas kakimu dengan rapi di tempat yang disediakan, lalu bantu rapikan satu pasang lainnya.",
         "done_label": "Sudah rapi!"
+      }
+    },
+    {
+      "id": "P17",
+      "name": "Rest Area 78",
+      "short_name": "Rest Area 78",
+      "category_id": "kuliner",
+      "location_label": "Sisi barat laut, Jl. Banten No. 78, dekat area parkir",
+      "source": "Google Maps: tenan Rest Area 78 (diakses 25 Nov 2026); OpenStreetMap: Gubuk Makan Mang Engking",
+      "lat": -6.9153,
+      "lng": 107.6408,
+      "radius_m": 30,
+      "art": "food",
+      "summary": "Deretan kafe dan rumah makan di Jl. Banten, buka dari sarapan sampai malam.",
+      "description": "Rest Area 78 adalah bangunan berderet di sisi barat laut taman, menghadap Jl. Banten dekat area parkir. Di dalamnya ada beberapa kafe dan rumah makan, antara lain Orien Coffee, Bagi Kopi Kiara Artha, Kang Bubur, Nats Time, dan Gubug Makan Mang Engking, serta Fely Creative Space.",
+      "trivia": [
+        "Papan di depan bangunan mengajak pengunjung datang dari sarapan pagi sampai nongkrong malam.",
+        "Rest Area 78 dekat area parkir dan Masjid Al-Maleeq, jadi praktis untuk singgah sebelum atau sesudah menjelajah taman."
+      ],
+      "activities": [
+        "Sarapan",
+        "Makan berat",
+        "Ngopi & nongkrong",
+        "Fely Creative Space"
+      ],
+      "tips": [
+        "Jam buka tiap tenan berbeda; cek papan di depan tenan.",
+        "Pas untuk sarapan sebelum jogging pagi."
+      ],
+      "trigger_response": "Daftar tenan makanan & minuman dan arah ke area parkir.",
+      "hours": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "07:00",
+          "close": "21:00"
+        }
+      ],
+      "best_times": [
+        "pagi",
+        "siang",
+        "sore",
+        "malam"
+      ],
+      "keywords": [
+        "rest area",
+        "rest area 78",
+        "makan",
+        "kuliner",
+        "kafe",
+        "kopi",
+        "bubur",
+        "sarapan",
+        "restoran",
+        "orien",
+        "bagi kopi",
+        "kang bubur",
+        "mang engking",
+        "nats time"
+      ],
+      "status_note": "Koordinat diperkirakan dari OpenStreetMap (Gubuk Makan Mang Engking) dan peta tenan; validasi saat survei lapangan.",
+      "narration": "Selamat datang di Rest Area 78, deretan kafe dan rumah makan di Jalan Banten, dekat area parkir. Mau sarapan bubur, makan berat, atau ngopi santai? Di sini ada Orien Coffee, Bagi Kopi, Kang Bubur, Nats Time, sampai Gubug Makan Mang Engking. Ada juga Fely Creative Space kalau kamu suka berkreasi. Jam buka tiap tenan beda-beda, jadi cek papan di depannya, ya. Setelah kenyang, Masjid Al-Maleeq dan Pintu Utama ada tidak jauh di sebelah selatan. Selamat menikmati!",
+      "quiz": [
+        {
+          "q": "Rest Area 78 berada di jalan apa?",
+          "options": [
+            "Jl. Jakarta",
+            "Jl. Asia Afrika",
+            "Jl. Banten",
+            "Jl. Ibrahim Adjie"
+          ],
+          "answer": 2,
+          "explain": "Rest Area 78 ada di Jl. Banten No. 78, sisi barat laut taman."
+        },
+        {
+          "q": "Spot mana yang dekat dengan Rest Area 78?",
+          "options": [
+            "Area parkir",
+            "Gerbang Timur",
+            "Food Court 2",
+            "Zona Teduh"
+          ],
+          "answer": 0,
+          "explain": "Rest Area 78 berada dekat area parkir di sisi barat laut taman."
+        }
+      ],
+      "mission": {
+        "type": "photo",
+        "title": "Foto menu Rest Area 78",
+        "prompt": "Foto menu atau tenan favoritmu di Rest Area 78."
       }
     }
   ],
@@ -2609,11 +2699,12 @@
     {
       "id": "B03",
       "name": "Pencicip Kuliner",
-      "description": "Kunjungi 2 dari 3 area kuliner dan kafe.",
+      "description": "Kunjungi 2 dari 4 area kuliner dan kafe.",
       "poi_ids": [
         "P08",
         "P09",
-        "P15"
+        "P15",
+        "P17"
       ],
       "min_count": 2,
       "requires_trail": false,
@@ -2626,7 +2717,7 @@
       "description": "Kunjungi 3 spot wellness dan selesaikan satu Wellness Trail.",
       "poi_ids": [
         "P06",
-        "P07",
+        "P09",
         "P11"
       ],
       "min_count": 3,
@@ -2637,7 +2728,7 @@
     {
       "id": "B05",
       "name": "Penjelajah Sejati",
-      "description": "Kumpulkan seluruh 14 stempel Kiara Artha Park.",
+      "description": "Kumpulkan seluruh 15 stempel Kiara Artha Park.",
       "poi_ids": [
         "P01",
         "P02",
@@ -2652,9 +2743,10 @@
         "P13",
         "P14",
         "P15",
-        "P16"
+        "P16",
+        "P17"
       ],
-      "min_count": 14,
+      "min_count": 15,
       "requires_trail": false,
       "sort_order": 5,
       "kind": "stamp"
@@ -2752,21 +2844,25 @@
         "kendaraan umum",
         "halte"
       ],
-      "answer": "Bus Trans Metro Bandung Koridor 5 berhenti di halte Kiara Artha. Dari selter BOSEH di sisi barat, kamu juga bisa lanjut bersepeda.",
-      "poi_id": "P07",
+      "answer": "Bus Trans Metro Bandung Koridor 5 berhenti di halte Kiara Artha. Halte Gerbang Utara Kiara Artha Park juga ada di Jl. Jakarta, dekat Gerbang Utara.",
+      "poi_id": "P13",
       "sort_order": 4
     },
     {
       "id": "sewa",
       "patterns": [
         "sewa sepeda",
+        "sewa skuter",
         "skuter",
+        "scooter",
         "otoped",
         "harga sepeda",
         "tarif sepeda",
-        "boseh"
+        "tarif skuter",
+        "papa skuter",
+        "rental"
       ],
-      "answer": "BOSEH (sepeda Pemkot Bandung) mulai Rp1.000 untuk jam pertama. Sewa sepeda dan skuter listrik di dalam taman sekitar Rp30.000 di hari kerja dan Rp40.000 di akhir pekan (detikJabar, 2024).",
+      "answer": "Skuter dan sepeda listrik bisa disewa di Papa Skuter, area dalam sebelah Solaria dan Taman Asia Afrika. Tarif sewa di dalam taman tercatat sekitar Rp30.000 di hari kerja dan Rp40.000 di akhir pekan (detikJabar, 2024); cek lagi di kasir, ya.",
       "poi_id": "P07",
       "sort_order": 5
     },

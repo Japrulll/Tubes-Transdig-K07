@@ -34,15 +34,22 @@ export const FAMILIES = [
   },
   {
     id: 'parkir',
-    label: 'Parkir & transportasi',
-    terms: ['parkir', 'parkiran', 'mobil', 'motor', 'halte', 'bus', 'angkot', 'sepeda', 'boseh'],
-    match: (p) => p.art === 'parking' || p.art === 'bike' || has(p, ['halte']),
+    label: 'Parkir',
+    // Bus/angkot/halte dijawab FAQ "angkutan" (halte ada di Gerbang Utara & Timur), bukan area parkir
+    terms: ['parkir', 'parkiran', 'mobil', 'motor'],
+    match: (p) => p.art === 'parking',
+  },
+  {
+    id: 'sewa',
+    label: 'Sewa skuter & sepeda',
+    terms: ['skuter', 'scooter', 'sepeda', 'sepeda listrik', 'bersepeda', 'otoped', 'rental'],
+    match: (p) => p.art === 'bike',
   },
   {
     id: 'olahraga',
     label: 'Olahraga',
-    terms: ['olahraga', 'jogging', 'joging', 'lari', 'sepeda', 'bersepeda', 'padel', 'senam', 'workout'],
-    match: (p) => ['jogging', 'bike', 'padel'].includes(p.art),
+    terms: ['olahraga', 'jogging', 'joging', 'lari', 'padel', 'senam', 'workout'],
+    match: (p) => ['jogging', 'padel'].includes(p.art),
   },
   {
     id: 'santai',

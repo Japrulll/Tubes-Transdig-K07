@@ -104,7 +104,7 @@ const sun = computed(() => (dusk.value ? { x: 80, y: 92, r: 26, c: '#ff9b73' } :
       <g v-else-if="art === 'bike'">
         <rect x="60" y="120" width="230" height="10" rx="5" fill="#0d4f4a" />
         <rect x="70" y="128" width="6" height="80" fill="#477a71" /><rect x="274" y="128" width="6" height="80" fill="#477a71" />
-        <rect x="140" y="104" width="70" height="18" rx="6" fill="#ee7b5b" /><text x="175" y="117" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">BOSEH</text>
+        <rect x="140" y="104" width="70" height="18" rx="6" fill="#ee7b5b" /><text x="175" y="117" text-anchor="middle" font-size="10" font-weight="800" fill="#fff">SEWA</text>
         <g v-for="(x, i) in [100, 170, 240]" :key="i" :transform="`translate(${x} 182)`" fill="none" stroke-width="4">
           <circle cx="0" cy="12" r="14" stroke="#1d2b29" /><circle cx="42" cy="12" r="14" stroke="#1d2b29" />
           <path d="M0 12 L14 -6 H34 L42 12 M14 -6 L22 12 H0 M34 -6 L30 -16" :stroke="i === 1 ? '#ee7b5b' : '#3f9e8e'" stroke-linejoin="round" />
