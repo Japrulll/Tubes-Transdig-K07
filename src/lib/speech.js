@@ -34,13 +34,16 @@ export function listen({ onPartial = () => {}, onFinal, onError = () => {}, onEn
   r.lang = 'id-ID'
   r.interimResults = true
   r.maxAlternatives = 1
+  // Terus merekam sampai pengguna menekan stop (tidak berhenti sendiri saat jeda bicara)
+  r.continuous = true
   let finalText = ''
   let lastText = ''
   let errored = false
   r.onresult = (e) => {
-    lastText = [...e.results].map((x) => x[0].transcript).join(' ').trim()
+    // Mode continuous: gabungkan semua potongan (final maupun sementara) jadi satu kalimat
+    lastText = [...e.results].map((x) => x[0].transcript.trim()).filter(Boolean).join(' ')
     onPartial(lastText)
-    if (e.results[e.results.length - 1].isFinal) finalText = lastText
+    if ([...e.results].every((x) => x.isFinal)) finalText = lastText
   }
   r.onerror = (e) => {
     if (e.error === 'aborted') return
@@ -50,7 +53,7 @@ export function listen({ onPartial = () => {}, onFinal, onError = () => {}, onEn
   }
   r.onend = () => {
     // Sebagian browser berhenti tanpa menandai hasil "final": pakai teks terakhir yang terdengar
-    const text = finalText || lastText
+    const text = lastText || finalText
     if (text) onFinal(text)
     else if (!errored) onError(WEB_ERRORS['no-speech'])
     onEnd()
