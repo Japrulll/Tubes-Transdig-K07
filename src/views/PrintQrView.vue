@@ -29,7 +29,7 @@ onMounted(async () => {
       </p>
       <ul class="grid grid-cols-2 gap-3 print:grid-cols-3">
         <li v-for="p in content.pois" :key="p.id" class="card flex break-inside-avoid flex-col items-center p-3 text-center">
-          <p class="text-[9px] font-extrabold uppercase tracking-[0.14em] text-brand-700">SETARA · {{ p.id }}</p>
+          <p class="text-[9px] font-extrabold uppercase tracking-[0.14em] text-brand-700">SETARA · Spot {{ p.number }}</p>
           <div class="mt-2 w-full max-w-[150px] [&_svg]:h-auto [&_svg]:w-full" v-html="codes[p.id] || ''" />
           <p class="mt-2 text-[12px] font-bold leading-tight text-ink">{{ p.name }}</p>
           <p class="text-[10px] text-muted">{{ categoryById[p.category_id]?.label }} · Pindai untuk cerita & stempel</p>

@@ -134,7 +134,12 @@ function ticketAnswer(t) {
   if (has(t, ['parkir', 'parkiran', 'mobil', 'motor'])) {
     return { intent: 'ticket:parkir', text: `Tarif parkir belum tercatat di SETARA. Tanyakan ke petugas parkir atau cek ${contact()}.`, actions: getPoi('P02') ? [detailAction(getPoi('P02'))] : [] }
   }
-  return { intent: 'ticket', text: `Tiket masuk taman: ${content.park.ticket || 'Rp10.000 per orang (detikJabar, 2024)'}.`, actions: getPoi('P01') ? [detailAction(getPoi('P01'))] : [] }
+  const booth = getPoi('P18')
+  return {
+    intent: 'ticket',
+    text: `Tiket masuk taman: ${content.park.ticket || 'Rp10.000 per orang'}.${booth ? ` Belinya di ${booth.name}, ${lower(booth.location_label)}.` : ''}`,
+    actions: booth ? [navAction(booth), detailAction(booth)] : [],
+  }
 }
 
 function openAnswer(p) {

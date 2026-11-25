@@ -71,7 +71,7 @@ Geolocation dan kamera hanya berjalan di **HTTPS** (atau `localhost`). Untuk uji
 
 ## Data & Supabase
 
-Sumber data tunggal ada di `scripts/build-data.mjs` (15 POI, kategori, trail, badge) dan `scripts/data-interaksi.mjs` (narasi Kia, kuis, misi, Tanya Kia, tantangan). Jalankan `npm run data` untuk menghasilkan:
+Sumber data tunggal ada di `scripts/build-data.mjs` (16 POI, kategori, trail, badge) dan `scripts/data-interaksi.mjs` (narasi Kia, kuis, misi, Tanya Kia, tantangan). Jalankan `npm run data` untuk menghasilkan:
 
 - `src/data/poi.json` — dataset bawaan aplikasi (dipakai selama database Supabase belum menjalankan seed terbaru)
 - `supabase/seed.sql` — isi database yang sama
@@ -98,25 +98,26 @@ Narasi rekaman (opsional) tetap bisa diunggah ke bucket `poi-media` sesuai `file
 
 ## Koordinat POI (Google Maps 16 Nov 2026; OpenStreetMap & Google Maps 24 Nov 2026)
 
-| ID | POI | Acuan | Lat, Lng | Radius |
-| --- | --- | --- | --- | --- |
-| P01 | Pintu Utama | Gerbang Barat Taman Kiara Artha | -6.9161917, 107.6407033 | 25 m |
-| P02 | Gerbang Area Parkir | Kiara Artha Parking Lot | -6.9154692, 107.6411222 | 25 m |
-| P03 | Danau & Air Mancur Menari | Dancing Fountain | -6.9160874, 107.6422657 | 40 m |
-| P05 | Spot Foto Ikonik | Taman Asia Afrika - Kiara Artha Park | -6.9166173, 107.6421607 | 25 m |
-| P06 | Titik Start Jogging Track | Jogging Track Kiara Artha Park | -6.9152676, 107.6417524 | 25 m |
-| P07 | Rental Skuter Papa Skuter | Google Maps plus code 3JMR+FM (sebelah Solaria & Taman Asia Afrika); OSM: Papa Skuter | -6.9163125, 107.6416875 | 20 m |
-| P08 | Area Kuliner / Food Court | Pelangi Graha Park (Kiara Pelangi) | -6.9170555, 107.6417750 | 30 m |
-| P09 | Area Kafe & Lapangan Padel | Padel Co. Semi Outdoor | -6.9149564, 107.6422184 | 30 m |
-| P10 | Musala & Toilet | Mushalla Kiara Artha Park | -6.9151658, 107.6421597 | 20 m |
-| P11 | Zona Relaksasi / Spot Teduh | Citra satelit (kanopi pohon timur danau) | -6.9159300, 107.6431120 | 20 m |
-| P13 | Gerbang Utara | OSM: halte "Gerbang Utara Kiara Artha Park" (Jl. Jakarta) + ujung Jl. Kiara Artha Utara | -6.9142000, 107.6412800 | 25 m |
-| P14 | Gerbang Timur | OSM: halte "Gerbang Timur Kiara Artha Park" (Jl. H. Ibrahim Adjie) | -6.9161500, 107.6437000 | 25 m |
-| P15 | Food Court 2 | OSM: Steak Ranjang (-6.91627), Siloka, Pang Waffle, RD Coffee & Eatery (-6.91675); titik tengah | -6.9164900, 107.6435100 | 30 m |
-| P16 | Masjid Al-Maleeq | Google Maps plus code 3JMR+J7 | -6.9159375, 107.6406875 | 20 m |
-| P17 | Rest Area 78 | Jl. Banten No. 78; OSM: Gubuk Makan Mang Engking + peta tenan (Orien Coffee, Bagi Kopi, Kang Bubur, Nats Time) | -6.9153000, 107.6408000 | 30 m |
+| No. | ID | POI | Acuan | Lat, Lng | Radius |
+| --- | --- | --- | --- | --- | --- |
+| 1 | P01 | Pintu Utama | Google Maps: "Gerbang Barat Taman Kiara Artha" | -6.9161917, 107.6407033 | 25 m |
+| 2 | P18 | Loket Tiket Masuk | Google Maps: plus code 3JMR+HMC (diakses 25 Nov 2026); OpenStreetMap: Kiara Artha Park sign | -6.9160625, 107.6416406 | 20 m |
+| 3 | P07 | Papa Skuter | Google Maps: "Papa Skuter" (plus code 3JMR+FM, diakses 25 Nov 2026); OpenStreetMap: Papa Skuter (bicycle_rental) | -6.9163125, 107.6416875 | 20 m |
+| 4 | P05 | Taman Asia Afrika | Google Maps: "Taman Asia Afrika - Kiara Artha Park" | -6.9166173, 107.6421607 | 25 m |
+| 5 | P08 | Food Court 1 | Google Maps: "Pelangi Graha Park" | -6.9170555, 107.6417750 | 30 m |
+| 6 | P03 | Danau & Air Mancur | Google Maps: "Dancing Fountain" | -6.9160874, 107.6422657 | 40 m |
+| 7 | P15 | Food Court 2 | OpenStreetMap: Steak Ranjang, Siloka, Pang Waffle, RD Coffee & Eatery (Jl. H. Ibrahim Adjie) | -6.9164900, 107.6435100 | 30 m |
+| 8 | P14 | Gerbang Timur | OpenStreetMap: halte "Gerbang Timur Kiara Artha Park", Jl. H. Ibrahim Adjie | -6.9161500, 107.6437000 | 25 m |
+| 9 | P11 | Zona Relaksasi | Google Maps (citra satelit): titik di bawah kanopi pohon, timur danau | -6.9159300, 107.6431120 | 20 m |
+| 10 | P09 | Kafe & Padel | Google Maps: "Padel Co. Semi Outdoor" | -6.9149564, 107.6422184 | 30 m |
+| 11 | P10 | Musala & Toilet | Google Maps: "Mushalla Kiara Artha Park" | -6.9151658, 107.6421597 | 20 m |
+| 12 | P06 | Start Jogging Track | Google Maps: "Jogging Track Kiara Artha Park" | -6.9152676, 107.6417524 | 25 m |
+| 13 | P13 | Gerbang Utara | OpenStreetMap: halte "Gerbang Utara Kiara Artha Park", Jl. Jakarta; Google Maps: Jl. Kiara Artha Utara | -6.9142000, 107.6412800 | 25 m |
+| 14 | P02 | Gerbang Parkir | Google Maps: "Kiara Artha Parking Lot" | -6.9154692, 107.6411222 | 25 m |
+| 15 | P17 | Rest Area 78 | Google Maps: tenan Rest Area 78 (diakses 25 Nov 2026); OpenStreetMap: Gubuk Makan Mang Engking | -6.9153000, 107.6408000 | 30 m |
+| 16 | P16 | Masjid Al-Maleeq | Google Maps: "Masjid Al-Maleeq" (plus code 3JMR+J7, diakses 25 Nov 2026) | -6.9159375, 107.6406875 | 20 m |
 
-P04 (Area Tematik Asia / Kampung Korea) dan Lolipops Playland **sudah tidak ada** dan dihapus dari aplikasi. Musala & Toilet pindah dari ID P12 ke P10 (25 Nov 2026). Semua ID lama dipetakan di `src/lib/poiIds.js`: QR/tautan `#/qr/P12`, stempel, dan bintang lama otomatis menjadi P10; kode P04 menampilkan pesan bahwa spot sudah tutup. P07 tetap memakai ID yang sama walau isinya berganti dari Selter BOSEH ke Papa Skuter, dan Rest Area 78 memakai ID baru P17 (ID lama P04/P12 tidak dipakai ulang). Nomor pin di peta mengikuti urutan (1–15).
+P04 (Area Tematik Asia / Kampung Korea) dan Lolipops Playland **sudah tidak ada** dan dihapus dari aplikasi. Musala & Toilet pindah dari ID P12 ke P10 (25 Nov 2026). Semua ID lama dipetakan di `src/lib/poiIds.js`: QR/tautan `#/qr/P12`, stempel, dan bintang lama otomatis menjadi P10; kode P04 menampilkan pesan bahwa spot sudah tutup. P07 tetap memakai ID yang sama walau isinya berganti dari Selter BOSEH ke Papa Skuter, dan Rest Area 78 memakai ID baru P17 (ID lama P04/P12 tidak dipakai ulang). Nomor spot (1–16) mengikuti urutan array `pois` di `scripts/build-data.mjs`, yaitu rute keliling: masuk dari barat, ke selatan danau, timur, utara, lalu barat laut. Nomor ini yang tampil di peta, Stempel, kartu spot, halaman detail, cetak QR, dan input kode manual. ID (P01…P18) hanya dipakai di belakang layar untuk QR dan progres.
 
 ## Change Log
 
@@ -142,6 +143,9 @@ P04 (Area Tematik Asia / Kampung Korea) dan Lolipops Playland **sudah tidak ada*
 | 1.5 | 25 Nov 2026 | P07 Selter BOSEH diganti Rental Skuter Papa Skuter (plus code 3JMR+FM); kategori Keluarga; badge B04 memakai P06, P09, P11 | Selter BOSEH diganti persewaan skuter yang ada di lapangan |
 | 1.5 | 25 Nov 2026 | Tambah P17 Rest Area 78 (kuliner); badge B03 menjadi 2 dari 4 area kuliner | Deretan restoran & kafe di Jl. Banten No. 78 |
 | 1.5 | 25 Nov 2026 | Koordinat P16 dari plus code 3JMR+J7; foto baru untuk P06, P07, P09, P13–P17 | Data lapangan dari tim |
+| 1.6 | 25 Nov 2026 | Tambah P18 Loket Tiket Masuk (plus code 3JMR+HMC; papan harga Rp10.000, usia 6+) | Titik pembelian tiket di dalam taman |
+| 1.6 | 25 Nov 2026 | Spot diurutkan ulang sebagai rute keliling; nomor spot (1–16) dipakai di semua halaman, bukan ID; satu nama per spot (`name` = `short_name`) | Penomoran & nama di Stempel sempat berbeda dengan peta |
+| 1.6 | 25 Nov 2026 | Foto P02 Gerbang Parkir, P11 Zona Relaksasi, P18 Loket Tiket; semua 16 spot kini berfoto | Data lapangan dari tim |
 
 ## Teknologi
 

@@ -107,7 +107,7 @@ function later() {
             </p>
             <h2 class="mt-1 text-xl font-semibold leading-tight text-ink">{{ poi.name }}</h2>
             <p class="mt-0.5 text-xs text-muted">
-              {{ categoryById[poi.category_id]?.label }} · {{ poi.id }}
+              {{ categoryById[poi.category_id]?.label }} · Spot {{ poi.number }}
               <template v-if="active.distance != null"> · {{ formatDistance(active.distance) }}</template>
             </p>
           </div>
@@ -117,7 +117,7 @@ function later() {
         <div class="mt-3 flex flex-wrap items-center gap-2">
           <span class="inline-flex items-center gap-1 rounded-full bg-brand-50 px-2.5 py-1 text-[11px] font-bold text-brand-700">
             <Icon name="check" :size="12" :stroke="3" />
-            {{ active.isNewStamp ? `Stempel ${poi.id} tersimpan` : 'Sudah ada di koleksi' }}
+            {{ active.isNewStamp ? `Stempel spot ${poi.number} tersimpan` : 'Sudah ada di koleksi' }}
           </span>
           <span v-if="sched" class="inline-flex items-center gap-1 rounded-full bg-sun-100 px-2.5 py-1 text-[11px] font-bold text-sun-600">
             <Icon name="clock" :size="12" :stroke="2.6" /> {{ sched.title.replace('Pertunjukan ', '') }} · {{ countdownLabel(sched) }}

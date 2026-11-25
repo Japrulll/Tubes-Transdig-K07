@@ -134,7 +134,7 @@ watch(
           </div>
         </div>
         <p class="mt-3 flex items-center gap-2 rounded-xl bg-mint px-3 py-2 text-[11px] text-muted">
-          <Icon name="vibrate" :size="14" class="text-brand-600" /> Notifikasi getar + suara saat masuk radius tujuan · Stempel {{ target.id }} tersimpan
+          <Icon name="vibrate" :size="14" class="text-brand-600" /> Notifikasi getar + suara saat masuk radius tujuan · Stempel spot {{ target.number }} tersimpan
         </p>
         <div class="mt-5">
           <RecommendationList :from="target" />
